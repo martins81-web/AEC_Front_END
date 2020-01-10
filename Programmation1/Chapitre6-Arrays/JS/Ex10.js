@@ -7,4 +7,4 @@
 // GEOGRAPHIE
 // BUREAUTIQUE
 //
-// Mettre ces   options dans un tableau, puis demander à un étudiant d’entrer un nom d’option. Vous lui répondez si OUI ou NON le collège offre cette option.
+// Mettre ces options dans un tableau, puis demander à un étudiant d’entrer un nom d’option. Vous lui répondez si OUI ou NON le collège offre cette option.
