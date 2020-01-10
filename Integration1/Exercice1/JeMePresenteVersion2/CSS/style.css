@@ -1,0 +1,120 @@
+/* CSS.css */
+/* Programmé par Eric Martins */
+/* Le 21 novembre 2019 */
+
+
+/*1.Centrez votre site avec une largeur de 900px (diapositive 16)
+2.Ajoutez une image en fond d’écran
+3.Ajoutez une couleur en fond d’écran (utilisez background-color)
+(vous ne verrez la couleur que si votre image est trop petite ou ne se répète pas) */
+body
+{
+    width: 900px;
+    background: url("../img/stylish-hexagonal-line-pattern-background_1017-19742.jpg") ;
+    background-color: darkcyan;
+    margin: auto;
+
+}
+
+
+/*1.Changez la dimension de la balise H1 pour 36px*/
+h1
+{
+    font-size: 36px;
+}
+
+/*2.Changez la dimension de la balise H2 pour 24 px*/
+h2
+{
+    font-size: 24px;
+}
+
+
+/*3.En une seule commande, changez la couleur de h1 et h2.*/
+/*4.Le texte des balises H1 et H2 doit être centré*/
+h1,h2
+{
+    color: cornflowerblue;
+    text-align: center;
+}
+
+
+#container{
+    display:inline-block;
+}​
+
+/*5.Changez la dimension de la balise p pour 14 px.*/
+/*6.Changez l’alignement de la balise p pour “justifiy”*/
+p
+{
+    font-size: 14px;
+    text-align: justify;
+}
+
+/**11.Changez la couleur de tous les liens pour un bleu pâle*/
+a
+{
+    color: lightblue;
+    text-decoration: none;
+}
+
+/*12.Changez la couleur des liens visités pour un bleu plus foncé */
+a:visited
+{
+    color: darkblue;
+}
+
+/*13.Ajoutez un soulignement à vos liens lorsque l’utilisateur passe sa souris par dessus (hover)*/
+a:hover
+{
+    text-decoration: underline;
+}
+
+/*11.Appliquez une largeur de 300px à toutes vos images
+12.Arrondissez les coins de vos images (border-radius)*/
+img
+{
+    width: 300px;
+    border-radius:10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*13. Lorsque l’usager passe sa souris par dessus votre image (hover) ajoutez un effet d’ombrage
+(box-shadow)*/
+img:hover
+{
+    box-shadow: 5px 10px;
+}
+
+/*11.Ajoutez une bordure à votre tableau
+12.  Changez la taille et la couleur du texte de votre tableau */
+table
+{
+    border: 1px solid  white;
+    font-size: 20px;
+    color: black;
+}
+td, th {
+    border: 1px solid #000000;
+    text-align: left;
+    padding: 8px;
+}
+
+/*
+13.  Changez la taille du texte de vos listes
+14.  Changez la couleur du texte de vos listes
+*/
+
+ul,li
+{
+    font-size: 18px;
+    color: blueviolet;
+    list-style-position: inside;
+}
+
+#container2{
+     text-align: center;
+ }

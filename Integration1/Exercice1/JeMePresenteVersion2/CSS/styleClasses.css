@@ -1,0 +1,54 @@
+/* CSS.css */
+/* Programmé par Eric Martins */
+/* Le 21 décembre 2019 */
+@font-face {
+    font-family: pokemon;
+    src: url("Pokemon Solid.ttf");
+}
+
+
+
+#JumpEtudes
+{
+    background-color: red;
+}
+
+#JumpLoisirs
+{
+    background-color: green;
+}
+
+#JumpSportpratique
+{
+    background-color: blue;
+}
+
+#JumpReve
+{
+    background-color: darkorange;
+}
+
+.belleImage
+{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.belleImage:hover
+{
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.titreH1
+{
+    color: dimgray;
+    font-size: 36px;
+    font-family: pokemon, serif;
+}
+
+.titreH2
+{
+    color: red;
+    font-size: 26px;
+    font-family: 'Roboto Mono', monospace;
+}

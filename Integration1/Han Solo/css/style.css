@@ -1,0 +1,99 @@
+/* CSS.css */
+/* Programmé par Eric Martins */
+/* Le 21 décembre 2019 */
+
+@font-face {
+    font-family: starjedi;
+    src: url("../font/Starjedi.ttf");
+}
+
+/*14.Le body a une largeur de 1000 pixels. (1 point)*/
+/*15.Le body a l’image étoile de la mort en background sans répétition. (1 point)*/
+/*16.Le body a la couleur noir comme fond. (1 point)*/
+/*17.Le body est centré (margin:auto) (1 point)*/
+
+body
+{
+    width: 1000px;
+    background-image: url("../img/etoileMort.jpg");
+    background-repeat: no-repeat;
+    background-color: black;
+    margin: auto;
+}
+
+/*18.Le titre h1 est de dimension 140px, de couleur et centré jaune. (1 point)*/
+/*19.Le titre h1 utilise la police Starjedi.ttf qui se trouve dans le dossier font. (1 point)*/
+/*20.Les marges du titre h1 sont toutes à 0. (1 point)*/
+
+h1
+{
+    font-size: 140px;
+    color: yellow;
+    text-align: center;
+    font-family: starjedi, serif;
+    margin: 0;
+}
+
+/*21.Les titres h2, h3 et h4 sont blancs et centrés. (1 point)*/
+/*a. Vous devez utiliser la propriété de css qui permet d’appliquer le css sur ces 3 balises*/
+/*                                                                                   en une seule commande.*/
+
+h2,h3,h4
+{
+    color: white;
+    text-align: center;
+}
+
+/*22.Le titre h2 est de dimension 72 px (.33 point).*/
+/*23.Le titre h3 est de dimension 60 px (.33 point).*/
+/*24.Le titre h4 est de dimension 44px (.33 point).*/
+
+h2
+{
+    font-size: 72px;
+}
+
+h3
+{
+    font-size: 60px;
+}
+
+h4
+{
+    font-size: 44px;
+}
+
+
+/*25.Les paragraphes sont justifiés, blancs et de dimension 16 px. (1 point)*/
+
+p
+{
+    text-align: justify;
+    color: white;
+    font-size: 16px;
+}
+
+/*26.Les images utilisent la propriété display : block (1point)*/
+/*27.Les images sont centrées (margin : auto). (1 point)*/
+
+img
+{
+    display: block;
+    margin: auto;
+}
+
+/*28.Créez une classe nommée .films pour que les titres des films soient en jaune. (2 points)*/
+
+.films
+{
+    color: yellow;
+}
+
+/*29.Les liens du menu du haut sont blancs, soulignés. (1 point)*/
+
+.liensHaut
+{
+    color: white;
+    text-decoration: underline;
+}
+
