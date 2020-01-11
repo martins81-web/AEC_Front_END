@@ -11,7 +11,7 @@
 //     Position de départ de la plus longue séquence de vrais consécutifs : 6
 // Position de départ de la plus longue séquence de faux consécutifs  : 12
 
-var bool= new Array();
+var bool= [];
 var CompteurVrai=1;
 var CompteurFaux=1;
 var SequenceVrai=0;

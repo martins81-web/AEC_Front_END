@@ -5,7 +5,7 @@
 // exp : tab2Exp[4] = 16;  // 2^4
 // exp : tab2Exp[5] = 32;  // 2^5
 
-var tab2Exp = new Array();
+var tab2Exp = [];
 var i;
 
 for ( i = 0 ; i < 16 ; i++ )

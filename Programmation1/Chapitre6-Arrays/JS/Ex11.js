@@ -8,7 +8,7 @@
 
 
 var terminer="non";
-var nombreEnfants = new Array();
+var nombreEnfants = [];
 var i=0;
 
 while (terminer==="non"){

@@ -1,8 +1,8 @@
 //Eric Martins - 11 janvier 2020
 // Lire 2 valeurs dans un tableau. Inverser ces deux valeurs.
 
-var tab = new Array;
-var tabInv = new Array;
+var tab = [];
+var tabInv = [];
 
 
 for ( i=0 ; i<2; i++){

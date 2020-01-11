@@ -2,7 +2,7 @@
 // Lire 10 nombres quelconques et les placer dans un tableau
 // Par la suite, trouver le plus petit et le plus grand de ces nombres
 
-var nombres = new Array();
+var nombres = [];
 var plusGrand;
 var plusPetit;
 var i;

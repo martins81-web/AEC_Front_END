@@ -2,8 +2,8 @@
 // Lire les noms et notes d’examen d’une classe de 5 élèves.
 // Afficher ceux (noms et notes) qui ont une note supérieure à la moyenne.
 
-var noms = new Array();
-var notes = new Array();
+var noms = [];
+var notes = [];
 var i;
 var total=0;
 

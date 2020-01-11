@@ -2,7 +2,7 @@
 // Lire 12 nombres quelconques et les mettre dans un tableau.
 // Vérifier si le dernier nombre (12e) additionné avec un des 11 autres nombres font une somme de 15. Si tel est le cas, afficher ces 2 nombres.
 
-var tab = new Array();
+var tab = [];
 var i;
 
 for ( i=0 ; i<12 ; i++){
