@@ -15,17 +15,17 @@
 var tableau = ["1","2","3","4","5","6","7","8","9","10"];
 
 var i;
-var r=0;
-var cache=0;
+var r;
+var temp;
 
 document.write(tableau+"<br>");
 
 for (i = 0 ; i < tableau.length-1  ; i++) {
 
     var r = Math.floor(Math.random() * (tableau.length));
-    var cache = tableau[i];
+    var temp = tableau[i];
     tableau[i] = tableau[r];
-    tableau[r] = cache;
+    tableau[r] = temp;
 
 }
 
