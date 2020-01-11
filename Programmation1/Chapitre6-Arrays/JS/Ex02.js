@@ -3,7 +3,7 @@
 // affichez-le à l’aide d’une boucle Pour.
 
 var LesMois= ["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"];
-var i=0;
+var i;
 
 for ( i = 0 ; i < LesMois.length ; i++)
 {
