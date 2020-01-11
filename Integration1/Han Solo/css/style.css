@@ -91,9 +91,9 @@ img
 
 /*29.Les liens du menu du haut sont blancs, soulignés. (1 point)*/
 
-.liensHaut
+a h4
 {
     color: white;
-    text-decoration: underline;
+    text-decoration: underline white;
 }
 

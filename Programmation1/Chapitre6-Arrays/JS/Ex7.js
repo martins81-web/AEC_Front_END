@@ -19,11 +19,9 @@ var SequenceFaux=0;
 var PositionDepartVrai=0;
 var PositionDepartFaux=0;
 
-for (var i=0;i<100;i++)
+for (var i=0;i<1000;i++)
 {
-
     bool[i] = Boolean(Math.round(Math.random()));
-
     if (bool[i]===bool[i-1])
     {
         if (bool[i]===true)
@@ -34,7 +32,6 @@ for (var i=0;i<100;i++)
                 SequenceVrai=CompteurVrai;
                 PositionDepartVrai = (i+1) - SequenceVrai ;
             }
-
         }
         else
         {
@@ -51,7 +48,6 @@ for (var i=0;i<100;i++)
         CompteurVrai=1;
         CompteurFaux=1;
     }
-
     document.write( i+": " + bool[i]+"<br>");
 }
 
