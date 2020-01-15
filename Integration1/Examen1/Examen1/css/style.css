@@ -1,0 +1,94 @@
+/* style.css */
+/* Programmé par Eric Martins */
+/* Le 11 janvier 2019 */
+
+/*14.Le body a une largeur de 1000 pixels. (1 point)*/
+/*15.Le body a l’image “fondecran.jpg”en background sans répétition. (1 point)*/
+/*16.Le body a la couleur noir comme fond. (1 point)*/
+/*17.Le body est centré (margin:auto) (1 point)*/
+
+body {
+    width: 1000px;
+    background-image: url("../img/fondecran.jpg");
+    background-repeat: no-repeat;
+    background-color: black;
+    background-position: center;
+    margin: auto;
+}
+
+/*18.Le titre h1 est de dimension 140px, de couleur et centré jaune. (1 point)*/
+/*19.Les marges du titre h1 sont toutes à 0. (1 point)*/
+
+h1{
+    font-size : 140px;
+    color:  yellow;
+    margin: 0;
+}
+
+/*20.Les titres h2, h3 et h4 sont blancs et centrés. (1 point)*/
+
+h2,h3,h4{
+    color: white;
+    text-align: center;
+}
+
+/*21.Le titre h2 est de dimension 70 px (.33 point).*/
+h2{
+    font-size : 70px;
+}
+
+/*21.Le titre h3 est de dimension 58 px (.33 point).*/
+h3{
+    font-size : 58px;
+}
+
+/*22.Le titre h4 est de dimension 40px (.33 point).*/
+h4{
+    font-size : 40px;
+}
+
+/*23.Les paragraphes sont justifiés, blancs et de dimension 30 px. (1 point)*/
+/*25.Les paragraphes utilisent la police jagwi.ttf qui se trouve dans le dossier font. (1 point)*/
+p{
+    text-align: justify;
+    color: white;
+    font-size: 30px;
+    font-family: jagwi, serif;
+}
+
+@font-face {
+    font-family: jagwi;
+    src: url("../font/jagwi.ttf");
+}
+
+/*26.Les images utilisent la propriété display : block (1point)*/
+/*27.Les images sont centrées (margin : auto). (1 point)*/
+img{
+    display: block;
+    margin: auto;
+}
+
+/*28.Créez une classe nommée .episode et utilisez la pour que les titres des épisodes soient en jaune. (1 points)*/
+.episode h3{
+    color:  yellow;
+}
+
+/*29.Les liens du menu du haut sont blancs, soulignés jaunes. (1 point)*/
+a h4
+{
+    color: white;
+    text-decoration: underline yellow;
+}
+
+/*30. L’image du bébé yoda doit avoir une largeur maximum de 50%. (2 points)*/
+.bebeyoda{
+    width: 50%;
+}
+
+/*31. La taille de caractère pour le texte dans un paragraphe dans une liste doit être de 22px.*/
+li p{
+    font-size: 22px;
+}
+
+
+
