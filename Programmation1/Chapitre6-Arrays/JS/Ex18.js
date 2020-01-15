@@ -30,8 +30,7 @@ for (i=0 ; i<noms.length ; i++) {
         {
             temp=noms[i];
             noms[i]=noms[j];
-            noms[j]=temp;
-        }
+            noms[j]=temp;        }
     }
 }
 
