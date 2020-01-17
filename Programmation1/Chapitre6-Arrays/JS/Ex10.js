@@ -16,7 +16,7 @@ var optionExistante="Non";
 
 choixEtudiant= prompt("Entrez l'option que vous desirez").toUpperCase();
 
-for ( i = 0 ; i < options.length ; i++ )
+for (let i = 0 ; i < options.length ; i++ )
 {
     if (choixEtudiant === options[i]){
         optionExistante="Oui"

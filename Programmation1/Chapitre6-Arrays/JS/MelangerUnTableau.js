@@ -20,7 +20,7 @@ var temp;
 
 document.write(tableau+"<br>");
 
-for (i = 0 ; i < tableau.length-1  ; i++) {
+for (i = 0 ; i < tableau.length  ; i++) {
 
     var r = Math.floor(Math.random() * (tableau.length));
     var temp = tableau[i];

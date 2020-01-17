@@ -12,6 +12,8 @@
 // Position de départ de la plus longue séquence de faux consécutifs  : 12
 
 var bool= [];
+var CompteurVraiAbsolut=0;
+var CompteurFauxAbsolut=0;
 var CompteurVrai=1;
 var CompteurFaux=1;
 var SequenceVrai=0;
@@ -22,6 +24,7 @@ var PositionDepartFaux=0;
 for (var i=0;i<1000;i++)
 {
     bool[i] = Boolean(Math.round(Math.random()));
+
     if (bool[i]===bool[i-1])
     {
         if (bool[i]===true)
@@ -49,9 +52,20 @@ for (var i=0;i<1000;i++)
         CompteurFaux=1;
     }
     document.write( i+": " + bool[i]+"<br>");
+
+    if (bool[i])
+    {
+        CompteurVraiAbsolut++;
+    }
+    else
+    {
+        CompteurFauxAbsolut++;
+    }
 }
 
 document.write("<br>");
+document.write("Nombre de Vrais: " + CompteurVraiAbsolut + "<br>");
+document.write("Nombre de Faux: " + CompteurFauxAbsolut + "<br>");
 document.write("Plus longue séquence de vrais consécutifs: " + SequenceVrai + "<br>");
 document.write("Plus longue séquence de faux consécutifs: " + SequenceFaux + "<br>");
 document.write("Position de départ de la plus longue séquence de vrais consécutifs: " + PositionDepartVrai + "<br>");
