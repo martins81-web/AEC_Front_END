@@ -51,6 +51,7 @@ for ( let i = 0 ; i < martingale; i++) {
 
 }
 
+
 //ici je determine le valeur max de ce tableau, comme ça je determine l'index plus grand du tableau statisque
 
 var Max=tabMaxMise[0];
@@ -60,17 +61,22 @@ for ( let i=1 ; i < tabMaxMise.length ; i++) {
     }
 }
 
+
 // criation d'un tableau avec l'index plus grand determiné anteriorment plus 1 comme grandeur.
 
 var statistique = new Array(Max+1);
 
-// je mets tous les valeurs a zero du tableau pour pouvoir incrementer chaque position en le accordant au meme temps le type integer au tableau
-// j'aurais pus faire une boucle pour ça aussi.
 
-statistique.fill(0);
 
-// dans la position i j'incrementw a chaque fois que ce valeur maximale a été ateint...
-// exemple:  i=10: 2^10 = 1024, ça va incrementer le nombre de fois que la valeur 1024$ a été la maximale pour chaqu'une des 1000 tentatives de la Martingale jusqu'à 1000$
+// je mets tous les valeurs du tableau a zero  pour pouvoir incrementer chaque position en le accordant au meme temps le type integer
+
+for ( let i = 0 ; i < statistique.length ; i++ ){
+    statistique[i]=0;
+}
+
+
+// dans la position i j'incremente a chaque fois que ce valeur maximale a été ateint...
+// exemple:  i=10: 2^i = 2^10 = 1024, ça va incrementer le nombre de fois que la valeur 1024$ a été la maximale pour chaqu'une des 1000 tentatives de la Martingale
 
 for ( let i = 0 ; i < tabMaxMise.length ; i++ ){
     statistique[tabMaxMise[i]]++;
@@ -81,23 +87,23 @@ for ( let i = 0 ; i < tabMaxMise.length ; i++ ){
 //affichage en tableau de statistiques
 
 document.write("<h1><b>Statistiques après "+martingale+" tentatives de la Martingale jusqu'à "+objective+" $</b></h1><br>");
+
 document.write("<table>" +
-                        "<tr> " +
-                            "<th>Nombre de défaites <br>consécutives</th>" +
-                            "<th>Montant maximale <br> sur la table</th>" +
-                            "<th>Nombre <br> d'ocurrences</th>" +
-                            "<th>Pourcentage</th>" +
-                        "</tr>");
+    "<tr> " +
+    "<th>Nombre de défaites <br>consécutives</th>" +
+    "<th>Montant maximale <br> sur la table</th>" +
+    "<th>Nombre <br> d'ocurrences</th>" +
+    "<th>Pourcentage</th>" +
+    "</tr>");
 
 for (let i=0 ; i<statistique.length ; i++){
     if ( statistique[i] !== 0){
-        document.write("<tr>" +
-                             "<td>"+ i                                                                    + "</td>" +
-                             "<td>"+ Math.pow(2,i).toLocaleString()                                   +" $</td>" +
-                             "<td>"+ statistique[i].toLocaleString()                                       +"</td>" +
-                             "<td>"+ ((statistique[i]/1000)*100).toFixed(1).toLocaleString()+" % </td>" +
-                      "</tr>");
+        document.write(  "<tr>" +
+                            "<td>"+ i                                                                    + "</td>" +
+                            "<td>"+ Math.pow(2,i).toLocaleString()                                   +" $</td>" +
+                            "<td>"+ statistique[i].toLocaleString()                                       +"</td>" +
+                            "<td>"+ ((statistique[i]/1000)*100).toFixed(1).toLocaleString()+" % </td>" +
+                        "</tr>");
     }
 }
 document.write("</table>");
-
