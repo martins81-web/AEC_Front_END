@@ -32,8 +32,7 @@ while (profit < 1000){
         document.write( "<b>Mise " + compteur + "</b>:  Argent misé: " + mise + "$ <font color=\"green\"> GAGNEZ </font>" +"  Profit Actuel: " + profit + "$<br>");
         mise=1;
     }
-    else
-    {
+    else{
         profit = profit - mise;
         document.write( "<b>Mise " + compteur + "</b>:  Argent misé: " + mise + "$ <font color=\"red\"> PERDU </font>" +"  Profit Actuel: " + profit + "$<br>");
         mise *= 2;
