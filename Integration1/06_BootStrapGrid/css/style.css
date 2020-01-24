@@ -34,7 +34,7 @@ p{
 
 .boxed p{
     color: white;
-    margin: 0;
+    margin: auto;
     text-align: center;
     font-weight: bold;
     background-color: #f05f40;
