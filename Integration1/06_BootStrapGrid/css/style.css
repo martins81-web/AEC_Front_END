@@ -2,46 +2,18 @@
 /* Programmé par Eric Martins */
 /* Le 23 janvier 2019 */
 
-.banner{
-    margin: auto;
-    background-image: url('../img/1.jpg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    width: 100VW;
-}
-
 hr{
     margin-bottom:30px;
     margin-top:30px;
     max-width: 50px;
     border-width: 3px;
-    border-color: #f05f40;
+    border-color: #0099CC;
 }
 
-h1{
-    color:  white;
-    text-align: center;
+.banner{
+    background-image: url('../img/1.jpg');
+    background-position: center center;
+    height:100vh;
 }
 
-p{
-    color:  lightgray;
-    text-align: center;
-}
 
-.boxed p{
-    margin: auto;
-    background-color: #f05f40;
-    color: white;
-    padding: 5px 20px;
-    border-radius: 15px;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline;
- }
-
-.boxed
-{
-
-    text-align: center;
-}
