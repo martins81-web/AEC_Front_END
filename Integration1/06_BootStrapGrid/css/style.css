@@ -34,10 +34,9 @@ p{
 
 .boxed p{
     color: white;
-    margin: auto;
+    margin: 0;
     text-align: center;
     font-weight: bold;
-    display: inline;
     background-color: #f05f40;
     padding: 5px 20px;
     border-radius: 15px;
