@@ -13,6 +13,7 @@ hr{
 .banner{
     background-image: url('../img/1.jpg');
     background-position: center center;
+    background-repeat: no-repeat;
     height:100vh;
 }
 
