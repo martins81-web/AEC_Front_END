@@ -3,15 +3,12 @@
 /* Le 23 janvier 2019 */
 
 .banner{
+    margin: auto;
     background-image: url('../img/1.jpg');
     background-position: center center;
     background-repeat: no-repeat;
-    /*background-attachment: fixed;*/
-    /*background-size: cover;*/
     height: 100vh;
     width: 100VW;
-    /*display: flex;*/
-    align-items: center;
 }
 
 hr{
@@ -33,12 +30,16 @@ p{
 }
 
 .boxed p{
-    color: white;
-    margin: auto;
-    text-align: center;
-    font-weight: bold;
-    background-color: #f05f40;
-    padding: 5px 20px;
-    border-radius: 15px;
+     background-color: #f05f40;
+     color: white;
+     padding: 5px 20px;
+     border-radius: 15px;
+     text-decoration: none;
+     font-weight: bold;
+     display: inline;
+ }
 
+.boxed
+{
+    text-align: center;
 }
