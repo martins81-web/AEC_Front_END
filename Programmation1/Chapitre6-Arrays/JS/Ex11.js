@@ -36,5 +36,7 @@ for ( i=0 ; i < nombreEnfants.length; i++){
 
 document.write(    "Nb d'enfants" + " ------------ " + "Nb familles recensées<br><br>");
 for ( i=0 ; i < tab.length; i++){
-    document.write(i +  " --------------------------------- " + tab[i]+"<br>");
+    if (tab[i] > 0) {
+        document.write( i + " --------------------------------- " + tab[ i ] + "<br>" );
+    }
 }
