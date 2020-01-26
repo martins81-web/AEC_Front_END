@@ -9,17 +9,17 @@ var index=0;
 
 valeur= Number(prompt("Entrez un valeur pour être inséré dans le tableau suivant [3,7,9,12,16,20,31,43,50,55]"));
 
-
 document.write( tableau+"<br>");
 
-while(valeur > tableau[index]){
-    index++;
-}
+for (i=tableau.length-1 ; ; i--){
 
-for (i=tableau.length-1 ; i>=index; i--){
-    tableau[i+1] = tableau[i];
+    if( valeur <= tableau[i]) {
+        tableau[i+1] = tableau[i];  //décalage vers la droite du tableau
+    }
+    else{
+        tableau[i+1]=valeur;
+        break;
+    }
 }
-
-tableau[index]=valeur;
 
 document.write(tableau+"<br>");
