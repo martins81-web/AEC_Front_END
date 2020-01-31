@@ -9,12 +9,13 @@
 //     Faites combattre vos deux guerriers jusqu’à la mort. et affichez les détails de votre combat.
 
 class Guerrier{
-    constructor(pointsDeVie,force,agilite,chance,precision) {
+    constructor(nom, pointsDeVie,force,agilite,chance,precision) {
        this.pointsDeVie = pointsDeVie;
        this.force = force;
        this.agilite = agilite;
        this.chance = chance;
-       this.precision=precision;
+       this.precision = precision;
+       this.nom = nom;
     }
 
     Attaquer(){
@@ -24,48 +25,46 @@ class Guerrier{
     }
 }
 
-let guerrier1 = new Guerrier(100,Math.random()*9+1,Math.random()*9+1, Math.random(),Math.random()*9+1);
-let guerrier2 = new Guerrier(100,Math.random()*9+1,Math.random()*9+1, Math.random(),Math.random()*9+1);
+function Attack(guerrier1,guerrier2){
+    if(guerrier1.pointsDeVie>0) {
+        let degats=guerrier1.Attaquer();
+        guerrier2.pointsDeVie-=degats;
+        document.write("<b>"+ guerrier1.nom + " ====>> "+ guerrier2.nom +"</b><br>   " + degats.toFixed(0) + " points de dégats.<br>");
+        if( guerrier2.pointsDeVie <=0 )
+        {
+            guerrier2.pointsDeVie=0;
+            document.write("<b>"+guerrier1.nom+":</b> "+  guerrier1.pointsDeVie.toFixed(0) +" points de vie <br>");
+            document.write("<b>"+guerrier2.nom+":</b> "+  guerrier2.pointsDeVie.toFixed(0) +" points de vie <br>");
+            document.write("<font color=\"red\">"+guerrier2.nom+" est mort.</font>");
+            document.write("<h2><font color=\"green\">"+guerrier1.nom+" est le vainqueur!</font></h2>");
+        }
+    }
+    return true;
+}
+
+let guerrier1 = new Guerrier("Guerrier1",100,Math.random()*9+1,Math.random()*9+1, Math.random(),Math.random()*9+1);
+let guerrier2 = new Guerrier("Guerrier2",100,Math.random()*9+1,Math.random()*9+1, Math.random(),Math.random()*9+1);
 
 document.write("<h1><u>DUEL ENTRE GUERRIERS</u></h1>");
-document.write("<b>Guerrier1:</b> "+  guerrier1.pointsDeVie +" points de vie<br>");
-document.write("<b>Guerrier2:</b> "+  guerrier2.pointsDeVie +" points de vie<br>");
 
 var i=1;
 
 while(guerrier1.pointsDeVie > 0 && guerrier2.pointsDeVie > 0){
+
+    document.write("<b>"+guerrier1.nom+"</b> "+  guerrier1.pointsDeVie.toFixed(0) +" points de vie<br>");
+    document.write("<b>"+guerrier2.nom+"</b> "+  guerrier2.pointsDeVie.toFixed(0) +" points de vie<br>");
     document.write("______________________________________");
     document.write("<h4><u>Round " + i +"</u></h4>");
+    document.write("<font color=\"red\">ATTAQUE:</font><br>");
 
-    if(guerrier1.pointsDeVie>0) {
-        let degats=guerrier1.Attaquer();
-        guerrier2.pointsDeVie-=degats;
-        document.write("<b>Guerrier1 Attaque:</b> " + degats.toFixed(0) + " points de dégats.<br>");
-        if( guerrier2.pointsDeVie <=0 )
-        {
-            guerrier2.pointsDeVie=0;
-            document.write("<b>Guerrier2:</b> " + guerrier2.pointsDeVie.toFixed(0) + " points de vie.<br>");
-            document.write("<h3><font color=\"red\">Guerrier2 est mort.</font></h3>");
-            document.write("<h2><font color=\"green\">Guerrier1 est le vainqueur!</font></h2>");
-        } else {
-            document.write("<b>Guerrier2:</b> " + guerrier2.pointsDeVie.toFixed(0) + " points de vie.<br><br>");
-        }
-
+    if(Boolean(Math.round(Math.random()))){
+        Attack(guerrier1,guerrier2);
+        Attack(guerrier2,guerrier1);
+    }
+    else{
+        Attack(guerrier2,guerrier1);
+        Attack(guerrier1,guerrier2);
     }
 
-    if(guerrier2.pointsDeVie>0) {
-        let degats=guerrier2.Attaquer();
-        guerrier1.pointsDeVie-=degats;
-        document.write("<b>Guerrier2 Attaque:</b> " + degats.toFixed(0) + " points de dégats.<br>");
-        if( guerrier1.pointsDeVie <=0 )
-        {
-            guerrier1.pointsDeVie=0;
-            document.write("<b>Guerrier1:</b> " + guerrier1.pointsDeVie.toFixed(0) + " points de vie.<br>");
-            document.write("<h3><font color=\"red\">Guerrier1 est mort.</font></h3>");
-            document.write("<h2><font color=\"green\">Guerrier2 est le vainqueur!</font></h2>");
-        } else {
-            document.write("<b>Guerrier1:</b> " + guerrier1.pointsDeVie.toFixed(0) + " points de vie.<br>");
-        }
-    }
     i++;
 }
