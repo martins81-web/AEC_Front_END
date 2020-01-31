@@ -8,6 +8,9 @@
 //     random de 0 à 1 de chance (ex 0.5 de chance fait frapper votre guerrier à 50% de sa puissance) N’oubliez pas que la chance doit être recalculée après chaque attaque.
 //     Faites combattre vos deux guerriers jusqu’à la mort. et affichez les détails de votre combat.
 
+
+//----------------------------classes---------------------------------------//
+
 class Guerrier{
     constructor(nom, pointsDeVie,force,agilite,chance,precision) {
        this.pointsDeVie = pointsDeVie;
@@ -25,46 +28,97 @@ class Guerrier{
     }
 }
 
-function Attack(guerrier1,guerrier2){
-    if(guerrier1.pointsDeVie>0) {
-        let degats=guerrier1.Attaquer();
-        guerrier2.pointsDeVie-=degats;
-        document.write("<b>"+ guerrier1.nom + " ====>> "+ guerrier2.nom +"</b><br>   " + degats.toFixed(0) + " points de dégats.<br>");
-        if( guerrier2.pointsDeVie <=0 )
-        {
-            guerrier2.pointsDeVie=0;
-            document.write("<b>"+guerrier1.nom+":</b> "+  guerrier1.pointsDeVie.toFixed(0) +" points de vie <br>");
-            document.write("<b>"+guerrier2.nom+":</b> "+  guerrier2.pointsDeVie.toFixed(0) +" points de vie <br>");
-            document.write("<font color=\"red\">"+guerrier2.nom+" est mort.</font>");
-            document.write("<h2><font color=\"green\">"+guerrier1.nom+" est le vainqueur!</font></h2>");
+//Class pour le duel et son affichage
+class Duel{
+    constructor(guerrier1, guerrier2) {
+        this.guerrier1 = guerrier1;
+        this.guerrier2 = guerrier2;
+    }
+
+    TillDeath(){  //methode qui initie le duel
+        document.write("<h1><u>DUEL ENTRE GUERRIERS</u></h1>");
+        let i=1;
+
+        while(this.guerrier1.pointsDeVie > 0 && this.guerrier2.pointsDeVie > 0){
+            this.GetEtat();
+            // document.write("__________________________________________________");
+            // document.write("<h4><u>Round " + i +"</u></h4>");
+
+            document.write("<br><font color=\"red\">ATTAQUE:</font><br>");
+            //random qui determine quel des guerriers attaque
+            if(Boolean(Math.round(Math.random()))){
+                this.Attack(this.guerrier1, this.guerrier2);
+            }
+            else{
+                this.Attack(this.guerrier2, this.guerrier1);
+            }
+
+            i++;
         }
     }
-    return true;
-}
 
-let guerrier1 = new Guerrier("Guerrier1",100,Math.random()*9+1,Math.random()*9+1, Math.random(),Math.random()*9+1);
-let guerrier2 = new Guerrier("Guerrier2",100,Math.random()*9+1,Math.random()*9+1, Math.random(),Math.random()*9+1);
+    Attack(guerrierQuiAttaque,guerrierQuiDefends){   //Méthode qui apelle les attaques d'un guerrier envers l'autre
+            let degats = guerrierQuiAttaque.Attaquer();
+            degats= Math.round(degats);
+            guerrierQuiDefends.pointsDeVie -= degats;
 
-document.write("<h1><u>DUEL ENTRE GUERRIERS</u></h1>");
+            document.write("<b>"+ guerrierQuiAttaque.nom + " === </b>"+  degats + " points de dégats" + "<b> ===>> "+ guerrierQuiDefends.nom +"</b>    <br>");
 
-var i=1;
-
-while(guerrier1.pointsDeVie > 0 && guerrier2.pointsDeVie > 0){
-
-    document.write("<b>"+guerrier1.nom+"</b> "+  guerrier1.pointsDeVie.toFixed(0) +" points de vie<br>");
-    document.write("<b>"+guerrier2.nom+"</b> "+  guerrier2.pointsDeVie.toFixed(0) +" points de vie<br>");
-    document.write("______________________________________");
-    document.write("<h4><u>Round " + i +"</u></h4>");
-    document.write("<font color=\"red\">ATTAQUE:</font><br>");
-
-    if(Boolean(Math.round(Math.random()))){
-        Attack(guerrier1,guerrier2);
-        Attack(guerrier2,guerrier1);
-    }
-    else{
-        Attack(guerrier2,guerrier1);
-        Attack(guerrier1,guerrier2);
+            if(this.DuelFini()) {   // verifie si le duel est terminé apres la mort de un des guerriers
+                this.AffichageFinal();  //appel du méthode qui affiche la fin du duel
+            }
+        return true;
     }
 
-    i++;
+    //retourne true si un des guerrier est mort
+    DuelFini(){
+        if (this.guerrier1.pointsDeVie <= 0 ) {
+            this.guerrier1.pointsDeVie = 0;
+            return true;
+        }
+        else if (this.guerrier2.pointsDeVie <= 0 ) {
+            this.guerrier2.pointsDeVie = 0;
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    GetEtat() {  //affiche les points de vie
+        document.write("<br><font color=\"green\">ÉTAT DE VIE:</font><br>");
+        document.write("<b>"+this.guerrier1.nom+"</b> "+  this.guerrier1.pointsDeVie +" points de vie<br>");
+        document.write("<b>"+this.guerrier2.nom+"</b> "+  this.guerrier2.pointsDeVie +" points de vie<br>");
+        return true;
+    }
+
+    AffichageFinal(){   //affichage qd le duel est fini
+        this.GetEtat();
+            let guerrierMort;
+            let guerrierVainqueur;
+            if (this.guerrier1.pointsDeVie === 0){
+                guerrierMort=this.guerrier1;
+                guerrierVainqueur=this.guerrier2;
+            }
+            else {
+                guerrierMort=this.guerrier2;
+                guerrierVainqueur=this.guerrier1;
+            }
+            document.write("__________________________________________________<br>");
+            document.write("<br><b>" + guerrierMort.nom + "</b> est <font color=\"red\">MORT.</font> <br>");
+            document.write("<b>" + guerrierVainqueur.nom + "</b> est le <font color=\"green\">VAINQUEUR </font> du duel!");
+    }
 }
+//-----------------------fin des classes-----------------------------------------------//
+
+
+
+// Instanciation des guerriers
+let Leonidas = new Guerrier("Leonidas",100,Math.random()*9+1,Math.random()*9+1, Math.random(),Math.random()*9+1);
+let Spartacus = new Guerrier("Spartacus",100,Math.random()*9+1,Math.random()*9+1, Math.random(),Math.random()*9+1);
+
+// Instanciation du duel entre les guerriers
+let duel1 = new Duel(Leonidas,Spartacus);
+
+//duel
+duel1.TillDeath();
