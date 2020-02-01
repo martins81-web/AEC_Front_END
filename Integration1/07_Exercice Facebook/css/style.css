@@ -1,0 +1,13 @@
+/* style.css */
+/* Programmé par Eric Martins */
+/* Le 23 janvier 2019 */
+
+hr{
+    margin-bottom:30px;
+    margin-top:30px;
+    max-width: 50px;
+    border-width: 3px;
+    border-color: #0099CC;
+}
+
+
