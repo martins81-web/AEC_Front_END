@@ -46,7 +46,7 @@ let etudiant8 = new Etudiant("Champagne", "David", new Examen().GetNote());
 let etudiant9 = new Etudiant("Vargas", "Francisca", new Examen().GetNote());
 let etudiant10 = new Etudiant("Gallard", "Frank", new Examen().GetNote());
 
-class Classe{
+class Groupe{
     constructor() {
         this.etudiant1 = etudiant1;
         this.etudiant2 = etudiant2;
@@ -79,5 +79,5 @@ class Classe{
 
 }
 
-let resultats = new Classe();
+let resultats = new Groupe();
 resultats.AffichageReussiEchec();
