@@ -13,12 +13,12 @@
 
 class Guerrier{
     constructor(nom, pointsDeVie,force,agilite,chance,precision) {
-       this.pointsDeVie = pointsDeVie;
-       this.force = force;
-       this.agilite = agilite;
-       this.chance = chance;
-       this.precision = precision;
-       this.nom = nom;
+        this.nom = nom;
+        this.pointsDeVie = pointsDeVie;
+        this.force = Math.round(force);
+        this.agilite = Math.round(agilite);
+        this.chance = chance.toFixed(1);
+        this.precision = Math.round(precision);
     }
 
     Attaquer(){
@@ -37,13 +37,10 @@ class Duel{
 
     TillDeath(){  //methode qui initie le duel
         document.write("<h1><u>DUEL ENTRE GUERRIERS</u></h1>");
+        this.AffichageGuerriers();
         let i=1;
 
         while(this.guerrier1.pointsDeVie > 0 && this.guerrier2.pointsDeVie > 0){
-            this.GetEtat();
-            // document.write("__________________________________________________");
-            // document.write("<h4><u>Round " + i +"</u></h4>");
-
             document.write("<br><font color=\"red\">ATTAQUE:</font><br>");
             //random qui determine quel des guerriers attaque
             if(Boolean(Math.round(Math.random()))){
@@ -62,10 +59,14 @@ class Duel{
             degats= Math.round(degats);
             guerrierQuiDefends.pointsDeVie -= degats;
 
-            document.write("<b>"+ guerrierQuiAttaque.nom + " === </b>"+  degats + " points de dégats" + "<b> ===>> "+ guerrierQuiDefends.nom +"</b>    <br>");
+            document.write("<b>"+ guerrierQuiAttaque.nom + " === </b>"+  degats + " points de dommage" + "<b> ===>> "+ guerrierQuiDefends.nom +"</b>    <br>");
 
             if(this.DuelFini()) {   // verifie si le duel est terminé apres la mort de un des guerriers
+                this.GetEtat();
                 this.AffichageFinal();  //appel du méthode qui affiche la fin du duel
+            }
+            else{
+                this.GetEtat();
             }
         return true;
     }
@@ -87,13 +88,12 @@ class Duel{
 
     GetEtat() {  //affiche les points de vie
         document.write("<br><font color=\"green\">ÉTAT DE VIE:</font><br>");
-        document.write("<b>"+this.guerrier1.nom+"</b> "+  this.guerrier1.pointsDeVie +" points de vie<br>");
-        document.write("<b>"+this.guerrier2.nom+"</b> "+  this.guerrier2.pointsDeVie +" points de vie<br>");
+        document.write("<b>"+this.guerrier1.nom+"</b>: "+  this.guerrier1.pointsDeVie +" points<br>");
+        document.write("<b>"+this.guerrier2.nom+"</b>: "+  this.guerrier2.pointsDeVie +" points<br>");
         return true;
     }
 
     AffichageFinal(){   //affichage qd le duel est fini
-        this.GetEtat();
             let guerrierMort;
             let guerrierVainqueur;
             if (this.guerrier1.pointsDeVie === 0){
@@ -108,6 +108,20 @@ class Duel{
             document.write("<br><b>" + guerrierMort.nom + "</b> est <font color=\"red\">MORT.</font> <br>");
             document.write("<b>" + guerrierVainqueur.nom + "</b> est le <font color=\"green\">VAINQUEUR </font> du duel!");
     }
+
+    AffichageGuerriers(){
+        document.write("<b>Guerrier1</b><br>");
+        for( let cle in this.guerrier1) {
+            document.write(cle+": ");
+            document.write(this.guerrier1[cle]+"<br>");
+        }
+        document.write("<br><b>Guerrier2</b><br>");
+        for( let cle in this.guerrier2) {
+            document.write(cle+": ");
+            document.write(this.guerrier2[cle]+"<br>");
+        }
+    }
+
 }
 //-----------------------fin des classes-----------------------------------------------//
 
