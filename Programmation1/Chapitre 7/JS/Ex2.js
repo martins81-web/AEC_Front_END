@@ -21,26 +21,24 @@ class Cylindre{
 let cyl1 = new Cylindre(10,2);
 
 
+let tabCylindres= [cyl1,cyl1,cyl1,cyl1,cyl1];
+
 // document.write(cyl1.GetVolume().toFixed(2));
 
 class Boite{
-    constructor(cylindre1,cylindre2,cylindre3,cylindre4,cylindre5) {
-        this.cylindre1 = cylindre1;
-        this.cylindre2 = cylindre2;
-        this.cylindre3 = cylindre3;
-        this.cylindre4 = cylindre4;
-        this.cylindre5 = cylindre5;
+    constructor(tabCylindre) {
+        this.tabCylindre=tabCylindre;
     }
 
     GetVolumeBoite(){
         let volume = 0;
-        for( let cle in this) {
-            volume += this[cle].GetVolume();
+        for(let i=0; i<this.tabCylindre.length; i++){
+            volume += this.tabCylindre[i].GetVolume();
         }
         return volume;
     }
 
 }
 
-let boite = new Boite(cyl1,cyl1,cyl1,cyl1,cyl1);
+let boite = new Boite(tabCylindres);
 document.write(boite.GetVolumeBoite().toFixed(2));
