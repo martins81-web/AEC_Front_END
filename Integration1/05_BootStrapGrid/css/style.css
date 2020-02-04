@@ -1,11 +1,10 @@
 
 
-.row{
-    height: 100px;
 
-}
 
 .red{
+
+    height:200px;
     background-color: red;
 }
 
@@ -21,7 +20,4 @@
     background-color: yellow;
 }
 
-.inside{
-    margin-top: auto;
-    margin-bottom: auto;
-}
+
