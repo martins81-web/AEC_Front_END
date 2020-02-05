@@ -1,0 +1,40 @@
+/*<!-- style.css -->*/
+/*<!-- Examen 2 par Eric Martins -->*/
+/*<!-- Le 04 février 2020 -->*/
+body{
+    background-color: #0b0b0b;
+}
+
+h2,p {
+    color: #6c6c6c;
+}
+
+/*13.Elle contient une row ayant une colonne avec l’image de fond witcherBanniere.jpg*/
+.banniere {
+    background: url("../img/witcherBanniere.jpg") 0 0 no-repeat;
+    background-size: 100%;
+    height: 100vh;
+}
+
+
+@font-face {
+    font-family: Witcher;
+    src: url("../font/Thewitcher-jnOj.ttf");
+}
+
+/*class pout utiliser la police Thewitcher-jnOj*/
+.witcher {
+    font-family: Witcher, serif;
+}
+
+hr{
+    background: #353434;
+    height: 1px;
+    border-style: none;
+    margin: 2% 0;
+}
+
+.fab {
+    color: white;
+}
+
