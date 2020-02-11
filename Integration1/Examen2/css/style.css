@@ -1,0 +1,42 @@
+/*<!-- style.css -->*/
+/*<!-- Examen 2 par Eric Martins -->*/
+/*<!-- Crée le 04 février 2020 -->*/
+/*<!-- Dernier mise à jour le 05 février 2020 -->*/
+body{
+    background-color: #0b0b0b;
+}
+
+#Entete a{
+    font-weight: bold;
+}
+
+a, a:hover, h2 {
+    color: #6c6c6c;
+}
+
+.Banniere{
+    background: url("../img/witcherBanniere.jpg") no-repeat center;
+    background-size: cover;
+    padding-top: 15%;
+    padding-bottom: 15%;
+}
+
+@font-face {
+    font-family: Witcher;
+    src: url("../font/Thewitcher-jnOj.ttf");
+}
+
+.Banniere, .PiedDePage{
+    font-family: Witcher, serif;
+}
+
+hr{
+    background: #353434;
+    height: 1px;
+    border-style: none;
+    margin: 2% 0;
+}
+
+.fab {
+    color: white;
+}
