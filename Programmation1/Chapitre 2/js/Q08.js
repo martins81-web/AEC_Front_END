@@ -10,7 +10,7 @@ tauxHoraire=Number(prompt("Entrez votre taux horaire"));
 nombreDheuresTravaillees=Number(prompt("Combien d'heures avez vous travaillé?"));
 
 
-if ( nombreDheuresTravaillees <= 40)
+if ( nombreDheuresTravaillees <= 39)
     salaire = nombreDheuresTravaillees * tauxHoraire;
 else
     {
