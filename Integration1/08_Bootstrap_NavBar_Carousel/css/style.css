@@ -71,3 +71,14 @@ body{
 .sel{
     font-weight: bold;
 }
+
+.carousel-item{
+    width: 100%;
+    height: 40rem;
+    overflow: hidden;
+}
+.carousel-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
