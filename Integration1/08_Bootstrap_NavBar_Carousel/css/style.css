@@ -68,6 +68,6 @@ body{
     color: black;
 }
 
-.nav-item,.dropdown-item,.navbar-brand{
+.sel{
     font-weight: bold;
 }
