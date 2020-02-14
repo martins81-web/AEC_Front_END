@@ -3,7 +3,7 @@
 }
 
 .bg-orange{
-    background-color: darkorange;
+    background-color: #FF803C;
 }
 
 .bg-narcos{
@@ -21,7 +21,7 @@
 
 .orange:hover {
     background-color: black;
-    color: darkorange;
+    color: #FF803C;
 }
 
 .narcos:hover {
@@ -44,7 +44,7 @@ body{
 }
 
 #myCarouselOrange{
-    border: 5px solid darkorange;
+    border: 5px solid #FF803C;
 }
 
 #myCarouselST{
