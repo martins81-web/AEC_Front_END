@@ -3,11 +3,11 @@
 }
 
 .bg-orange{
-    background-color: orange;
+    background-color: darkorange;
 }
 
 .bg-narcos{
-    background-color: red;
+    background-color: darkred;
 }
 
 .navbar-nav > li{
@@ -18,4 +18,28 @@
 
 .fab {
     color: white;
+}
+
+.dropdown :hover {
+    background-color: #b3b7bb;
+}
+
+body{
+    background-image: url("../img/netflix-background-9.jpg");
+}
+
+#myCarouselOrange{
+    border: 5px solid darkorange;
+}
+
+#myCarouselST{
+    border: 5px solid #5cb85c;
+}
+
+#myCarouselNarcos{
+    border: 5px solid darkred;
+}
+
+#myCarousel{
+    border: 5px solid #343a40;
 }
