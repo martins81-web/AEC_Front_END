@@ -1,0 +1,21 @@
+.coleur{
+    text-decoration-color: white;
+}
+
+.bg-orange{
+    background-color: orange;
+}
+
+.bg-narcos{
+    background-color: red;
+}
+
+.navbar-nav > li{
+    padding-left:30px;
+    padding-right:30px;
+}
+
+
+.fab {
+    color: white;
+}
