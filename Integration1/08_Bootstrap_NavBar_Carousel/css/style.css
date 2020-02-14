@@ -43,3 +43,8 @@ body{
 #myCarousel{
     border: 5px solid #343a40;
 }
+
+.logo {
+    width: 2rem !important;
+    height: 2rem !important;
+}
