@@ -20,8 +20,9 @@
     color: white;
 }
 
-.dropdown :hover {
-    background-color: #b3b7bb;
+.dropdown :hover .orange{
+    background-color: black;
+    color: darkorange;
 }
 
 body{
