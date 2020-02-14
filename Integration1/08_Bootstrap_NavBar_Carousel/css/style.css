@@ -15,14 +15,28 @@
     padding-right:30px;
 }
 
-
-.fab {
+.fab, .narcos, .strange, .idx{
     color: white;
 }
 
-.dropdown :hover .orange{
+.orange:hover {
     background-color: black;
     color: darkorange;
+}
+
+.narcos:hover {
+    background-color: white;
+    color: darkred;
+}
+
+.strange:hover {
+    background-color: white;
+    color: #5cb85c;
+}
+
+.idx:hover {
+    background-color: white;
+    color: #343a40;
 }
 
 body{
@@ -48,4 +62,12 @@ body{
 .logo {
     width: 2rem;
     height: 2rem;
+}
+
+.blk{
+    color: black;
+}
+
+.nav-item,.dropdown-item,.navbar-brand{
+    font-weight: bold;
 }
