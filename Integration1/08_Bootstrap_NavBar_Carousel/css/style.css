@@ -1,7 +1,3 @@
-.coleur{
-    text-decoration-color: white;
-}
-
 .bg-orange{
     background-color: #FF803C;
 }
@@ -10,12 +6,16 @@
     background-color: darkred;
 }
 
+.bg-strange{
+    background-color: #073e1e;
+}
+
 .navbar-nav > li{
     padding-left:30px;
     padding-right:30px;
 }
 
-.fab, .narcos, .strange, .idx{
+.fab, .narcos, .strange, .indx{
     color: white;
 }
 
@@ -31,10 +31,10 @@
 
 .strange:hover {
     background-color: white;
-    color: #5cb85c;
+    color: #073e1e;
 }
 
-.idx:hover {
+.indx:hover {
     background-color: white;
     color: #343a40;
 }
@@ -48,7 +48,7 @@ body{
 }
 
 #myCarouselST{
-    border: 5px solid #5cb85c;
+    border: 5px solid  #073e1e;
 }
 
 #myCarouselNarcos{
