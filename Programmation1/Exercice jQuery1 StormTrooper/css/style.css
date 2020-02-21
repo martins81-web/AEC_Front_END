@@ -1,0 +1,127 @@
+html,body { margin:0; height:100%;}
+
+.parallax {
+    /* L’image du Parallax */
+    background-image: url("../images/trooper.jpg");
+
+    /* L’hauteur du Parallax */
+    height: 100%;
+
+    /* Création de l’effet */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.row1{
+    height:50%;
+}
+
+.row2{
+    height: 25%;
+}
+.orange{
+    background-color: orange;
+    opacity: .6;
+    padding-top:50px;
+    padding-bottom:50px;
+}
+
+.row3{
+    height: 10%;
+}
+
+.row4{
+    height: 15%;
+    background-color: white;
+    opacity: .6;
+}
+
+.row4  h1{
+
+    font-size: 5rem;
+}
+
+.parallax2 {
+    /* L’image du Parallax */
+    background-image: url("../images/lune.jpg");
+
+    /* L’hauteur du Parallax */
+    height: 500px;
+
+    /* Création de l’effet */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.row100{
+    height:100%;
+}
+
+.blanc{
+    color: white;
+}
+
+.parallax3 {
+    /* L’image du Parallax */
+    background-image: url("../images/DarthVader.jpg");
+
+    /* L’hauteur du Parallax */
+    height: 500px;
+
+    /* Création de l’effet */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fondNoir{
+    background-color: black;
+}
+.fondBlanc{
+    background-color: d;
+}
+
+
+.pTop{
+    padding-top: 50px;
+}
+.pBottom{
+    padding-bottom: 50px;
+}
+
+/* Cellulaires */
+@media only screen and (max-width: 420px){
+
+    .parallax{
+        background-image: url("../images/bg2.jpg");
+        /* L’hauteur du Parallax */
+        height: 100%;
+
+        /* Création de l’effet */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .row4  h1{
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .parallax2{
+        height: 100%;
+    }
+
+    .parallax3{
+        height:100%;
+    }
+}
+
+
+

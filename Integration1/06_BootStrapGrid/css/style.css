@@ -17,3 +17,7 @@ hr{
     height:100vh;
 }
 
+.fas.active{
+    color: #ffd400;
+    text-shadow: 0 0 10px #ffd400;
+}
