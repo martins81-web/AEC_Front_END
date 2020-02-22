@@ -50,7 +50,7 @@ css .header .container {
     z-index: 2;
 }
 
-video{
+video  {
     position: absolute;
     top: 0;
     left: 0;
@@ -64,3 +64,4 @@ video{
 hr{
     background-color: white;
 }
+
