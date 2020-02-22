@@ -1,0 +1,16 @@
+
+.modal-body {
+    background-image: url(../img/estadio.jpg);
+}
+
+.jumbotron {
+    background: url("../img/taca.jpg") no-repeat center center;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+
+h5.modal-title{
+    margin: auto;
+}
