@@ -50,13 +50,13 @@ css .header .container {
     z-index: 2;
 }
 
-.header.overlay {
+video {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
     background-color : black;
-    opacity: 0.3;
+    opacity: 0.5;
     z-index: 1;
 }
