@@ -16,10 +16,7 @@ h5.modal-title{
     text-transform: uppercase;
 }
 
-.modal-backdrop.show {
-    background-color: #f00;
-    opacity: 0.75;
-}
+
 
 .modal-header{
     background-color: #1b1e21;
