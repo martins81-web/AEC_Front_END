@@ -1,12 +1,5 @@
 html,body { margin:0; height:100%;}
 
-body{
-    background-image: url("../img/wp2369755.jpg");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
 .parallax {
     /* Création de l’effet */
@@ -21,36 +14,59 @@ body{
     src: url("../font/carbon.ttf");
 }
 
-
 .zone1{
     height: 100%;
     background-image: url("../img/zone1bg.jpg");
 }
 
-.zone1 h1{
+.zone1 .h1{
     font-family: Carbon, serif;
 }
-.zone1 p{
+
+.colFeu{
+    color: firebrick;
+}
+
+.noirSombreBlanc{
+    color: black;
+    text-shadow: 2px 2px 8px white;
+    font-weight: bold;
+}
+
+.sombre{
+    text-shadow: 5px 5px 20px black;
+}
+
+.title_adjust{
+    font-size: 43px;
+    color: black;
+    text-shadow: none;
+}
+
+.zone1 .p{
     font-size: 24px;
+    color: whitesmoke;
 }
 
 .bgOpaqueZone1_1{
     background-color: rgba(126, 242, 255, 0.65);
-    margin-bottom: 80px;
+    margin-top: 3em;
+    margin-bottom: 6em;
 }
 
 .bgOpaqueZone1_2{
-    background-color: rgba(19, 2, 8, 0.8);
+    background-color: rgba(215, 102, 0, 0.65);
+    color: white;
 }
 
-.zone2{
-    background-color: white;
+.boxLogo{
+    background-color: rgba(0, 0, 0, 0.25);
 }
+
 
 .fa-check{
     color: red;
 }
-
 
 .zone3{
     height: 600px;
@@ -58,9 +74,10 @@ body{
 }
 
 .zone4{
-    height: 500px;
+    height: 700px;
     background-image: url("../img/altered_zone4.jpg");
 }
+
 
 .zone5_1{
     background-color: cadetblue;
