@@ -1,0 +1,75 @@
+html,body { margin:0; height:100%;}
+
+body{
+    background-image: url("../img/wp2369755.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax {
+    /* Création de l’effet */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@font-face {
+    font-family: Carbon;
+    src: url("../font/carbon.ttf");
+}
+
+
+.zone1{
+    height: 100%;
+    background-image: url("../img/zone1bg.jpg");
+}
+
+.zone1 h1{
+    font-family: Carbon, serif;
+}
+.zone1 p{
+    font-size: 24px;
+}
+
+.bgOpaqueZone1_1{
+    background-color: rgba(126, 242, 255, 0.65);
+    margin-bottom: 80px;
+}
+
+.bgOpaqueZone1_2{
+    background-color: rgba(19, 2, 8, 0.8);
+}
+
+.zone2{
+    background-color: white;
+}
+
+.fa-check{
+    color: red;
+}
+
+
+.zone3{
+    height: 600px;
+    background-image: url("../img/altered_zone3.jpg");
+}
+
+.zone4{
+    height: 500px;
+    background-image: url("../img/altered_zone4.jpg");
+}
+
+.zone5_1{
+    background-color: cadetblue;
+ }
+
+.zone5_2{
+    background-color: #8b2f23;
+}
+
+.zone5_3{
+    background-color: #144c70;
+}
