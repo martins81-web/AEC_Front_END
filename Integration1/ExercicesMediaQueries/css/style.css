@@ -15,7 +15,7 @@ html,body { margin:0; height:100%;}
 }
 
 .zone1{
-    height: 100%;
+    height: auto;
     background-image: url("../img/zone1bg.jpg");
 }
 
@@ -63,13 +63,12 @@ html,body { margin:0; height:100%;}
     background-color: rgba(0, 0, 0, 0.25);
 }
 
-
 .fa-check{
     color: red;
 }
 
 .zone3{
-    height: 600px;
+    height: 700px;
     background-image: url("../img/altered_zone3.jpg");
 }
 
@@ -78,6 +77,9 @@ html,body { margin:0; height:100%;}
     background-image: url("../img/altered_zone4.jpg");
 }
 
+.zone5{
+    height: 80%;
+}
 
 .zone5_1{
     background-color: cadetblue;
@@ -89,4 +91,42 @@ html,body { margin:0; height:100%;}
 
 .zone5_3{
     background-color: #144c70;
+}
+
+hr {
+    border: 0;
+    clear:both;
+    display:block;
+    width: 96%;
+    background-color:#FFFF00;
+    height: 1px;
+}
+
+/*<!--MEDIA QUERIES*/
+
+@media only screen and (max-width: 411px){
+    .zone1{
+        height: 100%;
+        background-image: url("../img/AC_pixel2.jpg");
+    }
+    .bgOpaqueZone1_1{
+        background-color: rgba(126, 242, 255, 0.45);
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .zone2 {
+        display: none;
+    }
+
+    .zone3{
+        height:auto;
+    }
+
+    .zone4{
+        height:auto;
+    }
+
+
+
 }
