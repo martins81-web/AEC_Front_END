@@ -103,6 +103,17 @@ hr {
 }
 
 /*<!--MEDIA QUERIES*/
+@media screen and (min-width: 412px) and (max-width: 576px) {
+    .bgOpaqueZone1_1{
+        background-color: rgba(126, 242, 255, 0.65);
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+    .fa-ul{
+        display: none;
+    }
+}
+
 
 @media only screen and (max-width: 411px){
     .zone1{
@@ -111,13 +122,12 @@ hr {
     }
     .bgOpaqueZone1_1{
         background-color: rgba(126, 242, 255, 0.45);
-        margin-top: 1rem;
-        margin-bottom: 25rem;
+        margin-top: 1em;
+        margin-bottom: 20em;
     }
     .bgOpaqueZone1_1 .p{
         display: none;
     }
-
 
     .zone2 {
         display: none;
