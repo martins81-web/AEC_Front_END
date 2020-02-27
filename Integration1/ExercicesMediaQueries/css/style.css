@@ -111,7 +111,7 @@ hr {
     }
 }
 
-
+/*Pixel2*/
 @media only screen and (max-width: 411px){
     .zone1{
         height: 100%;
@@ -141,4 +141,29 @@ hr {
     .zone5_2{
         display: none;
     }
+}
+
+
+/*LG G6*/
+@media only screen and (max-width: 411px){
+    .zone1{
+        height: 100%;
+        background-image: url("../img/Zone1/AC_pixel2.jpg");
+    }
+    .bgOpaqueZone1_1{
+        background-color: rgba(126, 242, 255, 0.45);
+        margin-top: 1em;
+        margin-bottom: 14em;
+    }
+
+    .zone1 .h1{
+        font-size: 35px;
+    }
+
+    .title_adjust{
+        font-size: 38px;
+        color: black;
+        text-shadow: none;
+    }
+
 }
