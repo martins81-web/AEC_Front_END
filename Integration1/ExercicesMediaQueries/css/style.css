@@ -16,7 +16,7 @@ html,body { margin:0; height:100%;}
 
 .zone1{
     height: auto;
-    background-image: url("../img/zone1bg.jpg");
+    background-image: url("../img/Zone1/zone1bg.jpg");
 }
 
 .zone1 .h1{
@@ -69,12 +69,12 @@ html,body { margin:0; height:100%;}
 
 .zone3{
     height: 700px;
-    background-image: url("../img/altered_zone3.jpg");
+    background-image: url("../img/Zone3/altered_zone3.jpg");
 }
 
 .zone4{
     height: 700px;
-    background-image: url("../img/altered_zone4.jpg");
+    background-image: url("../img/Zone4/altered_zone4.jpg");
 }
 
 .zone5{
@@ -107,7 +107,7 @@ hr {
 @media only screen and (max-width: 411px){
     .zone1{
         height: 100%;
-        background-image: url("../img/AC_pixel2.jpg");
+        background-image: url("../img/Zone1/AC_pixel2.jpg");
     }
     .bgOpaqueZone1_1{
         background-color: rgba(126, 242, 255, 0.45);
