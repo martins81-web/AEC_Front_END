@@ -111,9 +111,13 @@ hr {
     }
     .bgOpaqueZone1_1{
         background-color: rgba(126, 242, 255, 0.45);
-        margin-top: auto;
-        margin-bottom: auto;
+        margin-top: 1rem;
+        margin-bottom: 25rem;
     }
+    .bgOpaqueZone1_1 .p{
+        display: none;
+    }
+
 
     .zone2 {
         display: none;
@@ -127,6 +131,7 @@ hr {
         height:auto;
     }
 
-
-
+    .zone5_2{
+        display: none;
+    }
 }
