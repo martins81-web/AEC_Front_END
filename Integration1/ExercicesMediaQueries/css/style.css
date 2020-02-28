@@ -97,13 +97,25 @@ html,body { margin:0; height:100%;}
     background-color: #144c70;
 }
 
+.border-fire{
+     border: 2px solid firebrick;
+ }
+
+.border-white{
+    border: 2px solid white;
+}
+
 hr {
     border: 0;
     clear:both;
     display:block;
     width: 96%;
-    background-color:#FFFF00;
+    background-color:firebrick;
     height: 1px;
+}
+
+.hr2{
+    background-color:white;
 }
 
 /*<!--MEDIA QUERIES*/
