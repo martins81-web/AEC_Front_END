@@ -15,7 +15,7 @@ html,body { margin:0; height:100%;}
 }
 
 .zone1{
-    height: auto;
+    height: 100%;
     background-image: url("../img/Zone1/zone1bg.jpg");
 }
 
@@ -50,13 +50,17 @@ html,body { margin:0; height:100%;}
 
 .bgOpaqueZone1_1{
     background-color: rgba(126, 242, 255, 0.65);
-    margin-top: 3em;
-    margin-bottom: 6em;
+    margin-top: 2em;
+    margin-bottom: 3em;
 }
 
 .bgOpaqueZone1_2{
-    background-color: rgba(215, 102, 0, 0.65);
+    background-color: rgba(215, 102, 0, 0.75);
+
     color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .boxLogo{
@@ -68,7 +72,7 @@ html,body { margin:0; height:100%;}
 }
 
 .zone3{
-    height: 700px;
+    height: 820px;
     background-image: url("../img/Zone3/altered_zone3.jpg");
 }
 
@@ -103,11 +107,23 @@ hr {
 }
 
 /*<!--MEDIA QUERIES*/
+
+
+@media screen and (min-width: 412px) and (max-width: 670px) {
+    .zone3{
+         height: 1180px;
+     }
+    .zone4{
+        height: 850px;
+    }
+}
+
+
 @media screen and (min-width: 412px) and (max-width: 576px) {
     .bgOpaqueZone1_1{
         background-color: rgba(126, 242, 255, 0.65);
-        margin-top: 2em;
-        margin-bottom: 2em;
+        margin-top:2em;
+        margin-bottom: 1em;
     }
 }
 
