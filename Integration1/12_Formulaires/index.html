@@ -1,0 +1,68 @@
+<html lang="fr-ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Formulaire</title>
+    <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<div class="container">
+    <form>
+        <div class="form-group">
+            <label for="nom">Nom</label>
+            <input class="form-control input-sm" id="nom" type="text" placeholder="Nom">
+
+
+
+            <label for="prenom">Prénom</label>
+            <input class="form-control input-sm" id="prenom" type="text" placeholder="Prénon">
+
+
+
+            <label class="my-1 mr-2" for="listeDeroulante">Aide</label>
+            <select class="custom-select my-1 mr-sm-2" id="listeDeroulante">
+                <option selected>Choisir...</option>
+                <option value="1">HTML</option>
+                <option value="2">CSS</option>
+                <option value="3">Bootstrap</option>
+                <option value="4">Positionnement des divisions</option>
+            </select>
+
+
+
+
+            <label for="question">Question</label>
+            <input class="form-control input-lg" id="question" type="text" placeholder="Question">
+
+
+
+            <label>Priorité</label>
+            <div class="radio">
+                <label><input type="radio" name="optradio">Urgent</label>
+                <label><input type="radio" name="optradio">Important</label>
+                <label><input type="radio" name="optradio">Peut attendre</label>
+            </div>
+
+
+            <input type="reset" value="Reset">
+        </div>
+
+
+    </form>
+
+    <form action="FormulaireEnvoye.html">
+        <input type="submit" value="Envoyer" />
+    </form>
+
+</div>
+
+
+
+<script src="https://kit.fontawesome.com/a46d75ba7a.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="bootstrap-4.4.1-dist/js/bootstrap.js"></script>
+</body>
+</html>

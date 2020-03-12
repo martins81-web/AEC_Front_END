@@ -2,6 +2,8 @@
 /*<!-- Programmation1 -->*/
 /*<!-- par Eric Martins -->*/
 /*<!-- Crée le 27 février 2020 -->*/
+$(document).ready(() => {
+
 
 
 var flash=$("#flashID");
@@ -143,4 +145,7 @@ $( "#boutonFinVitesseSupreme" ).click(function() {
 $( "#boutonNuke" ).click(function() {
     $(".centralCity").children().hide();
     $(".centralCity").css({'background-image' : 'url(img/nuke.jpg)', 'background-repeat': 'no-repeat'});
+});
+
+
 });
