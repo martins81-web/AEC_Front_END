@@ -1,0 +1,149 @@
+<html lang="fr-ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Formulaire</title>
+    <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+
+<div class="container">
+    <form onsubmit="return false">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mt-5">
+                    <img src="img/logo-shawicon.png" class="img-fluid" alt="Responsive image" width="50%" height="50%">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group" id="formNom">
+            <label for="nom">Nom</label>
+            <input class="form-control input-sm " id="nom" type="text" placeholder="Nom">
+            <small class='hide' id="validationNom"></small>
+        </div>
+
+        <div class="form-group" id="formMotDePasse">
+            <label for="MotDePass">Mot de passe</label>
+            <input type="password" class="form-control " id="MotDePass" placeholder="Entrez un mot de passe">
+            <small class= hide' id="validationPass"></small>
+        </div>
+
+        <div class="form-group" id="formMotDePasse2">
+            <div class="d-flex justify-content-between">
+                <label for="ConfirmationMotDePass">Confirmation mot de passe</label>
+                <small class= hide' id="motDePassEgale"></small>
+            </div>
+            <input type="password" class="form-control" id="ConfirmationMotDePass" placeholder="Confirmez votre mot de passe">
+        </div>
+
+        <div class="form-group" id="formCourriel">
+            <label for="email">Adresse email</label>
+            <input type="text" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Entrez votre email">
+            <small class= hide' id="validationCourriel"></small>
+        </div>
+
+        <div class="form-group">
+            <div class="radio" id="radio">
+                <label><input type="radio" name="optradio" class="mr-2">Starwars</label>
+                <label class="mx-2"><input  type="radio" name="optradio" class="mr-2" >Marvel</label>
+                <label><input type="radio" name="optradio" class="mr-2" >DC</label>
+
+            </div>
+            <small class= hide' id="validationRadio"></small>
+            <div>
+                <div class="container sectionStarwars hide" id="sectionStarwars">
+                    <div class="row">
+                        <div class="col-6">
+                            <img  class="img-fluid image" alt="Responsive image">
+                        </div>
+                        <div class="col-6">
+                            <label class="mr-sm-2" for="listeDeroulanteSW">Choisissez votre personnage de Starwars</label>
+                            <select class="swSelect my-1 mr-sm-2" id="listeDeroulanteSW">
+                                <option selected>Yoda</option>
+                                <option value="1">Obiwan</option>
+                                <option value="2">Darth Vader</option>
+                                <option value="3">Luke Skywalker</option>
+                                <option value="4">Han Solo</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container sectionMarvel hide" id="sectionMarvel">
+                    <div class="row">
+                        <div class="col-6">
+                            <img class="img-fluid image" alt="Responsive image" >
+                        </div>
+                        <div class="col-6">
+                            <label class="mr-sm-2" for="listeDeroulanteMV">Choisissez votre personnage de Marvel</label>
+                            <select class="marvelSelect my-1 mr-sm-2" id="listeDeroulanteMV">
+                                <option selected>Spiderman</option>
+                                <option value="1">Thor</option>
+                                <option value="2">Hulk</option>
+                                <option value="3">Iron Man</option>
+                                <option value="4">Captain America</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sectionDC hide container" id="sectionDC">
+                    <div class="row">
+                        <div class="col-6">
+                            <img class="img-fluid image" alt="Responsive image" >
+                        </div>
+                        <div class="col-6">
+                            <label class="mr-sm-2" for="listeDeroulanteDC">Choisissez votre personnage de DC</label>
+                            <select class="DCselect my-1 mr-sm-2" id="listeDeroulanteDC">
+                                <option selected>Batman</option>
+                                <option value="1">Superman</option>
+                                <option value="2">Flash</option>
+                                <option value="3">Arrow</option>
+                                <option value="4">Aquaman</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <button id="envoyer" type="submit" class="btn btn-primary">Envoyer</button>
+
+
+    </form>
+</div>
+
+
+<div class="container-fluid submitForm hide">
+    <div class="row d-flex align-items-center">
+        <div class="col-4 mt-5 text-center">
+            <p class="h1">Personnage choisi</p>
+            <p class="h3 personnage"></p>
+            <img  class="img-fluid personnageChoisi" alt="Responsive image" >
+        </div>
+        <div class="col-8 mt-5 text-center">
+            <img src="img/bubble.png"  class="img-fluid" alt="Responsive image">
+            <div class="centered ">
+                <p class="h3 nom"></p>
+                <p class="h5 mail"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<script src="https://kit.fontawesome.com/a46d75ba7a.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="bootstrap-4.4.1-dist/js/bootstrap.js"></script>
+<script src="JS/shawicon.js"></script>
+</body>
+</html>
