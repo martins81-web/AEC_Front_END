@@ -148,8 +148,7 @@ $("select").change(function(){
 });
 
 
-
-
+//Envoyer les options du formulaire
 $("#envoyer").click(function(){
     if(nomValide && motDePassValide && courrielValide && motDePass2Valide && radioValide){
         $('form').hide();
