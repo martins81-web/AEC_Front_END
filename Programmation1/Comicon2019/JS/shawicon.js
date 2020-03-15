@@ -12,26 +12,27 @@ function hasNumber(str) {
 //faire aparaitre les sections selon le choix
 var image="";
 var radioValide=false;
+
 $('#radio').change(function(){
     $('#validationRadio').addClass('hide');
     var radioSelectionne = $("input[type='radio']:checked").parent().text();
     radioValide=true;
+
     if (radioSelectionne==='Starwars'){
         $('#sectionStarwars').siblings().hide();
         $('#sectionStarwars').show();
-        $('.image').attr("src", "img/Yoda.png");
-        personage='Yoda';
+        personage= $('.swSelect').children("option:selected").text();
     }else if(radioSelectionne==='Marvel'){
         $('#sectionMarvel').siblings().hide();
         $('#sectionMarvel').show();
-        $('.image').attr("src", "img/Spiderman.png");
-        personage='Spiderman';
+        personage= $('.marvelSelect').children("option:selected").text();
     }else if(radioSelectionne==='DC'){
         $('#sectionDC').siblings().hide();
         $('#sectionDC').show();
-        $('.image').attr("src", "img/Batman.png");
-        personage='Batman';
+        personage= $('.DCselect').children("option:selected").text();
     }
+
+    $('.image').attr("src", "img/"+personage+".png");
 });
 
 
