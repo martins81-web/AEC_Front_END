@@ -24,7 +24,7 @@ $('#radio').change(function(){
     }else if(radioSelectionne==='Marvel'){
         $('#sectionMarvel').siblings().hide();
         $('#sectionMarvel').show();
-        $('.image').attr("src", "img/SpiderMan.png");
+        $('.image').attr("src", "img/Spiderman.png");
         personage='Spiderman';
     }else if(radioSelectionne==='DC'){
         $('#sectionDC').siblings().hide();
@@ -44,11 +44,11 @@ $( "#formNom" ).keyup(function() {
     nom=nom.trim();
     if(nom === ""){
         $('#validationNom').addClass('hide');
-         nomValide=false;
+        nomValide=false;
     } else{
         if(nom==="SLAY" || nom==="Test"){
             $('#validationNom').removeClass('hide').removeClass('green').addClass('red').text("Usager non disponible");
-             nomValide=false;
+            nomValide=false;
         }
         else{
             $('#validationNom').removeClass('hide').removeClass('red').addClass('green').text("Valide");
@@ -142,9 +142,8 @@ $( "#formCourriel" ).keyup(function() {
 //changer image selon le choix de la liste déroulante
 var personage;
 $("select").change(function(){
-    let personageSelectionne = $(this).children("option:selected").text();
-    personage=personageSelectionne;
-    $('.image').attr("src", "img/"+personageSelectionne+".png");
+    personage= $(this).children("option:selected").text();
+    $('.image').attr("src", "img/"+personage+".png");
 });
 
 
