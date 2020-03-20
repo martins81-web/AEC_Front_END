@@ -23,7 +23,7 @@ $('#boutonRecommencer').click(function() {
 });
 
 $('#boutonTricher').click(function() {
-    for (let i=0; i<9; i++){
+    for (let i=1; i<=9; i++){
         $("#image"+i).attr("src","images/"+i+".jpg");
     }
 });
