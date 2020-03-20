@@ -7,17 +7,20 @@ var $imgSrc2;
 var coups=0;
 
 $('.img-fluid').on('click', function() {
+
     if (premierClique===true) {
         $img1 = $(this);
         $imgSrc1 = $(this).attr('src');
-        $img1.hide();
+        // $img1.hide();
+        $img1.addClass('border border-danger');
         premierClique=false;
     } else{
         $img2 = $(this);
         $imgSrc2 = $(this).attr('src');
         $img2.attr("src", $imgSrc1);
         $img1.attr("src", $imgSrc2);
-        $img1.show();
+        // $img1.show();
+        $img1.removeClass('border border-danger');
         premierClique=true;
         coups++;
 
