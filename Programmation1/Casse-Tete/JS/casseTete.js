@@ -28,6 +28,7 @@ $('.img-fluid').on('click', function() {
             addDivVictoire();
             addCoups();
             $("#boutonTricher").attr("disabled", true);
+            $('.img-fluid').off('click');
         }
     }
 
@@ -45,11 +46,16 @@ $('#boutonTricher').click(function() {
     addDivVictoire();
     addTricheur();
     $("#boutonTricher").attr("disabled", true);
+    $('.img-fluid').off('click');
 });
 
 
-$("img").hover(function() {
-    $(this).css('cursor','pointer');
+$(".img-fluid").hover(function () {
+    if (Victoire()===false) {
+        $(this).css('cursor', 'pointer');
+    } else{
+        $(this).css('cursor', 'default');
+    }
 });
 
 
