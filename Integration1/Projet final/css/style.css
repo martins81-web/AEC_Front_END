@@ -1,0 +1,106 @@
+.navbar-custom {
+    background-color: #006600;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("../img/toggler.svg");
+}
+
+.rotated {
+    transform: rotate(180deg);
+}
+
+.parallax {
+    /* L’hauteur du Parallax */
+    height: 100%;
+    /* Création de l’effet */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+hr{
+    background-color: black;
+}
+
+
+
+.baniere{
+    background-image: url("../img/imagem_porto.jpg");
+}
+
+.sectionJumbotron .h1 {
+    font-weight: bolder;
+    color: #050043;
+}
+
+.buttonVoirPhotos {
+    background-color: #050043;
+    color: white;
+}
+
+.texteBaniere{
+    background-color: rgba(255, 229, 12, 0.8);
+    margin-top: auto;
+    margin-bottom: 10%;
+}
+/*36A8-EDFE*/
+
+
+
+.lisbon,.sintra{
+    display: none;
+}
+
+.jumbotron{
+    background-color: white;
+}
+
+.sectionJumbotron{
+    background-image: url("../img/azulejo.jpg");
+}
+
+.bgModal{
+    background-color: darkred;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 576px) {
+    .baniere{
+        background-image: url("../img/lisbon.jpg");
+    }
+    .porto,.sintra{
+        display: none;
+    }
+    .lisbon{
+        display: inline;
+    }
+
+    .texteBaniere{
+        margin-top: 5%;
+        margin-bottom: auto;
+    }
+
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+    .baniere{
+        background-image: url("../img/sintra.jpg");
+    }
+
+    .lisbon,.porto{
+        display: none;
+    }
+    .sintra{
+        display: inline;
+    }
+
+    .texteBaniere{
+        margin-top: auto;
+        margin-bottom: 5%;
+    }
+}

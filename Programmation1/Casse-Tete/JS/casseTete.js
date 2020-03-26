@@ -65,9 +65,7 @@ $(".img-fluid").hover(function () {
 function Victoire(){
     let compteur=0;
     for (let i=1; i<=9; i++){
-        let id = $("#image"+i).attr("id");
-        let src= $("#image"+i).attr("src");
-        if (retnum(id)===retnum(src)){
+        if ($("#image"+i).attr("src") === "images/"+i+".jpg"){
             compteur++;
         }
     }
@@ -75,10 +73,7 @@ function Victoire(){
 }
 
 
-function retnum(str) {
-    var num = str.replace(/[^0-9]/g, '');
-    return parseInt(num,10);
-}
+
 
 function addDivVictoire(){
 $('#premiereRangee').before('<div id="victoire"><img class="img-fluid" src="images/victoire.jpg"/></div>');
