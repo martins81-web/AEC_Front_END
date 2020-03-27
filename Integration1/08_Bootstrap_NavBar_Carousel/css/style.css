@@ -72,3 +72,29 @@ body{
     font-weight: bold;
 }
 
+/*body {*/
+/*    padding-top: 20px;*/
+/*}*/
+
+/*.carousel {*/
+/*    width: 100%;*/
+/*}*/
+
+/*.slide-box {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*}*/
+
+/*.slide-box img {*/
+/*        -ms-flex: 0 0 25%;*/
+/*        flex: 0 0 25%;*/
+/*        max-width: 25%;*/
+/*}*/
+
+/*.carousel-caption {*/
+/*    background-color: rgba(0, 0, 0, 0.5);*/
+/*    padding: 20px;*/
+/*    border-radius: .5rem;*/
+/*}*/
+
+

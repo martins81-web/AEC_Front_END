@@ -1,5 +1,5 @@
 <html lang="fr-ca">
-<head>
+<head >
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Photociti</title>
@@ -10,12 +10,19 @@
 </head>
 <body>
 
-<header class="mb-5">
+<!--<section id="debut" class="mb-3">-->
+<!--    <div class="container-fluid">-->
+<!--        <div id="nom" class="row text-center">-->
+
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+<header class="mb-3 d-print-none">
     <p class="h1 text-center">Créez votre mot Photociti en 3 étapes rapides</p>
 </header>
 
-<section id="etapes">
-
+<section id="etapes" class="mb-3 d-print-none">
     <div class="container-fluid">
         <div class="row">
 
@@ -26,23 +33,27 @@
             </div>
 
             <div class="col-8">
-                <div class="etape1 ">
-                    <p class="h3">Étape 1</p>
+                <div class="etape1">
+                    <p class="h3 red">Étape 1</p>
                     <div class="d-flex justify-content-start align-items-end">
                         <i class="fas fa-keyboard fa-4x"></i>
                         <p class="h3 ml-3">Entrez votre mot</p>
                     </div>
+                    <div class="d-flex flex-column align-items-end">
+                        <small class="hide" id="erreur"></small>
+                        <small class="hide" id="invalide"></small>
+                    </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Entrez um mot entre 3 et 9 caractères">
-                        <span class="input-group-btn">
-                                <button class="btn btn-dark ml-2" type="button">Go!</button>
-                        </span>
+                            <input id='motInput' type="text" class="form-control" placeholder="Entrez um mot entre 3 et 9 caractères">
+                            <span class="input-group-btn">
+                                    <button id="buttonGO" class="btn btn-dark ml-2 " type="button">Go!</button>
+                            </span>
                     </div>
                     <p class="font-weight-bold">Utilisez * pour les caractères spéciaux</p>
 
                 </div>
                 <div class="etape2 hide">
-                    <p class="h3">Étape 2</p>
+                    <p class="h3 red">Étape 2</p>
                     <div class="d-flex justify-content-start align-items-end">
                         <i class="fa fa-font fa-4x xoneBlack"></i>
                         <p class="h3 ml-3">Changez vos lettres</p>
@@ -50,20 +61,20 @@
                     <p class="font-weight-bold">Cliquez sur une lettre pour changer la photo</p>
                 </div>
                 <div class="etape3 hide">
-                    <p class="h3">Étape 3</p>
+                    <p class="h3 red">Étape 3</p>
                     <div class="d-flex justify-content-start align-items-end">
                         <i class="fas fa-images fa-4x"></i>
                         <p class="h3 ml-3">Changez le fond</p>
                     </div>
                     <p class="font-weight-bold">Cliquez sur les couleurs pour changer le fond:</p>
                     <div>
-                        <img src="background/blanc.jpg" class="borderBlack" alt="Responsive image" width="30" height="30"/>
-                        <img src="background/bleu.jpg" class="borderBlack" alt="Responsive image" width="30" height="30"/>
-                        <img src="background/bleuFonce.jpg" class="borderBlack" alt="Responsive image" width="30" height="30"/>
-                        <img src="background/gris.jpg" class="borderBlack" alt="Responsive image" width="30" height="30"/>
-                        <img src="background/noir.jpg" class="borderBlack" alt="Responsive image" width="30" height="30"/>
-                        <img src="background/rose.jpg" class="borderBlack" alt="Responsive image" width="30" height="30"/>
-                        <img src="background/rouge.jpg" class="borderBlack" alt="Responsive image" width="30" height="30"/>
+                        <img id="blanc" src="background/blanc.jpg" class="borderBlack imgFond" alt="Responsive image" width="50" height="50"/>
+                        <img id="bleu" src="background/bleu.jpg" class="borderBlack imgFond" alt="Responsive image" width="50" height="50"/>
+                        <img id="bleuFonce" src="background/bleuFonce.jpg" class="borderBlack imgFond" alt="Responsive image" width="50" height="50"/>
+                        <img id="gris" src="background/gris.jpg" class="borderBlack imgFond" alt="Responsive image" width="50" height="50"/>
+                        <img id="noir" src="background/noir.jpg" class="borderRed imgFond" alt="Responsive image" width="50" height="50"/>
+                        <img id="rose" src="background/rose.jpg" class="borderBlack imgFond" alt="Responsive image" width="50" height="50"/>
+                        <img id="rouge" src="background/rouge.jpg" class="borderBlack imgFond" alt="Responsive image" width="50" height="50"/>
                     </div>
                 </div>
             </div>
@@ -79,6 +90,76 @@
 
 </section>
 
+<section id="photociti" class="p-3 m-3">
+    <div class="container-fluid">
+        <div id="mot" class="row text-center ">
+            <div id="J" class='imgBG col-2 p-3 photoMot'><img src='Letters/J/J3.jpg' class='img-fluid borderWhite' alt='Responsive image\'></div>
+            <div id="Q" class='imgBG col-2 p-3 photoMot'><img src='Letters/Q/Q5.jpg' class='img-fluid borderWhite' alt='Responsive image\'></div>
+            <div id="U" class='imgBG col-2 p-3 photoMot'><img src='Letters/U/U5.jpg' class='img-fluid borderWhite' alt='Responsive image\'></div>
+            <div id="E" class='imgBG col-2 p-3 photoMot'><img src='Letters/E/E3.jpg' class='img-fluid borderWhite' alt='Responsive image\'></div>
+            <div id="R" class='imgBG col-2 p-3 photoMot'><img src='Letters/R/R5.jpg' class='img-fluid borderWhite' alt='Responsive image\'></div>
+            <div id="Y" class='imgBG col-2 p-3 photoMot'><img src='Letters/Y/Y1.jpg' class='img-fluid borderWhite' alt='Responsive image\'></div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Modal -->
+<div class="modal fade d-print-none" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content bgModal">
+            <div class="modal-header bg-dark">
+                <h5 class="modal-title text-white" id="ModalPhotosCarroussel">Sélectionnez votre photo</h5>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">X</span>
+                </button>
+            </div>
+            <div class="modal-body bg-dark">
+                <!-- Carousel -->
+                        <div id="carousel" class="carousel slide portfolio-entries" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel" data-slide-to="1"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="d-none d-lg-block">
+                                        <div class="slide-box">
+                                            <img id="pic1" class="img-fluid picCarousel" src="" alt="First slide">
+                                            <img id="pic2" class="img-fluid picCarousel" src="" alt="First slide">
+                                            <img id="pic3" class="img-fluid picCarousel" src="" alt="First slide">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="d-none d-lg-block">
+                                        <div class="slide-box">
+                                            <img id="pic4" class="img-fluid picCarousel" src="" alt="second slide">
+                                            <img id="pic5" class="img-fluid picCarousel" src="" alt="second slide">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                <!-- Fin Carousel -->
+                    <div class="modal-footer bg-dark">
+                        <button id="save" type="button" class="btn btn-secondary text-white" data-dismiss="modal">Sauvegarder</button>
+                        <button id="cancel" type="button" class="btn btn-secondary text-white" data-dismiss="modal">Annuler</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Fin Modal -->
 
 
 <script src="https://kit.fontawesome.com/a46d75ba7a.js"></script>
