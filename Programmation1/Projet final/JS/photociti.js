@@ -165,7 +165,7 @@ function CreateCarrousel() {
     }
 
     for(let i=1 ; i<=5; i++){
-        $("#pic"+i).attr("src","Letters/"+photoClique.attr("id")+"/"+photoClique.attr("id")+i+".jpg");
+        $("#pic"+i).attr("src","Letters/"+photoClique.attr("id").toUpperCase()+"/"+photoClique.attr("id").toUpperCase()+i+".jpg");
 
         if (photoClique.children().attr("src")===$("#pic"+i).attr("src")){
             for(let j=1 ; j<=5; j++){
