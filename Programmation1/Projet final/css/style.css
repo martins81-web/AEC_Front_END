@@ -1,0 +1,11 @@
+.hide{
+    display: none;
+}
+
+input{
+    text-align:center;
+}
+
+.borderBlack{
+    border: 1px solid black;
+}
