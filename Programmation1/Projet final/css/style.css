@@ -39,9 +39,7 @@ input{
     width:-moz-fit-content;
 }
 
-.imgBG{
-    background-image: url("../background/noir.jpg");
-}
+
 
 
 @media print {

@@ -11,9 +11,10 @@
 // $('#nom').append("<div class='col-1'><img src='Letters/S/S1.jpg' class='img-fluid borderBlack' alt='Responsive image\'></div>");
 
 var etape=1;
-
+var fondClique='noir';
 
 $( window ).on( "load", function() {
+    $(".imgBG").css("background-image", "url(background/"+fondClique+".jpg)");
     myLoop();
 });
 
@@ -182,11 +183,12 @@ function creationPhotociti(){
    for(let i=0; i<mot.length ; i++){
        var random = Math.floor(Math.random() * 5) + 1;
        if( (mot[i]>='a' && mot[i] <= 'z') || (mot[i]>='A' && mot[i] <= 'Z')){
-           $('#mot').append("<div id='"+mot[i]+"' class='p-3 photoMot  "+col+"'><img src='Letters/"+mot[i].toUpperCase()+"/"+mot[i].toUpperCase()+random+".jpg' class='img-fluid borderWhite' alt='Responsive image\'></div>");
+           $('#mot').append("<div id='"+mot[i]+"' class='p-3 photoMot  "+col+"'><img src='Letters/"+mot[i].toUpperCase()+"/"+mot[i].toUpperCase()+random+".jpg' class='img-fluid borderWhite ' alt='Responsive image\'></div>");
        } else if(mot[i]==='*'){
-           $('#mot').append("<div id='"+mot[i]+"' class='p-3 photoMot  "+col+"'><img src='Letters/CS/CS"+random+".jpg' class='img-fluid borderWhite' alt='Responsive image\'></div>");
+           $('#mot').append("<div id='"+mot[i]+"' class='p-3 photoMot  "+col+"'><img src='Letters/CS/CS"+random+".jpg' class='img-fluid borderWhite ' alt='Responsive image\'></div>");
        }
    }
+    $('#mot').children().css("background-image", "url(background/"+fondClique+".jpg)");
 }
 
 var photoClique;
@@ -194,6 +196,7 @@ $(document).on('click', ".photoMot", function(){
     photoClique=$(this);
 
     if(etape===2) {
+        photoClique.children().addClass('borderRed').removeClass('borderWhite');
         $('#modal').modal('show');
         CreateCarrousel();
     }
@@ -218,10 +221,9 @@ function CreateCarrousel() {
     }
 }
 
-var fondClique;
+
 $(".imgFond").on('click', function() {
     fondClique=$(this).attr('id');
-    $("#mot").children().addClass('imgBG');
     $(".imgBG").css("background-image", "url(background/"+fondClique+".jpg)");
     if (fondClique==='blanc'){
         $("#ModalPhotosCarroussel").removeClass("text-white");
@@ -243,4 +245,9 @@ $(document).on('click', ".picCarousel", function(){
 
 $( "#save" ).on('click', function() {
     photoClique.children().attr("src",srcCarousel);
+    photoClique.children().addClass('borderWhite').removeClass('borderRed');
+});
+
+$('#modal').on('hidden.bs.modal', function () {
+    photoClique.children().addClass('borderWhite').removeClass('borderRed');
 });
