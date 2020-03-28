@@ -100,7 +100,7 @@ $( "#buttonGO" ).on('click', function() {
         $("#mot").empty();
         creationPhotociti();
         $("#mot").children().addClass('imgBG');
-        $("#flecheDroite").click();
+        // $("#flecheDroite").click();
     }
 });
 
