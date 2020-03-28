@@ -18,6 +18,10 @@ input{
     border: 3px solid red;
 }
 
+.borderBlue{
+    border: 3px solid blue;
+}
+
 .borderTransparent{
     border: 2px solid transparent;
 }

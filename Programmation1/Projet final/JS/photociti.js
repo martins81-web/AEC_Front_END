@@ -94,7 +94,6 @@ var mot='jquery';
 
 $( "#buttonGO" ).on('click', function() {
     mot = $("#motInput").val();
-
     EnleveAccents();
     if (Verification()) {
         $("#mot").empty();
@@ -131,7 +130,7 @@ function Verification(){
         motinvalide=true;
     }
 
-    if (mot.length<3 && mot.length>0){
+    if (mot.length>0 && mot.length<3){
         $("#erreur").text("Mot trop court");
         $("#erreur").addClass('red').removeClass('hide');
         longueurValide=false;
@@ -142,6 +141,10 @@ function Verification(){
     } else{
         $("#erreur").addClass('hide');
         longueurValide=true;
+    }
+
+    if (mot===""){
+        motinvalide=false;
     }
     return motinvalide && longueurValide;
 }
@@ -191,12 +194,14 @@ function creationPhotociti(){
     $('#mot').children().css("background-image", "url(background/"+fondClique+".jpg)");
 }
 
+var srcCarousell;
 var photoClique;
+
 $(document).on('click', ".photoMot", function(){
     photoClique=$(this);
-
+    carouselClique=false;
     if(etape===2) {
-        photoClique.children().addClass('borderRed').removeClass('borderWhite');
+        photoClique.children().addClass('borderBlue').removeClass('borderWhite');
         $('#modal').modal('show');
         CreateCarrousel();
     }
@@ -214,10 +219,36 @@ function CreateCarrousel() {
         $("#pic"+i).attr("src","Letters/"+photoClique.attr("id").toUpperCase()+"/"+photoClique.attr("id").toUpperCase()+i+".jpg");
         if ($("#pic"+i).attr("src")===photoClique.children().attr("src")){
             $(".slides").children().addClass('borderBlack');
-            $("#pic"+i).addClass('borderRed').removeClass("borderBlack");
+            $("#pic"+i).addClass('borderBlue').removeClass("borderBlack");
         }
     }
+
 }
+
+
+var carouselClique=false;
+$(document).on('click', ".picCarousel", function(){
+    for(let i=1 ; i<=5; i++){
+        $("#pic"+i).removeClass('borderBlue');
+    }
+    $(".slides").children().addClass('borderBlack');
+    $(this).addClass('borderBlue').removeClass("borderBlack");
+    srcCarousel=$(this).attr("src");
+    carouselClique=true;
+});
+
+$( "#save" ).on('click', function() {
+    if (carouselClique){
+        photoClique.children().attr("src",srcCarousel);
+    }
+    photoClique.children().addClass('borderBlack').removeClass('borderBlue');
+
+});
+
+$('#modal').on('hidden.bs.modal', function () {
+        photoClique.children().addClass('borderWhite').removeClass('borderBlue');
+        $(".slides").children().removeClass('borderBlue');
+});
 
 
 $(".imgFond").on('click', function() {
@@ -230,23 +261,4 @@ $(".imgFond").on('click', function() {
     }
     $(this).removeClass('borderBlack').addClass('borderRed');
     $(this).siblings().removeClass('borderRed').addClass('borderBlack');
-});
-
-var srcCarousel;
-$(document).on('click', ".picCarousel", function(){
-    for(let i=1 ; i<=5; i++){
-        $("#pic"+i).removeClass('borderRed');
-    }
-    $(".slides").children().addClass('borderBlack');
-    $(this).addClass('borderRed').removeClass("borderBlack");
-    srcCarousel=$(this).attr("src");
-});
-
-$( "#save" ).on('click', function() {
-    photoClique.children().attr("src",srcCarousel);
-    photoClique.children().addClass('borderWhite').removeClass('borderRed');
-});
-
-$('#modal').on('hidden.bs.modal', function () {
-    photoClique.children().addClass('borderWhite').removeClass('borderRed');
 });
