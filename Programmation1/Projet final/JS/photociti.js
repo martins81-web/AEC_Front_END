@@ -11,15 +11,17 @@
 // $('#nom').append("<div class='col-1'><img src='Letters/S/S1.jpg' class='img-fluid borderBlack' alt='Responsive image\'></div>");
 
 var etape=1;
-var fondClique='noir';
+var fondClique='bleu';
+var mot='jquery';
 
 $( window ).on( "load", function() {
     $(".imgBG").css("background-image", "url(background/"+fondClique+".jpg)");
-    myLoop();
+    $("#"+fondClique).removeClass('borderBlack').addClass('borderBlue');
+    AnimationEtape();
 });
 
 var counter=0;
-function myLoop () {
+function AnimationEtape () {
     if(counter===0){
         $('#etape'+etape).text("É");
         counter++;
@@ -42,7 +44,7 @@ function myLoop () {
     }
 
     if (counter<6){
-        toggleBorder = setTimeout(myLoop, 100);
+        toggleBorder = setTimeout(AnimationEtape, 100);
     } else{
         counter=0;
     }
@@ -54,7 +56,7 @@ $( "#flecheDroite" ).on('click', function() {
    changeEtape();
    counter=0;
    $('#etape'+etape).text("");
-   myLoop();
+   AnimationEtape ();
    document.getSelection().removeAllRanges();
 });
 
@@ -63,7 +65,7 @@ $( "#flecheGauche" ).on('click', function() {
    changeEtape();
    counter=0;
    $('#etape'+etape).text("");
-   myLoop();
+   AnimationEtape ();
    document.getSelection().removeAllRanges();
 });
 
@@ -90,12 +92,10 @@ function changeEtape(){
     }
 }
 
-var mot='jquery';
-
 $( "#buttonGO" ).on('click', function() {
     mot = $("#motInput").val();
     EnleveAccents();
-    if (Verification()) {
+    if (Validation()) {
         $("#mot").empty();
         creationPhotociti();
         $("#mot").children().addClass('imgBG');
@@ -111,7 +111,7 @@ $('#motInput').keypress(function(event){
 });
 
 
-function Verification(){
+function Validation(){
     let longueurValide=false;
     let motinvalide=false;
 
@@ -196,11 +196,13 @@ function creationPhotociti(){
 
 var srcCarousell;
 var photoClique;
+var click=false;
 
 $(document).on('click', ".photoMot", function(){
     photoClique=$(this);
     carouselClique=false;
     if(etape===2) {
+        click=true;
         photoClique.children().addClass('borderBlue').removeClass('borderWhite');
         $('#modal').modal('show');
         CreateCarrousel();
@@ -242,12 +244,13 @@ $( "#save" ).on('click', function() {
         photoClique.children().attr("src",srcCarousel);
     }
     photoClique.children().addClass('borderBlack').removeClass('borderBlue');
-
+    click=false;
 });
 
 $('#modal').on('hidden.bs.modal', function () {
         photoClique.children().addClass('borderWhite').removeClass('borderBlue');
         $(".slides").children().removeClass('borderBlue');
+        click=false;
 });
 
 
@@ -259,6 +262,31 @@ $(".imgFond").on('click', function() {
     } else {
         $("#ModalPhotosCarroussel").addClass("text-white");
     }
-    $(this).removeClass('borderBlack').addClass('borderRed');
-    $(this).siblings().removeClass('borderRed').addClass('borderBlack');
+    $(this).removeClass('borderBlack').addClass('borderBlue');
+    $(this).siblings().removeClass('borderBlue').addClass('borderBlack');
+});
+
+
+
+
+
+
+$("#mot .img-fluid ").hover(function () {
+    if(etape===2) {
+        $(this).css('cursor', 'pointer');
+        $(this).removeClass('borderBlack').addClass('borderBlue');
+    } else{
+        $(this).css('cursor', 'default');
+    }
+}).on("mouseout", function() {
+    if(etape===2 && click===false) {
+        $(this).removeClass('borderBlue').addClass('borderWhite');
+    }
+});
+
+$("#flecheGauche, #flecheDroite, .imgFond").hover(function () {
+    $(this).css('cursor', 'pointer');
+    $(this).children().addClass('red');
+}).on("mouseout", function() {
+    $(this).children().removeClass('red');
 });

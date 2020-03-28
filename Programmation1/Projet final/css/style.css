@@ -7,7 +7,7 @@ input{
 }
 
 .borderBlack{
-    border: 2px solid black;
+    border: 1px solid black;
 }
 
 .borderWhite{
@@ -15,11 +15,11 @@ input{
 }
 
 .borderRed{
-    border: 3px solid red;
+    border: 2px solid red;
 }
 
 .borderBlue{
-    border: 3px solid blue;
+    border: 2px solid blue;
 }
 
 .borderTransparent{
