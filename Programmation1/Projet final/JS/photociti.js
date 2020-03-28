@@ -203,6 +203,7 @@ $(document).on('click', ".photoMot", function(){
 });
 
 function CreateCarrousel() {
+    let index;
     if(photoClique.attr("id")==="*"){
         photoClique.attr("id","CS");
     }else {
@@ -211,12 +212,9 @@ function CreateCarrousel() {
 
     for(let i=1 ; i<=5; i++){
         $("#pic"+i).attr("src","Letters/"+photoClique.attr("id").toUpperCase()+"/"+photoClique.attr("id").toUpperCase()+i+".jpg");
-
-        if (photoClique.children().attr("src")===$("#pic"+i).attr("src")){
-            for(let j=1 ; j<=5; j++){
-                $("#pic"+j).removeClass('borderRed');
-            }
-            $("#pic"+i).addClass('borderRed');
+        if ($("#pic"+i).attr("src")===photoClique.children().attr("src")){
+            $(".slides").children().addClass('borderBlack');
+            $("#pic"+i).addClass('borderRed').removeClass("borderBlack");
         }
     }
 }
@@ -239,7 +237,8 @@ $(document).on('click', ".picCarousel", function(){
     for(let i=1 ; i<=5; i++){
         $("#pic"+i).removeClass('borderRed');
     }
-    $(this).addClass('borderRed');
+    $(".slides").children().addClass('borderBlack');
+    $(this).addClass('borderRed').removeClass("borderBlack");
     srcCarousel=$(this).attr("src");
 });
 
