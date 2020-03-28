@@ -12,15 +12,57 @@
 
 var etape=1;
 
+
+$( window ).on( "load", function() {
+    myLoop();
+});
+
+var counter=0;
+function myLoop () {
+    if(counter===0){
+        $('#etape'+etape).text("É");
+        counter++;
+    }else if (counter===1) {
+        $('#etape'+etape).text("Ét");
+        counter++;
+    }else if (counter===2){
+        $('#etape'+etape).text("Éta");
+        counter++;
+    }else if (counter===3){
+        $('#etape'+etape).text("Étap");
+        counter++;
+    }else if (counter===4){
+        $('#etape'+etape).text("Étape");
+        counter++;
+    }else if (counter===5){
+        $('#etape'+etape).text("Étape "+etape);
+        clearTimeout(toggleBorder);
+        counter++;
+    }
+
+    if (counter<6){
+        toggleBorder = setTimeout(myLoop, 100);
+    } else{
+        counter=0;
+    }
+}
+
+
 $( "#flecheDroite" ).on('click', function() {
    etape++;
    changeEtape();
+   counter=0;
+   $('#etape'+etape).text("");
+   myLoop();
    document.getSelection().removeAllRanges();
 });
 
 $( "#flecheGauche" ).on('click', function() {
    etape--;
    changeEtape();
+   counter=0;
+   $('#etape'+etape).text("");
+   myLoop();
    document.getSelection().removeAllRanges();
 });
 
@@ -181,6 +223,11 @@ $(".imgFond").on('click', function() {
     fondClique=$(this).attr('id');
     $("#mot").children().addClass('imgBG');
     $(".imgBG").css("background-image", "url(background/"+fondClique+".jpg)");
+    if (fondClique==='blanc'){
+        $("#ModalPhotosCarroussel").removeClass("text-white");
+    } else {
+        $("#ModalPhotosCarroussel").addClass("text-white");
+    }
     $(this).removeClass('borderBlack').addClass('borderRed');
     $(this).siblings().removeClass('borderRed').addClass('borderBlack');
 });

@@ -34,7 +34,7 @@
 
             <div class="col-8">
                 <div class="etape1">
-                    <p class="h3 red">Étape 1</p>
+                    <p id="etape1" class="h3 red etape"></p>
                     <div class="d-flex justify-content-start align-items-end">
                         <i class="fas fa-keyboard fa-4x"></i>
                         <p class="h3 ml-3">Entrez votre mot</p>
@@ -53,7 +53,7 @@
 
                 </div>
                 <div class="etape2 hide">
-                    <p class="h3 red">Étape 2</p>
+                    <p id="etape2" class="h3 red etape"></p>
                     <div class="d-flex justify-content-start align-items-end">
                         <i class="fa fa-font fa-4x xoneBlack"></i>
                         <p class="h3 ml-3">Changez vos lettres</p>
@@ -61,7 +61,7 @@
                     <p class="font-weight-bold">Cliquez sur une lettre pour changer la photo</p>
                 </div>
                 <div class="etape3 hide">
-                    <p class="h3 red">Étape 3</p>
+                    <p id="etape3" class="h3 red etape"></p>
                     <div class="d-flex justify-content-start align-items-end">
                         <i class="fas fa-images fa-4x"></i>
                         <p class="h3 ml-3">Changez le fond</p>
@@ -108,13 +108,13 @@
 <div class="modal fade d-print-none" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content bgModal">
-            <div class="modal-header bg-dark">
+            <div class="modal-header imgBG">
                 <h5 class="modal-title text-white" id="ModalPhotosCarroussel">Sélectionnez votre photo</h5>
                 <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">X</span>
                 </button>
             </div>
-            <div class="modal-body bg-dark">
+            <div class="modal-body bg-light">
                 <!-- Carousel -->
                         <div id="carousel" class="carousel slide portfolio-entries" data-ride="carousel">
                             <ol class="carousel-indicators">
@@ -126,7 +126,7 @@
                                     <div class="d-none d-lg-block">
                                         <div class="slide-box">
                                             <img id="pic1" class="img-fluid picCarousel" src="" alt="First slide">
-                                            <img id="pic2" class="img-fluid picCarousel" src="" alt="First slide">
+                                            <img id="pic2" class="img-fluid picCarousel mx-2" src="" alt="First slide">
                                             <img id="pic3" class="img-fluid picCarousel" src="" alt="First slide">
                                         </div>
                                     </div>
@@ -136,26 +136,27 @@
                                     <div class="d-none d-lg-block">
                                         <div class="slide-box">
                                             <img id="pic4" class="img-fluid picCarousel" src="" alt="second slide">
-                                            <img id="pic5" class="img-fluid picCarousel" src="" alt="second slide">
+                                            <img id="pic5" class="img-fluid picCarousel ml-2 " src="" alt="second slide">
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <a class="carousel-control-prev " href="#carousel" role="button" data-slide="prev">
+                                <span class="fas fa-arrow-circle-left fa-3x red"></span>
                                 <span class="sr-only">Previous</span>
                             </a>
                             <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="fas fa-arrow-circle-right fa-3x red"></span>
                                 <span class="sr-only">Next</span>
                             </a>
                         </div>
-                <!-- Fin Carousel -->
-                    <div class="modal-footer bg-dark">
-                        <button id="save" type="button" class="btn btn-secondary text-white" data-dismiss="modal">Sauvegarder</button>
-                        <button id="cancel" type="button" class="btn btn-secondary text-white" data-dismiss="modal">Annuler</button>
-                    </div>
             </div>
+                <!-- Fin Carousel -->
+            <div class="modal-footer imgBG mt-2">
+                <button id="save" type="button" class="btn btn-secondary text-white" data-dismiss="modal">Sauvegarder</button>
+                <button id="cancel" type="button" class="btn btn-secondary text-white" data-dismiss="modal">Annuler</button>
+            </div>
+
         </div>
     </div>
 </div>

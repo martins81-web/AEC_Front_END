@@ -13,8 +13,13 @@ input{
 .borderWhite{
     border: 2px solid white;
 }
+
 .borderRed{
-    border: 2px solid red;
+    border: 3px solid red;
+}
+
+.borderTransparent{
+    border: 2px solid transparent;
 }
 
 .red{
@@ -23,6 +28,15 @@ input{
 
 .green{
     color: green;
+}
+
+.black{
+    color: black;
+}
+
+.etape{
+    width:fit-content;
+    width:-moz-fit-content;
 }
 
 .imgBG{
@@ -56,3 +70,4 @@ input{
     padding: 20px;
     border-radius: .5rem;
 }
+
