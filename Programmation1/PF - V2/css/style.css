@@ -1,0 +1,75 @@
+.hide{
+    display: none;
+}
+
+input{
+    text-align:center;
+}
+
+.borderBlack{
+    border: 1px solid black;
+}
+
+.borderWhite{
+    border: 2px solid white;
+}
+
+.borderRed{
+    border: 2px solid red;
+}
+
+.borderBlue{
+    border: 2px solid blue;
+}
+
+.borderTransparent{
+    border: 2px solid transparent;
+}
+
+.red{
+    color: red;
+}
+
+.green{
+    color: green;
+}
+
+.black{
+    color: black;
+}
+
+.etape{
+    width:fit-content;
+    width:-moz-fit-content;
+}
+
+
+
+
+@media print {
+    * {
+        -webkit-print-color-adjust: exact;
+    }
+}
+
+.carousel {
+    width: 100%;
+}
+
+.slide-box {
+    display: flex;
+    justify-content: center;
+}
+
+.slide-box img {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: .5rem;
+}
+

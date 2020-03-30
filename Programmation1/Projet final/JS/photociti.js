@@ -94,6 +94,7 @@ function changeEtape(){
 
 $( "#buttonGO" ).on('click', function() {
     mot = $("#motInput").val();
+
     EnleveAccents();
     if (Validation()) {
         $("#mot").empty();
@@ -106,7 +107,7 @@ $( "#buttonGO" ).on('click', function() {
 $('#motInput').keypress(function(event){
     var keycode = (event.keyCode ? event.keyCode : event.which);
     if(keycode == '13'){
-        $( "#buttonGO" ).click();
+        $("#buttonGO").click();
     }
 });
 
@@ -186,9 +187,9 @@ function creationPhotociti(){
    for(let i=0; i<mot.length ; i++){
        var random = Math.floor(Math.random() * 5) + 1;
        if( (mot[i]>='a' && mot[i] <= 'z') || (mot[i]>='A' && mot[i] <= 'Z')){
-           $('#mot').append("<div id='"+mot[i]+"' class='p-3 photoMot  "+col+"'><img src='Letters/"+mot[i].toUpperCase()+"/"+mot[i].toUpperCase()+random+".jpg' class='img-fluid borderWhite ' alt='Responsive image\'></div>");
+           $('#mot').append("<div id='"+mot[i]+"' class='p-3 photoMot  "+col+"'><img src='Letters/"+mot[i].toUpperCase()+"/"+mot[i].toUpperCase()+random+".jpg' class='img-fluid borderWhite' alt='Responsive image\'></div>");
        } else if(mot[i]==='*'){
-           $('#mot').append("<div id='"+mot[i]+"' class='p-3 photoMot  "+col+"'><img src='Letters/CS/CS"+random+".jpg' class='img-fluid borderWhite ' alt='Responsive image\'></div>");
+           $('#mot').append("<div id='"+mot[i]+"' class='p-3 photoMot  "+col+"'><img src='Letters/CS/CS"+random+".jpg' class='img-fluid borderWhite' alt='Responsive image\'></div>");
        }
    }
     $('#mot').children().css("background-image", "url(background/"+fondClique+".jpg)");
@@ -229,6 +230,7 @@ function CreateCarrousel() {
 
 
 var carouselClique=false;
+
 $(document).on('click', ".picCarousel", function(){
     for(let i=1 ; i<=5; i++){
         $("#pic"+i).removeClass('borderBlue');
@@ -253,6 +255,16 @@ $('#modal').on('hidden.bs.modal', function () {
         click=false;
 });
 
+$('#modal').keypress(function(event){
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    if(keycode == '13'){
+        $("#save").click();
+    }
+});
+
+
+
+
 
 $(".imgFond").on('click', function() {
     fondClique=$(this).attr('id');
@@ -269,20 +281,27 @@ $(".imgFond").on('click', function() {
 
 
 
-
-
-$("#mot .img-fluid ").hover(function () {
+$(document).on('mouseenter', '#mot .img-fluid', function(e) {
     if(etape===2) {
         $(this).css('cursor', 'pointer');
-        $(this).removeClass('borderBlack').addClass('borderBlue');
+        $(this).removeClass('borderWhite').addClass('borderBlue');
     } else{
         $(this).css('cursor', 'default');
     }
-}).on("mouseout", function() {
+});
+
+$(document).on('mouseleave', '#mot .img-fluid', function(e) {
     if(etape===2 && click===false) {
         $(this).removeClass('borderBlue').addClass('borderWhite');
     }
 });
+
+$('#modal').on('mouseenter', 'img', function() {
+        $(this).css('cursor', 'pointer');
+}).on('mouseleave', '#mot .img-fluid', function(e) {
+        $(this).css('cursor', 'default');
+});
+
 
 $("#flecheGauche, #flecheDroite, .imgFond").hover(function () {
     $(this).css('cursor', 'pointer');
