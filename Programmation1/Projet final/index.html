@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<!-- index.html -->
+<!-- Projet final - Programmation1 - par Eric Martins -->
+<!-- Crée le 26 mars 2020 -->
+<!-- Dernier mise à jour le 29 mars 2020 -->
+
 <html lang="fr-ca">
 <head >
     <meta charset="UTF-8">
@@ -10,22 +16,30 @@
 </head>
 <body>
 
-
-<header class="mb-3 d-print-none">
+<!-- Section header titre du site -->
+<header class="mb-3">
     <p class="h1 text-center">Créez votre mot Photociti en 3 étapes rapides</p>
 </header>
+<!-- Fin section header titre du site -->
 
-<section id="etapes" class="mb-3 d-print-none">
+
+<!-- Section étapes -->
+<section id="etapes" class="mb-3 ">
     <div class="container-fluid">
         <div class="row">
 
+            <!--Flèche gauche-->
             <div class="col-2 d-flex justify-content-start ">
                 <div id="flecheGauche" class="hide">
                     <i class="fas fa-arrow-circle-left fa-5x "></i>
                 </div>
             </div>
+            <!--Fin flèche gauche-->
 
+            <!--Section étapes intérieures-->
             <div class="col-8">
+
+                <!--Étape 1-->
                 <div class="etape1">
                     <p id="etape1" class="h3 red etape"></p>
                     <div class="d-flex justify-content-start align-items-end">
@@ -43,8 +57,10 @@
                             </span>
                     </div>
                     <p class="font-weight-bold">Utilisez * pour les caractères spéciaux</p>
-
                 </div>
+                <!--Fin étape 1-->
+
+                <!--Étape 2-->
                 <div class="etape2 hide">
                     <p id="etape2" class="h3 red etape"></p>
                     <div class="d-flex justify-content-start align-items-end">
@@ -53,11 +69,19 @@
                     </div>
                     <p class="font-weight-bold">Cliquez sur une lettre pour changer la photo</p>
                 </div>
+                <!--Fin étape 2-->
+
+                <!--Étape 3-->
                 <div class="etape3 hide">
                     <p id="etape3" class="h3 red etape"></p>
-                    <div class="d-flex justify-content-start align-items-end">
-                        <i class="fas fa-images fa-4x"></i>
-                        <p class="h3 ml-3">Changez le fond</p>
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex justify-content-start align-items-end">
+                            <i class="fas fa-images fa-4x"></i>
+                            <p class="h3 ml-3">Changez le fond et imprimez</p>
+                        </div>
+                        <div id="print">
+                            <i class="fas fa-print fa-4x"></i>
+                        </div>
                     </div>
                     <p class="font-weight-bold">Cliquez sur les couleurs pour changer le fond:</p>
                     <div>
@@ -70,19 +94,29 @@
                         <img id="rouge" src="background/rouge.jpg" class="borderBlack imgFond" alt="Responsive image" width="50" height="50"/>
                     </div>
                 </div>
+                <!--Fin étape 3-->
+
             </div>
+            <!--Fin section étapes intérieures-->
 
 
+            <!--Flèche droite-->
             <div class="col-2 d-flex justify-content-end">
                 <div id="flecheDroite">
                     <i class="fas fa-arrow-circle-right fa-5x"></i>
                 </div>
             </div>
+            <!--Fin flèche droite-->
+
         </div>
     </div>
-
 </section>
+<!-- Fin section etapes -->
 
+
+
+
+<!-- Section Montage photos -->
 <section id="photociti" class="p-3 m-3">
     <div class="container-fluid">
         <div id="mot" class="row text-center ">
@@ -95,10 +129,13 @@
         </div>
     </div>
 </section>
+<!-- Fin section Montage photos -->
+
+
 
 
 <!-- Modal -->
-<div class="modal fade d-print-none" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content bgModal">
             <div class="modal-header imgBG">
@@ -152,13 +189,13 @@
                             </a>
                             <!-- Fin Carousel controls-->
                         </div>
-            </div>
                 <!-- Fin Carousel -->
+            </div>
+
             <div class="modal-footer imgBG pt-2">
                 <button id="save" type="button" class="btn btn-secondary text-white" data-dismiss="modal">Sauvegarder</button>
                 <button id="cancel" type="button" class="btn btn-secondary text-white" data-dismiss="modal">Annuler</button>
             </div>
-
         </div>
     </div>
 </div>
