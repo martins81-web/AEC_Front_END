@@ -1,6 +1,6 @@
 
 
-$( "#hamb" ).click(function() {
+$( ".navbar-toggler" ).click(function() {
         $("#arrowHamb").toggleClass("rotated");
 });
 
