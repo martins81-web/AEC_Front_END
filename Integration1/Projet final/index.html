@@ -13,28 +13,62 @@
 <header class="borderSectionNav">
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
         <div class="container">
-            <a class="navbar-brand " href="#">
-                <p class="h2"><img id="drapeauHeader" class="img-fluid" src="img/portugal_header.png" alt="Responsive image">
-                     Visitez le Portugal</p>
+            <a class="navbar-brand">
+                <img id="drapeauHeader" class="img-fluid" src="img/portugal_header.png" alt="Responsive image">
+            </a>
+            <a class="navbar-brand" href="index.html">
+                <h2 class="">Visitez le Portugal</h2>
             </a>
             <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span id="hamb"><i id="arrowHamb" class="far fa-arrow-alt-circle-down"></i></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav  ml-auto">
-                    <li class="nav-item active mx-5">
-                        <a class="nav-link" href="#">Début
-                            <span class="sr-only">(current)</span>
-                        </a>
+
+                    <li class="nav-item ">
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle text-white btn-drop" type="button" id="menu1" data-toggle="dropdown">Début
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                <a class="dropdown-item indx text-center" href="index.html">Début</a>
+                                <hr class="bg-white">
+                                <a class="dropdown-item indx" href="index.html#Portugal">Photos Portugal</a>
+                                <a class="dropdown-item indx" href="index.html#Gastronomie">Gastronomie</a>
+                                <a class="dropdown-item indx" href="index.html#sectionFontAwesome">Produits et style de vie</a>
+                            </ul>
+                        </div>
                     </li>
-                    <li class="nav-item mx-5">
-                        <a class="nav-link" href="#">Régions</a>
+
+                    <li class="nav-item mx-lg-5 mx-0">
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle text-white btn-drop" type="button" id="menu2" data-toggle="dropdown">Régions
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                <a class="dropdown-item indx text-center " href="regions.html">Regions</a>
+                                <hr class="bg-white">
+                                <a class="dropdown-item indx" href="regions.html#Algarve">Algarve</a>
+                                <a class="dropdown-item indx" href="regions.html#Douro">Douro</a>
+                                <a class="dropdown-item indx" href="regions.html#Geres">Gerês</a>
+                            </ul>
+                        </div>
                     </li>
-                    <li class="nav-item mx-5">
-                        <a class="nav-link" href="#">Quoi visiter</a>
+
+                    <li class="nav-item ">
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle text-white btn-drop" type="button" id="menu3" data-toggle="dropdown">Divers
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                <a class="dropdown-item indx text-center" href="divers.html">Divers</a>
+                                <hr class="bg-white">
+                                <a class="dropdown-item indx" href="divers.html#sportsPortugal">Soccer</a>
+                                <a class="dropdown-item indx" href="divers.html#monuments">Monuments</a>
+                                <a class="dropdown-item indx" href="divers.html#googleMaps">Carte google</a>
+                            </ul>
+                        </div>
                     </li>
-                    <li class="nav-item mx-5">
-                        <a class="nav-link" href="#">Contact</a>
+                    <li class="nav-item mx-lg-5 mx-0">
+                        <a class="" href="divers.html#formContact"><button class="btn btn-default text-white" type="button">Contact
+                            <span class="caret"></span></button></a>
                     </li>
                 </ul>
             </div>
@@ -47,23 +81,23 @@
         <div class="container-fluid" >
             <div class="row h-100">
                 <div class="offset-1 col-3 texteBaniere text-center porto">
-                    <p class="h1">Porto</p>
+                    <h1 class="">Porto</h1>
                     <hr class="my-4">
-                    <p class="h3 lead ">Porto est une ville du Portugal, elle est connue pour la commercialisation du vin de Porto, ses monuments et ses ponts sur le fleuve Douro.<br>
-                        Les habitants de Porto sont appelés Portuenses.</p>
+                    <h3 class="lead ">Porto est une ville du Portugal, elle est connue pour la commercialisation du vin de Porto, ses monuments et ses ponts sur le fleuve Douro.<br>
+                        Les habitants de Porto sont appelés Portuenses.</h3>
                 </div>
 
                 <div class="offset-6 col-5 texteBaniere text-center lisbon">
-                    <p class="h2">Lisbonne</p>
+                    <h2 class="">Lisbonne</h2>
                     <hr class="my-4">
-                    <p class="h3 lead ">Lisbonne est la capitale et la plus grande ville du Portugal.<br>
-                        Ses habitants sont habituellement appelés Lisboètes.</p>
+                    <h3 class="lead">Lisbonne est la capitale et la plus grande ville du Portugal.<br>
+                        Ses habitants sont habituellement appelés Lisboètes.</h3>
                 </div>
 
                 <div class="offset-7 col-4 texteBaniere text-center sintra">
-                    <p class="h1">Palais national de Pena</p>
+                    <h1 class="">Palais national de Pena</h1>
                     <hr class="my-4">
-                    <p class="h3 lead">Le palais de Pena est un édifice historique portugais situé sur l’une des cimes des monts de Sintra, au cœur d’un parc de 200 hectares de la ville de Sintra. <br> Il se caractérise par ses couleurs vives, jaune et rouge.</p>
+                    <h3 class=" lead">Le palais de Pena est un édifice historique portugais situé sur l’une des cimes des monts de Sintra, au cœur d’un parc de 200 hectares de la ville de Sintra. <br> Il se caractérise par ses couleurs vives, jaune et rouge.</h3>
                 </div>
             </div>
         </div>
@@ -73,7 +107,7 @@
 <section id="Portugal" class="sectionJumbotronModal py-5">
     <div class="container">
         <div class="jumbotron m-0">
-            <p class="h1 display-4 ">Portugal</p>
+            <h1 class=" display-4 ">Portugal</h1>
             <hr class="my-4 ">
             <p class="lead">Le Portugal, en forme longue la République portugaise, en portugais : República Portuguesa, est un pays d'Europe du Sud, membre de l'Union européenne, situé dans l'Ouest de la péninsule Ibérique.
                 <br>
@@ -82,7 +116,7 @@
                 <br>
                 <br>
                 Membre fondateur de l'OTAN, le Portugal est étroitement lié politiquement et militairement avec l'ensemble des autres pays occidentaux. </p>
-            <hr class="my-4 ">
+            <hr class="my-4">
             <p>Il est également membre de l’OCDE, de l'ONU, du conseil de l'Europe et de l’espace Schengen et est l'un des pays fondateurs de la zone euro. Le Portugal entretient en outre d'importantes relations avec l'Espagne et la France, l'Allemagne, le Royaume-Uni et l'Italie, qui sont ses cinq plus importants partenaires commerciaux.</p>
 
             <!-- Button trigger modal -->
@@ -172,14 +206,14 @@
 <section id="Gastronomie" class="SectionJumbotronCard py-5">
     <div class="container">
         <div class="jumbotron m-0">
-                <p class="h1 display-4 ">Gastronomie</p>
+                <h1 class="display-4 ">Gastronomie</h1>
                 <hr class="my-4 ">
             <div class="container ">
                     <div class="row p-3 no-gutters">
                         <div class="col-12 mb-3">
                             <div class="card shadow mb-5">
                                 <div class="card-header bg-dark">
-                                    <p class="h2 text-white">Cuisine portugaise</p>
+                                    <h2 class="text-white">Cuisine portugaise</h2>
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">Variété</h5>
@@ -233,8 +267,8 @@
 <section id="sectionFontAwesome" class="pb-5">
     <div class="container ">
         <div class="pt-5 d-flex text-center flex-column">
-            <div class="h3">
-                <p>Produits et style de vie<p>
+            <div class="">
+                <h3>Produits et style de vie</h3>
                 <hr>
             </div>
         </div>
@@ -242,28 +276,28 @@
             <div class="col-xl-3 col-md-6 col-12 d-flex text-center align-items-center flex-column">
                 <i class="fas fa-wine-glass-alt fa-3x"></i>
                 <div>
-                    <p class="h4">Le Porto<p>
+                    <h4 class="">Le Porto</h4>
                     <p>Le porto est un vin muté portugais, produit uniquement dans la région du Haut Douro</p>
                 </div>
             </div>
             <div class="col-xl-3 col-md-6 col-12 d-flex text-center align-items-center flex-column">
                 <i class="fas fa-umbrella-beach fa-3x"></i>
                 <div>
-                    <p class="h4">Plage<p>
+                    <h4 class="">Plage</h4>
                     <p>Le Portugal possède un immense littoral plein de belles plages qui s'étendent de la côte même à l'intérieur du pays. </p>
                 </div>
             </div>
             <div class="col-xl-3 col-md-6 col-12 d-flex text-center align-items-center flex-column">
                 <i class="fas fa-map-marked-alt fa-3x"></i>
                 <div>
-                    <p class="h4">Localisation<p>
+                    <h4 class="">Localisation</h4>
                     <p>Le Portugal est l'une des plus anciennes nations d'Europe à avoir établi sa frontière continentale ... Le Portugal est situé sur le côté ouest de la péninsule ibérique
                 </div>
             </div>
             <div class="col-xl-3 col-md-6 col-12 d-flex text-center align-items-center flex-column">
                 <i class="fas fa-futbol fa-3x"></i>
                 <div>
-                    <p class="h4">Soccer<p>
+                    <h4 class="">Soccer</h4>
                     <p>Le soccer est le sport le plus populaire au Portugal. Il est central dans la culture portugaise.</p>
                 </div>
             </div>

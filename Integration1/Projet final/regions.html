@@ -14,28 +14,62 @@
 <header class="borderSectionNav">
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
         <div class="container">
-            <a class="navbar-brand " href="#">
-                <p class="h2"><img id="drapeauHeader" class="img-fluid" src="img/portugal_header.png" alt="Responsive image">
-                    Visitez le Portugal</p>
+            <a class="navbar-brand">
+                <img id="drapeauHeader" class="img-fluid" src="img/portugal_header.png" alt="Responsive image">
+            </a>
+            <a class="navbar-brand" href="index.html">
+                <h2 class="">Visitez le Portugal</h2>
             </a>
             <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span id="hamb"><i id="arrowHamb" class="far fa-arrow-alt-circle-down"></i></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav  ml-auto">
-                    <li class="nav-item active mx-5">
-                        <a class="nav-link" href="#">Début
-                            <span class="sr-only">(current)</span>
-                        </a>
+
+                    <li class="nav-item ">
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle text-white btn-drop" type="button" id="menu1" data-toggle="dropdown">Début
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                <a class="dropdown-item indx text-center" href="index.html">Début</a>
+                                <hr class="bg-white">
+                                <a class="dropdown-item indx" href="index.html#Portugal">Photos Portugal</a>
+                                <a class="dropdown-item indx" href="index.html#Gastronomie">Gastronomie</a>
+                                <a class="dropdown-item indx" href="index.html#sectionFontAwesome">Produits et style de vie</a>
+                            </ul>
+                        </div>
                     </li>
-                    <li class="nav-item mx-5">
-                        <a class="nav-link" href="#">Régions</a>
+
+                    <li class="nav-item mx-lg-5 mx-0">
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle text-white btn-drop" type="button" id="menu2" data-toggle="dropdown">Régions
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                <a class="dropdown-item indx text-center " href="regions.html">Regions</a>
+                                <hr class="bg-white">
+                                <a class="dropdown-item indx" href="regions.html#Algarve">Algarve</a>
+                                <a class="dropdown-item indx" href="regions.html#Douro">Douro</a>
+                                <a class="dropdown-item indx" href="regions.html#Geres">Gerês</a>
+                            </ul>
+                        </div>
                     </li>
-                    <li class="nav-item mx-5">
-                        <a class="nav-link" href="#">Quoi visiter</a>
+
+                    <li class="nav-item ">
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle text-white btn-drop" type="button" id="menu3" data-toggle="dropdown">Divers
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                <a class="dropdown-item indx text-center" href="divers.html">Divers</a>
+                                <hr class="bg-white">
+                                <a class="dropdown-item indx" href="divers.html#sportsPortugal">Soccer</a>
+                                <a class="dropdown-item indx" href="divers.html#monuments">Monuments</a>
+                                <a class="dropdown-item indx" href="divers.html#googleMaps">Carte google</a>
+                            </ul>
+                        </div>
                     </li>
-                    <li class="nav-item mx-5">
-                        <a class="nav-link" href="#">Contact</a>
+                    <li class="nav-item mx-lg-5 mx-0">
+                        <a class="" href="divers.html#formContact"><button class="btn btn-default text-white" type="button">Contact
+                            <span class="caret"></span></button></a>
                     </li>
                 </ul>
             </div>
@@ -54,9 +88,9 @@
         <div class="container h-100">
             <div class="row h-100 text-center align-items-center" >
                 <div class="col-12 text-white" >
-                    <p class="h1 display-3">Portugal</p>
+                    <h1 class="display-3">Portugal</h1>
                     <hr class="my-4 bg-white">
-                    <p class="h3 lead mb-0">Régions</p>
+                    <h3 class="lead mb-0">Régions</h3>
                 </div>
             </div>
         </div>
@@ -72,7 +106,7 @@
                 <i class="fas fa-umbrella-beach fa-7x"></i>
             </div>
             <div id='descriptionAlgarve' class="col-6">
-                <p class="h1">Algarve</p>
+                <h1 class="">Algarve</h1>
                 <p>L’Algarve est la région la plus au sud du Portugal, bordée à l’ouest et au sud par l’océan Atlantique. Cette région se démarque par sa quantité et variété de plages et son climat plus que parfait pour des vacances au soleil.</p>
                 <p> Voici quelques images:</p>
             </div>
@@ -112,9 +146,8 @@
                 <i class="fas fa-mountain fa-7x"></i>
             </div>
             <div id='descriptionDouro' class="col-6 text-white">
-                <p class="h1">La vallée du Douro</p>
-                <p>La beauté et l'émerveillement que suscitent ses paysages sont tels que la vallée du Douro pourrait bien s'appeler la vallée enchantée.
-                </p>
+                <h1 class="">La vallée du Douro</h1>
+                <p>La beauté et l'émerveillement que suscitent ses paysages sont tels que la vallée du Douro pourrait bien s'appeler la vallée enchantée.</p>
                 <p>Voici quelques photos:</p>
             </div>
         </div>
@@ -155,12 +188,10 @@
                 <i class="fas fa-tree fa-7x"></i>
             </div>
             <div id='descriptionGeres' class="col-7 text-white">
-                <p class="h1">Parc national de Peneda-Gerês</p>
-                <p>
-                Le parc national de Peneda-Gerês, créé le 8 mai 1971 et d'une superficie de 72 000 ha, est le seul parc national du Portugal.
+                <h1 class="">Parc national de Peneda-Gerês</h1>
+                <p>Le parc national de Peneda-Gerês, créé le 8 mai 1971 et d'une superficie de 72 000 ha, est le seul parc national du Portugal.
                 Il est situé tout au Nord du pays, sur les districts de Braga, Viana do Castelo et Vila Real.
-                Rencogné contre la frontière espagnole, le parc est modelé par les montagnes, les torrents et les rivières, les gorges et les canyons.
-                </p>
+                Rencogné contre la frontière espagnole, le parc est modelé par les montagnes, les torrents et les rivières, les gorges et les canyons.</p>
             </div>
         </div>
 
@@ -171,12 +202,6 @@
         </div>
     </div>
 </section>
-
-
-<!--<section id="googleMaps" class="">-->
-<!--    <iframe class="map" width="100%" height="100%" frameborder="0" scrolling="yes" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6513226.430194585!2d-23.31680145568936!3d37.14589032371816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb32242dbf4226d5%3A0x2ab84b091c4ef041!2sPortugal!5e0!3m2!1sen!2sca!4v1585899168895!5m2!1sen!2sca"></iframe>-->
-<!--</section>-->
-
 
 <footer>
     <div class="container-fluid PiedDePage p-3">

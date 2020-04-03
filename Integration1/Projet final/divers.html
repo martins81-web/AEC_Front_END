@@ -10,32 +10,65 @@
 </head>
 <body id="bodyDivers">
 
-
 <header class="borderSectionNav">
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
         <div class="container">
-            <a class="navbar-brand " href="#">
-                <p class="h2"><img id="drapeauHeader" class="img-fluid" src="img/portugal_header.png" alt="Responsive image">
-                    Visitez le Portugal</p>
+            <a class="navbar-brand">
+                <img id="drapeauHeader" class="img-fluid" src="img/portugal_header.png" alt="Responsive image">
+            </a>
+            <a class="navbar-brand" href="index.html">
+                <h2 class="">Visitez le Portugal</h2>
             </a>
             <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span id="hamb"><i id="arrowHamb" class="far fa-arrow-alt-circle-down"></i></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav  ml-auto">
-                    <li class="nav-item active mx-5">
-                        <a class="nav-link" href="#">Début
-                            <span class="sr-only">(current)</span>
-                        </a>
+
+                    <li class="nav-item ">
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle text-white btn-drop" type="button" id="menu1" data-toggle="dropdown">Début
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                <a class="dropdown-item indx text-center" href="index.html">Début</a>
+                                <hr class="bg-white">
+                                <a class="dropdown-item indx" href="index.html#Portugal">Photos Portugal</a>
+                                <a class="dropdown-item indx" href="index.html#Gastronomie">Gastronomie</a>
+                                <a class="dropdown-item indx" href="index.html#sectionFontAwesome">Produits et style de vie</a>
+                            </ul>
+                        </div>
                     </li>
-                    <li class="nav-item mx-5">
-                        <a class="nav-link" href="#">Régions</a>
+
+                    <li class="nav-item mx-lg-5 mx-0">
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle text-white btn-drop" type="button" id="menu2" data-toggle="dropdown">Régions
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                <a class="dropdown-item indx text-center " href="regions.html">Regions</a>
+                                <hr class="bg-white">
+                                <a class="dropdown-item indx" href="regions.html#Algarve">Algarve</a>
+                                <a class="dropdown-item indx" href="regions.html#Douro">Douro</a>
+                                <a class="dropdown-item indx" href="regions.html#Geres">Gerês</a>
+                            </ul>
+                        </div>
                     </li>
-                    <li class="nav-item mx-5">
-                        <a class="nav-link" href="#">Quoi visiter</a>
+
+                    <li class="nav-item ">
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle text-white btn-drop" type="button" id="menu3" data-toggle="dropdown">Divers
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                <a class="dropdown-item indx text-center" href="divers.html">Divers</a>
+                                <hr class="bg-white">
+                                <a class="dropdown-item indx" href="divers.html#sportsPortugal">Soccer</a>
+                                <a class="dropdown-item indx" href="divers.html#monuments">Monuments</a>
+                                <a class="dropdown-item indx" href="divers.html#googleMaps">Carte google</a>
+                            </ul>
+                        </div>
                     </li>
-                    <li class="nav-item mx-5">
-                        <a class="nav-link" href="#">Contact</a>
+                    <li class="nav-item mx-lg-5 mx-0">
+                        <a class="" href="divers.html#formContact"><button class="btn btn-default text-white" type="button">Contact
+                            <span class="caret"></span></button></a>
                     </li>
                 </ul>
             </div>
@@ -51,7 +84,7 @@
                 <p class="h1">Soccer</p>
                 <hr class="my-4">
                 <p class="h3 lead ">Le soccer est le sport le plus populaire au Portugal. Ce sport a une longue et riche histoire dans le pays.
-                    Le soccer est le sport le plus populaire au Portugal et ses versions dérivées très pratiquées (futsal et football de plage) jouissent d'un grand succès international.</p>
+                    Et ses versions dérivées très pratiquées (futsal et football de plage) jouissent d'un grand succès international.</p>
             </div>
         </div>
     </div>
@@ -90,13 +123,13 @@
 </section>
 
 <section id="formContact" class="">
-        <div id="containerContact" class="container py-4">
+        <div id="containerContact" class="container py-4 px-2">
             <div class="row">
                 <div class="col-4 d-flex align-items-center justify-content-center">
                     <i class="fa  fa-envelope fa-7x"></i>
                 </div>
                 <div id='contact' class="col-7" >
-                    <p class="h1">Avez vous besoin de plus d'informations?</p>
+                    <p class="h1">Avez-vous besoin d'informations supplémentaires?</p>
                     <p>
                         Contactez-nous!
                     </p>
@@ -124,7 +157,13 @@
                     <textarea class="form-control" id="Textarea" rows="5"></textarea>
                 </div>
             </form>
-            <button type="submit" class="btn btn-dark">Submit</button>
+            <button type="submit" class="btn btn-dark">Envoyer</button>
+
+            <div class="row pt-5">
+                <div class="col-12 ">
+                    <p class="h4">Pour tout type de demandes vous pouvez nous contacter aussi sur <a  href = "mailto: VisitezPortugal@fake.mail">VisitezPortugal@fake.mail</a>.</p>
+                </div>
+            </div>
         </div>
 </section>
 

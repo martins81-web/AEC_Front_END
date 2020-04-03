@@ -24,7 +24,7 @@ var himne = new Audio();
 himne.src = "https://upload.wikimedia.org/wikipedia/commons/5/58/A_Portuguesa.ogg";
 
 var click=true;
-$(document).on('click', "#drapeauHeader, #drapeauFooter", function(){
+$(document).on('click', "#drapeauHeader, #drapeauFooter", function(e){
         if (click===true){
                 PlaySound();
                 click=false;
@@ -34,6 +34,7 @@ $(document).on('click', "#drapeauHeader, #drapeauFooter", function(){
                 click=true;
         }
 });
+
 
 function PlaySound() {
         himne.play();

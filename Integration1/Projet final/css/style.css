@@ -296,3 +296,17 @@ footer {
 #containerContact{
     background-color: #eff5e7;
 }
+
+
+/*menu*/
+.dropdown-menu{
+    background-color: #006600;
+    border: 2px solid white;
+}
+.dropdown-menu a{
+   color: white;
+}
+
+.dropdown-menu:active {
+    border: 1px solid white;
+}
