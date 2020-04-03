@@ -2,9 +2,6 @@
     background-color: #006600;
 }
 
-.custom-toggler .navbar-toggler-icon {
-    background-image: url("../img/toggler.svg");
-}
 
 .rotated {
     transform: rotate(180deg);
@@ -25,12 +22,15 @@ hr{
 }
 
 
-
 .baniere{
-    background-image: url("../img/imagem_porto.jpg");
+    background-image: url("../img/sintra.jpg");
 }
 
-.sectionJumbotron .h1 {
+.sintra{
+    display: inline;
+}
+
+.sectionJumbotronModal .h1 {
     font-weight: bolder;
     color: #050043;
 }
@@ -41,15 +41,13 @@ hr{
 }
 
 .texteBaniere{
-    background-color: rgba(255, 229, 12, 0.8);
+    background-color: rgba(255, 229, 12, 0.9);
     margin-top: auto;
     margin-bottom: 10%;
 }
-/*36A8-EDFE*/
 
 
-
-.lisbon,.sintra{
+.lisbon,.porto{
     display: none;
 }
 
@@ -57,9 +55,19 @@ hr{
     background-color: white;
 }
 
-.sectionJumbotron{
+.sectionJumbotronModal{
     background-image: url("../img/azulejo.jpg");
 }
+
+.SectionJumbotronCard{
+    background-image: url("../img/bgWood.jpg");
+
+}
+
+.bgGastronomie{
+    background-color: #3b5998;
+}
+
 
 .bgModal{
     background-color: darkred;
@@ -89,15 +97,16 @@ hr{
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 576px) and (max-width: 768px) {
     .baniere{
-        background-image: url("../img/sintra.jpg");
+        background-image: url("../img/imagem_porto.jpg");
     }
-
-    .lisbon,.porto{
-        display: none;
-    }
-    .sintra{
+    .porto{
         display: inline;
     }
+
+    .lisbon,.sintra{
+        display: none;
+    }
+
 
     .texteBaniere{
         margin-top: auto;

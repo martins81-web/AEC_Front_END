@@ -17,7 +17,7 @@
                 <p class="h2"><img class="img-fluid" src="img/portugal_header.png" alt="Responsive image"> Visitez le Portugal</p>
             </a>
             <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span id="hamb"><i id="arrowHamb" class="far fa-arrow-alt-circle-down"></i></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav  ml-auto">
@@ -46,7 +46,7 @@
         <div class="container-fluid" >
             <div class="row h-100">
                 <div class="offset-1 col-3 texteBaniere text-center porto">
-                    <p class="h1">Porto</h1>
+                    <p class="h1">Porto</p>
                     <hr class="my-4">
                     <p class="h3 lead ">Porto est une ville du Portugal, elle est connue pour la commercialisation du vin de Porto, ses monuments et ses ponts sur le fleuve Douro.<br>
                         Les habitants de Porto sont appelés Portuenses.</p>
@@ -59,7 +59,7 @@
                         Ses habitants sont habituellement appelés Lisboètes.</p>
                 </div>
 
-                <div class="offset-6 col-5 texteBaniere text-center sintra">
+                <div class="offset-7 col-4 texteBaniere text-center sintra">
                     <p class="h1">Palais national de Pena</p>
                     <hr class="my-4">
                     <p class="h3 lead">Le palais de Pena est un édifice historique portugais situé sur l’une des cimes des monts de Sintra, au cœur d’un parc de 200 hectares de la ville de Sintra. <br> Il se caractérise par ses couleurs vives, jaune et rouge.</p>
@@ -69,9 +69,9 @@
 </section>
 
 
-<section class="sectionJumbotron py-5">
+<section class="sectionJumbotronModal py-5">
     <div class="container">
-        <div class="jumbotron  ">
+        <div class="jumbotron">
             <p class="h1 display-4 ">Portugal</p>
             <hr class="my-4 ">
             <p class="lead">Le Portugal, en forme longue la République portugaise, en portugais : República Portuguesa, est un pays d'Europe du Sud, membre de l'Union européenne, situé dans l'Ouest de la péninsule Ibérique.
@@ -159,6 +159,109 @@
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="SectionJumbotronCard py-5">
+    <div class="container">
+        <div class="jumbotron">
+                <p class="h1 display-4 ">Gastronomie</p>
+                <hr class="my-4 ">
+            <div class="container ">
+                    <div class="row p-3 no-gutters">
+                        <div class="col-12 mb-3">
+                            <div class="card">
+                                <div class="card-header bg-dark">
+                                    <p class="h2 text-white">Cuisine portugaise</p>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Variété</h5>
+                                    <p class="card-text">La cuisine portugaise ne se résume pas qu'au poulet portugais! Le poisson et les fruits de mer jouent un rôle central dans cette gastronomie variée, généreuse et traditionnelle.</p>
+                                    <a href="https://fr.wikipedia.org/wiki/Cuisine_portugaise"  target="_blank" class="btn btn-outline-danger">Plus d'information</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-12 col-xl-4">
+                            <div class="card  h-100" >
+                                <img class="card-img-top" src="img/pasteis-de-belem.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Pastéis de Belém</h5>
+                                    <p class="card-text">Un pastel de nata est une pâtisserie typique de la cuisine portugaise. Il s'agit d'une sorte de flan pâtissier, parfois dégusté tiède. La Fábrica dos pastéis de Belém (l'original) utilise le terme pastel de Belém. La pâtisserie a été créée dans la petite ville de Belém, aujourd'hui un quartier de Lisbonne. </p>
+                                    <a href="https://pasteisdebelem.pt/fr/" target="_blank" class="btn btn-primary">Détails</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-xl-4 py-xl-0 py-3">
+                            <div class="card h-100 mx-xl-3 mx-md-0 ">
+                                <img class="card-img-top" src="img/leitao.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Leitão - Cochon de lait</h5>
+                                    <p class="card-text">Le cochon de lait rôti à Bairrada est un des plats plus connus et appréciés dans la région de Bairrada, au Portugal, ayant été nommée l’une des 7 merveilles de la gastronomie portugaise en 2011, et étant l’un des 21 plats finalistes. </p>
+                                    <a href="http://cuisinept.com/cochon-lait-roti-bairrada/" target="_blank" class="btn btn-success">Recette</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-xl-4">
+                            <div class="card  h-100" >
+                                <img class="card-img-top" src="img/bacalhau.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Morue au four</h5>
+                                    <p class="card-text">La morue au four un plat typique et célèbre du Portugal "Bacalhau assado no forno". La morue au four avec pommes de terre rôties est un plat traditionnel de la cuisine portugaise. Ce plat est consommé dans tout le pays du Portugal, avec de petites variations.</p>
+                                    <a href="https://www.750g.com/morue-au-four-a-la-portugaise-r99961.htm" target="_blank" class="btn btn-warning">Recette</a>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="sectionFontAwesome" class="pb-3">
+    <div class="container ">
+        <div class="pt-5 d-flex text-center flex-column">
+            <div class="h3">
+                <p>Produits et style de vie<p>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-3 col-md-6 col-12 d-flex text-center align-items-center flex-column">
+                <i class="fas fa-wine-glass-alt fa-3x"></i>
+                <div>
+                    <p class="h4">Le Porto<p>
+                    <p>Le porto est un vin muté portugais, produit uniquement dans la région du Haut Douro</p>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 col-12 d-flex text-center align-items-center flex-column">
+                <i class="fas fa-umbrella-beach fa-3x"></i>
+                <div>
+                    <p class="h4">Plage<p>
+                    <p>Le Portugal possède un immense littoral plein de belles plages qui s'étendent de la côte même à l'intérieur du pays. </p>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 col-12 d-flex text-center align-items-center flex-column">
+                <i class="fas fa-map-marked-alt fa-3x"></i>
+                <div>
+                    <p class="h4">Localisation<p>
+                    <p>Le Portugal est l'une des plus anciennes nations d'Europe à avoir établi sa frontière continentale ... Le Portugal est situé sur le côté ouest de la péninsule ibérique
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 col-12 d-flex text-center align-items-center flex-column">
+                <i class="fas fa-futbol fa-3x"></i>
+                <div>
+                    <p class="h4">Soccer<p>
+                    <p>Le soccer est le sport le plus populaire au Portugal. Il est central dans la culture portugaise.</p>
                 </div>
             </div>
         </div>
