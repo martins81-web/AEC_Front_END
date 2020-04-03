@@ -73,6 +73,16 @@ hr{
     background-color: darkred;
 }
 
+.carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+}
+
+.carousel-indicators {
+    bottom: -40px;
+}
+
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 576px) {
