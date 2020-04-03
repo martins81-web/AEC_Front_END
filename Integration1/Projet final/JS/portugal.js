@@ -17,3 +17,7 @@ $(document).on('mouseleave', '#btnPhotos', function(e) {
         $(this).css('background-color', "#050043");
 });
 
+
+function playAudio(url) {
+        new Audio(url).play();
+}

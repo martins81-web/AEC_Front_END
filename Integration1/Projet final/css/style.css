@@ -84,6 +84,10 @@ hr{
 }
 
 
+.shadow {
+    box-shadow: 2px 2px 4px #000000;
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 576px) {
     .baniere{
