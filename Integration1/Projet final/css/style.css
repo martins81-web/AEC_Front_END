@@ -1,5 +1,14 @@
-/* sections regions */
 
+.map {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+
+/* sections regions */
 /* section baniere video */
 .video {
     position: relative;
@@ -160,47 +169,29 @@ video {
 
 
 
-
-
 hr{
     background-color: black;
 }
 
 
+
+/* Section Jumbotron/Modal/Carroussel */
 .sectionJumbotronModal .h1 {
     font-weight: bolder;
     color: #050043;
-}
-
-.buttonVoirPhotos {
-    background-color: #050043;
-    color: white;
-}
-
-
-
-
-
-
-.jumbotron{
-    background-color: white;
 }
 
 .sectionJumbotronModal{
     background-image: url("../img/azulejo.jpg");
 }
 
-.SectionJumbotronCard{
-    background-image: url("../img/bgWood.jpg");
-
-}
-footer {
-    background-color: black;
-}
-
-
 .bgModal{
     background-color: darkred;
+}
+
+.buttonVoirPhotos {
+    background-color: #050043;
+    color: white;
 }
 
 .carousel-indicators li {
@@ -212,10 +203,31 @@ footer {
 .carousel-indicators {
     bottom: -40px;
 }
+/*Fin section Jumbotron/Modal/Carroussel */
 
+
+/* Section Jumbotron/Cards/buttons */
+.jumbotron{
+    background-color: white;
+}
+
+.SectionJumbotronCard{
+    background-image: url("../img/bgWood.jpg");
+
+}
 .shadow {
     box-shadow: 2px 2px 4px #000000;
 }
+/* Fin section Jumbotron/Cards/buttons */
+
+
+
+footer {
+    background-color: black;
+}
+
+
+
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 576px) {
@@ -249,7 +261,6 @@ footer {
     .lisbon,.sintra{
         display: none;
     }
-
 
     .texteBaniere{
         margin-top: auto;
