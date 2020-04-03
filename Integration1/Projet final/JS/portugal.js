@@ -1,5 +1,6 @@
 
 
+
 $( ".navbar-toggler" ).click(function() {
         $("#arrowHamb").toggleClass("rotated");
 });
@@ -41,4 +42,6 @@ function PlaySound() {
 function PauseSound() {
         himne.pause();
 }
+
+
 
