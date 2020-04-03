@@ -6,15 +6,15 @@
     <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.css">
     <!-- VOTRE CSS ICI APPPPPPRRRRREEESSSSS -->
     <link rel="stylesheet" href="css/style.css">
-
+<!--    <audio id="audio"></audio>-->
 </head>
 <body>
 
-<header>
+<header class="borderSectionNav">
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
         <div class="container">
             <a class="navbar-brand " href="#">
-                <p class="h2"><img class="img-fluid" src="img/portugal_header.png" alt="Responsive image" onclick="playAudio('https://upload.wikimedia.org/wikipedia/commons/5/58/A_Portuguesa.ogg')">
+                <p class="h2"><img id="drapeauHeader" class="img-fluid" src="img/portugal_header.png" alt="Responsive image">
                      Visitez le Portugal</p>
             </a>
             <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,7 +43,7 @@
 </header>
 
 
-<section class="baniere parallax">
+<section id="baniere" class="baniere parallax">
         <div class="container-fluid" >
             <div class="row h-100">
                 <div class="offset-1 col-3 texteBaniere text-center porto">
@@ -70,9 +70,9 @@
 </section>
 
 
-<section class="sectionJumbotronModal py-5">
+<section id="Portugal" class="sectionJumbotronModal py-5">
     <div class="container">
-        <div class="jumbotron">
+        <div class="jumbotron m-0">
             <p class="h1 display-4 ">Portugal</p>
             <hr class="my-4 ">
             <p class="lead">Le Portugal, en forme longue la République portugaise, en portugais : República Portuguesa, est un pays d'Europe du Sud, membre de l'Union européenne, situé dans l'Ouest de la péninsule Ibérique.
@@ -169,15 +169,15 @@
 
 
 
-<section class="SectionJumbotronCard py-5">
+<section id="Gastronomie" class="SectionJumbotronCard py-5">
     <div class="container">
-        <div class="jumbotron">
+        <div class="jumbotron m-0">
                 <p class="h1 display-4 ">Gastronomie</p>
                 <hr class="my-4 ">
             <div class="container ">
                     <div class="row p-3 no-gutters">
                         <div class="col-12 mb-3">
-                            <div class="card shadow">
+                            <div class="card shadow mb-5">
                                 <div class="card-header bg-dark">
                                     <p class="h2 text-white">Cuisine portugaise</p>
                                 </div>
@@ -229,7 +229,8 @@
 </section>
 
 
-<section id="sectionFontAwesome" class="pb-3">
+
+<section id="sectionFontAwesome" class="pb-5">
     <div class="container ">
         <div class="pt-5 d-flex text-center flex-column">
             <div class="h3">
@@ -270,6 +271,32 @@
     </div>
 </section>
 
+
+
+<footer>
+    <div class="container-fluid PiedDePage p-3">
+        <div class="row text-center">
+            <div class="col-12">
+                <img id="drapeauFooter" src="img/portugal_footer.png" class="img-fluid" alt="piedPage" onclick="playAudio('https://upload.wikimedia.org/wikipedia/commons/5/58/A_Portuguesa.ogg')"/>
+            </div>
+        </div>
+        <hr class="bg-white">
+        <div class="row text-center text-white">
+            <div class="offset-2 offset-sm-4 col-2 col-sm-1">
+                <a href="https://twitter.com/portugal" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
+            </div>
+            <div class="col-2 col-sm-1">
+                <a href="https://www.facebook.com/Visitportugal/" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
+            </div>
+            <div class="col-2 col-sm-1">
+                <a href="https://www.instagram.com/visitportugal/?hl=fr" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
+            </div>
+            <div class="col-2 col-sm-1">
+                <a href="https://www.youtube.com/visitportugal" target="_blank"><i class="fa fa-youtube fa-2x"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
 
 <script src="https://kit.fontawesome.com/a46d75ba7a.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

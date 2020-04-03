@@ -1,12 +1,134 @@
+/* sections regions */
+
+/* section baniere video */
+.video {
+    position: relative;
+    background-color : black;
+    height: 100%;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.video video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform : translateX(-50%) translateY(-50%);
+    -webkit-transform : translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+css .header .container {
+    position: relative;
+    z-index: 2;
+}
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color : black;
+    opacity: 0.6;
+    z-index: 1;
+}
+/* Fin section banière video */
+
+#regionsAlgarve {
+    background-color: #ff9300;
+}
+
+#regionsDouro {
+    background-color: #9b111e;
+}
+
+#regionsGeres {
+    background-color: #006600;
+}
+
+#bodyRegions {
+    background-image: url("../img/bodyRegionsBg.jpg");
+}
+
+.fa-mountain,.fa-tree{
+    color: white;
+}
+
+.borderVideoGeres{
+    border: 2px groove white;
+}
+
+.borderSectionNav {
+    border-bottom: 5px solid white;
+}
+
+.borderSectionVideoBottom {
+    border-bottom: 5px solid white;
+}
+
+
+/* section Douro */
+/* Creation Image Grid */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+/* Creation 4 columns égales*/
+.column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+/* Responsive 2 columns */
+@media screen and (max-width: 800px) {
+    .column {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+/* Responsive 2  columns une sur l'autre */
+@media screen and (max-width: 600px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+/* fin section Douro */
+/* fin sections regions */
+
+
+
+
+/* NavBar */
 .navbar-custom {
     background-color: #006600;
 }
 
-
 .rotated {
     transform: rotate(180deg);
 }
+/* Fin NavBar */
 
+
+
+/* Section banière Paralax*/
 .parallax {
     /* L’hauteur du Parallax */
     height: 100%;
@@ -17,11 +139,6 @@
     background-size: cover;
 }
 
-hr{
-    background-color: black;
-}
-
-
 .baniere{
     background-image: url("../img/sintra.jpg");
 }
@@ -29,6 +146,26 @@ hr{
 .sintra{
     display: inline;
 }
+
+.lisbon,.porto{
+    display: none;
+}
+
+.texteBaniere{
+    background-color: rgba(255, 229, 12, 0.9);
+    margin-top: auto;
+    margin-bottom: 10%;
+}
+/* Fin Section banière Paralax*/
+
+
+
+
+
+hr{
+    background-color: black;
+}
+
 
 .sectionJumbotronModal .h1 {
     font-weight: bolder;
@@ -40,16 +177,10 @@ hr{
     color: white;
 }
 
-.texteBaniere{
-    background-color: rgba(255, 229, 12, 0.9);
-    margin-top: auto;
-    margin-bottom: 10%;
-}
 
 
-.lisbon,.porto{
-    display: none;
-}
+
+
 
 .jumbotron{
     background-color: white;
@@ -63,9 +194,8 @@ hr{
     background-image: url("../img/bgWood.jpg");
 
 }
-
-.bgGastronomie{
-    background-color: #3b5998;
+footer {
+    background-color: black;
 }
 
 
@@ -82,7 +212,6 @@ hr{
 .carousel-indicators {
     bottom: -40px;
 }
-
 
 .shadow {
     box-shadow: 2px 2px 4px #000000;
@@ -127,3 +256,6 @@ hr{
         margin-bottom: 5%;
     }
 }
+
+
+

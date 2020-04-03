@@ -18,6 +18,27 @@ $(document).on('mouseleave', '#btnPhotos', function(e) {
 });
 
 
-function playAudio(url) {
-        new Audio(url).play();
+
+var himne = new Audio();
+himne.src = "https://upload.wikimedia.org/wikipedia/commons/5/58/A_Portuguesa.ogg";
+
+var click=true;
+$(document).on('click', "#drapeauHeader, #drapeauFooter", function(){
+        if (click===true){
+                PlaySound();
+                click=false;
+
+        } else {
+                PauseSound();
+                click=true;
+        }
+});
+
+function PlaySound() {
+        himne.play();
 }
+
+function PauseSound() {
+        himne.pause();
+}
+
