@@ -1,6 +1,6 @@
 
 
-
+/* Google map noir et blanc */
 .map {
     -webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);
@@ -8,7 +8,7 @@
     -o-filter: grayscale(100%);
     filter: grayscale(100%);
 }
-
+/*  Fin Google map */
 
 /* sections regions */
 /* section baniere video */
@@ -81,9 +81,6 @@ video {
     border-bottom: 5px solid white;
 }
 
-.borderSectionVideoBottom {
-    border-bottom: 5px solid white;
-}
 
 
 /* section Douro */
