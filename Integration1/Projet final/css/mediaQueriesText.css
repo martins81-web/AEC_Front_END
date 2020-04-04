@@ -1,8 +1,11 @@
-
+/*<!-- mediaQueriesText.css -->*/
+/*<!-- Projet final d'Integration1 par Eric Martins -->*/
+/*<!-- Crée le 12 mars 2020 -->*/
+/*<!-- Dernier mise à jour le 04 avril 2020 -->*/
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    /*header navBar*/
+
     header h2{
         font-size: 1.2rem;
     }
@@ -18,7 +21,7 @@
         font-size: 1.6rem;
     }
     .fas,.fab{
-        font-size: 4rem; /*size whatever you like*/
+        font-size: 4rem;
     }
 
     section h1{
@@ -41,7 +44,7 @@
         font-size: 1rem;
     }
     .fas,.fab{
-        font-size: 6rem; /*size whatever you like*/
+        font-size: 6rem;
     }
 
     section h1{
@@ -51,7 +54,7 @@
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-    /*header navBar*/
+
     header h2{
         font-size: 2rem;
     }
@@ -66,7 +69,7 @@
     }
 
     .fas,.fab{
-        font-size: 7rem; /*size whatever you like*/
+        font-size: 7rem;
     }
 
     section h1{
@@ -76,7 +79,6 @@
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-    /*header navBar*/
     header h2{
         font-size: 2rem;
     }
@@ -85,7 +87,7 @@
         font-size: 1rem;
     }
     .fas,.fab{
-        font-size: 7rem; /*size whatever you like*/
+        font-size: 7rem;
     }
 
     section h1{
@@ -96,7 +98,7 @@
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
 
-    /*header navBar*/
+
     header h2{
         font-size: 2.2rem;
     }
@@ -106,7 +108,7 @@
     }
 
     .fas,.fa-fort-awesome{
-        font-size: 8rem; /*size whatever you like*/
+        font-size: 8rem;
     }
 
     section h1{

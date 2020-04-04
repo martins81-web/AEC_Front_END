@@ -1,6 +1,9 @@
+/*<!-- style.css -->*/
+/*<!-- Projet final d'Integration1 par Eric Martins -->*/
+/*<!-- Crée le 12 mars 2020 -->*/
+/*<!-- Dernier mise à jour le 04 avril 2020 -->*/
 
-
-/* Google map noir et blanc */
+/* Google maps noir et blanc */
 .map {
     -webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);
@@ -77,9 +80,6 @@ video {
     border: 2px groove white;
 }
 
-.borderSectionNav {
-    border-bottom: 5px solid white;
-}
 
 
 
@@ -271,7 +271,7 @@ footer {
 }
 
 
-
+/*Page trois - Divers*/
 .sports{
     background-image: url("../img/euro.jpg");
 }
@@ -303,9 +303,10 @@ footer {
     padding-top: 10%;
     padding-bottom: 10%;
 }
+/*Fin Page 3 - Divers*/
 
 
-/*menu*/
+/*menu navBar*/
 .dropdown-menu{
     background-color: #006600;
     border: 2px solid white;
@@ -317,3 +318,4 @@ footer {
 .dropdown-menu:active {
     border: 1px solid white;
 }
+/*Fin menu navBar*/
