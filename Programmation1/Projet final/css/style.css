@@ -1,11 +1,19 @@
+/*<!-- style.css -->*/
+/*<!-- Projet final - Programmation1 - par Eric Martins -->*/
+/*<!-- Crée le 26 mars 2020 -->*/
+/*<!-- Dernier mise à jour le 4 avril 2020 -->*/
+
+/*classe pour cacher des elements*/
 .hide{
     display: none;
 }
 
+/*allignment du texte dans l'input de l'étape 1*/
 input{
     text-align:center;
 }
 
+/*diférents types de bordures*/
 .borderBlack{
     border: 1px solid black;
 }
@@ -22,36 +30,33 @@ input{
     border: 2px solid blue;
 }
 
-.borderTransparent{
-    border: 2px solid transparent;
-}
+/*Fin des bordures*/
 
+
+/*couleurs utilisés pour du text et pour les fontAwesome*/
 .red{
     color: red;
-}
-
-.green{
-    color: green;
 }
 
 .black{
     color: black;
 }
-
-.etape{
-    width:fit-content;
-    width:-moz-fit-content;
-}
+/*fin des couleurs*/
 
 
 
 
+/*Permet l'apparition du background en impression*/
 @media print {
     * {
         -webkit-print-color-adjust: exact;
     }
 }
 
+
+
+
+/*différents configurations visuels du carousel d'images*/
 .carousel {
     width: 100%;
 }

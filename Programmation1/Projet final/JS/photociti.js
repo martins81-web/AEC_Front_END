@@ -2,7 +2,7 @@
 // <!-- Programmation1 -->*/
 // <!-- Projet final par Eric Martins -->*/
 // <!-- Crée le 26 mars 2020 -->*/
-// <!-- Dernier mise à jour le 29 mars 2020 -->
+// <!-- Dernier mise à jour le 04 avril 2020 -->
 
 
 
@@ -253,6 +253,8 @@ function PrintZoneInitial() {
 // <!-- Fin des zones a imprimer-->
 
 
+
+// <!-- Validation du mot selon les contraints-->
 function Validation(){
     let longueurValide=false;
     let motinvalide=false;
@@ -290,7 +292,10 @@ function Validation(){
     }
     return motinvalide && longueurValide;
 }
+// <!-- Fin de la Validation-->
 
+
+// <!-- Enlève les accents -->
 function EnleveAccents(){
     let tabMot=[];
     for( let i=0; i<mot.length; i++){
@@ -310,8 +315,9 @@ function EnleveAccents(){
     }
     mot=tabMot.join("");
 }
+// <!-- Fin de la fonction qui enlève les accents -->
 
-
+// <!-- Fonction qui crie et fait les appends des chacunes des images du mots -->
 function creationPhotociti(){
     let col="";
 
@@ -335,7 +341,9 @@ function creationPhotociti(){
     }
     $('#mot').children().css("background-image", "url(background/"+fondClique+".jpg)");
 }
+// <!-- Fin de la fonction qui crie et fait les appends des chacunes des images du mots -->
 
+// <!-- Creation du Carousel pour changer d'images -->
 function CreateCarrousel() {
     let index;
     if(photoClique.attr("id")==="*"){
@@ -353,4 +361,7 @@ function CreateCarrousel() {
     }
 
 }
+// <!-- Fin de la fonction de creation du Carousel pour changer d'images -->
+
+
 // <!-- Fin des fonctions -->
