@@ -1,4 +1,6 @@
 
+
+
 .map {
     -webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);
@@ -247,10 +249,11 @@ footer {
         margin-bottom: auto;
     }
 
+
 }
 
 
-/* Medium devices (landscape tablets, 768px and up) */
+/* Medium devices (landscape tablets) */
 @media only screen and (min-width: 576px) and (max-width: 768px) {
     .baniere{
         background-image: url("../img/imagem_porto.jpg");
@@ -267,6 +270,7 @@ footer {
         margin-top: auto;
         margin-bottom: 5%;
     }
+
 }
 
 

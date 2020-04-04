@@ -1,0 +1,116 @@
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    /*header navBar*/
+    header h2{
+        font-size: 1.2rem;
+    }
+
+    #baniere h3{
+        font-size: 0.8rem;
+    }
+    #baniere h1{
+        font-size: 1.5rem;
+    }
+
+    #Gastronomie h1{
+        font-size: 1.6rem;
+    }
+    .fas,.fab{
+        font-size: 4rem; /*size whatever you like*/
+    }
+
+    section h1{
+        font-size: 1.3rem;
+    }
+
+    #formContact h4{
+        font-size: 1rem;
+    }
+
+    .display-3{
+        font-size: 2rem;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+    #baniere h3{
+        font-size: 1rem;
+    }
+    .fas,.fab{
+        font-size: 6rem; /*size whatever you like*/
+    }
+
+    section h1{
+        font-size: 1.7rem;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    /*header navBar*/
+    header h2{
+        font-size: 2rem;
+    }
+
+    header a{
+        font-size: 1rem;
+    }
+
+
+    #baniere h3{
+        font-size: 1.3rem;
+    }
+
+    .fas,.fab{
+        font-size: 7rem; /*size whatever you like*/
+    }
+
+    section h1{
+        font-size: 2.5rem;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    /*header navBar*/
+    header h2{
+        font-size: 2rem;
+    }
+
+    header a{
+        font-size: 1rem;
+    }
+    .fas,.fab{
+        font-size: 7rem; /*size whatever you like*/
+    }
+
+    section h1{
+        font-size: 2.5rem;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+    /*header navBar*/
+    header h2{
+        font-size: 2.2rem;
+    }
+
+    header a{
+        font-size: 1.2rem;
+    }
+
+    .fas,.fa-fort-awesome{
+        font-size: 8rem; /*size whatever you like*/
+    }
+
+    section h1{
+        font-size: 3rem;
+    }
+}
+
