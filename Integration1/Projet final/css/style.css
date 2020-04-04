@@ -298,7 +298,13 @@ footer {
 }
 
 #containerContact{
-    background-color: #eff5e7;
+    background-color: #e8ca36;
+    border: 2px solid dimgray;
+}
+
+#formContact{
+    padding-top: 15%;
+    padding-bottom: 15%;
 }
 
 
