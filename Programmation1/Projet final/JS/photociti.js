@@ -300,7 +300,7 @@ function Validation(){
 function EnleveAccents(){
     let tabMot=[];
     for( let i=0; i<mot.length; i++){
-        tabMot[i]=mot[i];
+        tabMot[i]=mot[i].toLowerCase();
     }
 
     for( let i=0; i<tabMot.length; i++){
