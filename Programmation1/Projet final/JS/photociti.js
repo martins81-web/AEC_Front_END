@@ -42,7 +42,7 @@ $( "#flecheGauche" ).on('click', function() {
 // <!-- Init -->
 $( window ).on( "load", function() {
     $(".imgBG").css("background-image", "url(background/"+fondClique+".jpg)");  // image/color de fond
-    $("#"+fondClique).removeClass('borderBlack').addClass('borderBlue'); //met une bordure bleu dans l'image du fond selectionné dans l'étape3
+    $("#"+fondClique).removeClass('borderBlack').addClass('borderBlue'); //met une bordure bleu (par défault) au tour de l'image de fond selectionné dans l'étape3
     AnimationEtape(); ////appel de la fonction qui genere l'animation du mot "Étape 1"
 });
 // <!-- Fin init-->
@@ -62,7 +62,7 @@ $( "#buttonGO" ).on('click', function() {
     }
 });
 
-
+// Enter
 $('#motInput').keypress(function(event){
     var keycode = (event.keyCode ? event.keyCode : event.which);
     if(keycode == '13'){
@@ -108,6 +108,7 @@ $('#modal').on('hidden.bs.modal', function () {
         click=false;
 });
 
+//Enter to save photo
 $('#modal').keypress(function(event){
     var keycode = (event.keyCode ? event.keyCode : event.which);
     if(keycode == '13'){
@@ -180,7 +181,7 @@ $("#print").hover(function () {
 
 // <!-- Fonctions -->
 
-// <!-- Création du texte "Étape x", chaque caractère aparait 100ms après l'anterieur -->
+// <!-- Création de l'animation du texte "Étape x", chaque caractère aparait 100ms après l'anterieur -->
 function AnimationEtape () {
     if(counter===0){
         $('#etape'+etape).text("É");
