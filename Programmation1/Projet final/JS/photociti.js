@@ -23,6 +23,7 @@ $( window ).on( "load", function() {
     $(".imgBG").css("background-image", "url(background/"+fondClique+".jpg)");  // image/color de fond
     $("#"+fondClique).removeClass('borderBlack').addClass('borderBlue'); //met une bordure bleu (par défault) au tour de l'image de fond selectionné dans l'étape3
     AnimationEtape(); ////appel de la fonction qui genere l'animation du mot "Étape 1"
+    $('#flecheDroite i').attr('title', "Aller à l'étape "+(etape+1));
 });
 // <!-- Fin init-->
 
@@ -230,14 +231,18 @@ function changeEtape(){
         $(".etape1").removeClass("hide");
         $(".etape2").addClass("hide");
         $(".etape3").addClass("hide");
+        $('#flecheDroite i').attr('title', "Aller à l'étape "+(etape+1));
         PrintZoneInitial();
     } else if (etape ===2){
         $("#flecheGauche").removeClass("hide");
+
         $("#flecheDroite").removeClass("hide");
         $(".etape1").addClass("hide");
         $(".etape2").removeClass("hide");
         $(".etape3").addClass("hide");
         $("#debut").addClass("hide");
+        $('#flecheGauche i').attr('title', "Aller à l'étape "+(etape-1));
+        $('#flecheDroite i').attr('title', "Aller à l'étape "+(etape+1));
         PrintZoneInitial();
     }
     else if (etape ===3){
@@ -245,6 +250,7 @@ function changeEtape(){
         $(".etape1").addClass("hide");
         $(".etape2").addClass("hide");
         $(".etape3").removeClass("hide");
+        $('#flecheGauche i').attr('title',"Aller à l'étape "+(etape-1));
         SelectPrintZoneFinal();
     }
 }
