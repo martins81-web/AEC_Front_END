@@ -2,7 +2,7 @@
 // <!-- Programmation1 -->*/
 // <!-- Projet final par Eric Martins -->*/
 // <!-- Crée le 26 mars 2020 -->*/
-// <!-- Dernier mise à jour le 10 avril 2020 -->
+// <!-- Dernier mise à jour le 11 avril 2020 -->
 
 
 
@@ -15,6 +15,15 @@ var photoClique;
 var click=false;
 var carouselClique=false;
 // <!-- Fin de la déclaration de variables -->
+
+
+// <!-- Init -->
+$( window ).on( "load", function() {
+    $("#mot").css("background-image", "url(background/"+fondClique+".jpg)");  // image/color de fond
+    $("#"+fondClique).removeClass('borderBlack').addClass('borderBlue'); //met une bordure bleu (par défault) au tour de l'image de fond selectionné dans l'étape3
+    AnimationEtape(); ////appel de la fonction qui genere l'animation du mot "Étape 1"
+});
+// <!-- Fin init-->
 
 
 
@@ -39,13 +48,7 @@ $( "#flecheGauche" ).on('click', function() {
 // <!-- Fin navigation -->
 
 
-// <!-- Init -->
-$( window ).on( "load", function() {
-    $(".imgBG").css("background-image", "url(background/"+fondClique+".jpg)");  // image/color de fond
-    $("#"+fondClique).removeClass('borderBlack').addClass('borderBlue'); //met une bordure bleu (par défault) au tour de l'image de fond selectionné dans l'étape3
-    AnimationEtape(); ////appel de la fonction qui genere l'animation du mot "Étape 1"
-});
-// <!-- Fin init-->
+
 
 
 
@@ -121,7 +124,7 @@ $('#modal').keypress(function(event){
 // <!-- Étape3 -->
 $(".imgFond").on('click', function() {
     fondClique=$(this).attr('id');
-    $(".imgBG").css("background-image", "url(background/"+fondClique+".jpg)");
+    $("#mot").css("background-image", "url(background/"+fondClique+".jpg)");
     if (fondClique==='blanc'){
         $("#ModalPhotosCarroussel").removeClass("text-white");
     } else {
