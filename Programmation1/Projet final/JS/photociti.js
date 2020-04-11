@@ -19,7 +19,7 @@ var carouselClique=false;
 
 // <!-- Init -->
 $( window ).on( "load", function() {
-    $("#mot").css("background-image", "url(background/"+fondClique+".jpg)");  // image/color de fond
+    $(".imgBG").css("background-image", "url(background/"+fondClique+".jpg)");  // image/color de fond
     $("#"+fondClique).removeClass('borderBlack').addClass('borderBlue'); //met une bordure bleu (par défault) au tour de l'image de fond selectionné dans l'étape3
     AnimationEtape(); ////appel de la fonction qui genere l'animation du mot "Étape 1"
 });
@@ -124,7 +124,7 @@ $('#modal').keypress(function(event){
 // <!-- Étape3 -->
 $(".imgFond").on('click', function() {
     fondClique=$(this).attr('id');
-    $("#mot").css("background-image", "url(background/"+fondClique+".jpg)");
+    $(".imgBG").css("background-image", "url(background/"+fondClique+".jpg)");
     if (fondClique==='blanc'){
         $("#ModalPhotosCarroussel").removeClass("text-white");
     } else {
