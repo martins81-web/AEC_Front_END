@@ -1,7 +1,7 @@
 /*<!-- style.css -->*/
 /*<!-- Projet final - Programmation1 - par Eric Martins -->*/
 /*<!-- Crée le 26 mars 2020 -->*/
-/*<!-- Dernier mise à jour le 4 avril 2020 -->*/
+/*<!-- Dernier mise à jour le 11 avril 2020 -->*/
 
 /*classe pour cacher des elements*/
 .hide{
@@ -23,14 +23,21 @@ input{
 }
 
 .borderRed{
-    border: 2px solid red;
+    border: 1px solid red;
 }
 
 .borderBlue{
-    border: 2px solid blue;
+    border-image-outset: 2px;
+    border: solid blue;
 }
 
 /*Fin des bordures*/
+
+
+header{
+    color: white;
+    background-color: black;
+}
 
 
 /*couleurs utilisés pour du text et pour les fontAwesome*/

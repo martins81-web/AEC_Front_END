@@ -19,6 +19,7 @@ var carouselClique=false;
 
 // <!-- Init -->
 $( window ).on( "load", function() {
+    identificationPF();
     $(".imgBG").css("background-image", "url(background/"+fondClique+".jpg)");  // image/color de fond
     $("#"+fondClique).removeClass('borderBlack').addClass('borderBlue'); //met une bordure bleu (par défault) au tour de l'image de fond selectionné dans l'étape3
     AnimationEtape(); ////appel de la fonction qui genere l'animation du mot "Étape 1"
@@ -28,7 +29,7 @@ $( window ).on( "load", function() {
 
 
 // <!-- On click navigation -->
-$( "#flecheDroite" ).on('click', function() {
+$( "#flecheDroite i" ).on('click', function() {
     etape++;    //incremente la variable étape
     changeEtape(); //appel de la fonction changeEtape qui va changer le visuel selon létape
     counter=0;  //variable utiliser pour l'animation de chaque étapae
@@ -37,7 +38,7 @@ $( "#flecheDroite" ).on('click', function() {
     document.getSelection().removeAllRanges(); //unselect all
 });
 
-$( "#flecheGauche" ).on('click', function() {
+$( "#flecheGauche i" ).on('click', function() {
     etape--;
     changeEtape();
     counter=0;
@@ -131,7 +132,7 @@ $(".imgFond").on('click', function() {
         $("#ModalPhotosCarroussel").addClass("text-white");
     }
     $(this).removeClass('borderBlack').addClass('borderBlue');
-    $(this).siblings().removeClass('borderBlue').addClass('borderBlack');
+    $(this).siblings().not(":first").removeClass('borderBlue').addClass('borderBlack');
 });
 
 $("#print").on('click', function() {
@@ -164,18 +165,26 @@ $('#modal').on('mouseenter', 'img', function() {
         $(this).css('cursor', 'default');
 });
 
-$("#flecheGauche, #flecheDroite, .imgFond").hover(function () {
+$("#flecheGauche i, #flecheDroite i").hover(function () {
     $(this).css('cursor', 'pointer');
-    $(this).children().addClass('red');
+    $(this).parent().addClass('red');
 }).on("mouseout", function() {
-    $(this).children().removeClass('red');
+    $(this).parent().removeClass('red');
 });
 
-$("#print").hover(function () {
+
+$(".imgFond").hover(function () {
     $(this).css('cursor', 'pointer');
-    $(this).children().addClass('red');
 }).on("mouseout", function() {
-    $(this).children().removeClass('red');
+    $(this).css('cursor', 'default');
+});
+
+$("#print i").hover(function () {
+    $(this).css('cursor', 'pointer');
+    $(this).parent().addClass('red');
+}).on("mouseout", function() {
+    $(this).parent().removeClass('red');
+    $(this).css('cursor', 'default');
 });
 // <!-- Fin hover functions -->
 
@@ -368,4 +377,24 @@ function CreateCarrousel() {
 // <!-- Fin de la fonction de creation du Carousel pour changer d'images -->
 
 
+function identificationPF() {
+    $("body").before($("<div class='container d-print-none'>\n" +
+        "    <div id='' class='row text-center d-flex justify-content-center'>\n" +
+        "    <div id='E' class=' col-1 p-3 '><img src='Letters/E/E3.jpg' class='img-fluid borderBlack' alt='Responsive image'></div>\n" +
+        "    <div id='R' class=' col-1 p-3 '><img src='Letters/R/R5.jpg' class='img-fluid borderBlack' alt='Responsive image'></div>\n" +
+        "    <div id='I' class=' col-1 p-3 '><img src='Letters/I/I5.jpg' class='img-fluid borderBlack' alt='Responsive image'></div>\n" +
+        "    <div id='C' class=' col-1 p-3 '><img src='Letters/C/C3.jpg' class='img-fluid borderBlack' alt='Responsive image'></div>\n" +
+        "    <div id='M' class=' offset-1 col-1 p-3 '><img src='Letters/M/M5.jpg' class='img-fluid borderWhite' alt='Responsive image'></div>\n" +
+        "    <div id='A' class=' col-1 p-3 '><img src='Letters/A/A1.jpg' class='img-fluid borderBlack' alt='Responsive image'></div>\n" +
+        "    <div id='R' class=' col-1 p-3 '><img src='Letters/R/R1.jpg' class='img-fluid borderBlack' alt='Responsive image'></div>\n" +
+        "    <div id='T' class=' col-1 p-3 '><img src='Letters/T/T1.jpg' class='img-fluid borderBlack' alt='Responsive image'></div>\n" +
+        "    <div id='I' class=' col-1 p-3 '><img src='Letters/I/I1.jpg' class='img-fluid borderBlack' alt='Responsive image'></div>\n" +
+        "    <div id='N' class=' col-1 p-3 '><img src='Letters/N/N1.jpg' class='img-fluid borderBlack' alt='Responsive image'></div>\n" +
+        "    <div id='S' class=' col-1 p-3 '><img src='Letters/S/S1.jpg' class='img-fluid borderBlack' alt='Responsive image'></div>\n" +
+        "    </div> \n" +
+        "    </div>"));
+}
+
 // <!-- Fin des fonctions -->
+
+
