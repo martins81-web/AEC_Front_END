@@ -1,0 +1,71 @@
+<html lang="fr-ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Formulaire</title>
+    <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<form>
+    <label for="nom">Nom:</label><br>
+    <input type="text" id="nom" name="nom" pattern="[\b[a-zA-Z]+\s[a-zA-Z]+\b]" maxlength="30" placeholder="Nom" required><br>
+
+    <label for="age">Age:</label><br>
+    <input type="number" id="age" name="age" min="0" max="15" maxlength="2" placeholder="Age" required><br>
+
+    <label for="dateNaissance">Date de Naissance:</label><br>
+    <input type="date" id="dateNaissance" name="dateNaissance"
+           min="2005-01-01" max="2020-04-18" required><br>
+
+    <label for="taille">Taille (cm):</label><br>
+    <input type="number" id="taille" name="taille" min="10" max="80" maxlength="2" placeholder="Taille (cm)" required><br>
+
+    <label for="poids">Poids (kg):</label><br>
+    <input type="number" id="poids" name="poids" min="1" max="10" maxlength="2" placeholder="Poids (kg)" required><br>
+
+    <label>Vacciné</label>
+    <div class="radio">
+        <label><input type="radio" name="optradio" required>Oui</label>
+        <label><input type="radio" name="optradio" required>Non</label>
+    </div>
+
+
+    <label>Couleur du Chat<br><input list="Couleur"  pattern="Noir|Blanc|Brun|Mixte" required></label>
+    <datalist id="Couleur" >
+        <option value="Noir">
+        <option value="Blanc">
+        <option value="Brun">
+        <option value="Mixte">
+    </datalist><br>
+
+    <label>Type</label>
+    <div class="radio">
+        <label><input type="radio" name="optradio" required>Domestique</label>
+        <label><input type="radio" name="optradio" required>Racé</label>
+    </div>
+
+    <label for="lieuNaissance">Lieu de naissance:</label><br>
+    <input type="text" id="lieuNaissance" name="lieuNaissance" pattern="[\b[a-zA-Z]+\s[a-zA-Z]+\b]" maxlength="30" placeholder="Lieu de naissance" required><br>
+
+    <label for="photos">Ajouter des Photos:</label>
+    <input type="file" id="photos" name="photos" multiple required><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Courriel" required><br>
+
+    <label for="tel">Téléphone:</label> <!--  (9999-555--1/G)//-->
+    <input type="tel" id="tel" name="tel" pattern="[0-9]{4}-[0-9]{3}--[0-9]{1}/[A-Z]{1}" placeholder="9999-555--1/G" required><br>
+
+    <input type="submit" value="Submit">
+</form>
+
+
+
+<script src="https://kit.fontawesome.com/a46d75ba7a.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="bootstrap-4.4.1-dist/js/bootstrap.js"></script>
+</body>
+</html>
