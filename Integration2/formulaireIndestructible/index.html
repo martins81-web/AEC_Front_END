@@ -9,58 +9,131 @@
 </head>
 <body>
 
+<header><h1 class="text-center">Adoption d'un joli petit chat</h1></header>
+
+<div class="container" >
 <form>
-    <label for="nom">Nom:</label><br>
-    <input type="text" id="nom" name="nom" pattern="[\b[a-zA-Z]+\s[a-zA-Z]+\b]" maxlength="30" placeholder="Nom" required><br>
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Identification
+                    </button>
+                </h5>
+            </div>
 
-    <label for="age">Age:</label><br>
-    <input type="number" id="age" name="age" min="0" max="15" maxlength="2" placeholder="Age" required><br>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="nom">Nom:</label>
+                        <input class="form-control" type="text" id="nom" name="nom" pattern="([a-zA-Z]{3,30}\s*)||([a-zA-Z]{3,30}\s*)+([a-zA-Z]{3,30}\s*)" maxlength="30" placeholder="Nom" required>
+                    </div>
 
-    <label for="dateNaissance">Date de Naissance:</label><br>
-    <input type="date" id="dateNaissance" name="dateNaissance"
-           min="2005-01-01" max="2020-04-18" required><br>
+                    <div class="form-group">
+                        <label for="age">Age:</label>
+                        <input class="form-control" type="number" id="age" name="age" min="0" max="15" maxlength="2" placeholder="Age" required>
 
-    <label for="taille">Taille (cm):</label><br>
-    <input type="number" id="taille" name="taille" min="10" max="80" maxlength="2" placeholder="Taille (cm)" required><br>
+                    </div>
 
-    <label for="poids">Poids (kg):</label><br>
-    <input type="number" id="poids" name="poids" min="1" max="10" maxlength="2" placeholder="Poids (kg)" required><br>
+                    <div class="form-group">
+                        <label for="dateNaissance">Date de Naissance:</label>
+                        <input class="form-control"  type="date" id="dateNaissance" name="dateNaissance"
+                               min="2005-01-01" max="2020-04-18" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lieuNaissance">Lieu de naissance:</label><br>
+                        <input class="form-control" type="text" id="lieuNaissance" name="lieuNaissance" pattern="^([a-zA-Z\u0080-\u024F]+(?:. |-| |'))*[a-zA-Z\u0080-\u024F]*$" maxlength="30" placeholder="Lieu de naissance" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Caratéristiques
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="taille">Taille (cm):</label>
+                        <input class="form-control" type="number" id="taille" name="taille" min="10" max="80" maxlength="2" placeholder="Taille (cm)" required>
+                    </div>
 
-    <label>Vacciné</label>
-    <div >
-        <label><input type="radio" name="vaccineRadio" required>Oui</label>
-        <label><input type="radio" name="vaccineRadio" >Non</label>
+                    <div class="form-group">
+                        <label for="poids">Poids (kg):</label>
+                        <input class="form-control" type="number" id="poids" name="poids" min="1" max="10" maxlength="2" placeholder="Poids (kg)" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Vacciné</label>
+                        <div class="form-check form-inline ">
+                            <label><input class="form-check-input" type="radio" name="vaccineRadio" required>Oui</label>
+                            <label><input class="form-check-input ml-3" type="radio" name="vaccineRadio" >Non</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Couleur du Chat<br><input list="Couleur"  pattern="Noir|Blanc|Brun|Mixte" required></label>
+                        <datalist id="Couleur" >
+                            <option class="form-control" value="Noir">
+                            <option class="form-control" value="Blanc">
+                            <option class="form-control" value="Brun">
+                            <option class="form-control" value="Mixte">
+                        </datalist><br>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Type</label>
+                        <div class="form-check form-inline">
+                            <label><input class="form-check-input" type="radio" name="typeRadio" required>Domestique</label>
+                            <label><input class="form-check-input ml-3" type="radio" name="typeRadio" >Racé</label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Contact et photos
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="photos">Ajouter des Photos:</label>
+                        <input class="" type="file" id="photos" name="photos" multiple required><br>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input class="form-control" type="email" id="email" name="email" placeholder="Courriel" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tel">Téléphone:</label> <!--  (9999-555--1/G)//-->
+                        <input class="form-control" type="tel" id="tel" name="tel" pattern="[0-9]{4}-[0-9]{3}--[0-9]{1}/[A-Z]{1}" placeholder="9999-555--1/G" required>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 
-    <label>Couleur du Chat<br><input list="Couleur"  pattern="Noir|Blanc|Brun|Mixte" required></label>
-    <datalist id="Couleur" >
-        <option value="Noir">
-        <option value="Blanc">
-        <option value="Brun">
-        <option value="Mixte">
-    </datalist><br>
 
-    <label>Type</label>
-    <div>
-        <label><input type="radio" name="typeRadio" required>Domestique</label>
-        <label><input type="radio" name="typeRadio" >Racé</label>
-    </div>
 
-    <label for="lieuNaissance">Lieu de naissance:</label><br>
-    <input type="text" id="lieuNaissance" name="lieuNaissance" pattern="[\b[a-zA-Z]+\s[a-zA-Z]+\b]" maxlength="30" placeholder="Lieu de naissance" required><br>
 
-    <label for="photos">Ajouter des Photos:</label>
-    <input type="file" id="photos" name="photos" multiple required><br><br>
+        <input class="mt-5" type="submit" value="Submit">
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" placeholder="Courriel" required><br>
-
-    <label for="tel">Téléphone:</label> <!--  (9999-555--1/G)//-->
-    <input type="tel" id="tel" name="tel" pattern="[0-9]{4}-[0-9]{3}--[0-9]{1}/[A-Z]{1}" placeholder="9999-555--1/G" required><br>
-
-    <input type="submit" value="Submit">
 </form>
+</div>
 
 
 
