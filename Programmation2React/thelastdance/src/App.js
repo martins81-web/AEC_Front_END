@@ -3,17 +3,17 @@ import ReactDOM from 'react-dom';
 import './App.css';
 import logoNetflix from './Img/logo netflix.png';
 import imgMJ from './Img/MJ.jpg';
-import imgCB from './Img/CB.jpg';
-import imgLB from './Img/LB.jpg';
+import imgSK from './Img/SK.jpg';
+import imgTK from './Img/TK.jpg';
+import imgDR from './Img/DR.jpg';
 import imgSP from './Img/SP.jpg';
-import imgMagic from './Img/Magic.jpg';
 
 
 
 
-const joueurs = ['Michael Jordan', 'Larry Bird', 'Charles Barkley', 'Magic Johnson', 'Scottie Pippen'];
+const joueurs = ['Michael Jordan', 'Steve Kerr', 'Toni Kukoč', 'Dennis Rodman', 'Scottie Pippen'];
 let random= Math.floor(Math.random() * 5); 
-const PhotosJoueurs= [imgMJ,imgLB,imgCB,imgMagic,imgSP];
+const PhotosJoueurs= [imgMJ,imgSK,imgTK,imgDR,imgSP];
 
 const partants = joueurs.map(element => <li key={element.toString()}>{element}</li>);
 const partantsAffiches =joueurs.map(element => joueurs[random] !== element && <li key={element.toString()}> {element}</li> );
@@ -61,7 +61,11 @@ function changeJoeur(){
   document.getElementById("liste4Partants").style.display = "none"; 
   let imgJ = document.getElementById("photo"); 
   let nomJ = document.getElementById("nomJoueur"); 
+  let norepeat=random;
   random= Math.floor(Math.random() * 5);
+  while(norepeat===random){
+    random= Math.floor(Math.random() * 5);
+  }
   imgJ.setAttribute("src",PhotosJoueurs[random]); 
   nomJ.innerHTML = joueurs[random]; 
 }
