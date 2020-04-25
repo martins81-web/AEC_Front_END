@@ -9,6 +9,51 @@
 </head>
 <body>
 
+<div class="container mt-5">
+
+
+    <canvas id="myCanvas" width="600" height="400"
+            style="border:1px solid #d3d3d3;">
+        Your browser does not support the canvas element.
+    </canvas>
+
+
+
+    <script>
+        var canvasRect = document.getElementById("myCanvas");
+        var ctxRect = canvasRect.getContext("2d");
+        var grd = ctxRect.createLinearGradient(0, 0, 400, 0);
+        grd.addColorStop(0, "deepskyblue");
+        grd.addColorStop(1, "darkblue");
+        ctxRect.fillStyle = grd;
+        ctxRect.fillRect(0, 0, 600, 400);
+
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        ctx.beginPath();
+        ctx.fillStyle = "green";
+        ctx.arc(300,700,500,0,2*Math.PI);
+        ctx.fill();
+
+        var rectRouge = canvas.getContext("2d");
+        rectRouge.fillStyle = "red";
+        rectRouge.fillRect(240,90,135,125);
+
+        var rectNoir = canvas.getContext("2d");
+        rectNoir.fillStyle = "black";
+        rectNoir.fillRect(245,95,125,115);
+
+        var text = document.getElementById("myCanvas");
+        var text = canvas.getContext("2d");
+        text.font = "70px Arial";
+        text.fillStyle = "red";
+        text.fillText("An", 265, 175);
+        text.textAlign = "center";
+    </script>
+
+
+
+</div>
 
 
 
