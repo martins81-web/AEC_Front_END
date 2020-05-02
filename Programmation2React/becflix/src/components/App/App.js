@@ -4,7 +4,6 @@ import './App.css';
 import Container from 'react-bootstrap/Container';  
 import Row from 'react-bootstrap/Row';  
 import Col from 'react-bootstrap/Col';  
-import {TvShow} from "../TvShow/TvShow"
 import {Catalogue} from "../Catalogue/Catalogue"
 import logoBecFlix from '../../img/becflix.PNG';
 
@@ -14,7 +13,7 @@ function App() {
       <Container fluid>
           <Row className="">  
             <Col xs lg="12">  
-              <img src={logoBecFlix} alt="logoBecFlix face" height="64" ></img>
+              <img src={logoBecFlix} alt="logoBecFlix" height="64" ></img>
             </Col>  
           </Row>  
 

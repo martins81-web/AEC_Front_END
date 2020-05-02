@@ -17,7 +17,7 @@ export class TvShow extends React.Component {
     render() {  
 
        return ( 
-                    <Col  lg="2"> {image}  </Col>       
+                <Col  lg="2"> {image}  </Col>       
             );  
     }  
 };  
