@@ -1,0 +1,47 @@
+body{
+    background-color: #fff3cd;
+}
+.black{
+    color: black;
+}
+#slider {
+    height: 350px;
+    overflow: hidden;
+    width: 100%;
+}
+.carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: firebrick;
+}
+.carousel-indicators {
+    bottom: -50px;
+}
+
+.carousel-indicators .active{
+    background-color: darkred;
+}
+
+
+#carousel {
+    background-color: #fff3cd;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.carousel-control-prev {
+    margin-left: -75px;
+}
+
+.carousel-control-next {
+    margin-right: -75px;
+}
+#description li{
+    margin-bottom: 1rem;
+}
+
+#prix{
+    font-weight: bold;
+    color: red;
+}

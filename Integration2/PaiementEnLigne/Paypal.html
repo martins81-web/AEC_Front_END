@@ -1,0 +1,160 @@
+<html lang="fr-ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Paypal</title>
+    <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Optimal Internet Explorer compatibility -->
+</head>
+<body>
+<header class="mb-3 py-1 text-center text-white bg-dark">
+    <h1>Paiements en Ligne</h1>
+</header>
+
+
+<div class="container">
+    <div class="row ">
+        <div class="offset-2 col-8">
+            <h2>ASUS ZenBook UX533FN-RH54 Ultra-Slim Laptop 15.6” FHD Display, Intel Core i5-8265U Processor,8GB DDR4, 512GB PCIE G3x2 SSD</h2>
+        </div>
+    </div>
+
+    <div class="row my-3">
+        <div class="col-6">
+            <div class="offset-2 col-8">
+                <h5>Prix:</h5>
+                <p id="prix">CDN$ 1,299.00</p>
+            </div>
+        </div>
+        <div class="col-6">
+            <div id="paypal-button"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <h5 class="mb-3">Photos:</h5>
+            <div id="carousel" class="carousel slide portfolio-entries " data-ride="carousel">
+
+                <!-- Carousel indicators-->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel" data-slide-to="1"></li>
+                    <li data-target="#carousel" data-slide-to="2"></li>
+                    <li data-target="#carousel" data-slide-to="3"></li>
+                </ol>
+                <!-- Fin Carousel indicators -->
+
+                <!-- Carousel slides-->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="">
+                            <div class="slide-box slides">
+                                <img id="pic1" class="img-fluid picCarousel borderBlack" src="img/asus1.jpg" alt="First slide">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="">
+                            <div class="slide-box slides">
+                                <img id="pic2" class="img-fluid picCarousel" src="img/asus2.jpg" alt="second slide">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="">
+                            <div class="slide-box slides">
+                                <img id="pic3" class="img-fluid picCarousel" src="img/asus3.jpg" alt="third slide">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="">
+                            <div class="slide-box slides">
+                                <img id="pic4" class="img-fluid picCarousel" src="img/asus4.jpg" alt="fourth slide">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fin Carousel slides-->
+
+                <!-- Carousel controls-->
+
+                <a class="carousel-control-prev " href="#carousel" role="button" data-slide="prev">
+                    <span class="fas fa-arrow-circle-left fa-3x black"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                    <span class="fas fa-arrow-circle-right fa-3x black"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+                <!-- Fin Carousel controls-->
+            </div>
+            <!-- Fin Carousel -->
+        </div>
+        <div class="col-6 ">
+            <h5 class="mb-3">Description:</h5>
+            <ul class="" id="description">
+                <li>15.6-Inch IPS-level Full-HD Display with latest 8th generation Intel Core i5-8265U Processor (up to 3.9 GHz)</li>
+                <li>Fast storage and memory featuring 512GB PCIE G3x2 SSD with 8GB DDR4 RAM and NVIDIA GeForce MX150 2GB GDDR5</li>
+                <li>Exclusive ErgoLift design for improved typing position, optimized cooling system and enhanced audio performance</li>
+                <li>Bluetooth V5.0</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+<script>
+    paypal.Button.render({
+        // Configure environment
+        env: 'sandbox',
+        client: {
+            sandbox: 'demo_sandbox_client_id',
+            production: 'demo_production_client_id'
+        },
+        // Customize button (optional)
+        locale: 'en_US',
+        style: {
+            size: 'small',
+            color: 'gold',
+            shape: 'pill',
+        },
+
+        // Enable Pay Now checkout flow (optional)
+        commit: true,
+
+        // Set up a payment
+        payment: function(data, actions) {
+            return actions.payment.create({
+                transactions: [{
+                    amount: {
+                        total: '0.01',
+                        currency: 'USD'
+                    }
+                }]
+            });
+        },
+        // Execute the payment
+        onAuthorize: function(data, actions) {
+            return actions.payment.execute().then(function() {
+                // Show a confirmation message to the buyer
+                window.alert('Thank you for your purchase!');
+            });
+        }
+    }, '#paypal-button');
+
+</script>
+
+
+
+
+<script src="https://kit.fontawesome.com/a46d75ba7a.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="bootstrap-4.4.1-dist/js/bootstrap.js"></script>
+</body>
+</html>
