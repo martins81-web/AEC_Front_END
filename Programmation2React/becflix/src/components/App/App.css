@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+.filtered{
+  background: firebrick;
+  overflow: hidden; 
+}
+
+.filtered img {
+  filter: grayscale(75%);
+  opacity: 0.7;
+  transition: transform .4s;
+  transform: scale(1.2);
+}
+

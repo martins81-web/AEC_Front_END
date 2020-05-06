@@ -1,11 +1,10 @@
 import React from 'react';
-import logo from "../../img/logo.svg";
 import './App.css';
 import Container from 'react-bootstrap/Container';  
 import Row from 'react-bootstrap/Row';  
 import Col from 'react-bootstrap/Col';  
 import {Catalogue} from "../Catalogue/Catalogue"
-import logoBecFlix from '../../img/becflix.PNG';
+import logoBecFlix from '../../img/becflix.png';
 
 function App() {
   return (
