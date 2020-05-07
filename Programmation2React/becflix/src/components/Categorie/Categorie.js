@@ -21,7 +21,7 @@ const tabSuspense = [
     {   
         src:require("../../img/Suspense/district31.jpg"),
         alt:"district31" ,
-        title:"district31"  
+        title:"District 31"  
     } ,
     {   
         src: require("../../img/Suspense/fugueuse.jpg"), 
@@ -92,7 +92,7 @@ const tabSerieAmericaines = [
             {   
                 src:require("../../img/Series americaines/mandalorian.jpg"),
                 alt:"Mandalorian", 
-                title:"Mandalorian"   
+                title:"The Mandalorian"   
             } ,
             {   
                 src:require("../../img/Series americaines/vikings.jpg"),
@@ -120,7 +120,7 @@ export class Categorie extends React.Component {
 
     AfficherSeriesCategorie() { 
         if(this.props.categorie === "Suspense") {      
-            return ( <Row >{tabSuspense.map((element,i) => <TvShow key={"suspense" + i} src={element.src} alt={element.alt} title={element.title} ></TvShow> )}</Row>)
+            return ( <Row>{tabSuspense.map((element,i) => <TvShow key={"suspense" + i} src={element.src} alt={element.alt} title={element.title} ></TvShow> )}</Row>)
         }else if(this.props.categorie==="Humour"){
             return ( <Row>{tabHumour.map((element,i) => <TvShow key={"humour" + i} src={element.src} alt={element.alt} title={element.title} ></TvShow> )}</Row>)
         }else if(this.props.categorie==="Séries américaines"){

@@ -42,12 +42,51 @@ d.App {
 .filtered{
   background: #007bff;
   transform: scale(1.2);
-  transition: transform .7s;
-  cursor: pointer;
+  transition: transform .7s ease-in-out; 
+  
 }
 
 .filtered img {
-  filter: grayscale(75%);
   opacity: 0.7;
+  filter: blur(3px) grayscale(75%);
+  cursor: pointer;
 }
+
+
+
+/* Centered text */
+.centered {
+  text-align: center;
+  font-size: 1.6em;
+  font-weight:bolder;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 2px 2px black;
+  cursor: pointer;
+}
+
+
+
+.cont {
+  position:relative;
+}
+
+/* Middle left text */
+.middle-left {
+  text-align: left;
+  float: left;
+  position: absolute;
+  left: 0%;
+  top: 50%;
+  transform: translate(0%, -50%);
+
+}
+
+.hide{
+  display: none;
+}
+
 
