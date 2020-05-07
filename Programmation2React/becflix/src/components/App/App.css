@@ -41,7 +41,7 @@ d.App {
 
 .filtered{
   background: #007bff;
-  transform: scale(1.1);
+  transform: scale(1.2);
   transition: transform .7s;
   cursor: pointer;
 }
