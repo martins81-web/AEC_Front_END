@@ -114,7 +114,7 @@ export class Categorie extends React.Component {
 
     AfficherTitreCategorie() {
         return  <Row className="mt-4">  
-                    <h1 className="text-white">{this.props.categorie}</h1>
+                    <h1 className="text-white ml-3">{this.props.categorie}</h1>
                 </Row>  
     }
 
