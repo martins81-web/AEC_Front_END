@@ -40,7 +40,7 @@ d.App {
 
 
 .filtered{
-  background: firebrick;
+  background: #007bff;
   transform: scale(1.2);
   transition: transform .7s;
 }
