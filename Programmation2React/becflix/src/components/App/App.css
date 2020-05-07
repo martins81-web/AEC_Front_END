@@ -41,14 +41,12 @@
 
 .filtered{
   background: firebrick;
-  overflow: hidden; 
+  transform: scale(1.22);
+  transition: transform .7s;
 }
 
 .filtered img {
   filter: grayscale(75%);
   opacity: 0.7;
-  
-  transform: scale(1.2);
-  transition: transform .7s;
 }
 
