@@ -47,7 +47,8 @@
 .filtered img {
   filter: grayscale(75%);
   opacity: 0.7;
-  transition: transform .4s;
+  
   transform: scale(1.2);
+  transition: transform .7s;
 }
 
