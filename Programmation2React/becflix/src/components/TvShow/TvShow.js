@@ -30,8 +30,16 @@ export class TvShow extends React.Component {
     } 
   
     handleEventOnHover(e){
-        //remove from all elements
-        this.removeFiltersEffects();
+           //remove all filters-efects from all elements not moused triggered before     
+           var matches = document.getElementsByClassName('filtered');
+           for (let i=0; i<matches.length; i++) {
+               matches[i].classList.remove('filtered');
+           }
+           //remove all titles from all elements not moused triggered before   
+           matches = document.getElementsByClassName('title');
+           for (let i=0; i<matches.length; i++) {
+               matches[i].classList.add('hide');
+           }
         //add filter-efects to this element    
         e.target.parentNode.classList.add("filtered");
         //show title
@@ -39,23 +47,19 @@ export class TvShow extends React.Component {
     }
 
     handleEventOnOut(e){
-        //remove from all elements
-        this.removeFiltersEffects();
+           //remove all filters-efects from all elements not moused triggered before     
+           var matches = document.getElementsByClassName('filtered');
+           for (let i=0; i<matches.length; i++) {
+               matches[i].classList.remove('filtered');
+           }
+           //remove all titles from all elements not moused triggered before   
+           matches = document.getElementsByClassName('title');
+           for (let i=0; i<matches.length; i++) {
+               matches[i].classList.add('hide');
+           }
         //hide title
         e.target.parentNode.lastChild.classList.add("hide");
     }
-    
-    removeFiltersEffects(){
-        //remove all filters-efects from all elements not moused triggered before     
-        var matches = document.getElementsByClassName('filtered');
-        for (let i=0; i<matches.length; i++) {
-            matches[i].classList.remove('filtered');
-        }
-        //remove all titles from all elements not moused triggered before   
-        matches = document.getElementsByClassName('title');
-        for (let i=0; i<matches.length; i++) {
-            matches[i].classList.add('hide');
-        }
-    }
+   
 
 };  
