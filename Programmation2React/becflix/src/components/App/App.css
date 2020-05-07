@@ -1,4 +1,4 @@
-.App {
+d.App {
   text-align: center;
 }
 
@@ -41,7 +41,7 @@
 
 .filtered{
   background: firebrick;
-  transform: scale(1.22);
+  transform: scale(1.2);
   transition: transform .7s;
 }
 
