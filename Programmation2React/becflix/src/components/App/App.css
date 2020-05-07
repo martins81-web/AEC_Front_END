@@ -41,8 +41,9 @@ d.App {
 
 .filtered{
   background: #007bff;
-  transform: scale(1.2);
+  transform: scale(1.1);
   transition: transform .7s;
+  cursor: pointer;
 }
 
 .filtered img {

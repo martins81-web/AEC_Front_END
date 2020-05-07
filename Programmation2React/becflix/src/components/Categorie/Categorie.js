@@ -113,14 +113,14 @@ export class Categorie extends React.Component {
      } 
 
     AfficherTitreCategorie() {
-        return  <Row>  
-                    <h1>{this.props.categorie}</h1>
+        return  <Row className="mt-4">  
+                    <h1 className="text-white">{this.props.categorie}</h1>
                 </Row>  
     }
 
     AfficherSeriesCategorie() { 
         if(this.props.categorie === "Suspense") {      
-            return ( <Row>{tabSuspense.map((element,i) => <TvShow key={"suspense" + i} src={element.src} alt={element.alt} title={element.title} ></TvShow> )}</Row>)
+            return ( <Row >{tabSuspense.map((element,i) => <TvShow key={"suspense" + i} src={element.src} alt={element.alt} title={element.title} ></TvShow> )}</Row>)
         }else if(this.props.categorie==="Humour"){
             return ( <Row>{tabHumour.map((element,i) => <TvShow key={"humour" + i} src={element.src} alt={element.alt} title={element.title} ></TvShow> )}</Row>)
         }else if(this.props.categorie==="Séries américaines"){
