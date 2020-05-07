@@ -55,7 +55,7 @@ d.App {
 
 
 /* Centered text */
-.centered {
+.title {
   text-align: center;
   font-size: 1.6em;
   font-weight:bolder;
