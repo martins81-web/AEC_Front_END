@@ -59,7 +59,7 @@ d.App {
 /* Centered text */
 .title {
   text-align: center;
-  font-size: 1.6em;
+  font-size: 1.4vw;
   font-weight:bolder;
   color: white;
   position: absolute;
@@ -93,4 +93,5 @@ d.App {
 /* play hover*/
 .play-hover{
   box-shadow: 5px 5px 5px #303030;
+  border-radius: 5px;
 }
