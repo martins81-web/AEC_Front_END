@@ -38,7 +38,7 @@ d.App {
 }
 
 
-
+/* filter sur le container de l'image*/
 .filtered{
   background: #007bff;
   transform: scale(1.2);
@@ -46,7 +46,9 @@ d.App {
   
 }
 
-.filtered img {
+
+/* filter sur l'image*/
+.filtered #imgShow {
   opacity: 0.7;
   filter: blur(3px) grayscale(75%);
   cursor: pointer;
@@ -69,24 +71,26 @@ d.App {
 }
 
 
-
+/*container*/
 .cont {
   position:relative;
 }
 
 /* Middle left text */
-.middle-left {
-  text-align: left;
-  float: left;
+.play {
   position: absolute;
-  left: 0%;
-  top: 50%;
-  transform: translate(0%, -50%);
-
+  left: 2%;
+  top: 95%;
+  transform: translate(2%, -95%);
+  cursor: pointer;
+  z-index: 100;
 }
 
 .hide{
   display: none;
 }
 
-
+/* play hover*/
+.play-hover{
+  box-shadow: 5px 5px 5px #303030;
+}

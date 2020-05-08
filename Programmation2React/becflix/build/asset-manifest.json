@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "./static/css/main.4ce67ce1.chunk.css",
-    "main.js": "./static/js/main.b161b8dc.chunk.js",
-    "main.js.map": "./static/js/main.b161b8dc.chunk.js.map",
+    "main.css": "./static/css/main.89279477.chunk.css",
+    "main.js": "./static/js/main.2df9ccfa.chunk.js",
+    "main.js.map": "./static/js/main.2df9ccfa.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.03e9e90d.js",
     "runtime-main.js.map": "./static/js/runtime-main.03e9e90d.js.map",
     "static/css/2.69121389.chunk.css": "./static/css/2.69121389.chunk.css",
-    "static/js/2.28d0600c.chunk.js": "./static/js/2.28d0600c.chunk.js",
-    "static/js/2.28d0600c.chunk.js.map": "./static/js/2.28d0600c.chunk.js.map",
+    "static/js/2.080b4eff.chunk.js": "./static/js/2.080b4eff.chunk.js",
+    "static/js/2.080b4eff.chunk.js.map": "./static/js/2.080b4eff.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.edcea65887b6df8281a11f029c1b0611.js": "./precache-manifest.edcea65887b6df8281a11f029c1b0611.js",
+    "precache-manifest.a0cf601d5efc4975efc24726977a36a6.js": "./precache-manifest.a0cf601d5efc4975efc24726977a36a6.js",
     "service-worker.js": "./service-worker.js",
     "static/css/2.69121389.chunk.css.map": "./static/css/2.69121389.chunk.css.map",
-    "static/css/main.4ce67ce1.chunk.css.map": "./static/css/main.4ce67ce1.chunk.css.map",
-    "static/js/2.28d0600c.chunk.js.LICENSE.txt": "./static/js/2.28d0600c.chunk.js.LICENSE.txt",
+    "static/css/main.89279477.chunk.css.map": "./static/css/main.89279477.chunk.css.map",
+    "static/js/2.080b4eff.chunk.js.LICENSE.txt": "./static/js/2.080b4eff.chunk.js.LICENSE.txt",
     "static/media/19-2.jpg": "./static/media/19-2.bab70690.jpg",
     "static/media/becflix.png": "./static/media/becflix.46a32f48.png",
     "static/media/betterCallSaul.jpg": "./static/media/betterCallSaul.9757f68c.jpg",
@@ -30,6 +30,7 @@
     "static/media/lesinvincibles.jpg": "./static/media/lesinvincibles.6f54be64.jpg",
     "static/media/mandalorian.jpg": "./static/media/mandalorian.1731a552.jpg",
     "static/media/minuitlesoir.jpg": "./static/media/minuitlesoir.dac29dc9.jpg",
+    "static/media/play.png": "./static/media/play.141d163b.png",
     "static/media/serienoire.jpg": "./static/media/serienoire.07756307.jpg",
     "static/media/unite9.jpg": "./static/media/unite9.f2ca7766.jpg",
     "static/media/vikings.jpg": "./static/media/vikings.303d3b0a.jpg"
@@ -37,8 +38,8 @@
   "entrypoints": [
     "static/js/runtime-main.03e9e90d.js",
     "static/css/2.69121389.chunk.css",
-    "static/js/2.28d0600c.chunk.js",
-    "static/css/main.4ce67ce1.chunk.css",
-    "static/js/main.b161b8dc.chunk.js"
+    "static/js/2.080b4eff.chunk.js",
+    "static/css/main.89279477.chunk.css",
+    "static/js/main.2df9ccfa.chunk.js"
   ]
 }
