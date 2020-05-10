@@ -56,7 +56,7 @@ d.App {
 
 
 
-/* Centered text */
+/* Centered position text */
 .title {
   text-align: center;
   font-size: 1.4vw;
@@ -71,12 +71,12 @@ d.App {
 }
 
 
-/*container*/
-.cont {
+/* Show container*/
+.container-tvShow {
   position:relative;
 }
 
-/* Middle left text */
+/* Bottom left position play */
 .play {
   position: absolute;
   left: 2%;
@@ -86,12 +86,13 @@ d.App {
   z-index: 100;
 }
 
+/* Hide class for any element*/
 .hide{
   display: none;
 }
 
 /* play hover*/
-.play-hover{
+.hover-play{
   box-shadow: 5px 5px 5px #303030;
   border-radius: 5px;
 }
