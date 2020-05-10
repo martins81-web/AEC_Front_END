@@ -37,24 +37,25 @@ d.App {
   }
 }
 
+/* container de l'Image tvShow */
+.container-tvShow{
+  position: relative;
+}
 
-/* filter sur le container de l'image*/
+/* Filtre pour le sur le container de l'image*/
 .filtered{
   background: #007bff;
   transform: scale(1.2);
   transition: transform .7s ease-in-out; 
-  
 }
 
 
-/* filter sur l'image*/
+/* Filtre pour l'image*/
 .filtered #imgShow {
   opacity: 0.7;
   filter: blur(3px) grayscale(75%);
   cursor: pointer;
 }
-
-
 
 /* Centered position text */
 .title {
@@ -70,13 +71,7 @@ d.App {
   cursor: pointer;
 }
 
-
-/* Show container*/
-.container-tvShow {
-  position:relative;
-}
-
-/* Bottom left position play */
+/* Left bottom position play */
 .play {
   position: absolute;
   left: 2%;
@@ -91,7 +86,7 @@ d.App {
   display: none;
 }
 
-/* play hover*/
+/* Play hover*/
 .hover-play{
   box-shadow: 5px 5px 5px #303030;
   border-radius: 5px;

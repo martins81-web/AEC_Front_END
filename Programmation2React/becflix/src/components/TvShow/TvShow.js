@@ -9,9 +9,10 @@ export class TvShow extends React.Component {
     }
 
     render() {  
+
             return ( 
                     <Col xs lg="2"> 
-                        <div id="container-tvShow" className={ 'container-tvShow ' + ( this.state.hover ? 'filtered' : null ) }>
+                        <div id="container-tvShow" className={ 'container-tvShow ' +  (this.state.hover ? 'filtered' : null) }>
                             {/* Image tv-show */}           
                             <img id="imgShow"
                                 onMouseOver={ () => this.setState( {hover: true} ) } 
@@ -24,19 +25,23 @@ export class TvShow extends React.Component {
                             
                             {/* Show title onMouseOver */}
                             <div 
-                                className={ 'title '+ ( this.state.hover === false ? 'hide' : null) } 
-                                onMouseOver={() => this.setState( {hover: true} )} >
+                                className={ this.state.hover ? 'title' : 'title hide' } 
+                                onMouseOver={() => this.setState( {hover: true} )} 
+                                onMouseOut= { () => this.setState( {hover: false} ) }  >
                                 {this.props.title}
                             </div>    
 
                             {/* Show play onMouseOver */}
                             <img  
-                                className={ 'play img-fluid ' + ( this.state.hover === false ? 'hide' : ( this.state.hoverplay ? 'hover-play' : null )) }
+                                className={ 'img-fluid play ' + (this.state.hover ? ( this.state.hoverplay ? 'hover-play' : null) :  'hide') }
                                 onMouseOver={() => {
                                     this.setState( {hover: true} );
                                     this.setState( {hoverplay: true} ); 
                                 }}
-                                onMouseOut={ () => this.setState( {hoverplay: false} ) }
+                                onMouseOut={() => {
+                                    this.setState( {hover: false} );
+                                    this.setState( {hoverplay: false} ); 
+                                }}
                                 src={play} 
                                 alt ="play"
                                 //title="Play"
@@ -48,7 +53,4 @@ export class TvShow extends React.Component {
                     </Col>      
                     );
             } 
-};  
-
-
-
+}
