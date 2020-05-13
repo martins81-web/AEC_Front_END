@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "./static/css/main.b7d46b5a.chunk.css",
-    "main.js": "./static/js/main.4161a6bb.chunk.js",
-    "main.js.map": "./static/js/main.4161a6bb.chunk.js.map",
+    "main.css": "./static/css/main.189c0f02.chunk.css",
+    "main.js": "./static/js/main.43608298.chunk.js",
+    "main.js.map": "./static/js/main.43608298.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.03e9e90d.js",
     "runtime-main.js.map": "./static/js/runtime-main.03e9e90d.js.map",
     "static/css/2.69121389.chunk.css": "./static/css/2.69121389.chunk.css",
-    "static/js/2.080b4eff.chunk.js": "./static/js/2.080b4eff.chunk.js",
-    "static/js/2.080b4eff.chunk.js.map": "./static/js/2.080b4eff.chunk.js.map",
+    "static/js/2.60ab45e1.chunk.js": "./static/js/2.60ab45e1.chunk.js",
+    "static/js/2.60ab45e1.chunk.js.map": "./static/js/2.60ab45e1.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.facf53f31ef9f6fea89de288118816e6.js": "./precache-manifest.facf53f31ef9f6fea89de288118816e6.js",
+    "precache-manifest.e16c47049422be626bb0aad6fa2d400c.js": "./precache-manifest.e16c47049422be626bb0aad6fa2d400c.js",
     "service-worker.js": "./service-worker.js",
     "static/css/2.69121389.chunk.css.map": "./static/css/2.69121389.chunk.css.map",
-    "static/css/main.b7d46b5a.chunk.css.map": "./static/css/main.b7d46b5a.chunk.css.map",
-    "static/js/2.080b4eff.chunk.js.LICENSE.txt": "./static/js/2.080b4eff.chunk.js.LICENSE.txt",
+    "static/css/main.189c0f02.chunk.css.map": "./static/css/main.189c0f02.chunk.css.map",
+    "static/js/2.60ab45e1.chunk.js.LICENSE.txt": "./static/js/2.60ab45e1.chunk.js.LICENSE.txt",
     "static/media/19-2.jpg": "./static/media/19-2.bab70690.jpg",
     "static/media/becflix.png": "./static/media/becflix.46a32f48.png",
     "static/media/betterCallSaul.jpg": "./static/media/betterCallSaul.9757f68c.jpg",
     "static/media/breakingbad.jpg": "./static/media/breakingbad.89c0fe3c.jpg",
     "static/media/dexter.jpg": "./static/media/dexter.89ae9f0e.jpg",
     "static/media/district31.jpg": "./static/media/district31.8e4c6ea1.jpg",
-    "static/media/fugueuse.jpg": "./static/media/fugueuse.91d87a25.jpg",
+    "static/media/fugueuse.jpg": "./static/media/fugueuse.70284935.jpg",
     "static/media/got.jpg": "./static/media/got.bd35d73b.jpg",
     "static/media/lanceEtCompte.jpg": "./static/media/lanceEtCompte.cb2cdb15.jpg",
     "static/media/lapetitevie.jpg": "./static/media/lapetitevie.ac41b93d.jpg",
@@ -38,8 +38,8 @@
   "entrypoints": [
     "static/js/runtime-main.03e9e90d.js",
     "static/css/2.69121389.chunk.css",
-    "static/js/2.080b4eff.chunk.js",
-    "static/css/main.b7d46b5a.chunk.css",
-    "static/js/main.4161a6bb.chunk.js"
+    "static/js/2.60ab45e1.chunk.js",
+    "static/css/main.189c0f02.chunk.css",
+    "static/js/main.43608298.chunk.js"
   ]
 }

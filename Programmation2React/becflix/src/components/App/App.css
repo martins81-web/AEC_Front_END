@@ -88,6 +88,6 @@ d.App {
 
 /* Play hover*/
 .hover-play{
-  box-shadow: 5px 5px 5px #303030;
+  box-shadow: 5px 5px 5px black;
   border-radius: 5px;
 }
