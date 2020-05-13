@@ -100,3 +100,9 @@ d.App {
 .background{
   background-color: #303030;
 }
+
+
+.filter{
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+}

@@ -41,21 +41,23 @@ export class Connexion extends React.Component {
         return (  
             <Container>
                 <Row className="mt-5">
-                    <Col className="bg-dark py-3" xs lg={{span: 6, offset: 3}}>
-                        <form >
-                            <div className="form-group">
-                                <label className="text-white" htmlFor="email">Email address</label>
-                                <input onChange={this.handleChangeEmail} type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" name="email" />
-                    
-                            </div>
-                            <div className="form-group">
-                                <label className="text-white" htmlFor="password">Password</label>
-                                <input onChange={this.handleChangePassword} type="password" className="form-control" id="pass" placeholder="Password" name="password" />
-                            </div>
-                            <div className="d-flex justify-content-end">
-                                <button type="" className="btn btn-primary" onClick={this.handleConexion}>Connexion</button>
-                            </div>
-                        </form>
+                    <Col className="filter px-5 py-4" xs lg={{span: 6, offset: 3}}>
+                        <h1 className="text-white ">Connexion</h1>
+                            <form >
+                                <div className="form-group mt-4">
+                                    <label className="text-white" htmlFor="email">Courriel</label>
+                                    <input onChange={this.handleChangeEmail} type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" name="email" />
+                        
+                                </div>
+                                <div className="form-group ">
+                                    <label className="text-white" htmlFor="password">Mot-de-passe</label>
+                                    <input onChange={this.handleChangePassword} type="password" className="form-control" id="pass" placeholder="Password" name="password" />
+                                </div>
+                                <div className="d-flex justify-content-end py-3">
+                                    <button type="" className="btn btn-primary" onClick={this.handleConexion}>Connexion</button>
+                                </div>
+                            </form>
+                       
                     </Col>
                 </Row>
             </Container>
