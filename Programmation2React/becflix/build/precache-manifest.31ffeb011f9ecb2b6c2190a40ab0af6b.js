@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "86589d9b66d63121b6e88b927e02dec2",
+    "revision": "06e2bd0f364a8a6eee147209492a3e14",
     "url": "./index.html"
   },
   {
-    "revision": "e9b5a658292962846782",
+    "revision": "97407afda3f01629939f",
     "url": "./static/css/2.69121389.chunk.css"
   },
   {
-    "revision": "df02875b01375472b0f7",
-    "url": "./static/css/main.189c0f02.chunk.css"
+    "revision": "8dcd00f9097def11417f",
+    "url": "./static/css/main.42897a25.chunk.css"
   },
   {
-    "revision": "e9b5a658292962846782",
-    "url": "./static/js/2.60ab45e1.chunk.js"
+    "revision": "97407afda3f01629939f",
+    "url": "./static/js/2.70ed0dc0.chunk.js"
   },
   {
     "revision": "5ac48c47bb3912b14c2d8de4f56d5ae8",
-    "url": "./static/js/2.60ab45e1.chunk.js.LICENSE.txt"
+    "url": "./static/js/2.70ed0dc0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "df02875b01375472b0f7",
-    "url": "./static/js/main.43608298.chunk.js"
+    "revision": "8dcd00f9097def11417f",
+    "url": "./static/js/main.4922558e.chunk.js"
   },
   {
     "revision": "ef8e272eb776f0edacee",
@@ -38,6 +38,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "9757f68c6ddc52b3792c249c186b40f8",
     "url": "./static/media/betterCallSaul.9757f68c.jpg"
+  },
+  {
+    "revision": "dc2411c98b969c2d71b0920ae3e2d9d8",
+    "url": "./static/media/bg.dc2411c9.jpg"
   },
   {
     "revision": "89c0fe3c02ec24da63027078fb1c7b4c",

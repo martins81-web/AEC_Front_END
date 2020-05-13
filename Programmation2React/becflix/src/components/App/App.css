@@ -1,3 +1,8 @@
+
+:root{
+  --bg: #303030;
+}
+
 d.App {
   text-align: center;
 }
@@ -90,4 +95,12 @@ d.App {
 .hover-play{
   box-shadow: 5px 5px 5px black;
   border-radius: 5px;
+}
+
+.background{
+  background-color: #303030;
+}
+
+.margin{
+  top: 50%
 }

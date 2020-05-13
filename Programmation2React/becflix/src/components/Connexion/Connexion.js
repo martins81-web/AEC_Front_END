@@ -40,8 +40,8 @@ export class Connexion extends React.Component {
     render() { 
         return (  
             <Container>
-                <Row className="mt-3">
-                    <Col xs lg="6">
+                <Row className="mt-5">
+                    <Col className="bg-dark py-3" xs lg={{span: 6, offset: 3}}>
                         <form >
                             <div className="form-group">
                                 <label className="text-white" htmlFor="email">Email address</label>
@@ -52,8 +52,9 @@ export class Connexion extends React.Component {
                                 <label className="text-white" htmlFor="password">Password</label>
                                 <input onChange={this.handleChangePassword} type="password" className="form-control" id="pass" placeholder="Password" name="password" />
                             </div>
-                            
-                            <button type="" className="btn btn-primary" onClick={this.handleConexion}>Connexion</button>
+                            <div className="d-flex justify-content-end">
+                                <button type="" className="btn btn-primary" onClick={this.handleConexion}>Connexion</button>
+                            </div>
                         </form>
                     </Col>
                 </Row>
