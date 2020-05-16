@@ -1,0 +1,122 @@
+<html lang="fr-ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Canevas</title>
+    <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<div class="container mt-5">
+    <canvas id="myCanvas" width="500" height="400"></canvas>
+
+    <script>
+        var xx=60;
+        var yy=50;
+
+        var canvas = document.getElementById("myCanvas");
+        var ctx= canvas.getContext("2d");
+        ctx.fillStyle="black";
+        ctx.rect(0, 0, 500, 400);
+        ctx.fill();
+
+        var ctx2= canvas.getContext("2d");
+        var grd = ctx2.createLinearGradient(0, 320, 0, 0);
+        grd.addColorStop(0, "purple");
+        grd.addColorStop(1, "deepskyblue");
+        ctx2.beginPath();
+        ctx2.arc(230+xx,160+yy,160,0,2*Math.PI);
+        ctx2.fillStyle=grd;
+        ctx2.fill();
+
+        var ctx3= canvas.getContext("2d");
+        ctx3.beginPath();
+        ctx3.arc(380+xx,110+yy,160,0,2*Math.PI);
+        ctx3.fillStyle="black";
+        ctx3.fill();
+    </script>
+
+</div>
+
+<svg width="1000" height="200">
+    <!--  circle-->
+    <circle cx="100" cy="100" r="60" fill="red" stroke="purple" stroke-width="5"/>
+    <!--  carré-->
+    <rect x="250" y="40" width="120" height="120"
+          style="fill:lawngreen;opacity:0.5;stroke:darkgreen;stroke-width:5" />
+    <!--  triangle-->
+    <polygon points="520,40 580,160 460,160" style="fill:deepskyblue;stroke:blue;stroke-width:5" />
+
+    <!--  free form-->
+    <line x1="700" y1="40" x2="820" y2="40" style="stroke:forestgreen;stroke-width:5" />
+    <line x1="700" y1="160" x2="820" y2="40" style="stroke:forestgreen;stroke-width:5" />
+    <line x1="700" y1="160" x2="820" y2="160" style="stroke:forestgreen;stroke-width:5" />
+    <line x2="820" y2="160" x1="760" y1="100"  style="stroke:forestgreen;stroke-width:5" />
+</svg>
+
+
+
+
+
+<div id="form" class="container">
+    <div class="container p-5">
+        <h1>Feedback Form</h1>
+        <p>We would love to hear your thoughts, concerns or problems whie anything so we can improve!</p>
+
+        <div class="form-group">
+            <div class="mt-5">
+                <p class="TitleFormsP">Feedback Type</p>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <label class="form-check-label" for="inlineRadio1">Comments</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <label class="form-check-label" for="inlineRadio2">Bug Reports</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" >
+                    <label class="form-check-label" for="inlineRadio3">Questions</label>
+                </div>
+            </div>
+
+            <div class="mt-5">
+                <p class="TitleFormsP">Describe Feedback:</p>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+            </div>
+
+            <div class="mt-5">
+                <p class="TitleFormsP">Name:</p>
+                <div class="row">
+                    <div class="col-2">
+                        <input type="text" id="fname" name="fname">
+                        <label for="fname">First name</label>
+                    </div>
+                    <div class="col-2 mx-3">
+                        <input type="text" id="lname" name="lname">
+                        <label for="lname">Last name</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-5">
+                <p class="TitleFormsP">Email</p>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ex: myname@example.com">
+                <small id="emailHelp" class="form-text text-muted">example@exemple.com</small>
+            </div>
+
+            <div class="mt-5 text-center">
+                <button type="submit"  value="Submit">SUBMIT FEEDBACK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://kit.fontawesome.com/a46d75ba7a.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="bootstrap-4.4.1-dist/js/bootstrap.js"></script>
+</body>
+</html>
