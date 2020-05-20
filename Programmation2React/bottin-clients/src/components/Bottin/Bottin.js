@@ -159,7 +159,7 @@ export class Bottin extends React.Component {
    
 
     AfficherClients() { 
-        return (<Row className="no-gutters m-0 p-0 ">
+        return (<Row>
                     {tabClients.map((element,i) =>  element.title.toLowerCase().includes(this.state.recherche.toLowerCase())   &&
                         <Client key={"client" + i} 
                                 src={element.src} 
