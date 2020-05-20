@@ -11,7 +11,7 @@ export class Client extends React.Component {
     render() { 
         return ( 
             <Col xs lg="2" className="mb-3"> 
-                <Card className="h-100 bg-light" style={{ width: '19rem' }}>
+                <Card className="h-100 bg-light" style={{ width: '18.5rem' }}>
                     <Card.Img variant="top" src={this.props.src} />
                     <Card.Body >
                         <Card.Title >{this.props.prenom+" "+this.props.nom}</Card.Title>
