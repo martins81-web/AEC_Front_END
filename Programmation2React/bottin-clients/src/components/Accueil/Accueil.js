@@ -8,7 +8,7 @@ import {Connexion} from '../Connexion/Connexion';
 export class Accueil extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { connected: false }
+        this.state = { connected: true }
         this.gestionConnexion = this.gestionConnexion.bind(this); 
         this.ChangeConexion = this.ChangeConexion.bind(this); 
     }

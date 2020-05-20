@@ -192,15 +192,15 @@ export class Bottin extends React.Component {
         );
     }
 
-
-
-    ActiveRecherche(NouvelleRecherche){
-        this.setState({ recherche: NouvelleRecherche.trim() });
-    }
-
-    
     AfficheButtonDeconnexion(){
         return  <Deconnexion onClick={this.handleDeconnexion}/>      
+    }
+
+   
+
+    
+    ActiveRecherche(nouvelleRecherche){
+        this.setState({ recherche: nouvelleRecherche });
     }
     
     handleDeconnexion(){
