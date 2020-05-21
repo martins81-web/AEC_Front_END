@@ -178,10 +178,10 @@ export class Bottin extends React.Component {
 
     Header(){
         return (
-                <Row>
-                    <Col xs lg="4"><h1>Bottin des clients</h1></Col>
-                    <Col xs lg="4"> {this.Recherche()}</Col>
-                    <Col xs lg="4"> {this.AfficheButtonDeconnexion()}</Col>
+                <Row id="header" className="d-flex align-items-center pt-3"> 
+                    <Col xl="4" lg="4" md="6" sm="12" xs="12" ><h1 ><span className="px-2">Bottin des clients</span></h1></Col>
+                    <Col xl="4" lg="4" md="6" sm="12" xs="12"> {this.Recherche()}</Col>
+                    <Col xl="4" lg="4" md="12" sm="12" xs="12"> {this.AfficheButtonDeconnexion()}</Col>
                 </Row>
                 )
     }
@@ -210,6 +210,7 @@ export class Bottin extends React.Component {
     render() { 
         return (    <>
                     {this.Header()}
+                    <hr className="style"></hr>
                     {this.AfficherClients()}
                     </>
                 );

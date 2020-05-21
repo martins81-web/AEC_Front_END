@@ -17,7 +17,7 @@ export class Recherche extends React.Component {
     handleRechercheChange(e){
         const search = e.target.value;
         this.setState({stringRecherche: search});
-        if (e.target.value.length===0){
+        if (e.target.value.length===0 && this.state.stringRecherche===""){
             this.setState({reset: false});
         } else {
             this.setState({reset: true});
@@ -58,8 +58,8 @@ export class Recherche extends React.Component {
 
     render() {
         return (
-                <div className="d-flex justify-content-center mt-3">
-                    <Form id="formRecherche" inline onSubmit={e => { e.preventDefault()}}>
+                <div className="d-flex justify-content-start">
+                    <Form id="formRecherche" inline onSubmit={e => {e.preventDefault()}}>
                         <FormControl id="inputRecherche"onKeyPress={this.handleKeyPress} onChange={this.handleRechercheChange}  type="text" placeholder="Recherche" />
                         <button type="button" id="recherche" onClick={this.handleRecherche} variant="outline-success" className="mx-sm-2">Recherche</button>
                         {this.AfficherAnnuler()}

@@ -16,7 +16,7 @@ export class Deconnexion extends React.Component {
     render() {
         return (
                 <div className="d-flex justify-content-end">
-                    <button onClick={this.handleDeconexion} type="" className="btn btn-danger my-3" >Déconnexion</button>
+                    <button onClick={this.handleDeconexion} type="" className="btn btn-danger " >Déconnexion</button>
                 </div>
         );
     }
