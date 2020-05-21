@@ -6,7 +6,7 @@ import {AnnulerRecherche}  from '../AnnulerRecherche/AnnulerRecherche';
 export class Recherche extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {stringRecherche: "" , reset:false};
+        this.state = {stringRecherche: "" , reset:false, rechercheActive:false};
         
         this.handleRechercheChange = this.handleRechercheChange.bind(this);
         this.handleRecherche = this.handleRecherche.bind(this); 
@@ -17,7 +17,7 @@ export class Recherche extends React.Component {
     handleRechercheChange(e){
         const search = e.target.value;
         this.setState({stringRecherche: search});
-        if (e.target.value.length===0 && this.state.stringRecherche===""){
+        if (e.target.value.length===0 && this.state.rechercheActive===false){
             this.setState({reset: false});
         } else {
             this.setState({reset: true});
@@ -28,8 +28,10 @@ export class Recherche extends React.Component {
         this.props.onBtnClick(this.state.stringRecherche); 
         if (this.state.stringRecherche!==""){
             this.setState({reset: true});
+            this.setState({rechercheActive: true});
         }else {
             this.setState({reset: false});
+            this.setState({rechercheActive: false});
         }
     }
 
@@ -48,6 +50,7 @@ export class Recherche extends React.Component {
         document.getElementById("inputRecherche").value="";
         this.setState({stringRecherche: ""});
         this.props.onBtnClick("");
+        this.setState({rechercheActive: false});
     }
 
     AfficherAnnuler(){
