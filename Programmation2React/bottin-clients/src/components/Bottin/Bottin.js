@@ -1,13 +1,16 @@
 import React from 'react';
 import '../App/App.css';
-import {Client} from '../Client/Client'
+
 import Row from 'react-bootstrap/Row';  
-import Col from 'react-bootstrap/Col'; 
+import Col from 'react-bootstrap/Col';
+
 import {Deconnexion}  from '../Deconnexion/Deconnexion';
 import {Recherche}  from '../Recherche/Recherche';
+import {Client} from '../Client/Client'
+import {AjouterClient} from '../AjouterClient/AjouterClient'
+import {FormulaireAjoutClient} from '../FormulaireAjoutClient/FormulaireAjoutClient'
 
-
-const tabClients = [ 
+var tabClients = [ 
     { 
         src : require("../../img/Photos clients/Alexandre_Gagnon.jpeg"), 
         alt: "Alexandre_Gagnon", 
@@ -142,22 +145,18 @@ const tabClients = [
     } 
 ] 
 
-
 export class Bottin extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {  recherche: "" , 
-                    }
+        this.state = {  recherche: "" , ajouter:false}
         this.Header = this.Header.bind(this); 
         this.handleDeconnexion =this.handleDeconnexion.bind(this); 
         this.ActiveRecherche =this.ActiveRecherche.bind(this); 
         this.Recherche =this.Recherche.bind(this); 
         this.AfficherClients =this.AfficherClients.bind(this); 
-        this.IncludesString =this.AfficherClients.bind(this); 
+        this.handleFormAjouterClient =this.handleFormAjouterClient.bind(this); 
     }
     
-   
-
     AfficherClients() { 
         return (<Row>
                     {tabClients.map((element,i) =>  element.title.toLowerCase().includes(this.state.recherche.toLowerCase())   &&
@@ -181,7 +180,8 @@ export class Bottin extends React.Component {
                 <Row id="header" className="d-flex align-items-center pt-3"> 
                     <Col xl="4" lg="4" md="6" sm="12" xs="12" ><h1 ><span className="px-2">Bottin des clients</span></h1></Col>
                     <Col xl="4" lg="4" md="6" sm="12" xs="12"> {this.Recherche()}</Col>
-                    <Col xl="4" lg="4" md="12" sm="12" xs="12"> {this.AfficheButtonDeconnexion()}</Col>
+                    <Col xl="2" lg="2" md="6" sm="12" xs="12"> <AjouterClient onClick={this.handleFormAjouterClient}/></Col>
+                    <Col xl="2" lg="2" md="6" sm="12" xs="12"> {this.AfficheButtonDeconnexion()}</Col>
                 </Row>
                 )
     }
@@ -195,9 +195,6 @@ export class Bottin extends React.Component {
     AfficheButtonDeconnexion(){
         return  <Deconnexion onClick={this.handleDeconnexion}/>      
     }
-
-   
-
     
     ActiveRecherche(nouvelleRecherche){
         this.setState({ recherche: nouvelleRecherche });
@@ -207,15 +204,30 @@ export class Bottin extends React.Component {
         this.props.onDeconnexion();
     }
 
+    handleFormAjouterClient(){
+        this.setState({ ajouter: !this.state.ajouter});
+        this.AfficherFormulaire();
+    }
+
+    AfficherFormulaire(){
+        if(this.state.ajouter ===true){
+            return (<>
+                        <FormulaireAjoutClient onAnnuler={() => this.setState({ ajouter: false })}/>
+                        <hr className="style"/>
+                    </>
+                    );
+        }
+    }
+
     render() { 
         return (    <>
                     {this.Header()}
                     <hr className="style"></hr>
+                    {this.AfficherFormulaire()}
                     {this.AfficherClients()}
                     </>
                 );
     }
-
 }
 
 
