@@ -33,7 +33,7 @@ export class AjoutClient extends React.Component {
         return (
             <Container fluid>
                 <Row className="col-container-sameHeight">
-                    <Col className="col-sameHeight d-flex justify-content-around flex-column" xs xl="9">
+                    <Col className="col-sameHeight d-flex justify-content-around flex-column" xs xl="7">
                         <h2>Nouveau Client</h2>
                         <FormNouveauClient  onAnnuler={this.handleAnnuler} 
                                             onChangePrenom={(prenom) => this.setState({prenom: prenom})}
@@ -44,9 +44,9 @@ export class AjoutClient extends React.Component {
                                             onChangeCourriel={(courriel) => this.setState({courriel: courriel})}
                         />
                     </Col>
-                    <Col className="col-sameHeight" xs xl="3" >
+                    <Col className="col-sameHeight" xs xl="5" >
                         <Row className="d-flex justify-content-center">
-                            <Col xl="12" lg="12" md="12" sm="12" xs="12" className="mb-3"> 
+                            <Col xl="5" lg="5" md="5" sm="5" xs="5" className="mb-3"> 
                                 <PreviewCard    prenom={this.state.prenom}
                                                 nom={this.state.nom}
                                                 metier={this.state.metier}
