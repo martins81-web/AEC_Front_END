@@ -44,7 +44,7 @@ export class AjoutClient extends React.Component {
                                             onChangeCourriel={(courriel) => this.setState({courriel: courriel})}
                         />
                     </Col>
-                    <Col className="col-sameHeight" xs xl="43" >
+                    <Col className="col-sameHeight" xs xl="3" >
                         <Row className="d-flex justify-content-center">
                             <Col xl="12" lg="12" md="12" sm="12" xs="12" className="mb-3"> 
                             
