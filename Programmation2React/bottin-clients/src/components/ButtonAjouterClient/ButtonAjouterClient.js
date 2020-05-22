@@ -2,11 +2,11 @@ import React from 'react';
 import '../App/App.css';
 
 
-export class AjouterClient extends React.Component {
+export class ButtonAjouterClient extends React.Component {
     constructor(props) {
         super(props);
         this.state = {  }
-    
+
         this.ShowForm=this.ShowForm.bind(this);
     }
 
@@ -17,7 +17,7 @@ export class AjouterClient extends React.Component {
     render() { 
         return (
             <div className="d-flex justify-content-start">
-                <button onClick={this.ShowForm} type="" className="btn btn-info" >Ajouter un nouveau client</button>
+                <button onClick={this.ShowForm} type="" className={this.props.typeBtn}>{this.props.textBouton}</button>
             </div>
           );
     }

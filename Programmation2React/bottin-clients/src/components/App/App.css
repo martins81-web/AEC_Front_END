@@ -57,3 +57,12 @@ hr.style {
 h1 span{
   background-color: darkorange;
 }
+
+.col-container-sameHeight {
+  display: table; /* Make the container element behave like a table */
+  width: 100%; /* Set full-width to expand the whole page */
+}
+
+.col-sameHeight {
+  display: table-cell; /* Make elements inside the container behave like table cells */
+}

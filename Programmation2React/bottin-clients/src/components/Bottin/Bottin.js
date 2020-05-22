@@ -7,8 +7,8 @@ import Col from 'react-bootstrap/Col';
 import {Deconnexion}  from '../Deconnexion/Deconnexion';
 import {Recherche}  from '../Recherche/Recherche';
 import {Client} from '../Client/Client'
-import {AjouterClient} from '../AjouterClient/AjouterClient'
-import {FormulaireAjoutClient} from '../FormulaireAjoutClient/FormulaireAjoutClient'
+import {ButtonAjouterClient} from '../ButtonAjouterClient/ButtonAjouterClient'
+import {AjoutClient} from '../AjoutClient/AjoutClient'
 
 var tabClients = [ 
     { 
@@ -148,7 +148,7 @@ var tabClients = [
 export class Bottin extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {  recherche: "" , ajouter:false}
+        this.state = {  recherche: "" , ajouter:false }
         this.Header = this.Header.bind(this); 
         this.handleDeconnexion =this.handleDeconnexion.bind(this); 
         this.ActiveRecherche =this.ActiveRecherche.bind(this); 
@@ -180,7 +180,9 @@ export class Bottin extends React.Component {
                 <Row id="header" className="d-flex align-items-center pt-3"> 
                     <Col xl="4" lg="4" md="6" sm="12" xs="12" ><h1 ><span className="px-2">Bottin des clients</span></h1></Col>
                     <Col xl="4" lg="4" md="6" sm="12" xs="12"> {this.Recherche()}</Col>
-                    <Col xl="2" lg="2" md="6" sm="12" xs="12"> <AjouterClient onClick={this.handleFormAjouterClient}/></Col>
+                    <Col xl="2" lg="2" md="6" sm="12" xs="12"> <ButtonAjouterClient typeBtn={this.state.ajouter ?'btn btn-danger':'btn btn-info'}
+                                                                                    textBouton= {this.state.ajouter ?'Annuler':'Ajouter nouveau client'}
+                                                                                    onClick={this.handleFormAjouterClient}/></Col>
                     <Col xl="2" lg="2" md="6" sm="12" xs="12"> {this.AfficheButtonDeconnexion()}</Col>
                 </Row>
                 )
@@ -212,7 +214,7 @@ export class Bottin extends React.Component {
     AfficherFormulaire(){
         if(this.state.ajouter ===true){
             return (<>
-                        <FormulaireAjoutClient onAnnuler={() => this.setState({ ajouter: false })}/>
+                        <AjoutClient onAnnuler={() => this.setState({ ajouter: false })}/>
                         <hr className="style"/>
                     </>
                     );

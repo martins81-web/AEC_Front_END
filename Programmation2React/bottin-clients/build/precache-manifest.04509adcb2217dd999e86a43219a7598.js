@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0bb6cb51e049f448f31ec33bd2197082",
+    "revision": "1c4a3bd6287dc7e76afe50e3abbc4fd2",
     "url": "./index.html"
   },
   {
-    "revision": "d0dc3bd232727be89da5",
+    "revision": "383a64feca71b97e515d",
     "url": "./static/css/2.af3c1da9.chunk.css"
   },
   {
-    "revision": "7f3657eca2b1c7de8d2b",
-    "url": "./static/css/main.27612938.chunk.css"
+    "revision": "5082854284454a73dc08",
+    "url": "./static/css/main.9a5c4033.chunk.css"
   },
   {
-    "revision": "d0dc3bd232727be89da5",
-    "url": "./static/js/2.265ab287.chunk.js"
+    "revision": "383a64feca71b97e515d",
+    "url": "./static/js/2.50c2895c.chunk.js"
   },
   {
     "revision": "5ac48c47bb3912b14c2d8de4f56d5ae8",
-    "url": "./static/js/2.265ab287.chunk.js.LICENSE.txt"
+    "url": "./static/js/2.50c2895c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7f3657eca2b1c7de8d2b",
-    "url": "./static/js/main.4f6f331c.chunk.js"
+    "revision": "5082854284454a73dc08",
+    "url": "./static/js/main.7d4ce270.chunk.js"
   },
   {
     "revision": "b284ca98912a9329ae65",
@@ -74,5 +74,13 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "fdc5cac435dfa896985393db8462afb2",
     "url": "./static/media/Vanessa_Fortin.fdc5cac4.jpeg"
+  },
+  {
+    "revision": "39eb0bbf2cc33ba02f53f8585004f820",
+    "url": "./static/media/default_Client_Image.39eb0bbf.jpg"
+  },
+  {
+    "revision": "08323eca84aada00b6c47827f8af729e",
+    "url": "./static/media/default_Client_Image_fille.08323eca.jpg"
   }
 ]);
