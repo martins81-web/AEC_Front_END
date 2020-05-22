@@ -6,9 +6,10 @@ import Col from 'react-bootstrap/Col';
 
 import {Deconnexion}  from '../Deconnexion/Deconnexion';
 import {Recherche}  from '../Recherche/Recherche';
-import {Client} from '../Client/Client'
-import {ButtonAjouterClient} from '../ButtonAjouterClient/ButtonAjouterClient'
-import {AjoutClient} from '../AjoutClient/AjoutClient'
+import {Client} from '../Client/Client';
+import {ButtonAjouterClient} from '../ButtonAjouterClient/ButtonAjouterClient';
+import {AjoutClient} from '../AjoutClient/AjoutClient';
+
 
 var tabClients = [ 
     { 
@@ -145,6 +146,7 @@ var tabClients = [
     } 
 ] 
 
+
 export class Bottin extends React.Component {
     constructor(props) {
         super(props);
@@ -214,7 +216,7 @@ export class Bottin extends React.Component {
     AfficherFormulaire(){
         if(this.state.ajouter ===true){
             return (<>
-                        <AjoutClient onAnnuler={() => this.setState({ ajouter: false })}/>
+                        <AjoutClient onAnnuler={() => this.setState({ ajouter: false })} ajoutClient={(nouveauClient)=>tabClients.push(nouveauClient)}/>
                         <hr className="style"/>
                     </>
                     );

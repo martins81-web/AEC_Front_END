@@ -7,16 +7,39 @@ import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
  
 
+
+
 export class FormNouveauClient extends React.Component {
     constructor(props) {
         super(props);
         this.state = {  };
 
         this.handleAnnuler=this.handleAnnuler.bind(this);
+        this.ajoutClient=this.ajoutClient.bind(this)
+        
     }
 
     handleAnnuler(){
         this.props.onAnnuler(true);
+    }
+
+    ajoutClient(){
+    
+        var nouveauClient={   
+            src:    this.props.image,
+            alt:    this.refs.prenom.value+"_"+this.refs.nom.value,
+            title:  this.refs.prenom.value+" "+this.refs.nom.value,
+            prenom: this.refs.prenom.value,
+            nom:    this.refs.nom.value,
+            metier: this.refs.metier.value,
+            email:  this.refs.courriel.value,
+            telephone: this.refs.telephone.value,
+            adresse: this.refs.adresse.value
+        } 
+
+        
+        this.props.ajoutClient(nouveauClient);
+        this.handleAnnuler();
     }
 
 
@@ -78,7 +101,7 @@ export class FormNouveauClient extends React.Component {
                             </Form.Group>           
             </Form>  
             <div className="d-flex justify-content-end" controlId="formButtons">
-                <button onClick="" type="" className="btn btn-primary mr-2" >Ajouter client</button>
+                <button onClick={this.ajoutClient} type="" className="btn btn-primary mr-2" >Ajouter client</button>
                 <button onClick={this.handleAnnuler} type="" className="btn btn-danger" >Annuler</button>
             </div>
             </>

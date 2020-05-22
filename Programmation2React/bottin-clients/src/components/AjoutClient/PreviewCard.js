@@ -9,22 +9,37 @@ import defaultClientImageFille from '../../img/default_Client_Image_fille.jpg';
 export class PreviewCard extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {  image: defaultClientImage, 
-                        hovered:false
+        this.state = {  image: defaultClientImage,
+                        typeImg: "", 
+                        hovered: false
                     };
+        
+        this.handleClick=this.handleClick.bind(this);
+        
     }
 
+    
 
+    handleClick(){
+        this.state.image === defaultClientImage ? this.setState({image: defaultClientImageFille}):this.setState({image: defaultClientImage});
+        if (this.state.image === defaultClientImage){
+            this.props.image(defaultClientImageFille); 
+        } else{
+            this.props.image(defaultClientImage); 
+        }
+        
+    }
 
     render() {
         return (
             <Card className="bg-light">
-                <Card.Img   onClick={() => {this.state.image === defaultClientImage ? this.setState({image: defaultClientImageFille}):this.setState({image: defaultClientImage})}} 
+                <Card.Img   onClick={this.handleClick} 
                             onMouseOver={() => this.setState({hovered: true})}
                             onMouseOut={() => this.setState({hovered: false})}
                             style={{cursor: `${this.state.hovered ? 'pointer' : null}`}}
                             title="Clique Moi!"
                             variant="top" src={this.state.image}   />
+                            
                 <Card.Body>
                     <Card.Title>{this.props.prenom +" "+this.props.nom}</Card.Title>
                     <Card.Text>{this.props.metier}</Card.Text>

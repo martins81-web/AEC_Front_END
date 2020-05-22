@@ -7,7 +7,7 @@ import {PreviewCard}  from './PreviewCard';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
+import defaultClientImage from '../../img/default_Client_Image.jpg';
 
 
 export class AjoutClient extends React.Component {
@@ -19,6 +19,7 @@ export class AjoutClient extends React.Component {
                         courriel: "",
                         telephone: "",
                         adresse: "",
+                        imgNouveauClient: defaultClientImage
                     }
 
         this.handleAnnuler=this.handleAnnuler.bind(this);
@@ -42,6 +43,8 @@ export class AjoutClient extends React.Component {
                                             onChangeAdresse={(adresse) => this.setState({adresse: adresse})}
                                             onChangeTelephone={(telephone) => this.setState({telephone: telephone})}
                                             onChangeCourriel={(courriel) => this.setState({courriel: courriel})}
+                                            ajoutClient={(nouveauClient)=>this.props.ajoutClient(nouveauClient)}
+                                            image={this.state.imgNouveauClient}
                         />
                     </Col>
                     <Col className="" xs xl="3">
@@ -53,6 +56,7 @@ export class AjoutClient extends React.Component {
                                                 adresse={this.state.adresse}
                                                 telephone={this.state.telephone}
                                                 courriel={this.state.courriel}
+                                                image={(imgNouveauClient) => this.setState({imgNouveauClient: imgNouveauClient})}
                                 />
                             </Col>
                         </Row>
