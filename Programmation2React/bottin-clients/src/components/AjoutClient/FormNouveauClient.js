@@ -22,7 +22,7 @@ export class FormNouveauClient extends React.Component {
 
     render() {
         return (<>
-                <Form id="" className="mx-2 mt-5" onSubmit={e => {e.preventDefault()}}>
+                <Form id="" className="mx-2" onSubmit={e => {e.preventDefault()}}>
                             <Form.Group as={Row} controlId="formID">
                                 <Form.Group as={Col}  xl="12" lg="12" md="12" sm="12" xs="12">
                                     <Row>

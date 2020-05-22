@@ -31,7 +31,7 @@ export class AjoutClient extends React.Component {
 
     render() { 
         return (
-            <Container >
+            <Container fluid>
                 <Row className="col-container-sameHeight">
                     <Col className="col-sameHeight d-flex justify-content-around flex-column" xs xl="9">
                         <h2>Nouveau Client</h2>
@@ -47,7 +47,6 @@ export class AjoutClient extends React.Component {
                     <Col className="col-sameHeight" xs xl="3" >
                         <Row className="d-flex justify-content-center">
                             <Col xl="12" lg="12" md="12" sm="12" xs="12" className="mb-3"> 
-                            
                                 <PreviewCard    prenom={this.state.prenom}
                                                 nom={this.state.nom}
                                                 metier={this.state.metier}
