@@ -29,7 +29,6 @@ export class AjoutClient extends React.Component {
         this.props.onAnnuler(true);
     }
 
-
     render() { 
         return (
             <Container fluid>
