@@ -13,55 +13,56 @@
     <h1>Exercice 1</h1>
 </div>
 
-<div class="container my-5">
-
-    <div class="row">
+<div class="container my-5 ">
+    <div class="row ">
         <div class="col-4">
             <div class="form-group has-search">
                 <span class="fa fa-search form-control-feedback"></span>
                 <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Rechercher des films..">
             </div>
         </div>
-        <div class="col-4 text-center">
+        <div class="col-4 text-right">
             <input class="btn btn-primary" onClick="sortTitre()" type="button" value="Trier les films en ordre alphabétique">
         </div>
 
-        <div class="col-4 text-center">
+        <div class="col-4 text-right">
             <input class="btn btn-secondary" onClick="sortDatedeSortie()" type="button" value="Trier les films en ordre de date de sortie">
         </div>
     </div>
 
     <div class="row">
-        <table id="monTableau" class="table">
-            <thead class="thead-dark">
-                <tr>
-                    <th>Titre du film</th>
-                    <th>Année de sortie</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Once Upon a Time... in Hollywood</td>
-                    <td>2019</td>
-                </tr>
-                <tr>
-                    <td>Pulp fiction</td>
-                    <td>1994</td>
-                </tr>
-                <tr>
-                    <td>Kill Bill</td>
-                    <td>2003</td>
-                </tr>
-                <tr>
-                    <td>Django</td>
-                    <td>2012 </td>
-                </tr>
-                <tr>
-                    <td>Inglourious Basterds</td>
-                    <td>2009</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="col-12">
+            <table id="monTableau" class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Titre du film</th>
+                        <th>Année de sortie</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Once Upon a Time... in Hollywood</td>
+                        <td>2019</td>
+                    </tr>
+                    <tr>
+                        <td>Pulp fiction</td>
+                        <td>1994</td>
+                    </tr>
+                    <tr>
+                        <td>Kill Bill</td>
+                        <td>2003</td>
+                    </tr>
+                    <tr>
+                        <td>Django</td>
+                        <td>2012 </td>
+                    </tr>
+                    <tr>
+                        <td>Inglourious Basterds</td>
+                        <td>2009</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 
@@ -71,8 +72,6 @@
 
 <div id="exercice2Container" class="container my-5">
     <div class="dropdown">
-
-
         <button onclick="myFunctionButtonDrop()" class="dropbtn">Dropdown</button>
         <div id="myDropdown" class="dropdown-content">
             <div class="form-group has-search">
