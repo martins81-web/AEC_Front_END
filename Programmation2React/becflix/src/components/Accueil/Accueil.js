@@ -40,7 +40,7 @@ export class Accueil extends React.Component {
     gestionConnexion(){
         let connected = this.state.connected;
         if(connected){
-            return  <Catalogue/>;
+            return  <Catalogue/>
         }
         if(!connected){
             return <Connexion onClick={this.ChangeConexion}/>
