@@ -1,0 +1,278 @@
+<html lang="fr-ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Filtres et graphiques</title>
+    <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<div class="container-fluid p-3 exercice">
+    <h1>Exercice 1</h1>
+</div>
+
+<div class="container my-5">
+
+    <div class="row">
+        <div class="col-4">
+            <div class="form-group has-search">
+                <span class="fa fa-search form-control-feedback"></span>
+                <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Rechercher des films..">
+            </div>
+        </div>
+        <div class="col-4 text-center">
+            <input class="btn btn-primary" onClick="sortTitre()" type="button" value="Trier les films en ordre alphabétique">
+        </div>
+
+        <div class="col-4 text-center">
+            <input class="btn btn-secondary" onClick="sortDatedeSortie()" type="button" value="Trier les films en ordre de date de sortie">
+        </div>
+    </div>
+
+    <div class="row">
+        <table id="monTableau" class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Titre du film</th>
+                    <th>Année de sortie</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Once Upon a Time... in Hollywood</td>
+                    <td>2019</td>
+                </tr>
+                <tr>
+                    <td>Pulp fiction</td>
+                    <td>1994</td>
+                </tr>
+                <tr>
+                    <td>Kill Bill</td>
+                    <td>2003</td>
+                </tr>
+                <tr>
+                    <td>Django</td>
+                    <td>2012 </td>
+                </tr>
+                <tr>
+                    <td>Inglourious Basterds</td>
+                    <td>2009</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="container-fluid p-3 exercice">
+    <h1>Exercice 2</h1>
+</div>
+
+<div id="exercice2Container" class="container my-5">
+    <div class="dropdown">
+
+
+        <button onclick="myFunctionButtonDrop()" class="dropbtn">Dropdown</button>
+        <div id="myDropdown" class="dropdown-content">
+            <div class="form-group has-search">
+                <span class="fa fa-search form-control-feedback"></span>
+                <input type="text" id="myInputDrop" onkeyup="filterFunction()" class="form-control" placeholder="Rechercher ..">
+            </div>
+
+            <a href="#exercice3">Graphique en pointe de tarte</a>
+            <a href="#exercice4">Graphique linéaire (courbe)</a>
+            <a href="#">Diagramme de gantt</a>
+            <a href="#">Diagramme de venn</a>
+            <a href="#">Nuage de points</a>
+        </div>
+    </div>
+</div>
+
+<div id="exercice3" class="container-fluid p-3 exercice">
+    <h1>Exercice 3</h1>
+</div>
+
+<div  class="container my-5">
+    <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+</div>
+
+<div id="exercice4" class="container-fluid p-3 exercice">
+    <h1>Exercice 4</h1>
+</div>
+
+<div  class="container my-5">
+    <div id="curve_chart" style="width: 900px; height: 500px"></div>
+</div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Age', 'École', 'Dépenses', 'Amour', 'Sense de la vie'],
+            ['0',  0,      0, 0 ,0],
+            ['10',  50,      25, 2.5 ,10],
+            ['25',  10,      50, 20 ,20],
+            ['40',  0,      45, 50 ,30],
+            ['60',  0,      60, 60 , 40],
+            ['100',  0,      10, 70 , 100],
+        ]);
+
+        var options = {
+            title: 'Source de stress en fonction de votre age',
+            curveType: 'function',
+            legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+    }
+</script>
+</head>
+
+<script>
+    function myFunction() {
+        // Declare variables
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("monTableau");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+    function sortTitre() {
+        var table, rows, switching, i, x, y, shouldSwitch;
+        table = document.getElementById("monTableau");
+        switching = true;
+        /* Make a loop that will continue until
+        no switching has been done: */
+        while (switching) {
+            // Start by saying: no switching is done:
+            switching = false;
+            rows = table.rows;
+            /* Loop through all table rows (except the
+            first, which contains table headers): */
+            for (i = 1; i < (rows.length - 1); i++) {
+                // Start by saying there should be no switching:
+                shouldSwitch = false;
+                /* Get the two elements you want to compare,
+                one from current row and one from the next: */
+                x = rows[i].getElementsByTagName("TD")[0];
+                y = rows[i + 1].getElementsByTagName("TD")[0];
+                // Check if the two rows should switch place:
+                if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                    // If so, mark as a switch and break the loop:
+                    shouldSwitch = true;
+                    break;
+                }
+            }
+            if (shouldSwitch) {
+                /* If a switch has been marked, make the switch
+                and mark that a switch has been done: */
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+            }
+        }
+    }
+
+    function sortDatedeSortie() {
+        var table, rows, switching, i, x, y, shouldSwitch;
+        table = document.getElementById("monTableau");
+        switching = true;
+        /* Make a loop that will continue until
+        no switching has been done: */
+        while (switching) {
+            // Start by saying: no switching is done:
+            switching = false;
+            rows = table.rows;
+            /* Loop through all table rows (except the
+            first, which contains table headers): */
+            for (i = 1; i < (rows.length - 1); i++) {
+                // Start by saying there should be no switching:
+                shouldSwitch = false;
+                /* Get the two elements you want to compare,
+                one from current row and one from the next: */
+                x = rows[i].getElementsByTagName("TD")[1];
+                y = rows[i + 1].getElementsByTagName("TD")[1];
+                // Check if the two rows should switch place:
+                if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                    // If so, mark as a switch and break the loop:
+                    shouldSwitch = true;
+                    break;
+                }
+            }
+            if (shouldSwitch) {
+                /* If a switch has been marked, make the switch
+                and mark that a switch has been done: */
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+            }
+        }
+    }
+
+    function myFunctionButtonDrop() {
+
+        document.getElementById("exercice2Container").classList.toggle("height");
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    function filterFunction() {
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("myInputDrop");
+        filter = input.value.toUpperCase();
+        div = document.getElementById("myDropdown");
+        a = div.getElementsByTagName("a");
+        for (i = 0; i < a.length; i++) {
+            txtValue = a[i].textContent || a[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                a[i].style.display = "";
+            } else {
+                a[i].style.display = "none";
+            }
+        }
+    }
+</script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['catégorie financière ($US)', '% de la population mondiale'],
+            ['< 10 000$',     0.733],
+            ['10 000 à 100,000$',      0.185],
+            ['100 000 à 1 million$',  0.075],
+            ['> 1 million$', 0.007]
+        ]);
+
+        var options = {
+            title: 'Global wealth',
+            is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+    }
+</script>
+<script src="https://kit.fontawesome.com/a46d75ba7a.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="bootstrap-4.4.1-dist/js/bootstrap.js"></script>
+</body>
+</html>
