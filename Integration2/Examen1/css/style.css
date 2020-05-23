@@ -1,0 +1,63 @@
+/*<!-- style.css -->*/
+/*<!-- Examan 1 d'Integration2 par Eric Martins -->*/
+/*<!-- Crée le 16 mai 2020 -->*/
+/*<!-- Dernier mise à jour le 22 mai 2020 -->*/
+
+/*  Background color */
+body {
+    background-color: black;
+    overflow: auto;
+}
+
+/* Text Style in SVG */
+#textSVG{
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 2.9875rem;
+}
+
+/* Container PayPal */
+.containerPayPal{
+    background-color: white;
+}
+
+/* Container form */
+.formContainer{
+    background-color: #202020;
+}
+
+.formContainer h1{
+    color: white;
+    font-size: 	2.975rem;
+}
+.formContainer p{
+    color: white;
+    font-size: 1.485rem;
+}
+
+/* Line hr */
+hr{
+  background-color: white;
+}
+
+/* Labels */
+label {
+    color: white;
+    font-size: 1.125rem;
+}
+
+/* Asterisk formulaire */
+.asterisk{
+    color: red;
+}
+
+/* Visuel formulaire */
+.form-row{
+    margin-top: 3rem;
+}
+
+/* Style des 'étiquetes' dans le formulaire */
+.form-row p{
+    font-size: 1.385rem;
+    font-weight: bold;
+}
+

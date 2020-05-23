@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr-ca">
+<!-- index.html -->
+<!-- Techniques d'intégration des interfaces Web 2 -->
+<!-- Examen 1 par Eric Martins -->
+<!-- Crée le 16 mai 2020 -->
+<!-- Dernier mise à jour le 22 mai 2020 -->
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Canevas</title>
+    <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Optimal Internet Explorer compatibility  PAYPAL-->
+</head>
+<body>
+
+<div class="container-fluid m-0 p-0 my-5">
+    <div class="row no-gutters">
+        <div class="col-8 ">
+            <div class="formContainer p-5 ml-5 ">
+                <form  name="formColoniserMars" onsubmit="return validateForm()" >
+                    <h1>Participez à l'avenir de la race humaine</h1>
+                    <p>Inscrivez-vous à la prochaine mission de colonisation sur Mars !</p>
+                    <hr class="mt-4">
+                    <div class="form-row">
+                        <!--Identification-->
+                        <div class="col-3">
+                            <p>Identification <span class="asterisk ">*</span></p>
+                        </div>
+                        <div class="col-2">
+                            <input class="form-control" type="text" id="nom" name="nom"
+                                   pattern="^[a-zA-Z\u0080-\u024F]+(?:. |-| |')*([1-9a-zA-Z\u0080-\u024F]+(?:. |-| |'))*[a-zA-Z\u0080-\u024F]*$"
+                                   minlength="3" maxlength="20" placeholder="" required>
+                            <!-- Inputs valides  ex: St-Pierre, O'Neal, Coeur de Pirate, Côté -->
+                            <label for="nom">Nom</label>
+                        </div>
+                        <div class="col-3">
+                            <input class="form-control" type="text" id="prenom" name="prenom"
+                                   pattern="^[a-zA-Z\u0080-\u024F]+(?:. |-| |')*([1-9a-zA-Z\u0080-\u024F]+(?:. |-| |'))*[a-zA-Z\u0080-\u024F]*$"
+                                   maxlength="30" minlength="3" placeholder="" required>
+                            <!-- Inputs valides ex: Marie-Claire, Paul-Émile, Marie Josée -->
+                            <label for="prenom">Prénom</label>
+                        </div>
+                    </div>
+                    <!--Date de naissance-->
+                    <div class="form-row">
+                        <div class="col-3">
+                            <p>Date de naissance  <span class="asterisk ">*</span></p>
+                        </div>
+                        <div class="col-7">
+                            <input class="form-control" type="text" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'"
+                                   name="dateNaissance" min="1960-01-01" max="2002-01-01" required>
+                        </div>
+                    </div>
+                    <!--Número de téléphone-->
+                    <div class="form-row">
+                        <div class="col-3">
+                            <p>Número de téléphone<span class="asterisk ">*</span></p>
+                        </div>
+                        <div class="col-2">
+                            <input class="form-control" type="tel" id="codeRegional" name="codeRegional" maxlength="3"
+                                   placeholder=""
+                                   oninput="this.setCustomValidity('')"
+                                   onchange="validateForm()"
+                                   required>
+                            <!-- Input valide seulement: 819, 418, 514 fait avec JS-->
+                            <label for="codeRegional">Code régional</label>
+                        </div>
+                        <div class="">
+                            <p>-</p>
+                        </div>
+                        <div class="col-3">
+                            <input class="form-control" type="tel" id="numeroTelephone" name="numeroTelephone" pattern="[0-9]{7}"
+                                   maxlength="7" minlength="7"
+                                   placeholder=""  required>
+                            <!-- Input valide seulement: 7 digits ex: 1234567 -->
+                            <label for="numeroTelephone">Numéro de téléphone</label>
+                        </div>
+                    </div>
+                    <!--E-mail-->
+                    <div class="form-row">
+                        <div class="col-3">
+                            <p>E-mail <span class="asterisk ">*</span></p>
+                        </div>
+                        <div class="col-6">
+                            <input class="form-control" type="email" id="email" name="email" placeholder="ex: myname@example.com"
+                                   required>
+                            <label for="email">exemple@exemple.com</label>
+                        </div>
+                    </div>
+                    <!--Adresse-->
+                    <div class="form-row">
+                        <div class="col-3">
+                            <p>Adresse <span class="asterisk ">*</span></p>
+                        </div>
+                        <div class="col-6 ">
+
+                            <input class="form-control" type="number" id="numeroPorte" name="numeroPorte"
+                                   placeholder="" min="1" max="99999" required>
+                            <label for="numeroPorte">Número de porte</label>
+                        </div>
+                        <div class="offset-3 col-6 mt-2">
+                            <input class="form-control" type="number" id="numeroAppartement" name="numeroAppartement"
+                                   placeholder="" min="1" max="99999" required>
+                            <label for="numeroAppartement">Número d'appartement</label>
+                        </div>
+                        <div class="offset-3 col-3 mt-2">
+                            <input class="form-control" type="text" id="ville" name="ville" placeholder=""
+                                   pattern="^[a-zA-Z\u0080-\u024F]+(?:. |-| |')*([1-9a-zA-Z\u0080-\u024F]+(?:. |-| |'))*[a-zA-Z\u0080-\u024F]*$"
+                                   maxlength="28" minlength="3"
+                                   required>
+                            <!-- Inputs valides ex: Toronto, Val-d'Or, Niagara on the Lake, Île-de-France, Þorlákshöfn-->
+                            <label for="ville">Ville</label>
+                        </div>
+                        <div class="col-3 mt-2">
+                            <input class="form-control" type="text" id="etatProvince" name="etatProvince"
+                                   maxlength="20" minlength="3"
+                                   pattern="^[a-zA-Z\u0080-\u024F]+(?:. |-| |')*([1-9a-zA-Z\u0080-\u024F]+(?:. |-| |'))*[a-zA-Z\u0080-\u024F]*$" placeholder="" required>
+                            <label for="etatProvince">État/province</label>
+                            <!-- Inputs valides ex: Québec, Ontario-->
+                        </div>
+                        <div class="offset-3 col-3 mt-2">
+                            <input class="form-control" type="text" id="codePostal" name="codePostal" placeholder=""
+                                   maxlength="6" minlength="6"
+                                   pattern="[A-Za-z][0-9][A-Za-z][0-9][A-Za-z][0-9]" required>
+                            <!-- Input valide ex: A9A9A9 *Code postal canadien-->
+                            <label for="codePostal">Code postal</label>
+                        </div>
+                    </div>
+                    <!--Sexe-->
+                    <div class="form-row">
+                        <div class="col-3">
+                            <p>Sexe <span class="asterisk ">*</span></p>
+                        </div>
+                        <div class="col-3">
+                            <input  onfocus="this.value=''"  list="sexe" type="text" class="form-control" pattern="Masculin|Féminin|Autre"
+                                   title='Insérez "Masculin", "Féminin", "Autre"' required>
+                            <datalist id="sexe">
+                                <option value="Masculin">Masculin</option>
+                                <option value="Féminin">Féminin</option>
+                                <option value="Autre">Autre</option>
+                            </datalist>
+                        </div>
+                    </div>
+                    <!--Metier-->
+                    <div class="form-row">
+                        <div class="col-3">
+                            <p>Métier <span class="asterisk ">*</span></p>
+                        </div>
+                        <div class="col-4">
+                            <input class="form-control" type="text" id="metier" name="metier" placeholder=""
+                                   minlength="3" maxlength="80"
+                                   required>
+                            <!-- Pas de pattern spécific, nous pouvons accepter presque tout..
+                            ex: Surveillante d'élèves , Conseillerère Conditions de travail I, Agent administratif classe 1 - secrétariat-->
+                        </div>
+                    </div>
+                    <!--Presentation-->
+                    <div class="form-row mb-3">
+                        <div class="col-3">
+                            <p>Présentation</p>
+                        </div>
+                        <div class="col-7">
+                            <textarea class="form-control" id="presentation" rows="4" maxlength="600"></textarea>
+                        </div>
+                    </div>
+                    <!--Button soumettre-->
+                    <div class="form-row">
+                        <div class="offset-3 col-9 mt-4">
+                                <button type="submit" class="btn btn-light ml-2">Soumettre ma candidature</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="col-4 d-flex align-items-end">
+            <div class="row no-gutters ml-4 mr-5">
+                    <div class="col-12 text-center">
+                            <!--Logo canvas-->
+                            <canvas id="myCanvas" width="400" height="500"></canvas>
+                            <script>
+                                var canvas = document.getElementById("myCanvas");
+
+                                //Background
+                                var background=canvas.getContext("2d");
+                                background.fillStyle="black";
+                                background.rect(0, 0, canvas.width, canvas.height);
+                                background.fill();
+
+                                //Centre du canvas
+                                var ctx = canvas.getContext("2d");
+                                var x = canvas.width/2;
+                                var y = canvas.height/2,
+                                    innerRadius = 20,
+                                    // Rayon du gradiant radial orange
+                                    outerRadius = 100,
+                                    // Rayon du gradiant radial noir
+                                    // Rayon du cercle entier
+                                    radius = 90;
+
+                                //Dessine mars
+                                var gradient = ctx.createRadialGradient(x, y, innerRadius, x, y, outerRadius);
+                                gradient.addColorStop(0, "darkorange");
+                                gradient.addColorStop(1, "black");
+                                ctx.beginPath();
+                                ctx.arc(x,y,radius,0,2*Math.PI);
+                                ctx.fillStyle=gradient;
+                                ctx.fill();
+
+                                //Texte
+                                var text= canvas.getContext("2d");
+                                text.beginPath();
+                                text.font="20px Blippo, fantasy";
+                                text.fillStyle="black";
+                                //Alignement du texte *Mars
+                                text.textAlign = "center";
+                                text.textBaseline = "middle";
+                                text.fillText("MARS",x,y);
+
+                                //Étoiles
+                                var numeroDEtoiles=15;
+                                var star = canvas.getContext('2d');
+                                star.fillStyle="white";
+                                var randomX=0;
+                                var randomY=0;
+                                var counterStars=0;
+                                for (let i=0; counterStars<numeroDEtoiles; i++) {
+                                    randomX = Math.random() * (canvas.width - 20) + 20;
+                                    randomY = Math.random() * (canvas.height - 10) + 10;
+                                    if ( !(randomX > x-radius && randomY > y - radius && randomY < y + radius && randomX < x+radius )) {
+                                            star.fillRect(randomX, randomY, 1, 1);
+                                            counterStars++;
+                                    }
+                                }
+                            </script>
+                    </div>
+                    <div class="col-12 text-center my-5">
+                        <!--  Image SVG   -->
+                        <svg width="350" height="380">
+                            <!--  Flèche  -->
+                            <!--  Triangle  -->
+                            <polygon points="175,20 105,165 245,165 " style="fill:white" />
+                            <!--  Rectangle  -->
+                            <rect x="140" y="160" width="70" height="145" style="fill:white" />
+
+                            <!--  Texte  -->
+                            <text text-anchor="middle" x="50%" y="355" dominant-baseline="middle"  fill="white" id="textSVG">Destination</text>
+                        </svg>
+                    </div>
+                    <div class="col-12 text-center mt-4">
+                            <div class="containerPayPal px-3 pt-3">
+                                <div id="paypal-button-container"></div>
+                            </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function validateForm() {
+        var codeRegional = document.forms["formColoniserMars"]["codeRegional"];
+        if (codeRegional.value === "819" || codeRegional.value === "418" || codeRegional.value === "514") {
+            return true;
+        } else {
+            codeRegional.setCustomValidity("Seulement les codes 819, 418 et 514 sont acceptés");
+            //codeRegional.focus();
+            return false;
+        }
+    }
+</script>
+
+
+
+
+
+
+<script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
+<script>paypal.Buttons().render('#paypal-button-container');</script>
+<script src="https://kit.fontawesome.com/a46d75ba7a.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="bootstrap-4.4.1-dist/js/bootstrap.js"></script>
+</body>
+</html>
