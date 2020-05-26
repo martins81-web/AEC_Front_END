@@ -40,7 +40,7 @@ var tabClients = [
         title:"Catherine Gagné",
         prenom: "Catherine",
         nom: "Gagné",
-        metier: "Assembleusede matériel mécanique",
+        metier: "Assembleuse de matériel mécanique",
         email: "Catherine_Gagne@gmail.com",
         telephone: "(514) 000-0003",
         adresse: "50811 Marks Gardens" 
@@ -150,13 +150,15 @@ var tabClients = [
 export class Bottin extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {  recherche: "" , ajouter:false }
+        this.state = {  recherche: "" , ajouter:false, hovered:false }
         this.Header = this.Header.bind(this); 
         this.handleDeconnexion =this.handleDeconnexion.bind(this); 
         this.ActiveRecherche =this.ActiveRecherche.bind(this); 
         this.Recherche =this.Recherche.bind(this); 
         this.AfficherClients =this.AfficherClients.bind(this); 
         this.handleFormAjouterClient =this.handleFormAjouterClient.bind(this); 
+        this.handleFormAjouterClient =this.handleFormAjouterClient.bind(this); 
+        this.handleReload=this.handleReload.bind(this);
     }
     
     AfficherClients() { 
@@ -177,10 +179,19 @@ export class Bottin extends React.Component {
                 )
     }   
 
+    handleReload(){
+        window.location.reload();
+    }
+
+
     Header(){
         return (
                 <Row id="header" className="d-flex align-items-center pt-3"> 
-                    <Col xl="4" lg="4" md="6" sm="12" xs="12" ><h1 ><span className="px-2">Bottin des clients</span></h1></Col>
+                    <Col xl="4" lg="4" md="6" sm="12" xs="12" ><h1 ><span   onClick={this.handleReload}  
+                                                                            onMouseOver={() => this.setState({hovered: true})}
+                                                                            onMouseOut={() => this.setState({hovered: false})} 
+                                                                            style={{cursor:  this.state.hovered ? 'pointer' : 'null'}}
+                                                                            className="px-2">Bottin des clients</span></h1></Col>
                     <Col xl="4" lg="4" md="6" sm="12" xs="12"> {this.Recherche()}</Col>
                     <Col xl="2" lg="2" md="6" sm="12" xs="12"> <ButtonAjouterClient typeBtn={this.state.ajouter ?'btn btn-danger':'btn btn-info'}
                                                                                     textBouton= {this.state.ajouter ?'Annuler':'Ajouter nouveau client'}

@@ -14,7 +14,8 @@ export class Client extends React.Component {
       }
     render() { 
         return ( 
-            <Col xl="2" lg="3" md="4" sm="6" xs="12" className="mb-3" onMouseOut={() => this.setState({hovered: false})}
+            <Col xl="2" lg="3" md="4" sm="6" xs="12" className="mb-3" 
+            onMouseOut={() => this.setState({hovered: false})}
             onMouseOver={() => this.setState({hovered: true})}   > 
                 <Card className="h-100 bg-light">
                     <Card.Img   variant="top" src={this.props.src}   />
