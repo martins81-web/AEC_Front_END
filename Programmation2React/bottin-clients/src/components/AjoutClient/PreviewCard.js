@@ -22,11 +22,14 @@ export class PreviewCard extends React.Component {
 
     handleClick(){
         this.state.image === defaultClientImage ? this.setState({image: defaultClientImageFille}):this.setState({image: defaultClientImage});
+        
         if (this.state.image === defaultClientImage){
             this.props.image(defaultClientImageFille); 
         } else{
             this.props.image(defaultClientImage); 
         }
+
+     
         
     }
 
