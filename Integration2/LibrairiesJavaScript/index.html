@@ -220,7 +220,10 @@ button.addEventListener("mouseover", () => rotateTL.play())
 button.addEventListener("mouseleave", () => rotateTL.reverse())
 button.addEventListener("click", e => { openTL.play()
         $('#yt-player').children('iframe').attr('src', 'https://www.youtube.com/embed/wM6exo00T5I')})
-backdrop.addEventListener("click", () => openTL.reverse())
+backdrop.addEventListener("click", e => {
+    openTL.reverse()
+    $('#yt-player').children('iframe').attr('src', '')
+})
 close.addEventListener("click", e => {
     e.stopPropagation()
     openTL.reverse()
