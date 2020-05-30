@@ -16,7 +16,7 @@
 
 <section class="p-5">
     <h1>
-        <span class="no">  Wall Street</span><span class="de"> The Wolf of </span>
+        <span class="wallStreet">Wall Street</span><span class="theWolfOf">The Wolf of</span>
     </h1>
 </section>
 
@@ -101,37 +101,37 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
 <script>
 anime({
-targets: '.no',
+targets: '.wallStreet',
 easing: 'linear',
 loop: true,
 duration: 7000,
 keyframes: [
-{ translateX: 0 },
+{ translateY: '50%'  },
 { translateX: '100%' },
-{ translateY: 0 },
+{ translateY: 0},
 { color: '#f7b402' },
 { color: '#f7b402' },
-{ translateY: '-100%' },
+{ translateY: '-50%' },
 { translateX: 0 },
 { translateY: 0 },
 { color: '#f7b402' },
 { color: '#f7b402' },
-{ translateY: 0 }
+{ translateY: 0  }
 ]
 })
 
 anime({
-targets: '.de',
+targets: '.theWolfOf',
 easing: 'linear',
 loop: true,
 duration: 7000,
 keyframes: [
-{ translateY: '-100%' },
+{ translateY: '-50%' },
 { translateX: '-100%' },
 { translateY: 0 },
 { color: '#fff' },
 { color: '#fff' },
-{ translateY: 0 },
+{ translateY: '50%' },
 { translateX: 0 },
 { translateY: 0 },
 { color: '#fff' },

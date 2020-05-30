@@ -27,7 +27,6 @@ body{
 .floater{
     border: white 5px solid;
     background-color: #f7b402;
-
 }
 
 
@@ -46,7 +45,6 @@ section {
 }
 
 section h1 {
-    padding-top: 0.75rem;
     font-weight: 900;
     font-size: 5rem;
     line-height: 0.78;
@@ -59,14 +57,15 @@ span {
 }
 
 
-span.de {
-    display: inline-block;
-    color: #fff;
-}
-
-span.no {
+span.wallStreet {
     display: inline-block;
     color: #f7b402;
+
+}
+
+span.theWolfOf {
+    display: inline-block;
+    color: #fff;
 }
 
 
