@@ -25,14 +25,11 @@ body{
 }
 
 .floater{
-    border: white 10px solid;
+    border: white 5px solid;
     background-color: #f7b402;
 
 }
 
-.borderVideo{
-    border: white 3px solid;
-}
 
 
 body {
@@ -49,11 +46,12 @@ section {
 }
 
 section h1 {
+    padding-top: 0.75rem;
     font-weight: 900;
     font-size: 5rem;
     line-height: 0.78;
     text-transform: uppercase;
-    color: #f7b402;
+    /*color: #fff;*/
 }
 
 span {
@@ -63,4 +61,82 @@ span {
 
 span.de {
     display: inline-block;
+    color: #fff;
 }
+
+span.no {
+    display: inline-block;
+    color: #f7b402;
+}
+
+
+.play-button {
+    width: 152px;
+    height: 152px;
+    position: relative;
+    cursor: pointer;
+}
+
+.play-backdrop {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.play-close {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 15px);
+    border: none;
+    outline: none;
+    background: none;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.play-close::before,
+.play-close::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: rotate(45deg);
+    background-color: #fff;
+}
+
+.play-close::after {
+    transform: rotate(-45deg);
+}
+
+.play-circles {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.play-perspective {
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    left: -230px;
+    top: -125px;
+}
+
+.play-triangle {
+    width: 600px;
+    height: 400px;
+    background-color: #000000;
+    cursor: pointer;
+}
+
+

@@ -28,7 +28,44 @@
     </div>
 </div>
 
+<div class="container">
+    <div class="row">
 
+        <!--        <div class="col-12 text-white mt-5">-->
+        <!--            <div data-aos="fade-right"-->
+        <!--                 data-aos-anchor-placement="center-center"-->
+        <!--                 data-aos-duration="2000">-->
+        <!--                <h4>Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.</h4>-->
+        <!--            </div>-->
+
+        <!--        </div>-->
+        <!--        <div class="col-12 m-5">-->
+
+        <!--            <div class="embed-responsive embed-responsive-16by9 borderVideo">-->
+        <!--                <iframe class="embed-responsive-item " src="https://www.youtube.com/embed/?rel=0" allowfullscreen></iframe>-->
+        <!--            </div>-->
+        <!--        </div>-->
+
+        <div class="col-12 m-5 d-flex align-items-center justify-content-center">
+            <div class="play-backdrop"></div>
+            <div class="play-button">
+                <svg class="play-circles" viewBox="0 0 152 152">
+                    <circle class="play-circle-01" fill="none" stroke="#fff" stroke-width="3" stroke-dasharray="343 343" cx="76" cy="76" r="72.7"/>
+                    <circle class="play-circle-02" fill="none" stroke="#fff" stroke-width="3" stroke-dasharray="309 309" cx="76" cy="76" r="65.5"/>
+                </svg>
+                <div class="play-perspective">
+                    <button class="play-close"></button>
+                    <div class="play-triangle">
+                        <div class="play-video" id="yt-player">
+                            <iframe width="600" height="400" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
 
 <div class="container-fluid bg3 h-100">
     <div class="row align-items-center h-100 ">
@@ -50,26 +87,18 @@
     </div>
 </div>
 
+
+
+
+
 <div class="container">
-    <div class="row">
+    <div class="row ">
 
-        <div class="col-12 text-white mt-5">
-            <div data-aos="fade-right"
-                 data-aos-anchor-placement="center-center"
-                 data-aos-duration="2000">
-                <h4>Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.</h4>
-            </div>
-
-        </div>
-        <div class="col-12 m-5">
-            <div class="embed-responsive embed-responsive-16by9 borderVideo">
-                <iframe class="embed-responsive-item " src="https://www.youtube.com/embed/wM6exo00T5I?rel=0" allowfullscreen></iframe>
-            </div>
-        </div>
     </div>
 
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
 <script>
 anime({
 targets: '.no',
@@ -110,10 +139,96 @@ keyframes: [
 { translateY: 0 }
 ]
 })
+
+TweenMax.set(".play-circle-01", {
+    rotation: 90,
+    transformOrigin: "center"
+})
+
+TweenMax.set(".play-circle-02", {
+    rotation: -90,
+    transformOrigin: "center"
+})
+
+TweenMax.set(".play-perspective", {
+    xPercent: 6.5,
+    scale: .175,
+    transformOrigin: "center",
+    perspective: 1
+})
+
+TweenMax.set(".play-video", {
+    visibility: "hidden",
+    opacity: 0,
+})
+
+TweenMax.set(".play-triangle", {
+    transformOrigin: "left center",
+    transformStyle: "preserve-3d",
+    rotationY: 10,
+    scaleX: 2
+})
+
+const rotateTL = new TimelineMax({ paused: true })
+    .to(".play-circle-01", .7, {
+        opacity: .1,
+        rotation: '+=360',
+        strokeDasharray: "456 456",
+        ease: Power1.easeInOut
+    }, 0)
+    .to(".play-circle-02", .7, {
+        opacity: .1,
+        rotation: '-=360',
+        strokeDasharray: "411 411",
+        ease: Power1.easeInOut
+    }, 0)
+
+const openTL = new TimelineMax({ paused: true })
+    .to(".play-backdrop", 1, {
+        opacity: .95,
+        visibility: "visible",
+        ease: Power2.easeInOut
+    }, 0)
+    .to(".play-close", 1, {
+        opacity: 1,
+        ease: Power2.easeInOut
+    }, 0)
+    .to(".play-perspective", 1, {
+        xPercent: 0,
+        scale: 1,
+        ease: Power2.easeInOut
+    }, 0)
+    .to(".play-triangle", 1, {
+        scaleX: 1,
+        ease: ExpoScaleEase.config(2, 1, Power2.easeInOut)
+    }, 0)
+    .to(".play-triangle", 1, {
+        rotationY: 0,
+        ease: ExpoScaleEase.config(10, .01, Power2.easeInOut)
+    }, 0)
+    .to(".play-video", 1, {
+        visibility: "visible",
+        opacity: 1
+    }, .5)
+
+
+const button = document.querySelector(".play-button")
+const backdrop = document.querySelector(".play-backdrop")
+const close = document.querySelector(".play-close")
+
+button.addEventListener("mouseover", () => rotateTL.play())
+button.addEventListener("mouseleave", () => rotateTL.reverse())
+button.addEventListener("click", e => { openTL.play()
+        $('#yt-player').children('iframe').attr('src', 'https://www.youtube.com/embed/wM6exo00T5I')})
+backdrop.addEventListener("click", () => openTL.reverse())
+close.addEventListener("click", e => {
+    e.stopPropagation()
+    openTL.reverse()
+    $('#yt-player').children('iframe').attr('src', '')
+
+})
+
 </script>
-
-
-
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     AOS.init();
