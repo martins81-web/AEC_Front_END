@@ -1,0 +1,66 @@
+html,body { margin:0; height:100%;}
+
+body{
+    background-color: black;
+}
+.parallax {
+    /* L’hauteur du Parallax */
+    height: 100%;
+    /* Création de l’effet */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg1{
+    background-image: url("../img/wolf.jpg");
+
+}
+
+.bg3{
+    background-image: url("../img/wolfbg2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.floater{
+    border: white 10px solid;
+    background-color: #f7b402;
+
+}
+
+.borderVideo{
+    border: white 3px solid;
+}
+
+
+body {
+    font-family: Montserrat, sans-serif;
+}
+
+section {
+    min-height: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section h1 {
+    font-weight: 900;
+    font-size: 5rem;
+    line-height: 0.78;
+    text-transform: uppercase;
+    color: #f7b402;
+}
+
+span {
+    display: inline-block;
+}
+
+
+span.de {
+    display: inline-block;
+}

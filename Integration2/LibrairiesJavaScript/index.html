@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr-ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>The Wolf of Wall Street</title>
+    <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="anime-master/lib/anime.js"></script>
+
+
+</head>
+<body>
+
+
+<section class="p-5">
+    <h1>
+        <span class="no">  Wall Street</span><span class="de"> The Wolf of </span>
+    </h1>
+</section>
+
+
+<div class="container-fluid parallax bg1 h-100">
+    <div class="row align-items-start h-100">
+        <div class="col-12 text-white">
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-fluid bg3 h-100">
+    <div class="row align-items-center h-100 ">
+
+        <div class="offset-1 col-4 text-center text-white">
+            <div class="floater" data-aos="fade-up"
+                 data-aos-easing="linear"
+                 data-aos-duration="2000">
+                <h1 >Funny, self-referential, and irreverent to a fault, The Wolf of Wall Street finds Martin Scorsese and Leonardo DiCaprio at their most infectiously dynamic.</h1>
+            </div>
+        </div>
+        <div class="offset-2 col-4 text-center text-white">
+            <div class="floater" data-aos="fade-down"
+                 data-aos-easing="linear"
+                 data-aos-duration="2000">
+                <h1>"For three hours the movie operates at a ridiculous comedic pitch. You never forget you're at the circus. You never lose site of the lawlessness, the reckless pleasure, the sheer lunacy and lack of regulation"</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-12 text-white mt-5">
+            <div data-aos="fade-right"
+                 data-aos-anchor-placement="center-center"
+                 data-aos-duration="2000">
+                <h4>Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.</h4>
+            </div>
+
+        </div>
+        <div class="col-12 m-5">
+            <div class="embed-responsive embed-responsive-16by9 borderVideo">
+                <iframe class="embed-responsive-item " src="https://www.youtube.com/embed/wM6exo00T5I?rel=0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+anime({
+targets: '.no',
+easing: 'linear',
+loop: true,
+duration: 7000,
+keyframes: [
+{ translateX: 0 },
+{ translateX: '100%' },
+{ translateY: 0 },
+{ color: '#f7b402' },
+{ color: '#f7b402' },
+{ translateY: '-100%' },
+{ translateX: 0 },
+{ translateY: 0 },
+{ color: '#f7b402' },
+{ color: '#f7b402' },
+{ translateY: 0 }
+]
+})
+
+anime({
+targets: '.de',
+easing: 'linear',
+loop: true,
+duration: 7000,
+keyframes: [
+{ translateY: '-100%' },
+{ translateX: '-100%' },
+{ translateY: 0 },
+{ color: '#fff' },
+{ color: '#fff' },
+{ translateY: 0 },
+{ translateX: 0 },
+{ translateY: 0 },
+{ color: '#fff' },
+{ color: '#fff' },
+{ translateY: 0 }
+]
+})
+</script>
+
+
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+<script src="https://kit.fontawesome.com/a46d75ba7a.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="bootstrap-4.4.1-dist/js/bootstrap.js"></script>
+</body>
+</html>
