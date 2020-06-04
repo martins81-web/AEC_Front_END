@@ -17,7 +17,7 @@ export class PageAlbum extends React.Component  {
     render() { 
         if (this.state.paroles===false){
             return ( 
-                <Container>
+                <>
                 <Row>
                     <Col xs lg="12">
                         <img onClick={()=>this.props.back(true)} className="img-fluid my-5"
@@ -52,11 +52,11 @@ export class PageAlbum extends React.Component  {
                         number={i+1} chanson={this.props.album.chansons[i].nom}  />
                      )} 
                 </Row>
-                </Container>
+                </>
             );
         } else if (this.state.paroles===true){
             return ( 
-                <Container>
+                <>
                 <Row>
                     <Col xl="12" lg="12" md="12" sm="12" xs="12" >
                         <img   onClick={() => this.setState({paroles: false})} className="img-fluid my-5"
@@ -89,7 +89,7 @@ export class PageAlbum extends React.Component  {
                                 <Paroles paroles={this.state.chanson.paroles}/>
                     </Col>
                 </Row>
-                </Container>
+                </>
             );
         }
     }

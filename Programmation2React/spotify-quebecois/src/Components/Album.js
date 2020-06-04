@@ -21,7 +21,7 @@ export class Album extends React.Component  {
             <Col style={this.state.hovered ? styleColHover : styleCol } xl="4" lg="4" md="6" sm="12" xs="12" className="mb-5 center-block d-flex justify-content-center flex-column p-3"> 
              <div className="p-0 mb-0 container" >
 
-                    <img fluid src={this.props.src} alt={this.props.alt} className='image' 
+                    <img fluid src={this.props.src} alt={this.props.alt} className='image img-fluid' 
                     onMouseOut={() => this.setState({hovered: false})}
                     onMouseOver={() => this.setState({hovered: true})}  
                     onClick={()=>this.handleOnClick()}
