@@ -17,11 +17,12 @@ export class Album extends React.Component  {
     }
 
     render() { 
-        return ( 
-            <Col style={this.state.hovered ? styleColHover : styleCol } xl="3" lg="4" md="6" sm="12" className="mb-5 center-block d-flex justify-content-center flex-column p-3"> 
-             <div className="p-0 mb-0 container" >
-
-                    <img src={this.props.src} alt={this.props.alt} className='image img-fluid' 
+        return (
+         
+            <Col style={this.state.hovered ? styleColHover : styleCol } xl="4" lg="4" md="6" sm="12" className="mb-5 center-block d-flex justify-content-center flex-column p-3 "> 
+             
+                <div className='containerImg'>
+                    <img  src={this.props.src} alt={this.props.alt} className='image' 
                     onMouseOut={() => this.setState({hovered: false})}
                     onMouseOver={() => this.setState({hovered: true})}  
                     onClick={()=>this.handleOnClick()}

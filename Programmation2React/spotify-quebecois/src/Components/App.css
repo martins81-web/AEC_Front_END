@@ -62,9 +62,9 @@ input:-webkit-autofill:active {
     color: white;
 }
 
-.container {
+.containerImg {
   position: relative;
-  width: 50%;
+  width: 100%;
   background: '#007bff';
   overflow:'hidden';
 }
@@ -73,10 +73,10 @@ input:-webkit-autofill:active {
   opacity: 1;
   display: block;
   width: 100%;
+  height: auto;
   transition: .5s ease;
   backface-visibility: hidden;
 }
-
 
 
 .middle {
@@ -93,7 +93,7 @@ input:-webkit-autofill:active {
 
 
 
-.container:hover .middle {
+.containerImg:hover .middle {
   opacity: 1;
 }
 
