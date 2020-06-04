@@ -12,7 +12,7 @@ import darth from '../img/vader.jfif'
 export class Accueil extends React.Component  {
     constructor(props) {
         super(props);
-        this.state = { connected: true,  recherche: '', hoveredReculer: false, hoveredAvancer: false, accueil:true}
+        this.state = { connected: false,  recherche: '', hoveredReculer: false, hoveredAvancer: false, accueil:true}
 
         
     }
@@ -39,9 +39,10 @@ export class Accueil extends React.Component  {
     header(){
         return (
             <Row className="d-flex mt-3">
-                <Col xs lg="12" className="d-flex justify-content-between " >
+                <Col xs lg="12" className="d-flex justify-content-between" >
+                    <div>
                     {this.Recherche()}
-                        
+                    </div>
                     <Dropdown>
                         <Dropdown.Toggle style={styleButton} variant="secondary" id="dropdown-basic">
                             <img style={imageDisconnexion} className='img-fluid' src={darth} alt="imgProfil"></img>

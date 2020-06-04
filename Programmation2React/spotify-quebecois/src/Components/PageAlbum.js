@@ -30,7 +30,7 @@ export class PageAlbum extends React.Component  {
                 </Row>
                 <Row>
                     <Col  xl="4" lg="4" md="6" sm="12" >
-                        <img    src={this.props.album.src} alt={this.props.album.alt} className="fluid" />
+                        <img    src={this.props.album.src} alt={this.props.album.alt} className="fluid" title={this.props.album.title+ " de " + this.props.album.artist} />
                     </Col>
                     
                     <Col xl="6" lg="6" md="6" sm="12" className="text-white d-flex align-items-begin flex-column justify-content-end">
@@ -72,7 +72,8 @@ export class PageAlbum extends React.Component  {
                             src={this.props.album.src} alt={this.props.album.alt} className="img-fluid" 
                             onMouseOut={() => this.setState({hovered: false})}
                             onMouseOver={() => this.setState({hovered: true})}
-                            style={this.state.hovered ?  AlbumHover : null }/>
+                            style={this.state.hovered ?  AlbumHover : null }
+                            title={this.props.album.title+ " de " + this.props.album.artist}/>
                     </Col>
                     <Col xl="6" lg="6" md="6" sm="12"  className="text-white d-flex align-items-begin flex-column justify-content-end">
                             <p style={color}>Album</p>

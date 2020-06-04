@@ -329,7 +329,7 @@ var tabAlbums = [
     { 
         src : require("../img/albums/colocs.jpg"), 
         alt: "LesColocs_DehorsNovembre", 
-        title: 'Dehors novembre', 
+        title: 'Dehors Novembre', 
         artist: "Les Colocs",
         releaseYear: '1998',
         chansons: [{
