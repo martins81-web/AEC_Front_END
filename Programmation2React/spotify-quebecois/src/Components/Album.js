@@ -18,19 +18,19 @@ export class Album extends React.Component  {
 
     render() { 
         return ( 
-            <Col style={this.state.hovered ? styleColHover : styleCol } xl="4" lg="4" md="6" sm="12" xs="12" className="mb-5 center-block d-flex justify-content-center flex-column p-3"> 
+            <Col style={this.state.hovered ? styleColHover : styleCol } xl="3" lg="4" md="6" sm="12" className="mb-5 center-block d-flex justify-content-center flex-column p-3"> 
              <div className="p-0 mb-0 container" >
 
-                    <img fluid src={this.props.src} alt={this.props.alt} className='image img-fluid' 
+                    <img src={this.props.src} alt={this.props.alt} className='image img-fluid' 
                     onMouseOut={() => this.setState({hovered: false})}
                     onMouseOver={() => this.setState({hovered: true})}  
                     onClick={()=>this.handleOnClick()}
                     style={this.state.hovered ? styleHoverImg : null}
                     />
-                    <div  className={this.state.hovered ? "middle" : 'hide' }   
+                    <div className={this.state.hovered ? "middle" : 'hide' }   
                         onMouseOut={() => this.setState({hovered: false})}
                         onMouseOver={() => this.setState({hovered: true})}  >
-                        <Icon icon={ic_play_circle_outline} size={this.state.playHovered ? 110 : 100} 
+                        <Icon fluid icon={ic_play_circle_outline} size={this.state.playHovered ? 110 : 100} 
                         style={this.state.playHovered ? {color:'white', cursor:'pointer',filter: 'drop-shadow(10px 10px 10px black)'} : {color:'#ECF0F1',filter: 'drop-shadow(10px 10px 10px black)'}}
                         onMouseOut={() => this.setState({playHovered: false})}
                         onMouseOver={() => this.setState({playHovered: true})} 
