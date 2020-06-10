@@ -33,7 +33,7 @@ export class StarWars extends React.Component {
 
 
         //'get' personnages
-        var i=1;
+        var i=0;
         while (i<=this.state.count+this.state.notFound){
             try { 
                 i++;
@@ -55,6 +55,7 @@ export class StarWars extends React.Component {
             } catch (error) { 
                     console.log(error); 
             }  
+            
         }  
         
         
