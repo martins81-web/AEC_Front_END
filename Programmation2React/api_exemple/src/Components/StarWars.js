@@ -9,7 +9,7 @@ export class StarWars extends React.Component {
 
     constructor(props) { 
         super(props); 
-        this.state = {data : [], count:0 }; 
+        this.state = {data : [], count:0, notFound:0 }; 
     } 
     
      
@@ -33,22 +33,29 @@ export class StarWars extends React.Component {
 
 
         //'get' personnages
-        for(let i=1;i<=this.state.count+1;i++)
-        try { 
+        var i=1;
+        while (i<=this.state.count+this.state.notFound){
+            try { 
+                i++;
+                const response = await fetch('https://swapi.dev/api/people/'+i); 
+                const json = await response.json(); 
             
-            const response = await fetch('https://swapi.dev/api/people/'+i); 
-            const json = await response.json(); 
-        
-            this.setState({ data: json }); 
-            person.push(json);
+                this.setState({ data: json });
+                
+                if(!(json['detail']==="Not found")){
+                    person.push(json);
+                } else if (json['detail']==="Not found"){
+                    this.setState({ notFound: this.state.notFound+1 });
+                }
 
-            if (!response.ok) { 
-                throw Error(response.statusText); 
-            } 
-            
-        } catch (error) { 
-                console.log(error); 
-        }    
+                if (!response.ok) { 
+                    throw Error(response.statusText); 
+                } 
+                
+            } catch (error) { 
+                    console.log(error); 
+            }  
+        }  
         
         
         
@@ -56,6 +63,8 @@ export class StarWars extends React.Component {
         
 
     render() { 
+        Object.keys(person).map(key => ( 
+            console.log(person[key])))
         return (<Row > {Object.keys(person).map(key => ( 
                     <PersonnageV4 key={key} personnage={person[key]} ></PersonnageV4>  
             ))}</Row>) 
