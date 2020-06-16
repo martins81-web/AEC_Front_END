@@ -1,3 +1,9 @@
+// <!-- Recherche.js -->
+// <!-- Techniques de programmation Web 2 -->
+// <!-- Projet 1 par Eric Martins -->
+// <!-- Crée le 2 juin 2020 -->
+// <!-- Dernier mise à jour le 16 juin 2020 -->
+
 import React from 'react';
 import './App.css';
 import Form from 'react-bootstrap/Form';  
@@ -28,6 +34,8 @@ export class Recherche extends React.Component  {
     }
 }
 
+
+/* Style */
 const inputStyle={
     borderRadius: '1.5rem',
     padding: '0.625rem',

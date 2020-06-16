@@ -1,3 +1,9 @@
+// <!-- Accueil.js -->
+// <!-- Techniques de programmation Web 2 -->
+// <!-- Projet 1 par Eric Martins -->
+// <!-- Crée le 2 juin 2020 -->
+// <!-- Dernier mise à jour le 16 juin 2020 -->
+
 import React from 'react';
 import './App.css';
 import Container from 'react-bootstrap/Container';  
@@ -12,9 +18,8 @@ import darth from '../img/vader.jfif'
 export class Accueil extends React.Component  {
     constructor(props) {
         super(props);
-        this.state = { connected: false,  recherche: '', hoveredReculer: false, hoveredAvancer: false, accueil:true}
-
-        
+        this.state = { connected: false,  recherche: '', hoveredReculer: false, hoveredAvancer: false, accueil:true, hoverDecon:false}
+  
     }
 
     AfficheTitre(){
@@ -50,7 +55,10 @@ export class Accueil extends React.Component  {
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu style={drpDmenu}>
-                            <Dropdown.Item style={disconnexion} onClick={() => this.setState({ connected: false, pageAlbum: false })}>Déconnexion</Dropdown.Item>
+                            <Dropdown.Item  onMouseOut={() => this.setState({hoverDecon: false})}
+                                            onMouseOver={() => this.setState({hoverDecon: true})} 
+                                            style={this.state.hoverDecon ? disconnexionHover : disconnexion}
+                                            onClick={() => this.setState({ connected: false, pageAlbum: false })}>Déconnexion</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </Col>
@@ -81,7 +89,7 @@ export class Accueil extends React.Component  {
 }
 
 
-
+/* Style */
 const styleTitre = {
     fontSize: '3.75rem',
     fontWeight: 'bold',
@@ -118,6 +126,12 @@ const userName ={
 
 const disconnexion ={
     backgroundColor: '#505050',
+    color: 'white',
+    textAlign: 'center'
+}
+
+const disconnexionHover={
+    backgroundColor: '#303030',
     color: 'white',
     textAlign: 'center'
 }

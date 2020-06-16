@@ -1,3 +1,10 @@
+// <!-- Connexion.js -->
+// <!-- Techniques de programmation Web 2 -->
+// <!-- Projet 1 par Eric Martins -->
+// <!-- Crée le 2 juin 2020 -->
+// <!-- Dernier mise à jour le 16 juin 2020 -->
+
+
 import React from 'react';
 import Row from 'react-bootstrap/Row';  
 import Col from 'react-bootstrap/Col';  
@@ -41,11 +48,11 @@ export class Connexion extends React.Component {
                             <form >
                                 <div className="form-group ">
                                     <input style={styleInputCourriel} 
-                                    onChange={this.handleEmail}  type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Adresse courriel ou nom d'utilisateur" name="email"/>
+                                    onChange={this.handleEmail}  type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Email ou nom d'utilisateur : shany.carle@gmail.com" name="email"/>
                                 </div>
                                 <div className="form-group mb-5">
                                     <input style={styleInputPassword} 
-                                    onChange={this.handlePassword} type="password" className="form-control" id="pass" placeholder="Mot de passe" name="password" />
+                                    onChange={this.handlePassword} type="password" className="form-control" id="pass" placeholder="Mot de passe : patate" name="password" />
                                 </div>
                                 <div className="py-3 ">
                                     <button style={styleButton} type="" className="btn btn-light btn-lg btn-block" onClick={this.handleConnexion}>SE CONNECTER</button>
@@ -58,6 +65,8 @@ export class Connexion extends React.Component {
     }
 }
 
+
+/* Style */
 const styleButton = {
     borderRadius: '1.5rem',
     fontSize: '1rem',

@@ -1,3 +1,9 @@
+// <!-- ListeChansons.js -->
+// <!-- Techniques de programmation Web 2 -->
+// <!-- Projet 1 par Eric Martins -->
+// <!-- Crée le 2 juin 2020 -->
+// <!-- Dernier mise à jour le 16 juin 2020 -->
+
 import React from 'react';
 import './App.css'; 
 import Col from 'react-bootstrap/Col';  
@@ -29,6 +35,8 @@ export class ListeChansons extends React.Component {
      }
 }
 
+
+/* Style */
 
 const list = {
     borderTop: '1px solid #505050',

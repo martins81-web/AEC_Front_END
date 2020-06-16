@@ -1,3 +1,9 @@
+// <!-- PageAlbum.js -->
+// <!-- Techniques de programmation Web 2 -->
+// <!-- Projet 1 par Eric Martins -->
+// <!-- Crée le 2 juin 2020 -->
+// <!-- Dernier mise à jour le 16 juin 2020 -->
+
 import React from 'react';
 import './App.css';
 import Row  from 'react-bootstrap/Row'; 
@@ -5,7 +11,7 @@ import Col from 'react-bootstrap/Col';
 import { ListeChansons } from './ListeChansons';
 import { Paroles } from './Paroles';
 import arrow from '../img/back.svg'
-import Container from 'react-bootstrap/Container';  
+
 
 export class PageAlbum extends React.Component  {
     constructor(props) {
@@ -95,6 +101,8 @@ export class PageAlbum extends React.Component  {
         }
     }
 }
+
+/* Style */
 
 const color={
     color: '#26b99a'
