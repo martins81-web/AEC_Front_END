@@ -20,7 +20,7 @@ export class StarWarsApi extends React.Component {
             
             this.setState({ data: json }); 
             this.getCount(json['people']);
-            this.setState({ parametre: json['people'] });
+            this.setState({ parametre: 'people' });
         
             if (!response.ok) { 
                 throw Error(response.statusText); 
@@ -59,7 +59,7 @@ export class StarWarsApi extends React.Component {
 
     async chercheApi(){
         try { 
-           const response = await fetch(this.state.parametre+this.state.input); 
+           const response = await fetch('https://swapi.dev/api/'+ this.state.parametre+'/'+this.state.input); 
            const json = await response.json(); 
            this.setState({ resultat: json }); 
            
@@ -90,7 +90,7 @@ export class StarWarsApi extends React.Component {
                 <form onSubmit={e => {e.preventDefault()}}>
                     <select  onChange={this.handleChange}>
                         {Object.keys(this.state.data).map(key => ( 
-                            <option key={key} value={this.state.data[key]}>{key}</option>
+                            <option key={key} value={key}>{key}</option>
                         ))} 
                     </select>
                     <input type="number"  min="1" max={this.state.count} onChange={this.handleInputChange}/>
