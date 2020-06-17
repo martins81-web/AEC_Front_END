@@ -39,7 +39,7 @@ export class StarWarsApi extends React.Component {
 
     async getCount(e){
         try { 
-            const response = await fetch(e); 
+            const response = await fetch('https://swapi.dev/api/'+ this.state.parametre+'/'); 
             const json = await response.json(); 
             this.setState({ count: json['count'] }); 
            
