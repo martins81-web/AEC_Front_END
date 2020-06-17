@@ -5,7 +5,7 @@ import './App.css';
 export class StarWarsApi extends React.Component {
     constructor(props) { 
         super(props); 
-        this.state = {data : [], parametre:'', count:0, input:'', resultat:[] }; 
+        this.state = {data : [], parametre:'', count:82, input:'', resultat:[] }; 
         this.handleChange=this.handleChange.bind(this);
         this.getCount=this.getCount.bind(this);
         this.handleInputChange=this.handleInputChange.bind(this);
@@ -50,7 +50,7 @@ export class StarWarsApi extends React.Component {
         } catch (error) { 
                 console.log(error); 
         }    
-    }s
+    }
 
     handleInputChange(e){
         this.setState({input:e.target.value})
