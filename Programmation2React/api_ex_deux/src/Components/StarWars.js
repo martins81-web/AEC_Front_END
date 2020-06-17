@@ -19,8 +19,9 @@ export class StarWarsApi extends React.Component {
             const json = await response.json(); 
             
             this.setState({ data: json }); 
-            this.getCount(json['people']);
             this.setState({ parametre: 'people' });
+            this.getCount(json['people']);
+            
         
             if (!response.ok) { 
                 throw Error(response.statusText); 
@@ -41,7 +42,7 @@ export class StarWarsApi extends React.Component {
         try { 
             const response = await fetch('https://swapi.dev/api/'+ this.state.parametre+'/'); 
             const json = await response.json(); 
-            this.setState({ count: json['count'] }); 
+            this.setState({ count: json['count']}); 
            
             if (!response.ok) { 
                 throw Error(response.statusText); 
