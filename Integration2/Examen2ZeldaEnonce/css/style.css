@@ -1,3 +1,8 @@
+/*<!-- style.css -->*/
+/*<!-- Techniques d'intégration des interfaces Web 2 -->*/
+/*<!-- Examen 2 par Eric Martins -->*/
+/*<!-- Crée le 13 juin 2020 -->*/
+/*<!-- Dernier mise à jour le 13 juin 2020 -->*/
 
 hr{
     border-top: 2px solid rgb(185, 195, 70);
@@ -38,4 +43,65 @@ a:hover{
     border: 2px solid rgb(255, 255, 255);
 }
 
+
+/*6. Le header a comme background image banniere.jpg (5 points)*/
+header{
+    background-image: url("../img/banniere.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*7. Le titre (et tous les h1) utilisent la police CinzelDecorative-Bold.ttf et ont une ombre de
+dimensions : 0px 0px 4px black; (5 points)*/
+@font-face {
+    font-family: CinzelBold;
+    src: url('../font/CinzelDecorative-Bold.ttf');
+}
+h1{
+    font-family: CinzelBold;
+    filter: drop-shadow( 0px 0px 4px black);
+    color: white;
+}
+
+/*8. Les trois liens du haut sont blanc, soulignés et de taille 1.5rem (5 points)*/
+header a{
+    color: white;
+    text-decoration: underline;
+    font-size: 1.5rem;
+}
+
+/*9. Le body a comme image de fond pattern-triforce-2x.png et la couleur #234f30 (10 points)*/
+body{
+    background-image: url("../img/pattern-triforce-2x.png");
+    background-color: #234f30;
+}
+
+/*10. La couleur du placeholder est blanche. (10 points)*/
+#recherche::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+}
+#recherche:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+}
+#recherche::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+}
+
+/*14. Les trois liens du haut utilisent la librairie Hover-Master (inclue dans le projet) pour exécuter l’effet nommé hvr-grow. (12 points)*/
+header a.hvr-grow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
 

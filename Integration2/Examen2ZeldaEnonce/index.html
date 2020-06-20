@@ -1,14 +1,29 @@
 <!DOCTYPE html>
+<!-- index.html -->
+<!-- Techniques d'intégration des interfaces Web 2 -->
+<!-- Examen 2 par Eric Martins -->
+<!-- Crée le 13 juin 2020 -->
+<!-- Dernier mise à jour le 13 juin 2020 -->
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="bootstrap-4.0.0-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
+    <title>Examen 2 - Eric Martins</title>
 
+    <!-- BootStrap Feuille de style-->
+    <link rel="stylesheet" href="bootstrap-4.0.0-dist/css/bootstrap.css">
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Animation On Scroll Feuille de style-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+
+    <!-- Google chart JavaScript-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- Jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/script.js"></script>
+
 </head>
 <body>
 <!-- Header -->
@@ -16,7 +31,7 @@
     <div class="container-fluid  text-center pt-3">
         <div class="row">
             <div class="col-1">
-                <a class=" " href="#">Jeux</a>
+                <a class=" hvr-grow" href="#">Jeux</a>
             </div>
             <div class="col-1 mr-5">
                 <a class=" hvr-grow" href="#">Marchandise</a>
@@ -52,7 +67,7 @@
 <div class="container">
     <div class="row pt-3 pb-3">
         <div class="col-12 ">
-            <input class="form-control" type="text" id="myInput"  placeholder="Rechercher un jeu...">
+            <input id="recherche" class="form-control" type="text" id="myInput"  placeholder="Rechercher un jeu..." onkeyup="Recherche()">
             <hr>
             <ul class="list-group text-center" id="myUL">
                 <li class="list-group-item"><a href="#">Breath of the wild</a></li>
@@ -74,17 +89,30 @@
     </div>
 </div>
 <!-- Graphiques -->
-<div class="container-fluid graphiques pt-5 " >
+<div class="container-fluid graphiques pt-5 " data-aos="fade-up" data-aos-easing="linear"
+     data-aos-duration="800">
     <div class="row ">
         <div class="col-12 text-center pb-5">
             <h1> Zelda en chiffres</h1>
         </div>
-    </div>
-    <div class="row ">
-        <!-- ..... -->
+
+        <div class="col-12 text-center mb-3">
+            <div id="piechart"></div>
+        </div>
+
+        <div class="col-12 text-center ">
+            <div id="regions_div"></div>
+        </div>
     </div>
 </div>
 
+<!--15 .la section “Zelda en chiffres” contenant les graphiques utilise la librairie AOS (animate on-->
+<!--scroll) pour exécuter l’effet nommé fade-up. (13 points)-->
+<!-- Animation On Scroll Javascript -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!-- Bootstrap Javascript -->
 <script src="bootstrap-4.0.0-dist/js/bootstrap.js"></script>
+<!-- Javascript -->
+<script src="js/script.js"></script>
 </body>
 </html>
