@@ -3,8 +3,6 @@ import {PersonnageV4} from './PersonnageV4'
 import Row from 'react-bootstrap/Row'; 
 
 
-
-
 export class StarWars extends React.Component { 
 
     constructor(props) { 
@@ -55,7 +53,6 @@ export class StarWars extends React.Component {
             } catch (error) { 
                     console.log(error); 
             }  
-            
         }  
         
         

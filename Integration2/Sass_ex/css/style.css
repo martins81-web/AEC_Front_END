@@ -22,6 +22,14 @@ hr {
   width: 100%;
 }
 
+.col3 {
+  width: 50%;
+}
+
+.col-xl6 {
+  width: 50%;
+}
+
 .col5 {
   width: 41.6666666667%;
 }
@@ -44,6 +52,10 @@ hr {
 
 .col11 {
   width: 91.6666666667%;
+}
+
+.col12 {
+  width: 100%;
 }
 
 .img-responsive {
