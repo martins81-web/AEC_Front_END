@@ -80,29 +80,29 @@ export class Norris extends React.Component {
     render() { 
         return (<Container >
                 <Row>
-                <Col xs='12' sm='12' md='12' lg="12" xl='12' className='text-center my-4'>
-                    <Image src='https://fontmeme.com/permalink/200623/1f8144fe42413d4eaeed6efb8e8970a6.png' alt="lethal-weapon-font" />                
-                </Col>
-                <Col xs='12' sm='12' md='12' lg="12" xl='12' className='text-center mt-2 mb-3'>
-                    <Image src={chuck} rounded />
-                </Col>
-                <Col xs='12' sm='12' md='12' lg="12" xl='12' className='text-center'>
-                    <div>
-                        Category: <select className='mr-5' onChange={this.handleCategoryChange}>
-                        
-                            {Object.keys(this.state.categories).map(key => ( 
-                                <option key={key} value={this.state.categories[key]}>{this.state.categories[key]}</option>
-                            ))} 
-                        </select> 
-                        <label for="customName" className='mr-2'>Custom Name: </label>
-                        <input type="text" id='customName' maxLength="30" onChange={this.handleNameChange}/>
-                        <button type="" className="btn btn-outline-dark btn-sm ml-2" onClick={this.searchJoke}>Show joke</button>
-                    </div>
-                </Col>
-        
-                <Col xs='12' sm='12' md='12' lg="12" xl='12'>
-                   {this.showJoke()}
-                </Col>
+                    <Col xs='12' sm='12' md='12' lg="12" xl='12' className='text-center my-4'>
+                        <Image src='https://fontmeme.com/permalink/200623/1f8144fe42413d4eaeed6efb8e8970a6.png' alt="lethal-weapon-font" />                
+                    </Col>
+                    <Col xs='12' sm='12' md='12' lg="12" xl='12' className='text-center mt-2 mb-3'>
+                        <Image src={chuck} rounded />
+                    </Col>
+                    <Col xs='12' sm='12' md='12' lg="12" xl='12' className='text-center'>
+                        <div>
+                        <b>Category</b>: <select className='mr-5' onChange={this.handleCategoryChange}>
+                            
+                                {Object.keys(this.state.categories).map(key => ( 
+                                    <option key={key} value={this.state.categories[key]}>{this.state.categories[key]}</option>
+                                ))} 
+                            </select> 
+                            <label for="customName" className='mr-2'><b>Custom Name:</b> </label>
+                            <input type="text" id='customName' maxLength="30" onChange={this.handleNameChange}/>
+                            <button type="" className="btn btn-outline-dark btn-sm ml-2" onClick={this.searchJoke}>Show joke</button>
+                        </div>
+                    </Col>
+            
+                    <Col xs='12' sm='12' md='12' lg="12" xl='12'>
+                    {this.showJoke()}
+                    </Col>
                 </Row>
             </Container>
             );
