@@ -4,25 +4,25 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';  
 import Image from 'react-bootstrap/Image';  
 
-import SB1 from '../Img/SB1.jpg'
-import SB2 from '../Img/SB2.jpg'
-import SB3 from '../Img/SB3.jpg'
-import SB4 from '../Img/SB4.jpg'
+import SB1 from '../img/SB1.jpg'
+import SB2 from '../img/SB2.jpg'
+import SB3 from '../img/SB3.jpg'
+import SB4 from '../img/SB4.jpg'
 
-import Shipwrecks1 from '../Img/Shipwrecks1.jpg'
-import Shipwrecks2 from '../Img/Shipwrecks2.jpg'
-import Shipwrecks3 from '../Img/Shipwrecks3.jpg'
-import Shipwrecks4 from '../Img/Shipwrecks4.jpg'
+import Shipwrecks1 from '../img/Shipwrecks1.jpg'
+import Shipwrecks2 from '../img/Shipwrecks2.jpg'
+import Shipwrecks3 from '../img/Shipwrecks3.jpg'
+import Shipwrecks4 from '../img/Shipwrecks4.jpg'
 
-import BruceNPark1 from '../Img/BruceNPark1.jpg'
-import BruceNPark2 from '../Img/BruceNPark2.jpg'
-import BruceNPark3 from '../Img/BruceNPark3.jpg'
-import BruceNPark4 from '../Img/BruceNPark4.jpg'
+import BruceNPark1 from '../img/BruceNPark1.jpg'
+import BruceNPark2 from '../img/BruceNPark2.jpg'
+import BruceNPark3 from '../img/BruceNPark3.jpg'
+import BruceNPark4 from '../img/BruceNPark4.jpg'
 
-import LittleCove1 from '../Img/LittleCove1.jpg'
-import LittleCove2 from '../Img/LittleCove2.jpg'
-import LittleCove3 from '../Img/LittleCove3.jpg'
-import LittleCove4 from '../Img/LittleCove4.jpg'
+import LittleCove1 from '../img/LittleCove1.jpg'
+import LittleCove2 from '../img/LittleCove2.jpg'
+import LittleCove3 from '../img/LittleCove3.jpg'
+import LittleCove4 from '../img/LittleCove4.jpg'
 
 export class Photos extends React.Component {
     constructor(props) {

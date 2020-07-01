@@ -3,7 +3,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';  
 import Image from 'react-bootstrap/Image';  
 
-import Bruce from '../Img/Bruce.jpg'
+import Bruce from '../img/Bruce.jpg'
 export class Accueil extends React.Component {
     constructor(props) {
         super(props);

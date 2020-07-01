@@ -11,7 +11,7 @@ import {Route} from 'react-router-dom'
 import {Switch} from 'react-router-dom' 
 import Container from 'react-bootstrap/Container';  
 
-import bg from '../Img/bg.png'
+import bg from '../img/bg.png'
 
 export class App extends React.Component {
 
@@ -25,11 +25,11 @@ render() {   return (
     
         <Menu/>
         <Switch>
-        <Route path="/" exact component={Accueil} /> 
-        <Route path="/Accueil" component={Accueil} /> 
-        <Route path="/Photos" component={Photos} /> 
-        <Route path="/Video" component={Video} /> 
-        <Route path="/Carte" component={Carte} />  
+        <Route path="/AEC_Front_End/Programmation2React/hello-routers-world/build/" exact component={Accueil} /> 
+        <Route path="/AEC_Front_End/Programmation2React/hello-routers-world/build/Accueil" component={Accueil} /> 
+        <Route path="/AEC_Front_End/Programmation2React/hello-routers-world/build/Photos" component={Photos} /> 
+        <Route path="/AEC_Front_End/Programmation2React/hello-routers-world/build/Video" component={Video} /> 
+        <Route path="/AEC_Front_End/Programmation2React/hello-routers-world/build/Carte" component={Carte} />  
         </Switch>
         <Return/> 
       
