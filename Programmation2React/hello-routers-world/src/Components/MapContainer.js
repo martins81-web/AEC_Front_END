@@ -17,6 +17,7 @@ export class MapContainer extends React.Component {
     return (
      
       <Map
+      
         style={mapStyles}
         google={this.props.google}
         zoom={11}
