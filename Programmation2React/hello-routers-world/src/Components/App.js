@@ -8,6 +8,7 @@ import {Carte} from './Carte';
 import {Video} from './Video'; 
 
 import {Route} from 'react-router-dom' 
+import {Switch} from 'react-router-dom' 
 import Container from 'react-bootstrap/Container';  
 
 import bg from '../Img/bg.png'
@@ -21,12 +22,15 @@ export class App extends React.Component {
 render() {   return (
     <Container  > 
       
+    
         <Menu/>
+        <Switch>
         <Route path="/" exact component={Accueil} /> 
         <Route path="/Accueil" component={Accueil} /> 
         <Route path="/Photos" component={Photos} /> 
         <Route path="/Video" component={Video} /> 
         <Route path="/Carte" component={Carte} />  
+        </Switch>
         <Return/> 
       
     </Container>
