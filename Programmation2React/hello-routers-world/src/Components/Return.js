@@ -10,7 +10,7 @@ export class Return extends React.Component {
     }
     render() { return (
         
-                    <Link exact to="/AEC_Front_End/Programmation2React/hello-routers-world/build/Accueil" className="btn btn-primary mb-3"> 
+                    <Link exact to="/Accueil" className="btn btn-primary mb-3"> 
                         Retour à l'accueil 
                     </Link> 
         ); 
