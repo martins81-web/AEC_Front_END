@@ -1,7 +1,8 @@
 {
   "name": "hello-routers-world",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "homepage": "./",
   "dependencies": {
     "@react-google-maps/api": "^1.9.7",
     "@testing-library/jest-dom": "^4.2.4",
