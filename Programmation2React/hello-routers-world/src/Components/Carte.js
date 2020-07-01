@@ -10,8 +10,8 @@ export class Carte extends React.Component {
     render() { 
         
         return (<>
-                    <Row className='no-gutters' style={rowStyle}> 
-                        <Col xs xl='12' className='px-5'>
+                    <Row className='no-gutters px-5' style={rowStyle}> 
+                        <Col xs xl='12' >
                             <h1>Carte google</h1>
                         </Col>     
 

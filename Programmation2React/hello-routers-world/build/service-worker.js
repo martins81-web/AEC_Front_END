@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/AEC_Front_End/Programmation2React/hello-routers-world/build/precache-manifest.200e9f36440ccbb05f74fb5e7fa77281.js"
+  "/AEC_Front_End/Programmation2React/hello-routers-world/build/precache-manifest.4ba38e140b9b0a4746fc77843ac3af0e.js"
 );
 
 self.addEventListener('message', (event) => {
