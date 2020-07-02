@@ -8,7 +8,7 @@ import {Carte} from './Carte';
 import {Video} from './Video'; 
 
 import {Route} from 'react-router-dom' 
-import {Switch} from 'react-router-dom' 
+
 import Container from 'react-bootstrap/Container';  
 
 import bg from '../img/bg.png'
@@ -24,13 +24,13 @@ render() {   return (
       
     
         <Menu/>
-        <Switch>
-        <Route path="/AEC_Front_End/Programmation2React/hello-routers-world/build/" exact component={Accueil} /> 
-        <Route path="/AEC_Front_End/Programmation2React/hello-routers-world/build/Accueil" component={Accueil} /> 
-        <Route path="/AEC_Front_End/Programmation2React/hello-routers-world/build/Photos" component={Photos} /> 
-        <Route path="/AEC_Front_End/Programmation2React/hello-routers-world/build/Video" component={Video} /> 
-        <Route path="/AEC_Front_End/Programmation2React/hello-routers-world/build/Carte" component={Carte} />  
-        </Switch>
+      
+        <Route path="AEC_Front_End/Programmation2React/hello-routers-world/build/" exact component={Accueil} /> 
+        <Route path="AEC_Front_End/Programmation2React/hello-routers-world/build/Accueil" component={Accueil} /> 
+        <Route path="AEC_Front_End/Programmation2React/hello-routers-world/build/Photos" component={Photos} /> 
+        <Route path="AEC_Front_End/Programmation2React/hello-routers-world/build/Video" component={Video} /> 
+        <Route path="AEC_Front_End/Programmation2React/hello-routers-world/build/Carte" component={Carte} />  
+    
         <Return/> 
       
     </Container>
