@@ -6,8 +6,10 @@ import {Return} from './Return';
 import {Photos} from './Photos'; 
 import {Carte} from './Carte'; 
 import {Video} from './Video'; 
+import {PageNotFound} from './PageNotFound'; 
 
 import {Route} from 'react-router-dom' 
+import {Switch} from 'react-router-dom' 
 
 import Container from 'react-bootstrap/Container';  
 
@@ -24,13 +26,14 @@ render() {   return (
       
     
         <Menu/>
-      
-        <Route path="/" exact component={Accueil} /> 
-        <Route path="/Accueil" component={Accueil} /> 
-        <Route path="/Photos" component={Photos} /> 
-        <Route path="/Video" component={Video} /> 
-        <Route path="/Carte" component={Carte} />  
-    
+        <Switch>
+          <Route path="/" exact component={Accueil} /> 
+          <Route path="/Accueil" component={Accueil} /> 
+          <Route path="/Photos" component={Photos} /> 
+          <Route path="/Video" component={Video} /> 
+          <Route path="/Carte" component={Carte} />  
+          <Route component={PageNotFound}/>
+        </Switch>
         <Return/> 
       
     </Container>
