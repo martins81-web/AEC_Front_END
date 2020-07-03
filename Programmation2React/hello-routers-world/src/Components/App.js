@@ -25,11 +25,11 @@ render() {   return (
     
         <Menu/>
       
-        <Route path="AEC_Front_End/Programmation2React/hello-routers-world/build/" exact component={Accueil} /> 
-        <Route path="AEC_Front_End/Programmation2React/hello-routers-world/build/Accueil" component={Accueil} /> 
-        <Route path="AEC_Front_End/Programmation2React/hello-routers-world/build/Photos" component={Photos} /> 
-        <Route path="AEC_Front_End/Programmation2React/hello-routers-world/build/Video" component={Video} /> 
-        <Route path="AEC_Front_End/Programmation2React/hello-routers-world/build/Carte" component={Carte} />  
+        <Route path="/" exact component={Accueil} /> 
+        <Route path="/Accueil" component={Accueil} /> 
+        <Route path="/Photos" component={Photos} /> 
+        <Route path="/Video" component={Video} /> 
+        <Route path="/Carte" component={Carte} />  
     
         <Return/> 
       

@@ -21,10 +21,10 @@ return ( <Row className='no-gutters mt-3'>
                 <Navbar bg="dark" variant="dark"> 
                 <Link exact to="/Accueil"><Navbar.Brand ><h3>Destination Vacances</h3></Navbar.Brand> </Link>
                         <Nav> 
-                            <NavLink to="AEC_Front_End/Programmation2React/hello-routers-world/build/Accueil" style={link} activeStyle={activeStyle}>Accueil</NavLink> 
-                            <NavLink to="AEC_Front_End/Programmation2React/hello-routers-world/build/Photos" style={link} activeStyle={activeStyle}>Photos</NavLink> 
-                            <NavLink to="AEC_Front_End/Programmation2React/hello-routers-world/build/Video" style={link} activeStyle={activeStyle}>Video</NavLink> 
-                            <NavLink to="AEC_Front_End/Programmation2React/hello-routers-world/build/Carte" style={link} activeStyle={activeStyle}>Carte</NavLink> 
+                            <NavLink to="/Accueil" style={link} activeStyle={activeStyle}>Accueil</NavLink> 
+                            <NavLink to="/Photos" style={link} activeStyle={activeStyle}>Photos</NavLink> 
+                            <NavLink to="/Video" style={link} activeStyle={activeStyle}>Video</NavLink> 
+                            <NavLink to="/Carte" style={link} activeStyle={activeStyle}>Carte</NavLink> 
                         </Nav> 
                 </Navbar> 
                 <br /> 
