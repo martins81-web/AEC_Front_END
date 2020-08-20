@@ -1,0 +1,65 @@
+//1. Créez, avec une boucle @for, 6 classes pour vos balises <p> qui auront la même police
+//mais des tailles 2 à 12 rem.
+
+@for $i from 1 through 6
+  .p-#{$i}
+    font-size: #{$i+$i}+'rem'
+    font-family: "Bodoni MT", sans-serif
+
+
+
+//2. Créez une variable contenant une liste de directions (nord,sud,est,west).
+//Avec une boucle @each, créez 4 classes avec comme background image un flèche
+//pointant la bonne direction !
+
+$directions: nord, sud, est, ouest
+
+@each $direction in $directions
+  .direction-#{$direction}
+    background-image: url('../media/arrow-#{$direction}')
+    background-repeat: no-repeat
+    background-position: center
+
+
+//3. Créez une map de chiffre:valeur (“un”:1, “deux”:2,..., “dix”:10).
+//Avec une boucle @each, créez 10 classes qui ajustent la largeur d’un élément de 1 à 10 rem.
+
+$chiffres: ("un": 1, "deux":2, "trois":3, "quatre":4, "cinq":5, "six":6, "sept":7, "huit":8, "neuf":9, "dix":10)
+
+@each $chiffre, $i in $chiffres
+  .largeur-#{$chiffre}-rem
+    width: $i+'rem'
+
+
+
+//4. Créez un @mixin avec paramètre qui affiche une image à gauche ou à droite selon le
+//paramètre.
+
+
+
+@mixin position-image($position)
+  width: 25%
+  @if $position==gauche
+    float: left
+  @else if $position==droite
+    float: right
+
+img
+  @include position-image(droite)
+
+
+//  5. Créez une fonction qui prend en paramètre une String et une lettre. La fonction doit
+//retourner combien de fois la lettre est présente dans la string !
+//ex : Mafonction(bonjour,o) retourne 2
+
+
+@function Mafonction($string, $lettre)
+  $count: 0
+  @for $i from 1 through str-length($string)
+    @if str-slice($string, $i, $i) == $lettre
+      $count: $count +1
+  @return $count
+
+
+.test-function
+  width: Mafonction(bonjour,o)

@@ -8,6 +8,9 @@ import { ButtonAddMovie } from "./ButtonAddMovie";
 import { ButtonReturnToMovies } from "./ButtonReturnToMovies";
 import { AddMovie } from "./AddMovie";
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { useLocation } from 'react-router-dom' 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -18,6 +21,7 @@ function App() {
   console.log(location.pathname); 
   return (
     <> 
+    <ToastContainer autoClose={3000} hideProgressBar />
     <Container fluid>
       <Row>
         <Col xs xl="12" className="d-flex justify-content-between align-items-center">
@@ -28,7 +32,8 @@ function App() {
           
         </Col>
       </Row>
-        
+      
+
     
       <Switch>
           <Route path="/" exact component={ManageMovies} /> 

@@ -17,22 +17,6 @@
       ]
     },
     {
-      "id": 2,
-      "title": "The Shawshank Redemption",
-      "year": "1994",
-      "picture": "https://upload.wikimedia.org/wikipedia/en/8/81/ShawshankRedemptionMoviePoster.jpg",
-      "director": "Frank Darabont",
-      "writers": [
-        "Stephen King",
-        "Frank Darabont"
-      ],
-      "stars": [
-        "Tim Robbins",
-        "Morgan Freeman",
-        "Bob Gunton"
-      ]
-    },
-    {
       "id": 3,
       "title": "Pulp Fiction",
       "year": "1994",
@@ -65,38 +49,6 @@
       ]
     },
     {
-      "id": 5,
-      "title": "The Empire Strikes Back",
-      "year": "1980",
-      "picture": "https://upload.wikimedia.org/wikipedia/en/3/3c/SW_-_Empire_Strikes_Back.jpg",
-      "director": "Irvin Kershner",
-      "writers": [
-        "Leigh Brackett",
-        "Lawrence Kasdan"
-      ],
-      "stars": [
-        "Mark Hamill",
-        "Harrison Ford",
-        "Carrie Fisher"
-      ]
-    },
-    {
-      "id": 6,
-      "title": "Fight Club",
-      "year": "1999",
-      "picture": "https://upload.wikimedia.org/wikipedia/en/f/fc/Fight_Club_poster.jpg",
-      "director": "David Fincher",
-      "writers": [
-        "Chuck Palahniuk",
-        "Jim Uhls"
-      ],
-      "stars": [
-        "Brad Pitt",
-        "Edward Norton",
-        "Meat Loaf"
-      ]
-    },
-    {
       "id": 7,
       "title": "Rounders",
       "year": "1998",
@@ -113,15 +65,30 @@
       ]
     },
     {
+      "id": 8,
+      "title": "Forrest Gump",
+      "year": "1995",
+      "picture": "https://upload.wikimedia.org/wikipedia/en/6/67/Forrest_Gump_poster.jpg",
+      "director": "Robert Zemeckis",
+      "writers": [
+        "Winston Groom",
+        "Eric Roth",
+        ""
+      ],
+      "stars": [
+        "Tom Hanks",
+        "Robin Wright",
+        "Gary Sinise"
+      ]
+    },
+    {
       "id": 9,
       "title": "American History X",
       "year": "1998",
       "picture": "https://upload.wikimedia.org/wikipedia/en/3/39/American_History_X_poster.png",
       "director": "Tony Kaye",
       "writers": [
-        "David McKenna",
-        "",
-        ""
+        "David McKenna"
       ],
       "stars": [
         "Edward Norton",
@@ -132,7 +99,7 @@
     {
       "id": 10,
       "title": "Good Will Hunting",
-      "year": "1997",
+      "year": "1998",
       "picture": "https://upload.wikimedia.org/wikipedia/en/5/52/Good_Will_Hunting.png",
       "director": "Gus Van Sant",
       "writers": [
@@ -151,16 +118,50 @@
       "title": "Rocky",
       "year": "1981",
       "picture": "https://images-na.ssl-images-amazon.com/images/I/91Wz30TIWvL._RI_.jpg",
+      "director": "John G. Avildsen",
+      "writers": [
+        "Sylvester Stallone",
+        "John G. Avildsen",
+        ""
+      ],
+      "stars": [
+        "Sylvester Stallone",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Rocky",
+      "year": "1976",
+      "picture": "https://images-na.ssl-images-amazon.com/images/I/91Wz30TIWvL._RI_.jpg",
       "director": "Sylvester Stallone",
       "writers": [
         "Sylvester Stallone",
         "John G. Avildsen",
-        "tyry"
+        "Eric"
       ],
       "stars": [
         "Sylvester Stallone",
-        "Talia Shire",
-        "Burt Young"
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Rocky",
+      "year": "1976",
+      "picture": "https://images-na.ssl-images-amazon.com/images/I/91Wz30TIWvL._RI_.jpg",
+      "director": "Sylvester Stallone",
+      "writers": [
+        "Sylvester Stallone",
+        "John G. Avildsen",
+        ""
+      ],
+      "stars": [
+        "Sylvester Stallone",
+        "",
+        ""
       ]
     }
   ]

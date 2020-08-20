@@ -131,7 +131,8 @@ export class AddMovie extends React.Component {
                     <Form.Label>URL of the movie's banner</Form.Label>
                     <Form.Control type="text" placeholder="Enter a valid url" onBlur={this.handlePicture}/>
                 </Form.Group>
-                {this.state.picture !== "" && <Image src={this.state.picture} rounded />}
+                {this.state.picture !== "" && <Image src={this.state.picture} rounded width='250' /> }
+                <br/>
                 
                 <Form.Label>Writers</Form.Label>
                 <Form.Group as={Row} controlId="writers">

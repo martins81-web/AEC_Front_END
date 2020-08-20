@@ -88,7 +88,7 @@ export class EditMovie extends React.Component {
       if(response.ok){ 
         const jsonResponse = await response.json(); 
         this.props.history.push("/");
-        toast.success(title + " added to my favourite movies!");
+        toast.success(title + " edited!");
 
         return jsonResponse; 
       } 
@@ -147,7 +147,7 @@ export class EditMovie extends React.Component {
                 <Form.Group controlId="movieBanner">
                     <Form.Label>URL of the movie's banner</Form.Label>
                     <Form.Control type="text" defaultValue={this.state.data.picture} onBlur={this.handlePicture}/>
-                    {this.state.picture !== "" && <Image src={this.state.picture} rounded />}
+                    {this.state.picture !== "" && <Image src={this.state.picture} rounded width='250'/>}
                 </Form.Group>
                
                 

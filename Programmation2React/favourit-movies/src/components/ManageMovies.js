@@ -30,7 +30,7 @@ export class ManageMovies extends React.Component {
         <>
             <Row>
                 {this.state.data.map((key,i) => (
-                <Movie title={key.title} movieData={key} id={i+1}></Movie>
+                <Movie key={i} movieData={key} ></Movie>
                 ))}
             </Row>
         </>
