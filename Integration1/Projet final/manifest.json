@@ -22,8 +22,8 @@
     "sizes": "168x168",
     "type": "image/png"
   }, {
-    "src": "AEC_Front_End/Integration1/Projet%20final/img/icons/homescreen192.png",
-    "sizes": "192x192",
+    "src": "AEC_Front_End/Integration1/Projet%20final/img/icons/VP_512x512.png",
+    "sizes": "512x512",
     "type": "image/png"
   }],
   "start_url": "index.html",
