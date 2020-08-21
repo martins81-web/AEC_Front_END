@@ -17,7 +17,7 @@
     "type": "image/png",
     "purpose" : "any maskable"
   }, {
-    "src": "/AEC_Front_End/Integration1/Projet%20final/img/icons/portugal-flag-icon-128.png",
+    "src": "img/icons/portugal-flag-icon-128.png",
     "sizes": "128x85",
     "type": "image/png",
     "purpose" : "any maskable"
