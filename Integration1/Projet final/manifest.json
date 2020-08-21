@@ -3,27 +3,27 @@
   "short_name": "VP",
   "icons": [{
     "src": "img/icons/portugal-flag-icon-16.png",
-    "sizes": "16x16",
+    "sizes": "16x11",
     "type": "image/png",
     "purpose" : "any maskable"
   }, {
     "src": "img/icons/portugal-flag-icon-32.png",
-    "sizes": "32x32",
+    "sizes": "32x21",
     "type": "image/png",
     "purpose" : "any maskable"
   }, {
     "src": "img/icons/portugal-flag-icon-64.png",
-    "sizes": "64x64",
+    "sizes": "64x43",
     "type": "image/png",
     "purpose" : "any maskable"
   }, {
     "src": "/img/icons/portugal-flag-icon-128.png",
-    "sizes": "128x128",
+    "sizes": "128x85",
     "type": "image/png",
     "purpose" : "any maskable"
   }, {
     "src": "img/icons/portugal-flag-icon-256.png",
-    "sizes": "256x256",
+    "sizes": "256x171",
     "type": "image/png",
     "purpose" : "any maskable"
   }, {
