@@ -2,24 +2,24 @@
   "name": "VisitPortugal",
   "short_name": "VP",
   "icons": [{
-    "src": "AEC_Front_End/Integration1/Projet%20final/img/icons/homescreen48.png",
-    "sizes": "48x48",
+    "src": "AEC_Front_End/Integration1/Projet%20final/img/icons/portugal-flag-icon-16.png",
+    "sizes": "16x16",
     "type": "image/png"
   }, {
-    "src": "AEC_Front_End/Integration1/Projet%20final/img/icons/homescreen72.png",
-    "sizes": "72x72",
+    "src": "AEC_Front_End/Integration1/Projet%20final/img/icons/portugal-flag-icon-32.png",
+    "sizes": "32x32",
     "type": "image/png"
   }, {
-    "src": "AEC_Front_End/Integration1/Projet%20final/img/icons/homescreen96.png",
-    "sizes": "96x96",
+    "src": "AEC_Front_End/Integration1/Projet%20final/img/icons/portugal-flag-icon-64.png",
+    "sizes": "64x64",
     "type": "image/png"
   }, {
-    "src": "AEC_Front_End/Integration1/Projet%20final/img/icons/homescreen144.png",
-    "sizes": "144x144",
+    "src": "AEC_Front_End/Integration1/Projet%20final/img/icons/portugal-flag-icon-128.png",
+    "sizes": "128x128",
     "type": "image/png"
   }, {
-    "src": "AEC_Front_End/Integration1/Projet%20final/img/icons/homescreen168.png",
-    "sizes": "168x168",
+    "src": "AEC_Front_End/Integration1/Projet%20final/img/icons/portugal-flag-icon-256.png",
+    "sizes": "256x256",
     "type": "image/png"
   }, {
     "src": "AEC_Front_End/Integration1/Projet%20final/img/icons/VP_512x512.png",
