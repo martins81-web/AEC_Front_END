@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <BoutonInstallPWA/>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" width="400 px" height="100 px"/>
+        <img src={logo} className="App-logo img-fluid" alt="logo"/>
         <p>
           Hello PWA World!
         </p>
