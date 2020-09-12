@@ -1,0 +1,93 @@
+@import './variables.sass';
+
+
+.bg
+    background-color: $background;
+
+
+.main-content
+    padding-top: 2%;
+    padding-left: 15%;
+    padding-right: 15%;
+    display: grid;
+    min-height: 100vh;
+
+.portfolio
+    display: grid;
+    height: 80%;
+    grid-template-rows: repeat(12, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 16px;
+
+.portfolio-item
+    background-color: $portfolioBackground;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+//portfolio grid
+@mixin grid($row,$column)
+    grid-row: span $row;
+    grid-column: span $column;
+
+.small
+    @include grid(6,1)
+
+.medium
+    @include grid(5,2)
+ 
+.large 
+   @include grid(8,3)
+
+.tall 
+    @include grid(6,2)
+
+.wide 
+    @include grid(4,2)
+    
+
+
+
+
+//portfolio images and backgrounds
+@mixin images-portfolio
+  background-blend-mode: multiply
+  background-size: cover
+  background-position: top left
+  transition: all ease-in-out 300ms
+  filter: grayscale(0%)
+@mixin hover
+  &:hover
+    filter: grayscale(80%)
+    
+
+.one
+  background-image: url('../images/img5.jpeg')
+  @include images-portfolio
+  @include hover
+
+.two
+  background-image: url('../images/img3.jpg')
+  @include images-portfolio
+  @include hover
+
+.three
+  background-image: url('../images/img6.jpg')
+  @include images-portfolio
+  @include hover
+
+.four
+  background-image: url('../images/img1.jpg')
+  @include images-portfolio
+  @include hover
+
+.five
+  background-image: url('../images/img2.jpg')
+  @include images-portfolio
+  @include hover
+
+.six
+  background-image: url('../images/img4.jpg')
+  @include images-portfolio
+  @include hover
