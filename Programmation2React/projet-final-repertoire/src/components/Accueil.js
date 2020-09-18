@@ -8,7 +8,7 @@ export class Accueil extends React.Component {
   render() {
     return (
   <>
-    
+     
     <Spring from={{opacity:0}} to={{opacity:1}} config={{delay: 500, duration:700}}>
       {props =>( 
         <div style={props}>
@@ -25,7 +25,7 @@ export class Accueil extends React.Component {
           </div>
         </div>
       )}
-    </Spring>
+    </Spring> 
 
 
   </>
