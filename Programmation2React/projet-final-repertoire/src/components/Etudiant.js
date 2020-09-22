@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef, useEffect} from "react";
 import {Card} from "react-bootstrap"
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
@@ -10,22 +10,36 @@ import {Visualisation} from "./Actions/Visualisation";
 import {Suppression} from "./Actions/Suppression";
 import {Edition} from "./Actions/Edition";
 
-export class Etudiant extends React.Component {
+import {TweenMax, Power3} from 'gsap';
 
+function Etudiant (props){
+  let cardItem = useRef(null)
 
+  useEffect(() => {
+    console.log(cardItem)
+    TweenMax.to(
+      cardItem, 1.5,
+      {
+        opacity:1,
+        y:-20,
+        ease: Power3.easeOut,
+        delay:.3
+      }
+
+    )
+  },[])
   
-  render() {
     return (
       <>
         <Col xl="4" lg="6" md="6" sm="12" className="my-4"> 
             
-              <Card className="h-100 card-rep ">
+              <Card ref={el => {cardItem = el}} className="h-100 card-rep ">
                 <Card.Body className='bgheader '>
                     <Container fluid>
                       <Row className='no-gutters '>
                         <Col xs lg="8" >
-                          <h4>{this.props.EtudiantData.firstName +" " + this.props.EtudiantData.name} </h4>
-                          {this.props.EtudiantData.course} 
+                          <h4>{props.EtudiantData.firstName +" " + props.EtudiantData.name} </h4>
+                          {props.EtudiantData.course} 
                         </Col>
                         <Col xs lg="4" className='text-right' >
                           <svg width="4em" height="4em" viewBox="0 0 16 16" className="bi bi-file-person" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -38,16 +52,16 @@ export class Etudiant extends React.Component {
                     <div>
                     </div>
                 </Card.Body>
-                <Link className='border-top border-bottom' to={"Etudiant/"+ this.props.EtudiantData.name +"?id=" + this.props.id} title='Visualiser le dossier de l´etudiant'>
+                <Link className='border-top border-bottom' to={"Etudiant/"+ props.EtudiantData.name +"?id=" + props.id} title='Visualiser le dossier de l´etudiant'>
                 <div className='text-center img-contour m-xl-3 m-lg-3 m-md-3 m-sm-2 m-4'>
-                  <img src={this.props.EtudiantData.picture} alt='photoEtudiant' className='img-fluid img-card ' />
+                  <img src={props.EtudiantData.picture} alt='photoEtudiant' className='img-fluid img-card ' />
                 </div>
                 </Link>
 
                 <div className='my-1  d-flex justify-content-around'>
-                    <Visualisation EtudiantData={this.props.EtudiantData} id={this.props.id}/>
-                    <Edition EtudiantData={this.props.EtudiantData} id={this.props.id}/>
-                    <Suppression className='links' history={this.props.history} EtudiantID={this.props.id} />
+                    <Visualisation EtudiantData={props.EtudiantData} id={props.id}/>
+                    <Edition EtudiantData={props.EtudiantData} id={props.id}/>
+                    <Suppression className='links' history={props.history} EtudiantID={props.id} />
                   </div>
               </Card> 
               
@@ -55,6 +69,8 @@ export class Etudiant extends React.Component {
           
       </>
     );
-  }
+  
 
 }
+
+export default Etudiant;

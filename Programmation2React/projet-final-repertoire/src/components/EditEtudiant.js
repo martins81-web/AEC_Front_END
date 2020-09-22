@@ -107,7 +107,7 @@ function EditEtudiant(props){
     return (
       <>
       <Container className='p-4 text-center'>   
-        <h2>Modification des informations de l'etudiant</h2> 
+        <h2>Modifier les informations de l'etudiant</h2> 
       </Container>
       <Container className='pb-4'>
         <Row>

@@ -3,6 +3,7 @@ import { Form, Button,Image,Container,Row,Col } from "react-bootstrap";
 import '../styles/formAjout.sass';
 import {toast} from "react-toastify";
 import {API} from "../Api_constante";
+import { Link } from "react-router-dom";
 
 export class AjouterEtudiant extends React.Component {
   constructor(props) {
@@ -58,6 +59,11 @@ formIsValid(prenomEtudiant,nomEtudiant,photoEtudiant,adresseEtudiant, villeEtudi
   if(!cours) _errors.cours = "Le cours est obligatoire";
 
   this.setState({setErrors : _errors});
+
+  if (Object.keys(_errors).length !== 0){
+  toast.error("Remplissez tout les champs!!!")
+  }
+
   return Object.keys(_errors).length === 0;
 }
 
@@ -74,6 +80,7 @@ formIsValid(prenomEtudiant,nomEtudiant,photoEtudiant,adresseEtudiant, villeEtudi
     const telephone = document.getElementById('telephone').value;
     const cours = document.getElementById('cours').value;
     const email = document.getElementById('email').value;
+
 
     if(!this.formIsValid(prenom,nom,photo,adresseEtudiant, villeEtudiant,codePostal,telephone,cours,email)) return;
 
@@ -187,12 +194,15 @@ formIsValid(prenomEtudiant,nomEtudiant,photoEtudiant,adresseEtudiant, villeEtudi
                 </Form.Group>
               </Form.Group>
 
-              
-            
 
             <Button variant="primary" type="submit" onClick={this.handleAdd}>
                 Enregistrer
             </Button>
+            <Link className='links mx-2  btn btn-danger' to={"/Accueil"}>
+                              <svg width="1em" height="1em" viewBox="0 0 16 16" className="bi bi-arrow-return-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fillRule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+                              </svg> Annuler 
+            </Link>
             </Form>  
             </Col>    
           </Row>

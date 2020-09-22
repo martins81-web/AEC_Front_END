@@ -1,5 +1,5 @@
 import React from "react";
-import { Etudiant } from "./Etudiant";
+import  Etudiant  from "./Etudiant";
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import {API} from "../Api_constante";
