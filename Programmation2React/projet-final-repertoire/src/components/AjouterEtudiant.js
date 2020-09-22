@@ -1,7 +1,8 @@
 import React from "react";
 import { Form, Button,Image,Container,Row,Col } from "react-bootstrap";
 import '../styles/formAjout.sass';
-
+import {toast} from "react-toastify";
+import {API} from "../Api_constante";
 
 export class AjouterEtudiant extends React.Component {
   constructor(props) {
@@ -13,9 +14,9 @@ export class AjouterEtudiant extends React.Component {
     this.addEtudiant = this.addEtudiant.bind(this);
   }
 
-  async addEtudiant(prenom, nom, photo, adresse, ville, codePostal, telephone, cours ) { 
+  async addEtudiant(prenom, nom, photo, adresse, ville, codePostal, telephone, cours, email ) { 
     try{ 
-      const response = await fetch('https://crudcrud.com/api/b179fdcd82d74cbe8773f514846405a3/etudiants', { 
+      const response = await fetch( API , { 
         method:'POST', 
         headers: {'Content-Type': 'application/json'  }, 
         body:JSON.stringify({
@@ -26,13 +27,14 @@ export class AjouterEtudiant extends React.Component {
           ville: ville,
           postalCode: codePostal,
           telephone: telephone,
-          course: cours
+          course: cours,
+          email: email
         }) 
       }); 
       if(response.ok){ 
         const jsonResponse = await response.json(); 
-        this.props.history.push("/");
-        //toast.success("Ajout d'étudiant " + prenom +" " + nom);
+        this.props.history.push("/Repertoire");
+        toast.success("Ajout d'étudiant!");
 
         return jsonResponse; 
       } 
@@ -43,14 +45,14 @@ export class AjouterEtudiant extends React.Component {
    } 
 }
 
-formIsValid(prenomEtudiant,nomEtudiant,photoEtudiant,adresseEtudiant, villeEtudiant,codePostal,telephone,cours){
+formIsValid(prenomEtudiant,nomEtudiant,photoEtudiant,adresseEtudiant, villeEtudiant,codePostal,telephone,cours,email){
   const _errors = {};
   if(!prenomEtudiant) _errors.prenomEtudiant = "Le prénom est obligatoire";
   if(!nomEtudiant) _errors.nomEtudiant = "Le nom est obligatoire";
   if(!photoEtudiant) _errors.photoEtudiant = "La photo est obligatoire";
   if(!adresseEtudiant) _errors.adresseEtudiant = "L'adresse est obligatoire";
   if(!villeEtudiant) _errors.villeEtudiant = "La ville est obligatoire";
-
+  if(!email) _errors.email = "L'email' est obligatoire";
   if(!codePostal) _errors.codePostal = "Le code postal est obligatoire";
   if(!telephone) _errors.telephone = "Le telephone est obligatoire";
   if(!cours) _errors.cours = "Le cours est obligatoire";
@@ -71,11 +73,11 @@ formIsValid(prenomEtudiant,nomEtudiant,photoEtudiant,adresseEtudiant, villeEtudi
     const codePostal = document.getElementById('codePostal').value;
     const telephone = document.getElementById('telephone').value;
     const cours = document.getElementById('cours').value;
+    const email = document.getElementById('email').value;
 
+    if(!this.formIsValid(prenom,nom,photo,adresseEtudiant, villeEtudiant,codePostal,telephone,cours,email)) return;
 
-    if(!this.formIsValid(prenom,nom,photo,adresseEtudiant, villeEtudiant,codePostal,telephone,cours)) return;
-
-      this.addEtudiant(prenom, nom, photo, adresseEtudiant, villeEtudiant, codePostal, telephone, cours);
+      this.addEtudiant(prenom, nom, photo, adresseEtudiant, villeEtudiant, codePostal, telephone, cours,email);
     
   }
 
@@ -89,68 +91,104 @@ formIsValid(prenomEtudiant,nomEtudiant,photoEtudiant,adresseEtudiant, villeEtudi
     console.log(this.props.history);
     return (
       <>
-      <Container>
+      <Container className='p-4 text-center'>   
+        <h2>Ajout d'un nouveau étudiant</h2> 
+      </Container>
+      <Container className='pb-4'>
         <Row>
           <Col>
             <Form>
-            <Form.Group controlId="prenomEtudiant">
-                <Form.Label>Prénom de l'étudiant</Form.Label>
-                <Form.Control type="text" placeholder="Entrer le prénom de l'étudiant" isInvalid={!!this.state.setErrors.prenomEtudiant} required />
-                <Form.Control.Feedback type='invalid'>
-                  {this.state.setErrors.prenomEtudiant}
-                </Form.Control.Feedback>
+            <Form.Label><h4>Identification</h4></Form.Label>
+              <Form.Group as={Row} controlId="prenom+nom" className='border border-black py-3'>
+                <Form.Group as={Col} xl="6" lg="6" md="12" sm="12" xs="12" controlId="prenomEtudiant">
+                  <Form.Label>Prénom</Form.Label>
+                  <Form.Control type="text" placeholder="Entrer le prénom de l'étudiant" isInvalid={!!this.state.setErrors.prenomEtudiant} required />
+                  <Form.Control.Feedback type='invalid'>
+                    {this.state.setErrors.prenomEtudiant}
+                  </Form.Control.Feedback>
+                </Form.Group>
+
+                <Form.Group as={Col} xl="6" lg="6" md="12" sm="12" xs="12" controlId="nomEtudiant">
+                  <Form.Label>Nom</Form.Label>
+                  <Form.Control type="text" placeholder="Entrer le nom de l'étudiant" isInvalid={!!this.state.setErrors.nomEtudiant} required />
+                  <Form.Control.Feedback type='invalid'>
+                    {this.state.setErrors.nomEtudiant}
+                  </Form.Control.Feedback>
+                </Form.Group>
+              </Form.Group>
+              <Form.Label className='mt-4'><h4>Photo</h4></Form.Label>
+              <Form.Group as={Row} controlId="photo" className='border border-black py-3'>
+                
+                
+                    <Form.Group  as={Col} xl="9" lg="9" md="12" sm="12" xs="12" controlId="photoEtudiant">
+                      <Form.Label>URL d'une photo de l'étudiant</Form.Label>
+                      <Form.Control type="text" placeholder="Entrer une URL valide" onBlur={this.handlePhoto} isInvalid={!!this.state.setErrors.photoEtudiant} required/>
+                      <Form.Control.Feedback type='invalid'>
+                        {this.state.setErrors.photoEtudiant}
+                      </Form.Control.Feedback>
+                    </Form.Group>
+                
+                <Col as={Col} xl="3" lg="3" md="6" sm="12" xs="12" className='text-center'> 
+                    <div>
+                      {this.state.photo !== "" && <Image src={this.state.photo} rounded height='200'/>}
+                    </div>
+                </Col> 
+
+              </Form.Group>
+              <Form.Label className='mt-4'><h4>Formation</h4></Form.Label>
+              <Form.Group as={Row} controlId="" className='border border-black py-3'>
+                <Form.Group as={Col} xl="12" lg="12" md="12" sm="12" xs="12" controlId="cours">
+                        <Form.Label>Cours</Form.Label>
+                        <Form.Control type="text" placeholder="Entrer le cours" isInvalid={!!this.state.setErrors.cours}  required/>
+                        <Form.Control.Feedback type='invalid'>
+                          {this.state.setErrors.cours}
+                        </Form.Control.Feedback>
+                </Form.Group>
               </Form.Group>
 
-              <Form.Group controlId="nomEtudiant">
-                <Form.Label>Nom de l'étudiant</Form.Label>
-                <Form.Control type="text" placeholder="Entrer le nom de l'étudiant" isInvalid={!!this.state.setErrors.nomEtudiant} required />
-                <Form.Control.Feedback type='invalid'>
-                  {this.state.setErrors.nomEtudiant}
-                </Form.Control.Feedback>
+              <Form.Label className='mt-4'><h4>Contact</h4></Form.Label>
+              <Form.Group as={Row} controlId="add" className='border border-black py-3'>
+              <Form.Group as={Col} xl="6" lg="6" md="12" sm="12" xs="12" controlId="adresseEtudiant">
+                  <Form.Label>Adresse</Form.Label>
+                  <Form.Control type="text" placeholder="Entrer l'adresse de l'étudiant" isInvalid={!!this.state.setErrors.adresseEtudiant} required/>
+                  <Form.Control.Feedback type='invalid'>
+                    {this.state.setErrors.adresseEtudiant}
+                  </Form.Control.Feedback>
               </Form.Group>
-              <Form.Group controlId="photoEtudiant">
-                <Form.Label>URL d'une photo de l'étudiant</Form.Label>
-                <Form.Control type="text" placeholder="Entrer une URL valide" onBlur={this.handlePhoto} isInvalid={!!this.state.setErrors.photoEtudiant} required/>
-                <Form.Control.Feedback type='invalid'>
-                  {this.state.setErrors.photoEtudiant}
-                </Form.Control.Feedback>
+              
+
+                <Form.Group as={Col} xl="6" lg="6" md="12" sm="12" xs="12" controlId="villeEtudiant">
+                  <Form.Label>Ville</Form.Label>
+                  <Form.Control type="text" placeholder="Entrer la ville" isInvalid={!!this.state.setErrors.villeEtudiant} required/>
+                  <Form.Control.Feedback type='invalid'>
+                    {this.state.setErrors.villeEtudiant}
+                  </Form.Control.Feedback>
+                </Form.Group>
+                <Form.Group as={Col} xl="6" lg="6" md="12" sm="12" xs="12" controlId="codePostal">
+                  <Form.Label>Code postal</Form.Label>
+                  <Form.Control type="text" placeholder="Entrer le code postal" isInvalid={!!this.state.setErrors.codePostal}  required/>
+                  <Form.Control.Feedback type='invalid'>
+                    {this.state.setErrors.codePostal}
+                  </Form.Control.Feedback>
+                </Form.Group>
+                <Form.Group as={Col} xl="6" lg="6" md="12" sm="12" xs="12" controlId="telephone">
+                  <Form.Label>Téléphone</Form.Label>
+                  <Form.Control type="text" placeholder="Entrer le téléphone" isInvalid={!!this.state.setErrors.telephone}  required/>
+                  <Form.Control.Feedback type='invalid'>
+                    {this.state.setErrors.telephone}
+                  </Form.Control.Feedback>
+                </Form.Group>
+                <Form.Group as={Col} xl="6" lg="6" md="12" sm="12" xs="12" controlId="email">
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control type="email" placeholder="Entrer l'email" isInvalid={!!this.state.setErrors.email}  required/>
+                  <Form.Control.Feedback type='invalid'>
+                    {this.state.setErrors.email}
+                  </Form.Control.Feedback>
+                </Form.Group>
               </Form.Group>
-              {this.state.photo !== "" && <Image src={this.state.photo} rounded width="125"/>}
-              <Form.Group controlId="adresseEtudiant">
-                <Form.Label>Adresse</Form.Label>
-                <Form.Control type="text" placeholder="Entrer l'adresse de l'étudiant" isInvalid={!!this.state.setErrors.adresseEtudiant} required/>
-                <Form.Control.Feedback type='invalid'>
-                  {this.state.setErrors.adresseEtudiant}
-                </Form.Control.Feedback>
-              </Form.Group>
-              <Form.Group controlId="villeEtudiant">
-                <Form.Label>Ville</Form.Label>
-                <Form.Control type="text" placeholder="Entrer la ville" isInvalid={!!this.state.setErrors.villeEtudiant} required/>
-                <Form.Control.Feedback type='invalid'>
-                  {this.state.setErrors.villeEtudiant}
-                </Form.Control.Feedback>
-              </Form.Group>
-              <Form.Group controlId="codePostal">
-                <Form.Label>Code postal</Form.Label>
-                <Form.Control type="text" placeholder="Entrer le code postal" isInvalid={!!this.state.setErrors.codePostal}  required/>
-                <Form.Control.Feedback type='invalid'>
-                  {this.state.setErrors.codePostal}
-                </Form.Control.Feedback>
-              </Form.Group>
-              <Form.Group controlId="telephone">
-                <Form.Label>Téléphone</Form.Label>
-                <Form.Control type="text" placeholder="Entrer le téléphone" isInvalid={!!this.state.setErrors.telephone}  required/>
-                <Form.Control.Feedback type='invalid'>
-                  {this.state.setErrors.telephone}
-                </Form.Control.Feedback>
-              </Form.Group>
-              <Form.Group controlId="cours">
-                <Form.Label>Cours</Form.Label>
-                <Form.Control type="text" placeholder="Entrer le cours" isInvalid={!!this.state.setErrors.cours}  required/>
-                <Form.Control.Feedback type='invalid'>
-                  {this.state.setErrors.cours}
-                </Form.Control.Feedback>
-              </Form.Group>
+
+              
+            
 
             <Button variant="primary" type="submit" onClick={this.handleAdd}>
                 Enregistrer

@@ -1,14 +1,39 @@
 @import './variables.sass';
 
-.titreDossier
-    color: $mainColorTitle1
-
-.actions
-    border-bottom: 3px solid $background
-
+.bgheader
+    background: #f0ad4e
 
 
 .img-card
     max-height: 300px;
     min-height: 300px;
+
+@media (max-width: 350px) 
+    .img-card
+        max-height: 210px;
+        min-height: 210px;
     
+.card-rep
+    img 
+        -webkit-box-shadow: 6px 6px 6px 0px $mainColor;
+        -moz-box-shadow: 6px 6px 6px 0px $mainColor;
+        box-shadow: 6px 6px 6px 0px $mainColor; 
+        &:hover 
+            transition: 0.5s ease;
+            filter: sepia(20%)
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+
+.links
+    padding-top: 2px
+    padding-bottom: 2px
+    padding-left: 12px
+    padding-right: 12px
+    color: black
+    &:hover
+        color: black
+        cursor: pointer
+        text-decoration: none
+        background-color: lightgray 
+

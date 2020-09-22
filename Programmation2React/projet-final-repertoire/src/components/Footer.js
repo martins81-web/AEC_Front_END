@@ -8,6 +8,7 @@ import Col from 'react-bootstrap/Col';
 export  function Footer() {
  
   return (
+    <footer>
     <Container fluid className='footer' >
         <Row >
           <Col  xl="12" lg="12" md="12" sm="12">
@@ -15,6 +16,7 @@ export  function Footer() {
           </Col>
         </Row>
     </Container>
+    </footer>
   );
 }
 

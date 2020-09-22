@@ -11,6 +11,8 @@ import { Footer } from "./Footer";
 import {FicheEtudiant}  from "./FicheEtudiant";
 import EditEtudiant from "./EditEtudiant.js"
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import '../styles/navbar.sass';
 
@@ -18,10 +20,12 @@ import '../styles/navbar.sass';
 function App() {
   let location = useLocation(); 
   console.log(location.pathname); 
-  return (
-  
+  return (<div className='rep'>
+    
+    <Menu/>
    <div className='bg container-fluid m-0 p-0'>
-      <Menu/>
+      
+      <ToastContainer position="top-center" autoClose={3000} hideProgressBar />
       <Switch>
           <Redirect exact from="/" to="/Accueil" />
           <Redirect exact from="/RepertoireRefresh" to="/Repertoire" />
@@ -33,6 +37,7 @@ function App() {
           <Route path="/Edit/:id" component={EditEtudiant} />
       </Switch>
       <Footer/>
+  </div>
   </div>
   );
 }
