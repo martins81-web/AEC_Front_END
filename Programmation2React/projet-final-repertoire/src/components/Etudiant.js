@@ -14,7 +14,7 @@ import {TweenMax, Power3} from 'gsap';
 
 function Etudiant (props){
   let cardItem = useRef(null)
-
+  
   useEffect(() => {
     console.log(cardItem)
     TweenMax.to(
@@ -23,7 +23,6 @@ function Etudiant (props){
         opacity:1,
         y:-20,
         ease: Power3.easeOut,
-        delay:.3
       }
 
     )

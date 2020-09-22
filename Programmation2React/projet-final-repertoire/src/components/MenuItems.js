@@ -14,9 +14,5 @@ export const MenuItems = [
         url:'/Repertoire',
         cName: 'nav-links'
     },
-    {
-        title: 'PWA',
-        url:'#',
-        cName: 'nav-links-mobile'
-    }
+    
 ]

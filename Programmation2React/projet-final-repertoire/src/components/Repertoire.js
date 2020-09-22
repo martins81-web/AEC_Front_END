@@ -1,9 +1,11 @@
 import React from "react";
 import  Etudiant  from "./Etudiant";
 import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import {API} from "../Api_constante";
 import { Recherche } from './Recherche';
+import '../styles/repertoire.sass';
 
 export class Repertoire extends React.Component {
   constructor(props) {
@@ -33,9 +35,10 @@ export class Repertoire extends React.Component {
     return (
       <>
       <Container className='p-4 d-flex justify-content-around'>   
-      <div><h2>Répertoire</h2></div>
-      <div><Recherche  recherche={(recherche)=>this.setState({ recherche: recherche})}/> </div>
-         
+      <Row>
+        <Col xl="6" lg="6" md="6" sm="6" xs="12" ><div><h2 className='titreRep'>Répertoire</h2></div></Col>
+        <Col xl="6" lg="6" md="6" sm="6" xs="12"><div><Recherche  recherche={(recherche)=>this.setState({ recherche: recherche})}/> </div></Col>
+      </Row>
       </Container>
       <Container>
         <Row>

@@ -2,7 +2,7 @@ import React from "react";
 import {NavLink} from 'react-router-dom' 
 import {Link} from 'react-router-dom' 
 import '../styles/navbar.sass';
-
+import Button from 'react-bootstrap/Button';
 import {MenuItems} from "./MenuItems"
 
 export class Menu extends React.Component { 
@@ -33,13 +33,13 @@ return (
                         {MenuItems.map((item,index)=>{
                             return(
                                 
-                                    <NavLink key={index} className={item.cName} to={item.url}>
+                                    <NavLink key={index} className={item.cName} to={item.url} onClick={this.handleClick}>
                                     {item.title}    
                                     </NavLink>
                                 
                             )
                         })}
-                      
+                      <Button variant="primary" size="lg" block id="boutonInstall"> Installer l'application </Button> 
                 </ul>
         </nav>
        
