@@ -1,3 +1,7 @@
+// <!-- Etudiant.js -->
+// <!-- Techniques de programmation Web 2 --- Techniques d'intégration des interfaces Web 2 -->
+// <!-- Projet Final par Eric Martins -->
+
 import React, {useRef, useEffect} from "react";
 import {Card} from "react-bootstrap"
 import Col from 'react-bootstrap/Col';

@@ -1,3 +1,7 @@
+// <!-- Menu.js -->
+// <!-- Techniques de programmation Web 2 --- Techniques d'intégration des interfaces Web 2 -->
+// <!-- Projet Final par Eric Martins -->
+
 import React from "react"; 
 import {NavLink} from 'react-router-dom' 
 import {Link} from 'react-router-dom' 
@@ -39,7 +43,7 @@ return (
                                 
                             )
                         })}
-                      <Button variant="primary" size="lg" block id="boutonInstall"> Installer l'application </Button> 
+                      <Button variant="primary" size="lg"  id="boutonInstall"> Installer l'application </Button> 
                 </ul>
         </nav>
        

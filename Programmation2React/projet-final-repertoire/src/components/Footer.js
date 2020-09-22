@@ -1,3 +1,7 @@
+// <!-- Footer.js -->
+// <!-- Techniques de programmation Web 2 --- Techniques d'intégration des interfaces Web 2 -->
+// <!-- Projet Final par Eric Martins -->
+
 import React from 'react';
 import '../styles/footer.sass';
 

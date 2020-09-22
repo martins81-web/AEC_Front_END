@@ -1,3 +1,7 @@
+// <!-- Repertoire.js -->
+// <!-- Techniques de programmation Web 2 --- Techniques d'intégration des interfaces Web 2 -->
+// <!-- Projet Final par Eric Martins -->
+
 import React from "react";
 import  Etudiant  from "./Etudiant";
 import Row from 'react-bootstrap/Row';
@@ -5,7 +9,6 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import {API} from "../Api_constante";
 import { Recherche } from './Recherche';
-import '../styles/repertoire.sass';
 
 export class Repertoire extends React.Component {
   constructor(props) {

@@ -1,3 +1,7 @@
+// <!-- AjouterEtudiant.js -->
+// <!-- Techniques de programmation Web 2 --- Techniques d'intégration des interfaces Web 2 -->
+// <!-- Projet Final par Eric Martins -->
+
 import React from "react";
 import { Form, Button , Image, Container, Row , Col } from "react-bootstrap";
 import '../styles/formAjout.sass';

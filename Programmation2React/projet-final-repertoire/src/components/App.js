@@ -1,3 +1,7 @@
+// <!-- App.js -->
+// <!-- Techniques de programmation Web 2 --- Techniques d'intégration des interfaces Web 2 -->
+// <!-- Projet Final par Eric Martins -->
+
 import React from 'react';
 import { Route, Switch } from "react-router-dom";
 import { useLocation } from 'react-router-dom' 

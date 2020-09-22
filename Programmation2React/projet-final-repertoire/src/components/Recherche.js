@@ -1,3 +1,7 @@
+// <!-- Recherche.js -->
+// <!-- Techniques de programmation Web 2 --- Techniques d'intégration des interfaces Web 2 -->
+// <!-- Projet Final par Eric Martins -->
+
 import React from 'react';
 import Form from 'react-bootstrap/Form';  
 import FormControl from 'react-bootstrap/FormControl';  

@@ -1,3 +1,7 @@
+// <!-- EditEtudiant.js -->
+// <!-- Techniques de programmation Web 2 --- Techniques d'intégration des interfaces Web 2 -->
+// <!-- Projet Final par Eric Martins -->
+
 import React , {useState , useEffect} from "react";
 import { Form, Button,Image,Container,Row,Col } from "react-bootstrap";
 import {toast} from "react-toastify"
@@ -103,6 +107,25 @@ function EditEtudiant(props){
     return Object.keys(_errors).length === 0;
   }
 
+  async function suppression(){
+    try{ 
+      const response = await fetch(API+ EtudiantID, { 
+        method:'DELETE', 
+      }); 
+  
+      if(response.ok){ 
+        props.history.push("/Repertoire");
+        toast.error("Étudiant supprimé!");
+       
+  
+        return response; 
+      } 
+      throw new Error('Request failed!'); 
+      } 
+      catch(error){ 
+          console.log(error); 
+      } 
+  }
 
     return (
       <>
@@ -202,15 +225,25 @@ function EditEtudiant(props){
                   </Form.Control.Feedback>
                 </Form.Group>
               </Form.Group>
-
-            <Button variant="primary" type="submit" onClick={handleEdit}>
-                Enregistrer
-            </Button>
-            <Link className='links mx-2 p-2' to={"/Etudiant/"+ donneesRecues.name +"?id="+EtudiantID}>
-                              <svg width="1em" height="1em" viewBox="0 0 16 16" className="bi bi-arrow-return-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fillRule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
-                              </svg> Retour au dossier de {donneesRecues.firstName + " " + donneesRecues.name}
-            </Link>
+            <Row>
+              <Col xl="4" lg="4" md="4" sm="12" xs="12">
+                <Button variant="primary" type="submit" onClick={handleEdit}>
+                    Enregistrer
+                </Button>
+            </Col>
+              <Col xl="4" lg="4" md="4" sm="12" xs="12">
+                <Link className='links m-2 p-2' to={"/Etudiant/"+ donneesRecues.name +"?id="+EtudiantID}>
+                                  <svg width="1em" height="1em" viewBox="0 0 16 16" className="bi bi-arrow-return-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fillRule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+                                  </svg> Retour au dossier de {donneesRecues.firstName + " " + donneesRecues.name}
+                </Link>
+              </Col>
+              <Col xl="4" lg="4" md="4" sm="12" xs="12" className='text-right'>
+                <Button variant="danger" type="submit" onClick={suppression}>
+                    Supprimer
+                </Button>
+              </Col>
+            </Row>
             </Form>  
             </Col>    
           </Row>
