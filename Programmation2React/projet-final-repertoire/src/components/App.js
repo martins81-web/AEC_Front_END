@@ -14,10 +14,10 @@ import {Repertoire} from './Repertoire.js';
 import { Footer } from "./Footer";
 import {FicheEtudiant}  from "./FicheEtudiant";
 import EditEtudiant from "./EditEtudiant.js"
+import {PageNotFound} from './PageNotFound'; 
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 import '../styles/navbar.sass';
 
 
@@ -39,6 +39,7 @@ function App() {
           <Route path="/Repertoire" component={Repertoire} /> 
           <Route path="/Etudiant/:id" component={FicheEtudiant} />
           <Route path="/Edit/:id" component={EditEtudiant} />
+          <Route component={PageNotFound}/>
       </Switch>
       <Footer/>
   </div>
