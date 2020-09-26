@@ -1,7 +1,3 @@
-// <!-- install.js -->
-// <!-- Techniques de programmation Web 2 --- Techniques d'intégration des interfaces Web 2 -->
-// <!-- Projet Final par Eric Martins -->
-
 let deferredInstallPrompt = null; 
 
 const installButton = document.getElementById("boutonInstall"); 
