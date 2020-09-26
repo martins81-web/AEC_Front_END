@@ -3,6 +3,12 @@
   "name": "Répertoire des Étudiants - APP",
   "icons": [
     {
+      "src": "book.svg",
+      "type": "image/svg",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    },
+    {
       "src": "maskable_icon_64x64.png",
       "type": "image/png",
       "sizes": "64x64",
