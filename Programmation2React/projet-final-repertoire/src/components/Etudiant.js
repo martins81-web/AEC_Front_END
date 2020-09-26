@@ -20,7 +20,7 @@ function Etudiant (props){
   let cardItem = useRef(null)
   
   useEffect(() => {
-    console.log(cardItem)
+    //console.log(cardItem)
     TweenMax.to(
       cardItem, 1.5,
       {
