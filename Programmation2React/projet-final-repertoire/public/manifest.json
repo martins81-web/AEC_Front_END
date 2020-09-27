@@ -3,12 +3,6 @@
   "name": "Répertoire des Étudiants",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "256x256",
-      "type": "image/x-icon",
-      "purpose": "any maskable" 
-    },
-    {
       "src": "icons/logo64.png",
       "sizes": "64x64",
       "type": "image/png",
