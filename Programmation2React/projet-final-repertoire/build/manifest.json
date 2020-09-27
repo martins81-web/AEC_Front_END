@@ -9,7 +9,7 @@
     },
     {
       "src": "../src/images/clock_144x144.png",
-      "type": "image/PNG",
+      "type": "image/png",
       "sizes": "144x144",
       "purpose": "any maskable"
     },
