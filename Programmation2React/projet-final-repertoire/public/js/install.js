@@ -101,6 +101,6 @@ function logAppInstalled(evt) {
 
   // Add code to log the event 
 
-  console.log('Hello World was installed.', evt); 
+  console.log('The app was installed.', evt); 
 
 } 

@@ -4,32 +4,31 @@
   "icons": [
     {
       "src": "favicon.ico",
-      "sizes": "256x256",
-      "type": "image/x-icon",
-      "purpose": "any maskable" 
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
     },
     {
-      "src": "icons/logo64.png",
-      "sizes": "64x64",
+      "src": "../src/images/clock_144x144.png",
+      "type": "image/PNG",
+      "sizes": "144x144",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "../src/images/clock_192x192.png",
       "type": "image/png",
-      "purpose": "any maskable" 
-    },
-    {
-      "src": "icons/logo192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable" 
+      "purpose": "any maskable"
     },
     {
-      "src": "icons/logo512.png",
-      "sizes": "512x512",
+      "src": "../src/images/clock_512x512.png",
       "type": "image/png",
-      "purpose": "any maskable" 
+      "sizes": "512x512",
+      "purpose": "any maskable"
     }
   ],
   "start_url": "index.html",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
-}
+    }
 
