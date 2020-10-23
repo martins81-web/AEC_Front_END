@@ -1,0 +1,33 @@
+<!--  <mat-card class='card-miniforfaits'>
+    <div class='titre'>
+       <h2 style="color: gray; font-size: 1.5em;">{{forfait.destination}} </h2>   <p> de {{forfait.villeDeDepart}}</p>
+    </div>
+    <div class='content'>
+        <h1 style="color: rgb(31, 131, 224); font-size: 2em;" ></h1><p>{{forfait.prix}} $</p>
+    </div>
+
+    <div class='footer'>
+        <p>{{forfait.hotel.etoiles}} étoiles</p>
+        
+        <p>{{forfait.dateDeDepart}}, 7 jours</p>
+    </div>
+    
+</mat-card> -->
+
+<mat-card style="width: 450px;  background-color: lightblue; border: 2px solid rgb(69, 69, 238);" >
+    <mat-card-header >
+      <mat-card-title>{{forfait.destination}} </mat-card-title>
+      <mat-card-subtitle>de {{forfait.villeDeDepart}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content style="color: rgb(69, 69, 238);text-align: center;  font-size: 2em;">
+       Hotel {{forfait.hotel.nom}} 
+    </mat-card-content>
+    <mat-card-actions style="text-align: center;  font-size: 2em;color: rgb(69, 69, 238);">
+        <p>{{forfait.prix}}$</p>
+    </mat-card-actions>
+    <mat-card-footer style='display: flex; justify-content: space-between; margin-left: 1em;margin-right: 1em; color:#606060;'>
+        <p>{{forfait.hotel.etoiles}} étoiles</p>
+        
+        <p>{{forfait.dateDeDepart}}, 7 jours</p>
+    </mat-card-footer>
+  </mat-card>

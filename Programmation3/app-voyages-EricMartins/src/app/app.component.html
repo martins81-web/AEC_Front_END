@@ -1,0 +1,9 @@
+
+   <div>
+        
+<mat-grid-list cols="3" rowHeight='fit' style="height: 500px">
+    <mat-grid-tile *ngFor="let item of mesForfaits">
+        <app-mini-forfait  [forfait]="item"></app-mini-forfait >
+    </mat-grid-tile>
+</mat-grid-list>
+</div>
