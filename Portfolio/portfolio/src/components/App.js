@@ -10,6 +10,7 @@ import Portfolio from './Portfolio';
 function App() {
   return (
     <Switch>
+          <Redirect exact from="/" to="/Main/" />
           <Route path="/" exact component={Main} /> 
           <Route path="/Main/" component={Main} /> 
           <Route path="/Main/:language" component={Main} /> 
