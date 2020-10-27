@@ -1,7 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { Route, Switch } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
 
 import Main from './Main';
 import Portfolio from './Portfolio';

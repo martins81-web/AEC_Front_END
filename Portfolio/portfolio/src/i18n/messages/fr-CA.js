@@ -13,7 +13,7 @@ export default {
         "CONNECTIONS":"Connexions",
         "PROJECTS":"Projets",
         "PRESENTATION":"Présentation",
-        "CONTACT":"Contact"
+        "CONTACT": "Contact"
     }
 
 }

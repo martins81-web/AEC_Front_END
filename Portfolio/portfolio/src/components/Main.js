@@ -4,7 +4,6 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import Particles from 'react-particles-js';
 import { Link } from 'react-router-dom';
-import { useHistory } from 'react-router-dom';
 
 import { I18nProvider, LOCALES } from '../i18n';
 import translate from '../i18n/translate';
@@ -36,7 +35,7 @@ class Main extends React.Component {
         if(this.state.language2 === 'en-us'){
             this.setState({
                 language: LOCALES.ENGLISH,
-                checked: true
+                checked: true,
             });
         }
       }
@@ -179,6 +178,7 @@ class Main extends React.Component {
         msUserSelect: 'none', /* Internet Explorer/Edge */
         userSelect: 'none',    
     }
+
     
     return (
         <I18nProvider locale={this.state.language}>
@@ -196,12 +196,12 @@ class Main extends React.Component {
                         </div>
                         <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '10px'}}>
                             <Typography>{translate('MODE')}:</Typography>
-                            <Select onChange={(e)=> this.handleModeSelection(e)} native id="select" >
-                                <option value={1}>Particles</option>
-                                <option value={2}>Connections</option>
-                                <option value={3}>Snow</option>
-                                <option value={4}>Christmas</option>
-                            </Select>
+                            <Select  onChange={(e)=> this.handleModeSelection(e)} native id="select" >
+                                <FormattedMessage id='PARTICLES' children={msg=> <option value={1}>{msg}</option>}/>
+                                <FormattedMessage id='CONNECTIONS' children={msg=> <option value={2}>{msg}</option>}/>
+                                <FormattedMessage id='SNOW' children={msg=> <option value={3}>{msg}</option>}/>
+                                <FormattedMessage id='CHRISTMAS' children={msg=> <option value={4}>{msg}</option>}/>
+                            </Select >
                         </div>
                         
                     </div>
