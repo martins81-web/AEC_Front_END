@@ -15,7 +15,7 @@
         <div *ngIf="forfait.rabais>0; else elseBlock" style= 'display:flex; justify-content: space-around'>
             <p style="text-decoration: line-through; color: red">{{forfait.prix}}$</p>
             <p style="color: green">{{forfait.rabais}}$</p>
-            <p>{{forfait.prix-forfait.rabais}}$</p>
+            <p style="color: black">{{forfait.prix-forfait.rabais}}$</p>
         </div>
         <ng-template #elseBlock><p>{{forfait.prix}}$</p></ng-template>
         

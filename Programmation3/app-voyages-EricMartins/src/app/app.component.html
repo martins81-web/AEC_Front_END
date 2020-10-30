@@ -1,9 +1,9 @@
-<div style=""> 
+<div style="position: relative;"> 
     
-<mat-grid-list cols="3" rowHeight='fit' style="height: 450px; margin-bottom: 100px">
+<mat-grid-list cols="3" rowHeight="2:1">
     <span *ngFor="let item of mesForfaits">
         <mat-grid-tile  *ngIf="item.forfaitVedette" >
-                <app-mini-forfait  [forfait]="item" style="position: relative;  height: 100%;width: 100%;" ></app-mini-forfait >
+                <app-mini-forfait  [forfait]="item" style="position: absolute;  height: 100%;width: 100%;" ></app-mini-forfait >
         </mat-grid-tile>
     </span>
 </mat-grid-list>
@@ -15,3 +15,13 @@
 </mat-grid-list>
 
 </div>
+
+<mat-grid-list cols="4" rowHeight="100px">
+  <mat-grid-tile
+      *ngFor="let tile of tiles"
+      [colspan]="tile.cols"
+      [rowspan]="tile.rows"
+      [style.background]="tile.color">
+    {{tile.text}}
+  </mat-grid-tile>
+</mat-grid-list>
