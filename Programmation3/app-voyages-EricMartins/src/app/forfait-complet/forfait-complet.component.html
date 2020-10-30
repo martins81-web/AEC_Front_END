@@ -1,1 +1,38 @@
-<p>forfait-complet works!</p>
+<div style="border: 2px solid rgb(69, 69, 238); margin: 5px">
+
+<div style="display: flex; justify-content: space-between">
+    <div style="display: flex; width: 80% ">
+        <img src={{forfait.hotel.photo}} alt="Girl in a jacket" width="600px" height="400px" style="border-right: 2px solid rgb(69, 69, 238)">
+        <div style="display: flex; flex-direction: column; margin: 10px">
+            <div style="font-size: 1.4em">{{forfait.destination}}</div>
+            <div  style="color: rgb(69, 69, 238);  font-size: 3em; margin-top: 0.6em"><span>{{forfait.hotel.nom}}</span></div>
+
+            <div style=" font-size: 1.1em; margin-top: 2em">
+                <div *ngFor="let item of forfait.hotel.caracteristiques" style="display: flex">
+                    <div> {{item}} </div> 
+                </div>
+            </div>        
+           
+
+
+            <div style="font-size:1.5em; margin-top: 1.5em">{{forfait.hotel.adresse}}</div>
+        </div>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: flex-end; margin: 10px;  ">
+        <div>7 jours à partir de</div>
+        <div *ngIf="forfait.rabais>0; else elseBlock" style="margin-top: 1em; font-size: 3em; text-align: right">
+            <p style="text-decoration: line-through; color: red">{{forfait.prix}}$</p>
+            <p style="color: green; margin-top: 0.5em; margin-bottom: 0.5em"> {{forfait.rabais}}$</p>
+            <p >{{forfait.prix-forfait.rabais}}$</p>
+        </div>
+        <ng-template #elseBlock><p style="margin-top: 1em; font-size: 3em;">{{forfait.prix}}$</p></ng-template>
+
+        <div style="margin-top: 0.7em; ">tx et frais incl. par adulte</div>
+    
+    </div>
+</div>
+
+
+
+
+</div>

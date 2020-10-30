@@ -6,5 +6,8 @@ export interface Forfait {
     hotel: Hotel,
     dateDeDepart: string,
     dateDeRetour: string,
-    prix: number
+    prix: number,
+    rabais: number,
+    forfaitVedette: boolean,
+
 }

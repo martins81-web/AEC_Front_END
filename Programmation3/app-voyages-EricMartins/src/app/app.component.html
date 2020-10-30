@@ -1,9 +1,17 @@
+<div style=""> 
+    
+<mat-grid-list cols="3" rowHeight='fit' style="height: 450px; margin-bottom: 100px">
+    <span *ngFor="let item of mesForfaits">
+        <mat-grid-tile  *ngIf="item.forfaitVedette" >
+                <app-mini-forfait  [forfait]="item" style="position: relative;  height: 100%;width: 100%;" ></app-mini-forfait >
+        </mat-grid-tile>
+    </span>
+</mat-grid-list>
 
-   <div>
-        
-<mat-grid-list cols="3" rowHeight='fit' style="height: 500px">
+<mat-grid-list cols="1" rowHeight='420px' >
     <mat-grid-tile *ngFor="let item of mesForfaits">
-        <app-mini-forfait  [forfait]="item"></app-mini-forfait >
+        <app-forfait-complet  [forfait]="item" style="position: relative;  height: 100%;width: 100%; " ></app-forfait-complet >
     </mat-grid-tile>
 </mat-grid-list>
+
 </div>
