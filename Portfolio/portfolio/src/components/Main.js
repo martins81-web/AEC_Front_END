@@ -1,13 +1,15 @@
 import { Typography } from '@material-ui/core';
-import { IconButton, Select, Switch, withStyles } from '@material-ui/core/';
+import { IconButton, Switch, withStyles } from '@material-ui/core/';
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
 import Particles from 'react-particles-js';
 import { Link } from 'react-router-dom';
 
 import { I18nProvider, LOCALES } from '../i18n';
 import translate from '../i18n/translate';
 
+/* import { IconButton, Select, Switch, withStyles } from '@material-ui/core/'; */
+
+//import { FormattedMessage } from 'react-intl';
 
 
 class Main extends React.Component {
@@ -185,7 +187,7 @@ class Main extends React.Component {
             <div style={page}>
                 <div style={selectStyle}>
                     <div style={{padding: '10px', border: '2px solid black', }}>
-                        <div style={{display: 'flex', alignItems: 'center', borderBottom: '2px solid black', paddingBottom: '10px'}}>
+                        <div style={{display: 'flex', alignItems: 'center',/*  borderBottom: '2px solid black', paddingBottom: '10px' */}}>
                             <Typography>Français</Typography>
                             <PurpleSwitch onClick={this.handleLanguageChange} 
                             checked={this.state.checked} 
@@ -194,7 +196,7 @@ class Main extends React.Component {
                             />
                             <Typography>English</Typography>
                         </div>
-                        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '10px'}}>
+                       {/*  <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '10px'}}>
                             <Typography>{translate('MODE')}:</Typography>
                             <Select  onChange={(e)=> this.handleModeSelection(e)} native id="select" >
                                 <FormattedMessage id='PARTICLES' children={msg=> <option value={1}>{msg}</option>}/>
@@ -203,7 +205,7 @@ class Main extends React.Component {
                                 <FormattedMessage id='CHRISTMAS' children={msg=> <option value={4}>{msg}</option>}/>
                             </Select >
                         </div>
-                        
+                         */}
                     </div>
                 </div>
               
@@ -212,7 +214,7 @@ class Main extends React.Component {
                 <div style={overlay}>
                     <div className='text-center mb-3'>
                         <Typography variant={'h3'}>Eric Martins</Typography>
-                        <Typography variant={'h6'} style={{color: '#505050'}}>{translate('DEV')}</Typography>
+                        <Typography variant={'h6'} style={{color: '#48fb47'}}>{translate('DEV')}</Typography>
                         {/*<Typography>{translate('EDIT',  {path:'lalala'} )}</Typography>*/}                    
                     </div>
                     <div style={button}>

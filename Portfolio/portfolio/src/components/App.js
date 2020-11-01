@@ -5,7 +5,6 @@ import { Route, Switch } from 'react-router-dom';
 import Main from './Main';
 import Portfolio from './Portfolio';
 
-
 function App() {
   return (
     <Switch>

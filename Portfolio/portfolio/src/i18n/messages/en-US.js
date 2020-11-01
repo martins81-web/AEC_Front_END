@@ -1,7 +1,7 @@
 import { LOCALES } from '../locales';
 
 
-export default {
+const foo= {
     [LOCALES.ENGLISH]:{
         "HELLO":"hello",
         "EDIT":"Edit {path} and save to reload.",
@@ -17,4 +17,4 @@ export default {
         "CONTACT":"Contact"
     }
 }
-
+export default foo

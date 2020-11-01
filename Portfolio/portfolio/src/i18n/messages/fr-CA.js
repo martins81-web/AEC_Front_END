@@ -1,6 +1,6 @@
 import { LOCALES } from '../locales';
 
-export default {
+const foo=  {
     [LOCALES.FRENCH]:{
         "HELLO": "Salut",
         "EDIT": "Editez {path} et sauvegardez pour recharger.",
@@ -17,3 +17,5 @@ export default {
     }
 
 }
+
+export default foo
