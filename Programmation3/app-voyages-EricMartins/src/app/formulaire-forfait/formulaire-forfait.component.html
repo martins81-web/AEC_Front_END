@@ -1,0 +1,65 @@
+<div style='padding:20px;margin:20px; border: 1px solid black'>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input type="text"
+              placeholder="Choisissez une destination"
+              aria-label="Number"
+              matInput
+              [formControl]="destinationsControl"
+              [matAutocomplete]="auto1">
+        <mat-autocomplete #auto1="matAutocomplete">
+          <mat-option *ngFor="let destination of filteredDestinations  | async" [value]="destination">
+            {{destination}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input type="text"
+              placeholder="Choisissez la ville de départ"
+              aria-label="Number"
+              matInput
+              [formControl]="villesDepartControl"
+              [matAutocomplete]="auto2">
+        <mat-autocomplete #auto2="matAutocomplete">
+          <mat-option *ngFor="let ville of filteredVillesDepart | async" [value]="ville">
+            {{ville}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Nom de l’hôtel</mat-label>
+        <input matInput placeholder="Nom de l’hôtel..." >
+      </mat-form-field>
+    </form>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Coordonnées </mat-label>
+        <input matInput placeholder="Adresse...">
+      </mat-form-field>
+    </form>
+    <mat-label>Étoiles: </mat-label>
+    <mat-slider
+        thumbLabel
+        [displayWith]="formatLabel"  
+        tickInterval="1"
+        min="1"
+        max="6">
+      </mat-slider> 
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Nombre de chambres</mat-label>
+        <input matInput type="number" min="1" placeholder="Nombre de chambres...">
+      </mat-form-field>
+     </form>
+     <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Prix</mat-label>
+        <input matInput type="number" min="1" placeholder="Prix...">
+      </mat-form-field>
+     </form>
+</div>

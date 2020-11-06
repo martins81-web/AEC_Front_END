@@ -1,0 +1,250 @@
+.card{
+    background-color: lightblue; 
+    border: 2px solid rgb(69, 69, 238);
+    margin: 4px;
+    padding: 10px
+}
+
+.cardHeader{
+    display: flex; 
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+}
+
+    
+.cardContent{
+    color: rgb(69, 69, 238);
+    text-align: center;  
+    font-size: 1.8em;
+}
+
+.cardActions{
+    text-align: center;  
+    font-size: 2em;
+    color: rgb(69, 69, 238);
+}
+
+.cardFooter{
+    display: flex; 
+    justify-content: space-between; 
+    margin-left: 1em;
+    margin-right: 1em; 
+    color:#606060;
+} 
+
+.cardTitle{
+    font-size: 1.4em;
+}
+
+.cardPrix{
+    display:flex; 
+    justify-content: space-around
+}
+
+.prixRabais{
+    color: green
+}
+
+.prixSansRabais{
+    text-decoration: line-through; 
+    color: red
+}
+
+.prixAvecRabais{
+    color: black
+}
+
+
+/* 
+@media (max-width: 575.98px) { 
+    .card{
+        background-color: lightblue; 
+        border: 2px solid rgb(69, 69, 238);
+        margin: 1px;
+        padding: 1px
+    }
+    .cardHeader{
+        display: flex; 
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0;
+        margin: 0;
+    }
+
+    .cardTitle{
+        font-size: 0.5em;
+        margin: 0;
+        padding:0;
+}
+
+.cardSubTitle{
+    font-size: 0.6em;
+    align-content: center;
+}
+
+
+.cardContent{
+    color: rgb(69, 69, 238);
+    text-align: center;  
+    font-size: 0.5em;
+}
+
+.cardActions{
+    text-align: center;  
+    font-size: 0.5em;
+    color: rgb(69, 69, 238);
+}
+
+.cardFooter{
+    display: flex; 
+    justify-content: space-between; 
+    margin: 0.2em;
+    color:#606060;
+    font-size: 0.5em;
+
+}
+
+ }
+
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    .card{
+        background-color: lightblue; 
+        border: 2px solid rgb(69, 69, 238);
+        margin: 4px;
+        padding: 3px
+    }
+    .cardHeader{
+        display: flex; 
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0;
+        margin: 0;
+    }
+
+    .cardTitle{
+        font-size: 0.8em;
+        margin: 0;
+        padding:0;
+}
+
+.cardSubTitle{
+    font-size: 0.8em;
+    align-content: center;
+}
+
+
+.cardContent{
+    color: rgb(69, 69, 238);
+    text-align: center;  
+    font-size: 0.9em;
+}
+
+.cardActions{
+    text-align: center;  
+    font-size: 1em;
+    color: rgb(69, 69, 238);
+}
+
+.cardFooter{
+    display: flex; 
+    justify-content: space-between; 
+    margin: 0.2em;
+    color:#606060;
+    font-size: 0.8em;
+
+}
+ }
+
+@media (min-width: 768px) and (max-width: 991.98px) {  
+    .cardTitle{
+        font-size: 1.2em;
+}
+
+.cardSubTitle{
+    font-size: 0.9em;
+}
+
+
+.cardContent{
+    color: rgb(69, 69, 238);
+    text-align: center;  
+    font-size: 1.1em;
+}
+
+.cardActions{
+    text-align: center;  
+    font-size: 1em;
+    color: rgb(69, 69, 238);
+}
+
+.cardFooter{
+    display: flex; 
+    justify-content: space-between; 
+    margin-left: 0.5em;
+    margin-right: 0.5em; 
+    color:#606060;
+    font-size: 0.8em;
+}
+
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+
+.cardTitle{
+        font-size: 0.9em;
+}
+
+.cardSubTitle{
+    font-size: 0.9em;
+}
+
+
+.cardContent{
+    color: rgb(69, 69, 238);
+    text-align: center;  
+    font-size: 1.5em;
+}
+
+.cardActions{
+    text-align: center;  
+    font-size: 2em;
+    color: rgb(69, 69, 238);
+}
+
+.cardFooter{
+    display: flex; 
+    justify-content: space-between; 
+    margin-left: 1em;
+    margin-right: 1em; 
+    color:#606060;
+}
+ }
+
+@media (min-width: 1200px) {
+    
+.cardContent{
+    color: rgb(69, 69, 238);
+    text-align: center;  
+    font-size: 1.8em;
+}
+
+.cardActions{
+    text-align: center;  
+    font-size: 2em;
+    color: rgb(69, 69, 238);
+}
+
+.cardFooter{
+    display: flex; 
+    justify-content: space-between; 
+    margin-left: 1em;
+    margin-right: 1em; 
+    color:#606060;
+} 
+
+.cardTitle{
+    font-size: 1.4em;
+}
+
+} */

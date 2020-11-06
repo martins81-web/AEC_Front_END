@@ -1,26 +1,27 @@
 
 
-<mat-card style=" background-color: lightblue; border: 2px solid rgb(69, 69, 238);margin: 5px" >
-    <mat-card-header style="display: flex; justify-content: space-between" >
-        <mat-card-title>{{forfait.destination}} </mat-card-title>
-        <mat-card-subtitle>de {{forfait.villeDeDepart}}</mat-card-subtitle>
+<mat-card class="card" >
+    <mat-card-header class="cardHeader" >
+        <mat-card-title class="cardTitle">{{forfait.destination}} </mat-card-title>
+        <mat-card-subtitle  class="cardSubTitle">de {{forfait.villeDeDepart}}</mat-card-subtitle>
       <div  *ngIf="forfait.forfaitVedette">
-       <mat-card-subtitle>Forfait Vedette</mat-card-subtitle>
+       <mat-card-subtitle class="cardSubTitle">Forfait Vedette</mat-card-subtitle>
       </div>
     </mat-card-header>
-    <mat-card-content style="color: rgb(69, 69, 238);text-align: center;  font-size: 2em;">
+    <mat-card-content class="cardContent">
        Hotel {{forfait.hotel.nom}} 
     </mat-card-content>
-    <mat-card-actions style="text-align: center;  font-size: 2em;color: rgb(69, 69, 238);">
-        <div *ngIf="forfait.rabais>0; else elseBlock" style= 'display:flex; justify-content: space-around'>
-            <p style="text-decoration: line-through; color: red">{{forfait.prix}}$</p>
-            <p style="color: green">{{forfait.rabais}}$</p>
-            <p style="color: black">{{forfait.prix-forfait.rabais}}$</p>
+    <mat-card-actions class="cardActions">
+
+        <div *ngIf="forfait.rabais>0; else elseBlock" class='cardPrix'>
+            <p class='prixSansRabais'>{{forfait.prix}}$</p>
+            <p class='prixRabais'>{{forfait.rabais}}$</p>
+            <p class='prixAvecRabais'>{{forfait.prix-forfait.rabais}}$</p>
         </div>
         <ng-template #elseBlock><p>{{forfait.prix}}$</p></ng-template>
         
     </mat-card-actions>
-    <mat-card-footer style='display: flex; justify-content: space-between; margin-left: 1em;margin-right: 1em; color:#606060;'>
+    <mat-card-footer class="cardFooter">
         <p>{{forfait.hotel.etoiles}} étoiles</p>
         
         <p>{{forfait.dateDeDepart}}, 7 jours</p>
