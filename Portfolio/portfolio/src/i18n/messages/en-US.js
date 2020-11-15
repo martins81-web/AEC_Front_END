@@ -14,7 +14,9 @@ const foo= {
         "CONNECTIONS": "Connections",
         "PROJECTS":"Projects",
         "PRESENTATION":"About",
-        "CONTACT":"Contact"
+        "CONTACT":"Contact",
+        "SEE_WEBSITE": "Visit website",
+        "SEE_CODE": "See source code"
     }
 }
 export default foo

@@ -13,7 +13,9 @@ const foo=  {
         "CONNECTIONS":"Connexions",
         "PROJECTS":"Projets",
         "PRESENTATION":"Présentation",
-        "CONTACT": "Contact"
+        "CONTACT": "Contact",
+        "SEE_WEBSITE": "Voir le site Web",
+        "SEE_CODE": "Voir le code source"
     }
 
 }

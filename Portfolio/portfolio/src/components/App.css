@@ -1,38 +1,72 @@
-.App {
-  text-align: center;
+.iconLink{
+  color: steelblue
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.iconLink:hover{
+  transition: 0.4s  ease ;
+  color: white
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.imgLink{
+  filter: grayscale(95%);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.imgLink:hover{
+  transition: 0.7s ease ;
+  transform: scale(1.1);
+  filter: none;
+
 }
 
-.App-link {
-  color: #61dafb;
+.imgContainer{
+  overflow: hidden;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cardDrop{
+  -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+      
+}
+
+.cardDrop:hover{
+  transition: 0.7s ease;
+  -webkit-box-shadow: 5px 5px 5px 0px rgb(87, 87, 87) ;
+  -moz-box-shadow: 5px 5px 5px 0px rgb(87, 87, 87);
+  box-shadow: 5px 5px 5px 0px rgb(87, 87, 87); 
+}
+
+
+
+@media (max-width: 575px) {
+  .contactFont{
+      font-size: 0.7em ;
+  } 
+}
+
+@media (min-width: 576px) {
+  .contactFont{
+      font-size: 0.8em ;
+  } 
+}
+
+
+@media (min-width: 768px) { 
+  .contactFont{
+    font-size: 0.9em;
+  } 
+}
+
+
+@media (min-width: 992px) {  
+  .contactFont{
+  font-size: 1em;
+  }  
+}
+
+
+@media (min-width: 1200px) {  
+  .contactFont{
+  font-size: 1.3em ;
+  } 
 }

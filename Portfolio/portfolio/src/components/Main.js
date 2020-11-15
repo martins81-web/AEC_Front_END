@@ -185,9 +185,9 @@ class Main extends React.Component {
     return (
         <I18nProvider locale={this.state.language}>
             <div style={page}>
-                <div style={selectStyle}>
+              {/*   <div style={selectStyle}>
                     <div style={{padding: '10px', border: '2px solid black', }}>
-                        <div style={{display: 'flex', alignItems: 'center',/*  borderBottom: '2px solid black', paddingBottom: '10px' */}}>
+                        <div style={{display: 'flex', alignItems: 'center', borderBottom: '2px solid black', paddingBottom: '10px' }}>
                             <Typography>Français</Typography>
                             <PurpleSwitch onClick={this.handleLanguageChange} 
                             checked={this.state.checked} 
@@ -196,7 +196,7 @@ class Main extends React.Component {
                             />
                             <Typography>English</Typography>
                         </div>
-                       {/*  <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '10px'}}>
+                        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '10px'}}>
                             <Typography>{translate('MODE')}:</Typography>
                             <Select  onChange={(e)=> this.handleModeSelection(e)} native id="select" >
                                 <FormattedMessage id='PARTICLES' children={msg=> <option value={1}>{msg}</option>}/>
@@ -205,9 +205,10 @@ class Main extends React.Component {
                                 <FormattedMessage id='CHRISTMAS' children={msg=> <option value={4}>{msg}</option>}/>
                             </Select >
                         </div>
-                         */}
+                        
                     </div>
-                </div>
+                </div> */}
+            
               
                 <Particles  style={particles}
                             params={this.state.parametres} />
@@ -221,7 +222,7 @@ class Main extends React.Component {
                         
                             <IconButton 
                                 component={Link}
-                                to={'/Portfolio/'+this.state.language}
+                                to={'/Portfolio/'}
                                 onMouseOver={this.mouseOver}
                                 onMouseOut={this.mouseOut}
                                 color='inherit'

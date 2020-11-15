@@ -1,5 +1,5 @@
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope, faFile, faPhoneSquareAlt } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faFile, faMapMarkerAlt, faPhoneSquareAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Button, Col, Container, Image, Nav, Navbar, Row } from 'react-bootstrap';
@@ -8,22 +8,9 @@ import Particles from 'react-particles-js';
 
 import { I18nProvider, LOCALES } from '../i18n';
 import translate from '../i18n/translate';
-import alteredCarbon from '../media/alteredCarbon.JPG';
-import bottin from '../media/bottin.JPG';
-import destination from '../media/destination.JPG';
 import Eric from '../media/Eric.jpg';
-import etudiants from '../media/etudiants.JPG';
-import formulaire from '../media/formulaire.JPG';
-import hanSolo from '../media/hanSolo.JPG';
-import netflix from '../media/netflix.JPG';
-import norris from '../media/norris.JPG';
-import photociti from '../media/photociti.JPG';
-import portugal from '../media/portugal.JPG';
-import rebrandly from '../media/rebrandly.JPG';
-import spotify from '../media/spotify.JPG';
-import witcher from '../media/witcher.jpg';
-import wolf from '../media/wolf.JPG';
-import zelda from '../media/zelda.JPG';
+import { categories, competences, projects } from './mockData';
+import Projects from './Projects';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -36,9 +23,8 @@ class NavBar extends React.Component {
 
     async componentDidMount() {
         try {
-          await this.setState({language2 : this.props.location.pathname.substring(this.props.location.pathname.length-5,this.props.location.pathname.length)});
-          await console.log(this.state.language2);
-          }
+          this.setState({language2 : this.props.location.pathname.substring(this.props.location.pathname.length-5,this.props.location.pathname.length)});
+        }
          catch (error) {
           console.log(error);
         }
@@ -129,6 +115,46 @@ class NavBar extends React.Component {
                     </Row>
                     <Row className='mt-4'>
                         <Col xs="12" >
+                        <h4>Mes formations</h4>
+                            <hr style={{backgroundColor: 'white'}}/>
+                            </Col>
+                    </Row>
+                    <Row > 
+                        <Col xs={12} style={{display:'flex', flexWrap: 'wrap'}}>
+                        <ul>
+                          <li>
+                            <div style={{display: 'flex', flexDirection: 'column'}}>
+                              <h6>Attestation d’études collégiales en Développement WEB</h6>
+                              <p>Cégep Trois-Rivières, Trois-Rivières</p>
+                            </div>
+                          </li>
+                          <li>
+                            <div style={{display: 'flex', flexDirection: 'column'}}>
+                              <h6>Attestation d’études collégiales en réseaux de télécommunication Internet</h6>
+                              <p>Cégep de Saint-Laurent, Montréal</p>
+                            </div>
+                          </li>
+                          <li>
+                            <div style={{display: 'flex', flexDirection: 'column'}}>
+                              <h6>Génie électronique et ordinateurs – automatisation</h6>
+                              <p>Université de Porto, Portugal</p>
+                              <span>*Évaluation comparative délivrée par le MICC :</span>
+                              <ul>
+                                <li>
+                                  <span>Diplôme d’études collégiales en formation générale</span>
+                                </li>
+                                <li>
+                                  <span>Études universitaires de premier cycle — une année complétée — secteur des sciences pures et appliquées</span>
+                                </li>
+                              </ul>
+                            </div>
+                          </li>
+                        </ul>
+                        
+                        </Col>
+                    </Row>
+                    <Row className='mt-4'>
+                        <Col xs="12" >
                         <h4>Mes compétences</h4>
                             <hr style={{backgroundColor: 'white'}}/>
                             </Col>
@@ -159,28 +185,30 @@ class NavBar extends React.Component {
                             <hr style={{backgroundColor: 'white'}}/>
                             </Col>
                     </Row>
-                    <Row className='mb-5'> 
+                    <Row className='mb-3'> 
                         <Col xs={12} style={{display:'flex', flexWrap: 'wrap'}}>
                              {categories.map( item =>
                                 <div key={"categories_"+item} >
                                     <Button   onClick={()=>this.setState({categorie: item})}
-                                      style={{backgroundColor: 'LightSeaGreen', borderRadius: '15px', margin: '5px', border: 'none', fontWeight: this.state.categorie === item? 'bold': 'normal' }}>
+                                      style={{backgroundColor: 'LightSeaGreen', borderRadius: '15px', margin: '5px', border: 'none', 
+                                      fontWeight: this.state.categorie === item? 'bold': 'normal',color: this.state.categorie === item? 'SteelBlue': 'white'}}>
                                       {item}
                                     </Button>
                                 </div>
                                 )}
                         </Col>
                     </Row>
-                    <Row className='no-gutters'>
+                    <Row className='no-gutters p-0 m-0'>
                       <FlipMove style={{display: 'flex', flexWrap:'wrap'}}> 
-                            {projets.map( item => (item.motcles.includes(this.state.categorie.toLowerCase()) )&&
-                                <Col  xl="3" lg="4" md="6" sm="6" xs="12" key={"projet"+item.nom} >
-                                    <div style={{backgroundColor: 'LightSeaGreen', borderRadius: '15px', padding: '5px 0px 5px 0px', 
-                                    height: '250px', margin: '10px'}}>
-                                        <span>{item.nom} </span>
-                                        <Image src={item.src} style={{width: '100%', height: '60%'}}/>
-                                        <span> {item.description} </span>    
-                                    </div>
+                            {projects.map( projet => (projet.motcles.includes(this.state.categorie.toLowerCase()) )&&
+                                  <Col  xl="3" lg="4" md="6" sm="6" xs="12" key={"projet"+projet.nom} className='mb-2 p-2'>
+                                      <Projects src={projet.src} 
+                                                description={projet.description} 
+                                                nom={projet.nom} 
+                                                website={projet.website} 
+                                                github={projet.githubLink}
+                                                language={this.state.language}
+                                      />
                                   </Col>
                               )}
                         </FlipMove>
@@ -192,40 +220,43 @@ class NavBar extends React.Component {
     renderContact =()=>{
         return (
                 <Container  style={{ backgroundColor: 'SteelBlue', color: 'white', padding: '50px', borderRadius: '25px', marginTop: '50px',border: '2px solid white'}}>
-                     <Row className='mb-2'>
-                        <Col xs="12" >
+                     <Row className='mb-3'>
+                        <Col xs={12} >
                             <h4 >Contact</h4>
                             <hr style={{backgroundColor: 'white'}}/>
                             </Col>
-                    </Row>
-                    <Row  className='mb-4'> 
-                        <Col xs={12}  style={{display:'flex', flexWrap: 'wrap', justifyContent:'center', alignItems:'center'}}>
+                      </Row>
+                      <Row className='pl-sm-5'>
+                        <Col xs={12} className='mb-3 contactFont' style={{display:'flex', flexWrap: 'wrap', alignItems:'center'}}>
                             <FontAwesomeIcon icon={faEnvelope} size="3x" color="LightSeaGreen" style={{marginRight: '15px'}} />
-                            <a style={{color: 'white', alignSelf:'center'}} href={"mailto: ericmartins81@gmail.com"}> <h5>ericmartins81@gmail.com</h5></a>
+                            <a style={{color: 'white', alignSelf:'center'}} href={"mailto: ericmartins81@gmail.com"}> <span>ericmartins81@gmail.com</span></a>
                         </Col>
-                    </Row>
-                    <Row  className='mb-4'>
-                        <Col xs={12} style={{display:'flex', flexWrap: 'wrap', justifyContent:'center', alignItems:'center'}}>
+                   
+                        <Col xs={12} className='mb-3 contactFont'  style={{display:'flex', flexWrap: 'wrap',alignItems:'center'}}>
                             <FontAwesomeIcon icon={faPhoneSquareAlt} size="3x" color="LightSeaGreen" style={{marginRight: '15px'}}/>
-                            <a style={{color: 'white'}} href={"tel:5144248691"}> <h5>514-424-8691</h5></a>                          
+                            <a style={{color: 'white'}} href={"tel:5144248691"}> <span>514-424-8691</span></a>                          
                         </Col>
-                    </Row>
-                    <Row  className='mb-4'>
-                        <Col xs={12} style={{display:'flex', flexWrap: 'wrap', justifyContent:'center', alignItems:'center'}}>
+                    
+                        <Col xs={12} className='mb-3 contactFont'  style={{display:'flex', flexWrap: 'wrap',alignItems:'center'}}>
                             <FontAwesomeIcon icon={faLinkedin} size="3x" color="LightSeaGreen" style={{marginRight: '15px'}}/>
-                            <a style={{color: 'white'}} href={"https://www.linkedin.com/in/ericmartins81/"} target="_blank" rel="noreferrer" > <h5>linkedin.com/in/ericmartins81/</h5></a>                        
+                            <a style={{color: 'white'}} href={"https://www.linkedin.com/in/ericmartins81/"} target="_blank" rel="noreferrer" > <span>linkedin.com/in/ericmartins81/</span></a>                        
                         </Col>
-                    </Row>
-                    <Row  className='mb-4'>
-                        <Col xs={12} style={{display:'flex', flexWrap: 'wrap', justifyContent:'center', alignItems:'center'}}>
+                   
+                        <Col xs={12} className='mb-3 contactFont'  style={{display:'flex', flexWrap: 'wrap', alignItems:'center'}}>
                             <FontAwesomeIcon icon={faGithub} size="3x" color="LightSeaGreen" style={{marginRight: '15px'}}/>
-                            <a style={{color: 'white'}} href={"https://github.com/martins81-web"} target="_blank" rel="noreferrer" > <h5>github.com/martins81-web</h5></a>                        
+                            <a style={{color: 'white'}} href={"https://github.com/martins81-web"} target="_blank" rel="noreferrer" > <span>github.com/martins81-web</span></a>                        
                         </Col>
-                    </Row>
-                    <Row  className='mb-4'>
-                        <Col xs={12} style={{display:'flex', flexWrap: 'wrap', justifyContent:'center', alignItems:'center'}}>
+                    
+                        <Col xs={12} className='mb-3 contactFont'  style={{display:'flex', flexWrap: 'wrap', alignItems:'center'}}>
                             <FontAwesomeIcon icon={faFile} size="3x" color="LightSeaGreen" style={{marginRight: '15px'}}/>
-                            <a style={{color: 'white'}} href={"https://drive.google.com/file/d/1p_bwFoFqyIzo00vZRiRollL9lic3YtDL/view?usp=sharing"} target="_blank" rel="noreferrer" > <h5>Voir mon CV</h5></a>             
+                            <a style={{color: 'white'}} href={"https://drive.google.com/file/d/12fkbT1EypqqpDYhYUGr_d8HZf4XvNAxJ/view?usp=sharing"} target="_blank" rel="noreferrer" > <span>Voir mon CV</span></a>             
+                        </Col>
+                        <Col xs={12} className='mb-3 contactFont'  style={{display:'flex', flexWrap: 'wrap', alignItems:'center'}}>
+                            <FontAwesomeIcon icon={faMapMarkerAlt} size="3x" color="LightSeaGreen" style={{marginRight: '15px'}}/>
+                            <div style={{display: 'flex', flexDirection: 'column'}}>
+                              <span>190, rue Sénécal, Saint-Jean-sur-Richelieu</span>
+                              <span>J2W 1C8  - QC - Canada</span>
+                            </div>
                         </Col>
                     </Row>
                 </Container>
@@ -269,9 +300,7 @@ class NavBar extends React.Component {
 export default NavBar;
 
 
-const competences = [ 'HTML5','CSS3/SASS ', 'BootStrap', 'javaScript', 'jQuery' ,"typeScript",'React-js', 'Angular', 'Vue', '...' ]
 
-const categories = ['HTML', 'BootStrap','CSS', 'SASS', 'React', 'jQuery' , "javaScript", "SQL", "PWA", "API", 'CRUD' ]
 
 const particles ={
     backgroundColor: 'LightSeaGreen',
@@ -281,99 +310,7 @@ const particles ={
     bottom:0,
     left:0,
 }
-/* Mock projets */
-const projets = [
-{
-  src : hanSolo, 
-  nom: "Han Solo",
-  description: <p>Projet realisé avec HTML et CSS</p>,
-  motcles: ['html', 'css']
-},
-{
-  src : witcher, 
-  nom: "The Witcher 3",
-  description: <p>Pour ce projet Bootstrap, HTML et CSS on été utilisés. </p>,
-  motcles: ['html', 'css', 'bootstrap']
-},
-{
-  src : alteredCarbon, 
-  nom: "Altered Carbon",
-  description: <p>Projet utilisant Media Queries et Parallax</p>,
-  motcles: ['html', 'css',  'media queries', 'parallax', 'bootstrap']
-},
-{
-  src : netflix, 
-  nom: "Séries Netflix",
-  description: <p>Projet utilisant NavBar et carousel</p>,
-  motcles: ['html', 'css', 'navbar', 'carousel']
-},
-{
-  src : portugal, 
-  nom: "Visitez le Portugal",
-  description: <p>Projet sur le Portugal</p>,
-  motcles: ['html', 'css', 'NavBar', 'carousel','modal', 'parallax', 'bootstrap', 'pwa']
-},
-{
-  src : formulaire, 
-  nom: "L'avenir de la race humaine",
-  description: <p>Ce projet englobe la création et vérifications d'un formulaire</p>,
-  motcles: ['html', 'css', 'forms','paypal', 'bootstrap']
-},
-{
-  src : zelda, 
-  nom: "La légende de zelda",
-  description: <p>Google charts, tri et recherche de tableaux</p>,
-  motcles: ['html', 'css', 'bootstrap', 'sorting', 'search']
-},
-{
-  src : wolf, 
-  nom: "The Wolf of Wall Street",
-  description: <p>Animations javaScript</p>,
-  motcles: ['html', 'css', 'javascript', 'animations']
-},
-{
-  src : photociti, 
-  nom: "Photociti",
-  description: <p>Créez votre mot Photociti en 3 étapes rapides</p>,
-  motcles: ['html', 'css', 'javascript', 'jquery', 'programmation']
-},
-{
-  src : bottin, 
-  nom: "Bottin des clients",
-  description: <p>Application React pour un bottin des clients, en utilisant des donnés mock</p>,
-  motcles: ['bootstrap', 'javascript', 'react', 'programmation']
-},
-{
-  src : spotify, 
-  nom: "Spotify Québécois",
-  description: <p>Application React - clone spotify</p>,
-  motcles: ['bootstrap', 'javascript', 'react', 'programmation']
-},
-{
-  src : norris, 
-  nom: "Chuck Norris Jokes",
-  description: <p>Application React qui fait des raquêtes à un API en utilisant deux paramètres</p>,
-  motcles: ['bootstrap', 'javascript', 'react', 'programmation', 'api']
-},
-{
-  src : rebrandly, 
-  nom: "Rebrandly URL shortener",
-  description: <p>Application React qui fait des raccourcis d'URL</p>,
-  motcles: ['bootstrap', 'javascript', 'react', 'programmation', 'api']
-},
-{
-  src : destination, 
-  nom: "Destination Vacances",
-  description: <p>Application React sur la péninsulte Bruce en Ontario</p>,
-  motcles: ['bootstrap', 'javascript', 'react', 'programmation', 'router']
-},
-{
-  src : etudiants, 
-  nom: "Répertoire des Étudiants",
-  description: <p>Application React d'un répertoire d'etudiants</p>,
-  motcles: ['bootstrap', 'javascript', 'react', 'programmation', 'router','crud', 'api', 'sass', 'pwa' ]
-},
-]
+
 
 
 const particlesParametres1 = {
