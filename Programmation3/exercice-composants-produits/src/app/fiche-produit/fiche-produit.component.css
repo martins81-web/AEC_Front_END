@@ -1,0 +1,30 @@
+div{
+    margin-top: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 5px;
+    border: 1px solid black;
+    background-color: rgb(58, 120, 255);
+    padding: 15px;
+   
+}
+
+#fiche-produit{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+app-image{
+    width: 10%;
+}
+
+app-produit{
+    width: 70%;
+}
+
+#prixLien{
+    width: 20%;
+    margin-right: 10px;
+}

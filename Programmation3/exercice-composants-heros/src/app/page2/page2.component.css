@@ -1,0 +1,32 @@
+div{
+    margin-top: 15px;
+    border: 1px solid black;
+    background-color: rosybrown;
+    padding: 5px;
+
+}
+
+#page2{
+    font-weight: bold;
+}
+
+#bodyPage2{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+.item{
+    height: 100%;
+}
+
+app-recherche{
+    width: 35%; 
+
+}
+
+#hero2-container{
+    width: 65%;
+    margin-top: 15px;
+    margin-right: 15px;
+}

@@ -1,0 +1,27 @@
+<div >
+  
+<!--        {{ Heros | json }}
+ -->      
+
+ 
+
+     <!--  <p *ngFor="let item of Heros">
+            <b>{{item.id}}</b>  
+      </p>
+ -->
+
+       <p *ngFor="let item of Heros| keyvalue: unsorted">
+            <b>{{ item.key }}</b>  : {{ item.value }}
+       </p> 
+            
+
+      <!--  <p>{{Heros.id}}</p>
+      
+      <p>{{Heros.hero}}</p>
+       
+      <p>{{Heros.nom}}</p> 
+      
+      <p>{{Heros.description}}</p> 
+      <p> {{Heros.caracteristique}}</p>  -->
+</div>
+

@@ -1,0 +1,45 @@
+div{
+    margin-top: 15px;
+    border: 1px solid black;
+    background-color: rosybrown;
+    padding: 5px;
+}
+
+#page1{
+    font-weight: bold;
+}
+
+#bodyPage1{
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: stretch;
+}
+
+
+
+app-recherche{
+    width: 35%;
+    
+}
+
+#page1SubBody{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+app-hero{
+    width: 33.333%;
+    
+}
+
+
+#hero{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    margin-right: 15px;
+}

@@ -1,0 +1,22 @@
+<div>
+    <span id='page1'>Page1</span>
+    <app-entete></app-entete>
+
+    <span id='bodyPage1'>
+        <app-recherche class='item'></app-recherche>
+        <span class='item' id='page1SubBody'>
+            <app-carousel></app-carousel>
+            <span id='hero'>
+                
+               <span *ngFor="let item of MyHeros">
+                    <app-hero [Heros]="item"></app-hero>
+                 </span>
+
+
+         </span>
+        </span>
+        
+    </span>
+
+    <app-pied-page></app-pied-page>
+</div>

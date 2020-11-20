@@ -1,0 +1,9 @@
+div {
+    background-color: darkgray;
+    border: 1px solid black;
+    padding: 15px;
+}
+
+span{
+    font-weight: bold;
+}
