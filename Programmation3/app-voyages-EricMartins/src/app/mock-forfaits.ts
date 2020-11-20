@@ -31,7 +31,7 @@ export const forfaits : Forfait [] = [
         hotel: {
             nom: 'Playa Costa Verde',
             adresse: 'Playa Pesquero, Rafael Freye Holguin, 82200 Cuba',
-            etoiles: 4,
+            etoiles: 3,
             nbChambres: 480,
             photo: "https://media-cdn.tripadvisor.com/media/photo-s/13/04/c9/48/hotel-playa-costa-verde.jpg",
             caracteristiques: [ 'Tout inclus', 
@@ -59,7 +59,7 @@ export const forfaits : Forfait [] = [
             adresse: 'Arena Gorda sn. Playa Bavaro, République dominicaine',
             etoiles: 5,
             nbChambres: 708,
-            photo: "https://lh3.googleusercontent.com/proxy/2Qha6YX_LQwddNhqrfO02EGO6GOyaIeKNr2ocLDsaV4IO7YMq2VWPFDr3y7N10CGalvEc1mq1-226MtGXI77u6r6YoYP0O-XFGc-qoqE5w",
+            photo: "https://images.sunwingtravelgroup.com/HotelImages/PUJOBA/16x9/032.jpg",
             caracteristiques: [ 'Tout inclus', 
                                 'Miniclub ',
                                 "2 piscines",

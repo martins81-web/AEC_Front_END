@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSliderModule } from '@angular/material/slider';
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { EtoilesComponent } from './etoiles/etoiles.component';
 import { ForfaitCompletComponent } from './forfait-complet/forfait-complet.component';
 import { ForfaitComponent } from './forfait/forfait.component';
 import { FormulaireForfaitComponent } from './formulaire-forfait/formulaire-forfait.component';
@@ -25,7 +27,8 @@ import { MiniForfaitComponent } from './mini-forfait/mini-forfait.component';
     ForfaitComponent,
     MiniForfaitComponent,
     ForfaitCompletComponent,
-    FormulaireForfaitComponent
+    FormulaireForfaitComponent,
+    EtoilesComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,8 @@ import { MiniForfaitComponent } from './mini-forfait/mini-forfait.component';
     MatAutocompleteModule,
     MatButtonModule,
     MatInputModule,
-    MatSliderModule
+    MatSliderModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
