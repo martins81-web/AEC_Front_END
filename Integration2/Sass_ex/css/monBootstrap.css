@@ -1,0 +1,65 @@
+hr {
+  margin-bottom: 30px;
+  margin-top: 30px;
+  max-width: 50px;
+  border-width: 3px;
+  border-color: #0099CC;
+}
+
+.banner {
+  background-image: url("../img/1.jpg");
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.fas.active {
+  color: #ffd400;
+  text-shadow: 0 0 10px #ffd400;
+}
+
+.monContainer {
+  width: 100%;
+}
+
+.col3 {
+  width: 50%;
+}
+
+.col-xl6 {
+  width: 50%;
+}
+
+.col5 {
+  width: 41.6666666667%;
+}
+
+.col7 {
+  width: 58.3333333333%;
+}
+
+.col8 {
+  width: 66.6666666667%;
+}
+
+.col9 {
+  width: 75%;
+}
+
+.col10 {
+  width: 83.3333333333%;
+}
+
+.col11 {
+  width: 91.6666666667%;
+}
+
+.col12 {
+  width: 100%;
+}
+
+.img-responsive {
+  width: 100%;
+}
+
+/*# sourceMappingURL=monBootstrap.css.map */

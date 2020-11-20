@@ -63,3 +63,33 @@ img
 
 .test-function
   width: Mafonction(bonjour,o)
+
+
+@mixin images-portfolio
+  background-blend-mode: multiply
+  background-size: cover
+  background-position: top left
+
+.one
+  background-image: url('//unsplash.it/800/500')
+  @include images-portfolio
+
+.two
+  background-image: url('//unsplash.it/800/400')
+  @include images-portfolio
+
+.three
+  background-image: url('//unsplash.it/800/350')
+  @include images-portfolio
+
+.four
+  background-image: url('//unsplash.it/600/200')
+  @include images-portfolio
+
+.five
+  background-image: url('//unsplash.it/500/180')
+  @include images-portfolio
+
+.six
+  background-image: url('//unsplash.it/800/200')
+  @include images-portfolio

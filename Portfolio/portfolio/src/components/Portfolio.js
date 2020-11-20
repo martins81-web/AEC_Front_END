@@ -238,6 +238,7 @@ class NavBar extends React.Component {
                         </Col>
                     
                         <Col xs={12} className='mb-3 contactFont'  style={{display:'flex', flexWrap: 'wrap',alignItems:'center'}}>
+
                             <FontAwesomeIcon icon={faLinkedin} size="3x" color="LightSeaGreen" style={{marginRight: '15px'}}/>
                             <a style={{color: 'white'}} href={"https://www.linkedin.com/in/ericmartins81/"} target="_blank" rel="noreferrer" > <span>linkedin.com/in/ericmartins81/</span></a>                        
                         </Col>
@@ -257,6 +258,9 @@ class NavBar extends React.Component {
                               <span>190, rue Sénécal, Saint-Jean-sur-Richelieu</span>
                               <span>J2W 1C8  - QC - Canada</span>
                             </div>
+                        </Col>
+                        <Col xs={12} className='mb-3 contactFont'  style={{display:'flex', flexWrap: 'wrap', alignItems:'center'}}>
+                        <div className="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="fr_FR" data-type="vertical" data-theme="dark" data-vanity="ericmartins81"><a class="LI-simple-link" href='https://ca.linkedin.com/in/ericmartins81/fr-fr?trk=profile-badge'>Eric Martins</a></div>
                         </Col>
                     </Row>
                 </Container>

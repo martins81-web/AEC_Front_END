@@ -1,0 +1,62 @@
+
+.section1{
+    padding: 7rem;
+}
+
+.logo{
+    padding: 3rem;
+}
+
+.logo img{
+    padding-right: 2rem;
+}
+
+
+.box{
+    background-color: #edf2f7;
+
+}
+
+.box a{
+    color: #169e80;
+    font-weight: bold;
+}
+
+.box .row {
+    padding-left: 4rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.btn-link{
+    background-color: #169e80;
+    color: white;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+
+.btn-link:hover {
+    background-color: #168a76;
+    color: white;
+    text-decoration: none;
+    border: #169e80 solid 1px;
+}
+
+.section2{
+    padding-right: 5rem;
+    padding-left: 5rem;
+}
+
+.section3{
+    margin: 5rem;
+}
+
+.section3 .row{
+    background-color: #edf2f7;
+}
+
+.section3 .col-3{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}

@@ -1,0 +1,146 @@
+.p-1 {
+  font-size: 2rem;
+  font-family: "Bodoni MT", sans-serif;
+}
+
+.p-2 {
+  font-size: 4rem;
+  font-family: "Bodoni MT", sans-serif;
+}
+
+.p-3 {
+  font-size: 6rem;
+  font-family: "Bodoni MT", sans-serif;
+}
+
+.p-4 {
+  font-size: 8rem;
+  font-family: "Bodoni MT", sans-serif;
+}
+
+.p-5 {
+  font-size: 10rem;
+  font-family: "Bodoni MT", sans-serif;
+}
+
+.p-6 {
+  font-size: 12rem;
+  font-family: "Bodoni MT", sans-serif;
+}
+
+.direction-nord {
+  background-image: url("../media/arrow-nord");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.direction-sud {
+  background-image: url("../media/arrow-sud");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.direction-est {
+  background-image: url("../media/arrow-est");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.direction-ouest {
+  background-image: url("../media/arrow-ouest");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.largeur-un-rem {
+  width: "1rem";
+}
+
+.largeur-deux-rem {
+  width: "2rem";
+}
+
+.largeur-trois-rem {
+  width: "3rem";
+}
+
+.largeur-quatre-rem {
+  width: "4rem";
+}
+
+.largeur-cinq-rem {
+  width: "5rem";
+}
+
+.largeur-six-rem {
+  width: "6rem";
+}
+
+.largeur-sept-rem {
+  width: "7rem";
+}
+
+.largeur-huit-rem {
+  width: "8rem";
+}
+
+.largeur-neuf-rem {
+  width: "9rem";
+}
+
+.largeur-dix-rem {
+  width: "10rem";
+}
+
+img {
+  width: 25%;
+  float: right;
+}
+
+.test-function {
+  width: 2;
+}
+
+.one {
+  background-image: url("//unsplash.it/800/500");
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: top left;
+}
+
+.two {
+  background-image: url("//unsplash.it/800/400");
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: top left;
+}
+
+.three {
+  background-image: url("//unsplash.it/800/350");
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: top left;
+}
+
+.four {
+  background-image: url("//unsplash.it/600/200");
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: top left;
+}
+
+.five {
+  background-image: url("//unsplash.it/500/180");
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: top left;
+}
+
+.six {
+  background-image: url("//unsplash.it/800/200");
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: top left;
+}
+
+/*# sourceMappingURL=style.css.map */

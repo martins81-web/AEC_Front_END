@@ -17,6 +17,22 @@
       ]
     },
     {
+      "id": 2,
+      "title": "The Shawshank Redemption",
+      "year": "1994",
+      "picture": "https://upload.wikimedia.org/wikipedia/en/8/81/ShawshankRedemptionMoviePoster.jpg",
+      "director": "Frank Darabont",
+      "writers": [
+        "Stephen King",
+        "Frank Darabont"
+      ],
+      "stars": [
+        "Tim Robbins",
+        "Morgan Freeman",
+        "Bob Gunton"
+      ]
+    },
+    {
       "id": 3,
       "title": "Pulp Fiction",
       "year": "1994",
@@ -67,13 +83,12 @@
     {
       "id": 8,
       "title": "Forrest Gump",
-      "year": "1995",
+      "year": "1994",
       "picture": "https://upload.wikimedia.org/wikipedia/en/6/67/Forrest_Gump_poster.jpg",
       "director": "Robert Zemeckis",
       "writers": [
         "Winston Groom",
-        "Eric Roth",
-        ""
+        "Eric Roth"
       ],
       "stars": [
         "Tom Hanks",
@@ -99,69 +114,17 @@
     {
       "id": 10,
       "title": "Good Will Hunting",
-      "year": "1998",
+      "year": "1997",
       "picture": "https://upload.wikimedia.org/wikipedia/en/5/52/Good_Will_Hunting.png",
       "director": "Gus Van Sant",
       "writers": [
         "Matt Damon",
-        "Ben Affleck",
-        ""
+        "Ben Affleck"
       ],
       "stars": [
         "Robin Williams",
         "Matt Damon",
         "Ben Affleck"
-      ]
-    },
-    {
-      "id": 11,
-      "title": "Rocky",
-      "year": "1981",
-      "picture": "https://images-na.ssl-images-amazon.com/images/I/91Wz30TIWvL._RI_.jpg",
-      "director": "John G. Avildsen",
-      "writers": [
-        "Sylvester Stallone",
-        "John G. Avildsen",
-        ""
-      ],
-      "stars": [
-        "Sylvester Stallone",
-        "",
-        ""
-      ]
-    },
-    {
-      "id": 12,
-      "title": "Rocky",
-      "year": "1976",
-      "picture": "https://images-na.ssl-images-amazon.com/images/I/91Wz30TIWvL._RI_.jpg",
-      "director": "Sylvester Stallone",
-      "writers": [
-        "Sylvester Stallone",
-        "John G. Avildsen",
-        "Eric"
-      ],
-      "stars": [
-        "Sylvester Stallone",
-        "",
-        ""
-      ]
-    },
-    {
-      "id": 13,
-      "title": "Rocky",
-      "year": "1976",
-      "picture": "https://images-na.ssl-images-amazon.com/images/I/91Wz30TIWvL._RI_.jpg",
-      "director": "Sylvester Stallone",
-      "writers": [
-        "Sylvester Stallone",
-        "John G. Avildsen",
-        ""
-      ],
-      "stars": [
-        "Sylvester Stallone",
-        "",
-        ""
       ]
     }
   ]
