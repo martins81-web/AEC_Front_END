@@ -4,40 +4,27 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Button, Col, Container, Image, Nav, Navbar, Row } from 'react-bootstrap';
 import FlipMove from 'react-flip-move';
-import Particles from 'react-particles-js';
 
 import { I18nProvider, LOCALES } from '../i18n';
 import translate from '../i18n/translate';
 import Eric from '../media/Eric.jpg';
+import Footer from './Footer';
 import { categories, competences, projects } from './mockData';
 import Projects from './Projects';
 
-class NavBar extends React.Component {
+class Portfolio extends React.Component {
     constructor(props) {
         super(props);
         this.state = {language: LOCALES.FRENCH,
-                    navigation: 'presentation',
                     categorie: 'HTML', 
+                    navigation: this.props.navigation
         };
     }
 
-    async componentDidMount() {
-        try {
-          this.setState({language2 : this.props.location.pathname.substring(this.props.location.pathname.length-5,this.props.location.pathname.length)});
-        }
-         catch (error) {
-          console.log(error);
-        }
-        if(this.state.language2 ==='en-us'){
-            this.setState({
-                language: LOCALES.ENGLISH 
-            })
-        } else{
-            this.setState({
-                language: LOCALES.FRENCH 
-            })
-        }
-      }
+    componentDidMount() {
+       
+    }
+
      calculate_age = () => {
         const birthDate = new Date(1981,3,31,0,24,0,0); 
         const difference = Date.now() - birthDate.getTime();
@@ -46,41 +33,51 @@ class NavBar extends React.Component {
         return Math.abs(age.getUTCFullYear() - 1970);
       }
 
+      
     renderNavBar =()=>{
         
-        return (
-          
-            <Container style={{padding:'0'}}>
-               
-                    <Navbar expand="lg" variant="dark" style={{backgroundColor: 'SteelBlue', border: '2px solid white', borderRadius: '25px'}}>
-                        <Navbar.Brand href={"#Main/"+this.state.language}><h4 style={{color: '#48fb47', marginLeft: '50px'}}>{" <EricMartins "}</h4></Navbar.Brand>
-                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                        <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="ml-auto">
-                            <Nav.Link   onClick={()=>this.setState({navigation:'presentation'})} 
-                                        style={this.state.navigation==='presentation'? {fontWeight: 'bold', color: 'white'}:null}
-                                        >
-                                            <h5>{translate('PRESENTATION')}</h5>
-                            </Nav.Link>
-                            <Nav.Link   onClick={()=>this.setState({navigation:'projects'})} 
-                                        style={this.state.navigation==='projects'? {fontWeight: 'bold', color: 'white'}:null}
-                                        >
-                                            <h5>{translate('PROJECTS')}</h5>
-                            </Nav.Link>
-                            <Nav.Link   onClick={()=>this.setState({navigation:'contact'})} 
-                                        style={this.state.navigation==='contact'? {fontWeight: 'bold', color: 'white'}:null}
-                                        >
-                                            <h5>{translate('CONTACT')}</h5>
-                            </Nav.Link>
-                          <Navbar.Brand><h4 style={{color: '#48fb47', marginRight: '50px'}}>{" />"}</h4></Navbar.Brand>
+      return (
+/*         <NavBar onNavigationChange={(navigation)=>this.props.onNavigationChange(navigation)} navigation={this.props.navigation}/>
+ */          <Container style={{padding:'0'}}>
+             
+                  <Navbar expand="lg" variant="dark" style={{backgroundColor: 'SteelBlue', border: '2px solid white', borderRadius: '25px'}}>
+                      <Navbar.Brand href={"#Main/"}><h4 style={{color: '#48fb47', marginLeft: '50px'}}>{" <EricMartins "}</h4></Navbar.Brand>
+                      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                      <Navbar.Collapse id="basic-navbar-nav">
+                      <Nav className="ml-auto">
+                          <Nav.Link   href={"#/portfolio/presentation"}
+                                      onClick={()=>{
+                                        this.setState({navigation: 'presentation'}, this.props.onChange('presentation')); 
+                                      }} 
+                                      style={this.state.navigation==='presentation'? {fontWeight: 'bold', color: 'white'}:null}
+                                      >
+                                          <h5>{translate('PRESENTATION')}</h5>
+                          </Nav.Link>
+                          <Nav.Link   href={"#/portfolio/projects"}
+                                      onClick={()=>{
+                                        this.setState({navigation: 'projects'}, this.props.onChange('projects')); 
+                                      }} 
+                                      style={this.state.navigation==='projects'? {fontWeight: 'bold', color: 'white'}:null}
+                                      >
+                                          <h5>{translate('PROJECTS')}</h5>
+                          </Nav.Link>
+                          <Nav.Link   href={"#/portfolio/contact"}
+                                      onClick={()=>{
+                                        this.setState({navigation: 'contact'},this.props.onChange('contact')); 
+                                      }}                                       
+                                      style={this.state.navigation==='contact'? {fontWeight: 'bold', color: 'white'}:null}
+                                      >
+                                          <h5>{translate('CONTACT')}</h5>
+                          </Nav.Link>
+                        <Navbar.Brand><h4 style={{color: '#48fb47', marginRight: '50px'}}>{" />"}</h4></Navbar.Brand>
 
-                        </Nav>
-                        </Navbar.Collapse>
-                    </Navbar>
-                  
-                </Container>
-       
-    );
+                      </Nav>
+                      </Navbar.Collapse>
+                  </Navbar>
+                
+              </Container>
+     
+  );
 
 
 }
@@ -89,7 +86,7 @@ class NavBar extends React.Component {
 
         return (
           
-                <Container  style={{ backgroundColor: 'SteelBlue', color: 'white', padding: '50px', borderRadius: '25px', marginTop: '50px',border: '2px solid white'}}>
+                <Container  style={{ backgroundColor: 'SteelBlue', color: 'white', padding: '50px', borderRadius: '25px', marginTop: '25px',border: '2px solid white'}}>
                     <Row className='mb-2'>
                         <Col xs="12" >
                             <h4 >À propos de moi</h4>
@@ -176,9 +173,8 @@ class NavBar extends React.Component {
     }
 
     renderProjects =()=>{
-
         return (
-                <Container  style={{ backgroundColor: 'SteelBlue', color: 'white', padding: '50px', borderRadius: '25px', marginTop: '50px',border: '2px solid white', minHeight: '600px'}}>
+                <Container  style={{ backgroundColor: 'SteelBlue', color: 'white', padding: '50px', borderRadius: '25px', marginTop: '25px',border: '2px solid white', minHeight: '600px'}}>
                   <Row className='mb-2'>
                         <Col xs="12" >
                             <h4 >Projets</h4>
@@ -219,7 +215,7 @@ class NavBar extends React.Component {
 
     renderContact =()=>{
         return (
-                <Container  style={{ backgroundColor: 'SteelBlue', color: 'white', padding: '50px', borderRadius: '25px', marginTop: '50px',border: '2px solid white'}}>
+                <Container  style={{ backgroundColor: 'SteelBlue', color: 'white', padding: '50px', borderRadius: '25px', marginTop: '25px',border: '2px solid white'}}>
                      <Row className='mb-3'>
                         <Col xs={12} >
                             <h4 >Contact</h4>
@@ -259,9 +255,6 @@ class NavBar extends React.Component {
                               <span>J2W 1C8  - QC - Canada</span>
                             </div>
                         </Col>
-                        <Col xs={12} className='mb-3 contactFont'  style={{display:'flex', flexWrap: 'wrap', alignItems:'center'}}>
-                        <div className="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="fr_FR" data-type="vertical" data-theme="dark" data-vanity="ericmartins81"><a class="LI-simple-link" href='https://ca.linkedin.com/in/ericmartins81/fr-fr?trk=profile-badge'>Eric Martins</a></div>
-                        </Col>
                     </Row>
                 </Container>
 
@@ -270,159 +263,37 @@ class NavBar extends React.Component {
     }
 
     renderFooter =()=>{
-        return(
-            <Container  style={{ backgroundColor: 'SteelBlue', color: 'white', padding: '20px', borderRadius: '25px', marginTop: '50px',border: '2px solid white'}}>
-                    <Row>
-                        <Col xs={12} style={{display:'flex', justifyContent: 'center', alignContent: 'center'}}>
-                            <div>Copyright © Eric Martins 2020</div>
-                        </Col>
-                    </Row>
-                    
-                </Container>);
-    }
+      return(
+          <Container  style={{ backgroundColor: 'SteelBlue', color: 'white', padding: '20px', borderRadius: '25px', marginTop: '25px',border: '2px solid white'}}>
+                  <Row>
+                      <Col xs={12} style={{display:'flex', justifyContent: 'center', alignContent: 'center'}}>
+                          <div>Copyright © Eric Martins 2020</div>
+                      </Col>
+                  </Row>
+                  
+              </Container>);
+  }
+    
 
     render() {
+
         return (
-            <I18nProvider locale={this.state.language} >
-                <Particles  style={particles}
-                            params={particlesParametres1} />
-                            
-                <div style={{minHeight: '100vh', position:'relative',  padding: '30px'}} >
-                   <FlipMove> 
-                        {this.renderNavBar()}
-                        {this.state.navigation ==='presentation' ? this.renderPresentation(): null}
-                        {this.state.navigation ==='projects' ? this.renderProjects(): null}
-                        {this.state.navigation ==='contact' ? this.renderContact(): null}
-                        {this.renderFooter()}
-                   </FlipMove> 
-                </div>
+            <I18nProvider locale={this.state.language} >    
+            
+            <div style={{ position:'relative', padding:'25px', minHeight:'100vh'}} >
+                          <FlipMove>
+                            {this.renderNavBar()}
+                            {this.state.navigation ==='presentation' ? this.renderPresentation(): null}
+                            {this.state.navigation ==='projects' ? this.renderProjects(): null}
+                            {this.state.navigation ==='contact' ? this.renderContact(): null}
+                            <Footer/>      
+                          </FlipMove>
+             </div>
+            
             </I18nProvider>
         );
     }
 }
 
-export default NavBar;
+export default Portfolio;
 
-
-
-
-const particles ={
-    backgroundColor: 'LightSeaGreen',
-    position: 'fixed',
-    top:0,
-    right:0,
-    bottom:0,
-    left:0,
-}
-
-
-
-const particlesParametres1 = {
-  "particles": {
-    "number": {
-      "value": 100,
-      "density": {
-        "enable": true,
-        "value_area": 800
-      }
-    },
-    "color": {
-      "value": "#ffffff"
-    },
-    "shape": {
-      "type": "circle",
-      "stroke": {
-        "width": 0,
-        "color": "#000000"
-      },
-      "polygon": {
-        "nb_sides": 5
-      },
-      "image": {
-        "src": "img/github.svg",
-        "width": 100,
-        "height": 100
-      }
-    },
-    "opacity": {
-      "value": 0.5,
-      "random": false,
-      "anim": {
-        "enable": false,
-        "speed": 1,
-        "opacity_min": 0.1,
-        "sync": false
-      }
-    },
-    "size": {
-      "value": 5,
-      "random": true,
-      "anim": {
-        "enable": false,
-        "speed": 40,
-        "size_min": 0.1,
-        "sync": false
-      }
-    },
-    "line_linked": {
-      "enable": true,
-      "distance": 150,
-      "color": "#ffffff",
-      "opacity": 0.5,
-      "width": 1
-    },
-    "move": {
-      "enable": false,
-      "speed": 6,
-      "direction": "none",
-      "random": false,
-      "straight": false,
-      "out_mode": "out",
-      "attract": {
-        "enable": false,
-        "rotateX": 600,
-        "rotateY": 1200
-      }
-    }
-  },
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": {
-      "onhover": {
-        "enable": false,
-        "mode": "repulse"
-      },
-      "onclick": {
-        "enable": false,
-        "mode": "push"
-      },
-      "resize": true
-    },
-    "modes": {
-      "grab": {
-        "distance": 400,
-        "line_linked": {
-          "opacity": 1
-        }
-      },
-      "bubble": {
-        "distance": 400,
-        "size": 40,
-        "duration": 2,
-        "opacity": 8,
-        "speed": 3
-      },
-      "repulse": {
-        "distance": 200
-      },
-      "push": {
-        "particles_nb": 4
-      },
-      "remove": {
-        "particles_nb": 2
-      }
-    }
-  },
-  "retina_detect": false,
-  
-}

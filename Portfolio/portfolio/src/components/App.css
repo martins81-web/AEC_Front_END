@@ -70,3 +70,7 @@
   font-size: 1.3em ;
   } 
 }
+
+html { margin-left: calc(100vw - 100%); 
+  margin-right: 0;
+}
