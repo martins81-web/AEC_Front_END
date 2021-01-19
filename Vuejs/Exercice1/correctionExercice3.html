@@ -1,0 +1,27 @@
+<!-- Exercice 3 -->
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Manipulation de vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{getYear}}</h1>
+    </div>
+    <script>
+      let vm = new Vue({
+        el: "#app",
+        data: {
+          date: new Date(),
+        },
+        computed: {
+          getYear() {
+            return this.date.getFullYear();
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Manipulation de vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="monapp"><titre valeur="Nouveau titre"></titre></div>
+
+    <script>
+      let maVueModele = new Vue({
+        el: "#monapp",
+        components: {
+          titre: {
+            props: ["valeur"],
+            template: "<h1>{{valeur}}</h1>",
+          },
+        },
+        data: {},
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!-- Exercice 1 -->
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Manipulation de vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style type="text/css">
+      .tasks__item__toggle_completed {
+        text-decoration: line-through;
+        background-color: rgba(green, 0.15);
+        border-color: rgba(green, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <li class="list-item" v-for="item in items">
+        <input type="checkbox" v-on:click="completeTask(item)" /><span
+          v-bind:class=" {tasks__item__toggle_completed : isClassActive( item.completed ) } "
+        >
+          {{ item.name }}
+        </span>
+      </li>
+    </div>
+    <script>
+      let vm = new Vue({
+        el: "#app",
+        data: {
+          items: [
+            {
+              id: 1,
+              name: "Clean the fridge",
+              completed: false,
+            },
+            {
+              id: 2,
+              name: "Walk the dogs",
+              completed: false,
+            },
+          ],
+        },
+        methods: {
+          completeTask(task) {
+            task.completed = !task.completed;
+          },
+          isClassActive(completed) {
+            console.log(completed);
+            return completed;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+<div id="app">
+  <h1>Premier exercice de routage dans vue!</h1>
+  <p>
+    <!-- utilisez le composant router-link pour la navigation. -->
+    <!-- spécifiez le lien en le passant à la prop `to` -->
+    <!-- `<router-link>` sera rendu en tag `<a>` par défaut -->
+    <router-link to="/accueil">Accueil</router-link>
+    <router-link to="/contact">Contact</router-link>
+    <router-link to="/utilisateur/john">/user/john</router-link>
+    <router-link to="/utilisateur/john/profile">/user/john/profile</router-link>
+    <router-link to="/utilisateur/john/posts">/user/john/posts</router-link>
+
+  </p>
+  <!-- balise pour le composant router-view -->
+  <!-- le composant correspondant à la route sera rendu ici -->
+  <router-view></router-view>
+</div>
+
+<script src="routage_ex1.js"></script>

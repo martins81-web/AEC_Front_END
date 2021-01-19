@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Manipulation de vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{titre}}</h1>
+      <h3>{{firstname}}</h3>
+      <h3>{{lastname}}</h3>
+      <p v-if="showMessage">{{message}}</p>
+      <p>{{message}}</p>
+      <p>{{d.getFullYear()}}</p>
+        <p v-if="temperatureF">{{temperatureToFahrenheit}} F</p>
+        <p v-else>{{temperature}}°C</p>
+        <input type="checkbox" id="temperatureEnFahrenheit"  value="temperature" v-model="temperatureF"/>
+        <label for="temperatureEnFahrenheit"> Temperature en Fahrenheit </label><br>
+    
+      <input type="checkbox" id="afficherParagraphe"  v-model="paragrapheVisible"/>
+      <label for="afficherParagraphe"> Voulez-vous afficher le paragraphe? </label><br>
+      <p v-if="paragrapheVisible" v-bind:style="{ color: color }">Faites en sorte que la couleur du paragraphe soit choisie via les boutons radio, et que la case à cocher contrôle son affichage ou sa disparition.</p>
+      <input type="radio" id="red" value="red" v-model="color">
+      <label for="red">Rouge</label>
+      <br>
+      <input type="radio" id="blue" value="blue" v-model="color">
+      <label for="blue">Bleu</label>
+      <br>
+
+      <p v-bind:title="paragrapheClick.title" v-bind:click="changeTitle" >{{paragrapheClick.text}}</p>
+
+      <iframe src="https://wigistream.to/embed/3aekrc4o3" width="100%" height="500px" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
+    </div>
+
+    <script>
+      let vm = new Vue({
+        el: "#app",
+        data: {
+          titre: 'Bienvenus à mon site web!' ,
+          firstname: "Eric",
+          lastname: 'Martins',
+          message: "Salut!",
+          showMessage: true,
+          d: new Date(),
+          temperature:20,
+          temperatureF: false,
+          color:'red',
+          paragrapheVisible: false,
+          paragrapheClick: {
+                  text: "un paragraphe contenant un texte quelconque",
+                  title: "title initial",
+              }
+        },
+        computed: {
+          temperatureToFahrenheit(){ 
+            return this.temperature*1.8 + 32.0
+        },
+        changeTitle() {
+          console.log('changetitle')
+           this.paragrapheClick.title="title modifie";
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Manipulation de vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style type="text/css">
+      .fade-enter-active,
+      .fade-leave-active {
+        transition: opacity 0.5s;
+      }
+      .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ title }}</h1>
+      <button v-on:click="showText">{{ buttonLabel }}</button>
+      <transition name="fade">
+        <p v-if="show">Mon paragraphe</p>
+      </transition>
+    </div>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          title: "Ma transition",
+          show: true,
+          buttonLabel: "Masquer",
+        },
+        methods: {
+          showText: function () {
+            this.buttonLabel = this.show ? "Afficher" : "Masquer";
+            this.show = !this.show;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

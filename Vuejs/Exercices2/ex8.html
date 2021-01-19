@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Manipulation de vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style type="text/css">
+      .modal-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 98;
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+
+      .modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 99;
+
+        width: 100%;
+        max-width: 400px;
+        background-color: #fff;
+        border-radius: 16px;
+
+        padding: 25px;
+      }
+
+      .fade-enter-active,
+      .fade-leave-active {
+        transition: opacity 0.5s;
+      }
+
+      .fade-enter,
+      .fade-leave-to {
+        opacity: 0;
+      }
+
+      .slide-enter-active,
+      .slide-leave-active {
+        transition: transform 0.5s;
+      }
+
+      .slide-enter,
+      .slide-leave-to {
+        transform: translateY(-50%) translateX(100vw);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <button class="button" v-on:click="showModal = true">
+        Affichez les horaires
+      </button>
+      <transition name="fade" appear>
+        <div
+          class="modal-overlay"
+          v-if="showModal"
+          @click="showModal = false"
+        ></div>
+      </transition>
+      <transition name="slide" appear>
+        <div class="modal" v-if="showModal">
+          <h1>Horaire de la station</h1>
+          <p>
+            Lundi-mercredi 8h30-16<br />
+            Jeudi-samedi 10h-22h<br />
+            Dimanche fermé
+          </p>
+          <button class="button" v-on:click="showModal = false">
+            Close Modal
+          </button>
+        </div>
+      </transition>
+    </div>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          title: "Transition d'un modal",
+          showModal: false,
+        },
+      });
+    </script>
+  </body>
+</html>

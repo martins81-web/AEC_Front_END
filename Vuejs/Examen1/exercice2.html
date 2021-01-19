@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Examen 1 - exercice 2</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <style>
+      .underlined{
+        text-decoration: underline;
+      }
+  </style>
+  <body>
+    <div id="app">
+        <h1 v-bind:class='getClass'> {{firstname}} {{lastname}} </h1> 
+        <p>Firstname: <input v-model="firstname"></p>
+        <p>Lastname: <input v-model="lastname"></p>
+        <input type="checkbox" id="checkbox" v-model="underlined">
+        <label for="checkbox">Underlined</label>
+    </div>
+
+    <script>
+      let vm = new Vue({
+        el: "#app",
+        data: {
+            firstname: "Eric",
+            lastname: "Martins",
+            underlined: false
+        },
+        computed: {
+          getClass() {
+            let myClass = "";
+            if (this.underlined === true) {
+              myClass = "underlined";
+            } else {
+              myClass = "";
+            }
+            return myClass;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

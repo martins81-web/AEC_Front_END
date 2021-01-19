@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Manipulation de vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ title }}</h1>
+      <div>
+        <select v-model="selectedHeroByVModel">
+          <option v-for="option in heroes" :value="option">{{option}}</option>
+        </select>
+        <span>Get value by v-model: {{ selectedHeroByVModel }}</span>
+      </div>
+      <br />
+      <div>
+        <select v-on:change="onChange">
+          <option v-for="option in heroes" :value="option">{{option}}</option>
+        </select>
+        <span>Get value by v-on: {{ selectedHeroByVOn }}</span>
+      </div>
+    </div>
+    <script>
+      let vm = new Vue({
+        el: "#app",
+        data: {
+          title: "My heroes",
+          heroes: [
+            "Phoenix",
+            "Wolverine",
+            "Black Widow",
+            "Thor",
+            "Daredevil",
+            "Deadpool",
+            "Spiderman",
+          ],
+          selectedHeroByVModel: null,
+          selectedHeroByVOn: null,
+        },
+        methods: {
+          onChange: function (event) {
+            this.selectedHeroByVOn = event.target.value;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

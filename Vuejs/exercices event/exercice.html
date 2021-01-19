@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Manipulation de vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+        <button v-on:click="nbfois++">{{nbfois}} fois clické</button>
+    </div>
+
+    <script>
+      let vm = new Vue({
+        el: "#app",
+        data: {
+            nbfois:0
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!-- Exercice 1 -->
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Manipulation de vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{titre}} {{firstname}} {{lastname}}</h1>
+    </div>
+    <script>
+      let vm = new Vue({
+        el: "#app",
+        data: {
+          titre: "Bienvenue dans mon site VueJs",
+          firstname: "Vincent",
+          lastname: "Baylly",
+        },
+      });
+    </script>
+  </body>
+</html>

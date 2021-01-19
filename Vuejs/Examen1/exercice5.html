@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Examen 1 - exercice 5</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <style>
+      .whiteBackground{
+        background-color: white;
+      }
+
+      .redBackground{
+        background-color: red;
+      }
+
+
+      .modal-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 98;
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+
+      .modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 99;
+
+        width: 100%;
+        max-width: 400px;
+        border-radius: 16px;
+
+        padding: 25px;
+      }
+      .fade-enter-active,
+      .fade-leave-active {
+        transition: opacity 0.5s;
+      }
+
+      .fade-enter,
+      .fade-leave-to {
+        opacity: 0;
+      }
+
+      .slide-enter-active,
+      .slide-leave-active {
+        transition: transform 0.5s;
+      }
+
+      .slide-enter,
+      .slide-leave-to {
+        transform: translateY(-50%) translateX(100vw);
+      }
+     
+  </style>
+  <body>
+    <div id="app">
+        <formulaire ></formulaire>
+    </div>
+
+    <script>
+    
+
+      Vue.component("formulaire", {
+        data: function () {
+          return {
+            firstname: "Eric",
+            lastname: "Martins",
+            selectedGenre: 'Homme',
+            genres: ['Homme','Femme'],
+          };
+        },
+        computed: {
+          getClass() {
+            let myClass = "";
+            if (this.backColor === false) {
+              myClass = "whiteBackground";
+            } else {
+              myClass = "redBackground";
+            }
+            return myClass;
+          },
+          getPrefix(){
+              let prefix='';
+              if (this.selectedGenre==='Homme'){
+                    prefix='Mr';
+              } else {
+                    prefix='Ms';
+              }
+              return prefix
+          }
+        },
+        
+        template: `<div>
+                    <p>Firstname: <input v-model="firstname"></p>
+                    <p>Lastname: <input v-model="lastname"></p>
+                    <br>
+                    <div v-for="genre in genres">
+                        <input type="radio" id="genre" :value="genre" v-model="selectedGenre">
+                        <label for="genre">{{genre}}</label>
+                    </div>
+                    <br>
+                    <modal v-bind:prefix="getPrefix" v-bind:firstname="firstname" v-bind:lastname="lastname" ></modal>
+                  </div>`,
+      });
+
+      Vue.component("modal", {
+        props: ["prefix", "firstname", "lastname"],
+        data: function () {
+          return {
+            backColor: false,
+            showModal: false
+          };
+        },
+        computed: {
+          getClass() {
+            let myClass = "";
+            if (this.backColor === false) {
+              myClass = "whiteBackground";
+            } else {
+              myClass = "redBackground";
+            }
+            return myClass;
+          },
+        },
+        template: `<div>
+                    <button class="button" v-on:click="showModal = true">
+                        Soumission 
+                    </button>
+                        <transition name="fade" appear>
+                        <div
+                            class="modal-overlay"
+                            v-if="showModal"
+                            @click="showModal = false"
+                        ></div>
+                        </transition>
+                        <transition name="slide" appear>
+                            <div class="modal" v-if="showModal" v-bind:class='getClass'>
+                            <h1>{{prefix}} {{firstname}} {{lastname}} </h1>
+                            <input type="checkbox" id="checkboxColor" v-model="backColor">
+                            <label for="checkboxColor">Change color</label>
+                            <br>
+                            </div>
+                        </transition>
+                  </div>`,
+      });
+
+      let vm = new Vue({
+        el: "#app",
+        data: {
+     
+        },
+      });
+    </script>
+  </body>
+</html>

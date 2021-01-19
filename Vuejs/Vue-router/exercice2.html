@@ -1,0 +1,24 @@
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+<div id="app">
+  <h1>Exercice 2</h1>
+  <p>
+    <!-- utilisez le composant router-link pour la navigation. -->
+    <!-- spécifiez le lien en le passant à la prop `to` -->
+    <!-- `<router-link>` sera rendu en tag `<a>` par défaut -->
+    <router-link to="/home">Accueil</router-link>
+    <router-link to="/list">Liste d'articles</router-link>
+    <router-link to="/plan">Plan du site</router-link>
+    <router-link to="/about">À propos</router-link>
+    <router-link to="/type/meubles">Meubles</router-link>
+    <router-link to="/type/electromenagers">Electro-menagers</router-link>
+    <router-link to="/type/jouets">Jouets</router-link>
+    <router-link to="/type/vetements">Vêtements</router-link>
+  </p>
+  <!-- balise pour le composant router-view -->
+  <!-- le composant correspondant à la route sera rendu ici -->
+  <router-view></router-view>
+</div>
+
+<script src="exercice2.js"></script>

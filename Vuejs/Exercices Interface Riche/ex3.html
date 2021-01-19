@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Manipulation de vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="monapp">
+      <label for="chp">Saisissez un nouveau titre :</label
+      ><input id="chp" v-model="valeurchamp" />
+      <titre v-bind:valeur="valeurchamp"></titre>
+    </div>
+
+    <script>
+      let maVueModele = new Vue({
+        el: "#monapp",
+        data: {
+          valeurchamp: "Titre",
+        },
+        components: {
+          titre: {
+            props: {
+              valeur: {
+                type: String,
+                validator: function (value) {
+                  return /^[a-zA-Z]+$/.exec(value);
+                },
+              },
+            },
+            template: "<h1>{{valeur}}</h1>",
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

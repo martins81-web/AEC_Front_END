@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Examen 1 - exercice 6</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  </head>
+  <style>
+      .whiteBackground{
+        background-color: white;
+      }
+
+      .redBackground{
+        background-color: red;
+      }
+
+      .modal-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 98;
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+
+      .modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 99;
+
+        width: 100%;
+        max-width: 400px;
+        border-radius: 16px;
+
+        padding: 25px;
+      }
+      .fade-enter-active,
+      .fade-leave-active {
+        transition: opacity 0.5s;
+      }
+
+      .fade-enter,
+      .fade-leave-to {
+        opacity: 0;
+      }
+
+      .slide-enter-active,
+      .slide-leave-active {
+        transition: transform 0.5s;
+      }
+
+      .slide-enter,
+      .slide-leave-to {
+        transform: translateY(-50%) translateX(100vw);
+      }
+     
+      .icon-bar {
+        width: 100%; /* Full-width */
+        background-color: #555; /* Dark-grey background */
+        overflow: auto; /* Overflow due to float */
+        left: 0;
+        top: 0;
+        }
+
+        .icon-bar a {
+        float: left; /* Float links side by side */
+        text-align: center; /* Center-align text */
+        width: 20%; /* Equal width (5 icons with 20% width each = 100%) */
+        padding: 12px 0; /* Some top and bottom padding */
+        transition: all 0.3s ease; /* Add transition for hover effects */
+        color: white; /* White text color */
+        font-size: 36px; /* Increased font size */
+        }
+
+        .icon-bar a:hover {
+        background-color: #000; /* Add a hover color */
+        }
+
+        .active {
+        background-color: #4CAF50; /* Add an active/current color */
+        }
+
+        .footer {
+        width: 100%; /* Full-width */
+        background-color: #555; /* Dark-grey background */
+        color: white;
+        overflow: auto; /* Overflow due to float */
+        text-align: center; /* Center-align text */
+        padding: 12px 0; /* Some top and bottom padding */
+        font-size: 20px; /* Increased font size */
+       
+        }
+  </style>
+  <body>
+    <div id="app">
+        <header-component>
+            <template v-slot:header>
+                <div class="icon-bar">
+                    <a class="active" href="#"><i class="fa fa-home"></i></a>
+                    <a href="#"><i class="fa fa-search"></i></a>
+                    <a href="#"><i class="fa fa-envelope"></i></a>
+                    <a href="#"><i class="fa fa-globe"></i></a>
+                    <a href="#"><i class="fa fa-trash"></i></a>
+                  </div>
+            </template>
+          </header-component>
+        <formulaire></formulaire>
+        <footer-component>
+            <template v-slot:footer>
+                <div class="footer">
+                        Copywright @ 2021 - Eric Martins - All Rights Reserved
+                </div>
+            </template>
+          </footer-component>
+    </div>
+
+    <script>
+
+    Vue.component("headerComponent", {
+        template: `<div>
+                       <slot name="header"></slot>
+                  </div>`,
+      });
+
+
+      Vue.component("footerComponent", {
+        template: `<div>
+                       <slot name="footer"></slot>
+                  </div>`,
+      });
+
+      Vue.component("formulaire", {
+        data: function () {
+          return {
+            firstname: "Eric",
+            lastname: "Martins",
+            selectedGenre: 'Homme',
+            genres: ['Homme','Femme'],
+            showModal: false,
+          };
+        },
+        computed: {
+          getClass() {
+            let myClass = "";
+            if (this.backColor === false) {
+              myClass = "whiteBackground";
+            } else {
+              myClass = "redBackground";
+            }
+            return myClass;
+          },
+          getPrefix(){
+              let prefix='';
+              if (this.selectedGenre==='Homme'){
+                    prefix='Mr';
+              } else {
+                    prefix='Ms';
+              }
+              return prefix
+          }
+        },
+        
+        template: `<div>
+                    <p>Firstname: <input v-model="firstname"></p>
+                    <p>Lastname: <input v-model="lastname"></p>
+                    <br>
+                    <div v-for="genre in genres">
+                        <input type="radio" id="genre" :value="genre" v-model="selectedGenre">
+                        <label for="genre">{{genre}}</label>
+                    </div>
+                    <br>
+                    <modal v-bind:prefix="getPrefix" v-bind:firstname="firstname" v-bind:lastname="lastname" ></modal>
+                  </div>`,
+      });
+
+      Vue.component("modal", {
+        props: ["prefix", "firstname", "lastname"],
+        data: function () {
+          return {
+            backColor: false,
+            showModal: false
+          };
+        },
+        computed: {
+          getClass() {
+            let myClass = "";
+            if (this.backColor === false) {
+              myClass = "whiteBackground";
+            } else {
+              myClass = "redBackground";
+            }
+            return myClass;
+          },
+        },
+        template: `<div>
+                        <button class="button" v-on:click="showModal = true">
+                            Soumission 
+                        </button>
+                        <transition name="fade" appear>
+                        <div
+                            class="modal-overlay"
+                            v-if="showModal"
+                            @click="showModal = false"
+                        ></div>
+                        </transition>
+                        <transition name="slide" appear>
+                            <div class="modal" v-if="showModal" v-bind:class='getClass'>
+                            <h1>{{prefix}} {{firstname}} {{lastname}} </h1>
+                            <input type="checkbox" id="checkboxColor" v-model="backColor">
+                            <label for="checkboxColor">Change color</label>
+                            <br>
+                            <br>
+                            <button class="button" v-on:click="showModal = false">
+                                Close Modal
+                            </button>
+                            </div>
+                        </transition>
+                  </div>`,
+      });
+
+      let vm = new Vue({
+        el: "#app",
+        data: {
+     
+        },
+      });
+    </script>
+  </body>
+</html>

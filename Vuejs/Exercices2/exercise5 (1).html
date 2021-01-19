@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <title>Examen: Exercise no 5</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<style type="text/css">
+    /* Pour le modal */
+
+    .modal-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 98;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 99;
+
+        width: 100%;
+        max-width: 400px;
+        background-color: #fff;
+        border-radius: 16px;
+
+        padding: 25px;
+    }
+
+    .fade-enter-active,
+    .fade-leave-active {
+        transition: opacity 0.5s;
+    }
+
+    .fade-enter,
+    .fade-leave-to {
+        opacity: 0;
+    }
+
+    .slide-enter-active,
+    .slide-leave-active {
+        transition: transform 0.5s;
+    }
+
+    .slide-enter,
+    .slide-leave-to {
+        transform: translateY(-50%) translateX(100vw);
+    }
+
+    /* Pour la case à cocher du h1 */
+    .surligner{
+        text-decoration: line-through;
+        text-decoration-color: blue;
+    }
+    .changementCouleur {
+        text-decoration: line-through;
+        text-decoration-color: rosybrown;
+    }
+</style>
+
+<body>
+<div id="app">
+    <h2>{{ title }}</h2>
+
+    <p>Sélectionner votre genre</p>
+
+    <input type="radio"
+           name="genre"
+           value="Mr"
+           v-model="selected"
+    >Homme
+    <br/>
+    <input type="radio"
+           name="genre"
+           value="Ms"
+           v-model="selected"
+    >Femme
+    <br/>
+    <br/>
+    <p>
+        <label for="prenom">Écrire votre prénom: </label>
+        <input id="prenom" v-model="prenom">
+        <br/>
+        <label for="nom">Écrire votre nom: </label>
+        <input id="nom" v-model="nom">
+    </p>
+
+    <!-- Section qui affiche l'information précédemment entrée SI nous avons entrée un nom et un prénom-->
+
+    <nomprenom v-if="prenom && nom" v-bind:valeur="'Bonjour' + ' ' + selected + ' ' + prenom + ' ' + nom" v-bind:class="cls">
+
+    </nomprenom><br/>
+
+    <!-- Section case à cocher pour Mettre le trait / Enlever le trait du nom -->
+
+    <input type="checkbox"
+           v-model="checked">Mettre le trait / Enlever le trait
+    </input>
+    <p>
+        <!-- Bouton pour ouvrir le modal -->
+        <button id="show-modal"
+                v-on:click="showModal = true">Soumission
+        </button>
+    </p>
+
+    <!-- Section des transitions pour le modal -->
+
+    <!-- Transition en fade pour le modal -->
+
+    <transition name="fade" appear>
+
+        <div class="modal-overlay"
+             v-if="showModal"
+             v-on:update-show-modal="update"
+             @click="showThisModal"
+        >
+        </div>
+
+    </transition>
+
+    <!-- Transition du slide pour le modal -->
+
+    <transition name="slide" appear>
+        <div class="modal" v-if="showModal">
+            <p>
+                <nomprenommodal v-if="prenom && nom" v-bind:valeur="'Bonjour' + ' ' + selected + ' ' + prenom + ' ' + nom" v-bind:class="cls2">
+                </nomprenommodal>
+            </p>
+            <p>
+                <input type="checkbox"
+                       v-model="checked">Mettre le trait / Enlever le trait
+                </input>
+            </p>
+            <button class="button" v-on:click="showModal = false">
+                Fermer le modal
+            </button>
+        </div>
+    </transition>
+</div>
+
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            showModal: false,
+            nom: '',
+            prenom: '',
+            mode: "",
+            selected: "",
+            genre: ["mr", "ms"],
+            title: "Examen - Exercise 5",
+            checked: false
+        },
+        methods:{
+            showThisModal() {
+                showModal = false;
+                this.$emit("update-show-modal", showModal);
+            },
+            update(showModal) {
+                this.showModal = showModal;
+            },
+        },
+        components: {
+            nomprenom: {
+                props: ["valeur"],
+                template: `<h1>{{ valeur }}</h1>`
+            },
+            nomprenommodal: {
+                props: ["valeur"],
+                template: `<h1>{{ valeur }}</h1>`
+            },
+        },
+        computed: {
+            cls(){
+                let maClasse = "";
+                if (this.checked) {
+                    maClasse = "surligner";
+                }
+                return maClasse;
+            },
+            cls2() {
+                let maCouleur = "";
+                if (this.checked) {
+                    maCouleur = "changementCouleur";
+                }
+                return maCouleur;
+            }
+        }
+    });
+</script>
+</body>
+</html>

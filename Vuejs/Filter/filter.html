@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Manipulation de vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+        <h1>{{ 25 | celsius }}</h1>
+        <h1>{{ 80 | fahrenheit}}</h1>
+        <h1>{{ 50 | cad }}</h1>
+    </div>
+
+    <script>
+      let vm = new Vue({
+        el: "#app",
+        data: {
+           
+        },
+        filters:{
+            celsius: function(value){
+                return value.toFixed(1).toString() + " C";
+            },
+            fahrenheit: function(value){
+                return value.toFixed(1).toString() + " F";
+            },
+            cad: function(value){
+                return value.toFixed(2).toString() + " CAD";
+            }
+        },
+      });
+    </script>
+  </body>
+</html>

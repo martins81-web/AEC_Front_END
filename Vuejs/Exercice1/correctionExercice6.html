@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Manipulation de vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style type="text/css">
+      .red {
+        color: red;
+      }
+      .blue {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <input
+        type="radio"
+        id="blue"
+        name="color"
+        value="blue"
+        v-model="selected"
+      />
+      <label for="blue">Blue</label><br />
+      <input
+        type="radio"
+        id="red"
+        name="color"
+        value="red"
+        v-model="selected"
+      />
+      <label for="red">Red</label>
+      <div v-bind:class="cls">
+        <p>Changer la couleur du paragraphe</p>
+      </div>
+    </div>
+    <script>
+      let vm = new Vue({
+        el: "#app",
+        data: {
+          selected: "red",
+        },
+        computed: {
+          cls() {
+            let myClass = "";
+            if (this.selected === "red") {
+              console.log("hello");
+              myClass = "red";
+            } else if (this.selected === "blue") {
+              myClass = "blue";
+            }
+            return myClass;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

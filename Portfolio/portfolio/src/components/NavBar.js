@@ -22,7 +22,7 @@ class Footer extends React.Component {
                  <Navbar.Toggle aria-controls="basic-navbar-nav" />
                  <Navbar.Collapse id="basic-navbar-nav">
                  <Nav className="ml-auto">
-                     <Nav.Link   href={"#/portfolio/presentation"}
+                     <Nav.Link   href={"presentation"}
                                  onClick={()=>{
                                    this.setState({navigation: 'presentation'}, this.props.onChange('presentation')); 
                                  }} 
@@ -30,7 +30,7 @@ class Footer extends React.Component {
                                  >
                                      <h5>{translate('PRESENTATION')}</h5>
                      </Nav.Link>
-                     <Nav.Link   href={"#/portfolio/projects"}
+                     <Nav.Link   href={"projects"}
                                  onClick={()=>{
                                    this.setState({navigation: 'projects'}, this.props.onChange('projects')); 
                                  }} 
@@ -38,7 +38,7 @@ class Footer extends React.Component {
                                  >
                                      <h5>{translate('PROJECTS')}</h5>
                      </Nav.Link>
-                     <Nav.Link   href={"#/portfolio/contact"}
+                     <Nav.Link   href={"contact"}
                                  onClick={()=>{
                                    this.setState({navigation: 'contact'},this.props.onChange('contact')); 
                                  }}                                       

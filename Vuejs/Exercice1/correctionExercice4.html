@@ -1,0 +1,35 @@
+<!-- Exercice 4 -->
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Manipulation de vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <input type="checkbox" v-model="converter" /> Convertir la température
+      <h4>{{temperatureConverted}}</h4>
+    </div>
+    <script>
+      let vm = new Vue({
+        el: "#app",
+        data: {
+          temperatureC: 32,
+          converter: false,
+        },
+        computed: {
+          temperatureConverted() {
+            let tempConverted;
+            if (this.converter) {
+              tempConverted = this.temperatureC * (9.0 / 5) + 32 + " F";
+            } else {
+              tempConverted = this.temperatureC + " C";
+            }
+            return tempConverted;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

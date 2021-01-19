@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Manipulation de vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div v-if="Math.random() > 0.5">Now you see me</div>
+      <div v-else>Now you don't</div>
+      <h1 v-show="a">Hello!</h1>
+    </div>
+    <script>
+      let vm = new Vue({
+        el: "#app",
+        data: {
+          a: false,
+        },
+      });
+    </script>
+  </body>
+</html>

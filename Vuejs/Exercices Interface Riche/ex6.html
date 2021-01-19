@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Mon composant asynchrone</h1>
+      <h2 id="loading">Chargement en cours...</h2>
+      <exemple-async> </exemple-async>
+    </div>
+
+    <script>
+      Vue.component("exemple-async", function (resolve, reject) {
+        setTimeout(function () {
+          // Passe la définition du composant à la fonction de rappel `resolve`
+          resolve({
+            template: "<div>Je suis asynchrone !</div>",
+            methods: {
+              hide: function () {
+                document.getElementById("loading").style.visibility = "hidden";
+              },
+            },
+            created: function () {
+              this.hide();
+            },
+          });
+        }, 10000);
+      });
+
+      const vuemodel = new Vue({
+        el: "#app",
+        data: {
+          title: "My slot",
+        },
+      });
+
+      function salutation(name) {
+        alert("Bonjour " + name);
+      }
+
+      function processUserInput(callback) {
+        var name = prompt("Entrez votre nom.");
+        callback(name);
+      }
+
+      processUserInput(salutation);
+    </script>
+  </body>
+</html>

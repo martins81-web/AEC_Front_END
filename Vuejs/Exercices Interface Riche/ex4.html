@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Manipulation de vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ title }}</h1>
+      <sub-content>
+        <template v-slot:first>
+          <h1>My First slot</h1>
+        </template>
+        <template v-slot:second>
+          <p>My second slot</p>
+        </template>
+        <template v-slot:third>
+          <p>My third slot</p>
+        </template>
+        <template v-slot:fourth>
+          <p>My fourth slot</p>
+        </template>
+      </sub-content>
+    </div>
+    <script>
+      Vue.component("sub-content", {
+        template: `<div>
+                       <slot name="first"></slot>
+                       <slot name="second"></slot>
+                       <slot name="third"></slot>
+                       <slot name="fourth"></slot>
+                  </div>`,
+      });
+
+      const vuemodel = new Vue({
+        el: "#app",
+        data: {
+          title: "My slot",
+        },
+      });
+    </script>
+  </body>
+</html>

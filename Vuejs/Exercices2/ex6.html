@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Manipulation de vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style type="text/css">
+      h1 {
+        text-align: center;
+      }
+
+      input[type="text"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+
+      .container {
+        width: 50%;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        margin: auto;
+      }
+      .transport {
+        width: 50%;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ title }}</h1>
+      <div class="container">
+        <form>
+          <p>Type de transport :</p>
+          <div class="transport">
+            <input
+              type="radio"
+              id="transport"
+              name="transport"
+              value="vehicule"
+              v-on:click="changeForm('vehicule')"
+            />
+            <label for="vehicule">vehicule</label>
+            <input
+              type="radio"
+              id="transport"
+              name="transport"
+              value="velo"
+              v-on:click="changeForm('velo')"
+              checked
+            />
+            <label for="velo">velo</label>
+          </div>
+          <component v-bind:is="currentForm"></component>
+        </form>
+      </div>
+    </div>
+    <script>
+      Vue.component("velo", {
+        data: function () {
+          return { message: "checked" };
+        },
+        template: `<div>
+                    <div>
+                      <label for="type_velo">Type de velo :</label>
+                      <input type="text" id="type_velo" name="type_velo" />
+                    </div>
+                    <p>Taille en pouce :</p>
+                    <div>
+                      <input type="radio" id="XS" name="taille" value="13-14″" checked />
+                      <label for="XS">13-14″</label>
+                    </div>
+                    <div>
+                      <input type="radio" id="S" name="taille" value="15-16″" checked />
+                      <label for="taille">15-16″</label>
+                    </div>
+                    <div>
+                      <input type="radio" id="M" name="taille" value="17-18″" checked />
+                      <label for="M">17-18″</label>
+                    </div>
+                    <div>
+                      <input type="radio" id="L" name="taille" value="19-20″" checked />
+                      <label for="L">19-20″</label>
+                    </div>
+                    <div>
+                      <input type="radio" id="XL" name="taille" value="21-22″" checked />
+                      <label for="XL">21-22″</label>
+                    </div>
+                    <div>
+                      <input type="radio" id="XXL" name="taille" value="23-24″" checked />
+                      <label for="XXL">23-24″</label>
+                    </div>
+                    <br/>
+                    <div>
+                      <label for="frein">Type de frein :</label>
+                      <input type="text" id="frein" name="frein" />
+                    </div>
+                    <div>
+                      <label for="pneu">Epaisseur des pneus en pouce :</label>
+                      <input type="text" id="pneu" name="pneu" />
+                    </div>
+                  </div>
+                </div>`,
+      });
+      Vue.component("vehicule", {
+        data: function () {
+          return { message: "checked" };
+        },
+        template: `<div>
+                    <div>
+                        <label for="type_vehicule">Type de vehicule :</label>
+                        <input type="text" id="type_vehicule" name="type_vehicule">
+                    </div>
+                    <p>Manuel ou automatique :</p>
+                    <div>
+                      <input type="radio" id="manuel" name="transmission" value="manuel" checked />
+                      <label for="manuel">manuel</label>
+                    </div>
+                    <div>
+                      <input type="radio" id="automatique" name="transmission" value="automatique" checked />
+                      <label for="automatique">automatique</label>
+                    </div>
+                    <br/>
+                    <div>
+                        <label for="chevaux">Nombre de chevaux :</label>
+                        <input type="text" id="chevaux" name="chevaux">
+                    </div>
+                    <div>
+                        <label for="consomation">Consomation d'essence (l/100km) :</label>
+                        <input type="text" id="consomation" name="consomation">
+                    </div>
+                  </div>`,
+      });
+      let vm = new Vue({
+        el: "#app",
+        data: {
+          title: "My component event",
+          currentForm: "velo",
+        },
+        methods: {
+          changeForm: function (form) {
+            this.currentForm = form;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
