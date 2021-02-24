@@ -6,8 +6,9 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <style>
-      .underlined{
-        text-decoration: underline;
+      .highlighted{
+        background-color: black;
+        color: white;
       }
   </style>
   <body>
@@ -31,7 +32,7 @@
           getClass() {
             let myClass = "";
             if (this.underlined === true) {
-              myClass = "underlined";
+              myClass = "highlighted";
             } else {
               myClass = "";
             }
